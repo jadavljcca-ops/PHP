@@ -5,8 +5,8 @@
  * with fallback to configurable default credentials.
  */
 
-const DEFAULT_ADMIN_USERNAME = "admin";
-const DEFAULT_ADMIN_PASSWORD = "admin123";
+const DEFAULT_ADMIN_USERNAME = "J.d";
+const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
 
 (function (window) {
   'use strict';
@@ -23,11 +23,16 @@ const DEFAULT_ADMIN_PASSWORD = "admin123";
       if (stored) {
         const parsed = JSON.parse(stored);
         if (parsed && parsed.username && parsed.password) {
-          return {
-            username: String(parsed.username).trim(),
-            password: String(parsed.password).trim(),
-            isCustom: true
-          };
+          // If stored credentials are old default 'admin'/'admin123', upgrade them to new default J.d / Jd@#123
+          if (parsed.username === 'admin' && parsed.password === 'admin123') {
+            localStorage.removeItem(AUTH_CREDENTIALS_KEY);
+          } else {
+            return {
+              username: String(parsed.username).trim(),
+              password: String(parsed.password).trim(),
+              isCustom: true
+            };
+          }
         }
       }
     } catch (e) {
@@ -156,14 +161,14 @@ const DEFAULT_ADMIN_PASSWORD = "admin123";
   }
 
   /**
-   * Reset credentials back to default admin / admin123
+   * Reset credentials back to default J.d / Jd@#123
    */
   function resetCredentialsToDefault() {
     try {
       localStorage.removeItem(AUTH_CREDENTIALS_KEY);
       return {
         success: true,
-        message: 'Credentials reset to default (admin / admin123).'
+        message: 'Credentials reset to default (J.d / Jd@#123).'
       };
     } catch (e) {
       return {
