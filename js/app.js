@@ -437,8 +437,7 @@
                   </button>
                   <div class="q-panel">
                     <div class="q-body">
-                      <div class="q-label">Logic</div>
-                      <p class="q-logic">${q.logic}</p>
+                      ${(q.logic && q.logic.trim()) ? `<div class="q-label">Logic</div><p class="q-logic">${q.logic}</p>` : ''}
                       <div class="q-label">Program</div>
                       <div class="code-wrap">
                         <pre class="code"><code>${codeHighlighted}</code></pre>
