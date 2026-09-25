@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Admin Dashboard &mdash; Python Practicals Lab Manual | LJCCA</title>
+  <meta name="description" content="Admin Dashboard for managing Python practical questions, logic, code, and output.">
+  <link rel="icon" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/admin.css">
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('python_practicals_admin_theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-theme');
+          document.addEventListener('DOMContentLoaded', function () {
+            if (document.body) document.body.classList.add('light-theme');
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. LOGIN VIEW (Shown when not authenticated)
+       ========================================================================= -->
+  <div id="login-view" class="login-wrap" style="display: none;">
+    <div class="glass login-card">
+      <!-- Theme Toggle Switch on Login Screen -->
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 12px;">
+        <button type="button" class="theme-toggle-btn" id="login-theme-toggle-btn" title="Toggle Theme (Dark / Light)">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-icon">🌙</span>
+          <span class="theme-text">Dark Mode</span>
+        </button>
+      </div>
+
+      <div class="logo-row">
+        <img src="./assets/images/ljcca_logo.png" alt="LJCCA Logo">
+        <img class="pylogo" src="./assets/images/python_logo.png" alt="Python Logo">
+      </div>
+      <h1>Admin Login</h1>
+      <p class="desc">Manage Python practical programs, answers &amp; lab manual content</p>
+
+      <div id="login-error-alert" class="danger-btn" style="display: none; width: 100%; margin-bottom: 16px; text-align: center; justify-content: center;"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="admin-username">Admin Username</label>
+          <input type="text" id="admin-username" class="form-control" placeholder="admin" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="admin-password">Admin Password</label>
+          <input type="password" id="admin-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="clay-btn" style="width: 100%; justify-content: center; margin-top: 10px;">
+          Log In to Dashboard &rarr;
+        </button>
+      </form>
+
+      <div class="security-note">
+        <strong>Security Notice:</strong> Static-site admin mode: this login is intended for basic access control only. Do not store sensitive information here.
+        <br><br>
+        <strong>Default Credentials:</strong> Username: <code>admin</code> | Password: <code>admin123</code>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <a href="./index.html" class="secondary-btn" style="font-size: 12.5px;">&larr; Return to Student Website</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. DASHBOARD VIEW (Shown when authenticated)
+       ========================================================================= -->
+  <div id="dashboard-view" class="admin-container" style="display: none;">
+    
+    <!-- Top Header -->
+    <header class="glass admin-header">
+      <div class="brand">
+        <img src="./assets/images/ljcca_logo.png" alt="LJCCA Logo">
+        <img src="./assets/images/python_logo.png" alt="Python Logo">
+        <div>
+          <div class="title">Python Practicals &mdash; Admin Dashboard</div>
+          <div class="sub">LJCCA BS(CA) Semester 5 Lab Manual</div>
+        </div>
+      </div>
+      <div class="admin-header-actions">
+        <button type="button" class="theme-toggle-btn" id="dash-theme-toggle-btn" title="Toggle Theme (Dark / Light)">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb"></span>
+          </span>
+          <span class="theme-icon">🌙</span>
+          <span class="theme-text">Dark Mode</span>
+        </button>
+        <button type="button" class="secondary-btn" id="open-credentials-btn" title="Change Admin Username and Password">
+          🔑 Change Credentials
+        </button>
+        <span class="user-badge" id="admin-user-display">User: admin</span>
+        <a href="./index.html" class="secondary-btn" title="Open student view in new or same tab">
+          &larr; View Student Website
+        </a>
+        <button type="button" class="danger-btn" id="logout-btn" title="Sign out of Admin Panel">
+          Log Out
+        </button>
+      </div>
+    </header>
+
+    <!-- Data Storage Limitation Notice Banner (Requirement 8 & 15) -->
+    <div class="info-banner">
+      <span class="icon">&#9432;</span>
+      <div>
+        <strong>Local Browser Storage Notice:</strong> Data is stored in this browser only (via <code>localStorage</code>). Changes made from one device/browser will not automatically appear on other devices. Use the <strong>Export Questions (.PDF)</strong> button to download a complete formatted PDF manual, <strong>Backup JSON</strong> to backup data, and <strong>Import JSON</strong> to transfer questions across devices.
+      </div>
+    </div>
+
+    <!-- Metrics Summary Cards -->
+    <section class="stats-grid">
+      <div class="glass stat-card">
+        <div class="val" id="stat-total-questions">62</div>
+        <div class="lbl">Total Practicals</div>
+      </div>
+      <div class="glass stat-card">
+        <div class="val" id="stat-total-units">4</div>
+        <div class="lbl">Syllabus Units</div>
+      </div>
+      <div class="glass stat-card">
+        <div class="val" id="stat-total-categories">4</div>
+        <div class="lbl">Topic Categories</div>
+      </div>
+      <div class="glass stat-card">
+        <div class="val" style="font-size: 22px; color: var(--phosphor); -webkit-text-fill-color: initial;">Active</div>
+        <div class="lbl">localStorage Ready</div>
+      </div>
+    </section>
+
+    <!-- Actions Bar -->
+    <section class="glass actions-bar">
+      <div class="btn-group">
+        <button type="button" class="clay-btn" id="add-question-btn">
+          <span>+</span> Add New Practical
+        </button>
+        <button type="button" class="clay-btn" id="add-unit-direct-btn" style="background: linear-gradient(150deg, #10b981, #059669); color: #fff;" title="Directly add a new syllabus unit or module">
+          <span>+</span> Add New Unit
+        </button>
+        <button type="button" class="clay-btn" id="export-questions-pdf-btn" style="background: linear-gradient(150deg, #ef4444, #b91c1c); color: #fff;" title="Download complete practicals as a formatted .pdf file">
+          📄 Export Questions (.PDF)
+        </button>
+        <button type="button" class="secondary-btn" id="manage-units-btn" title="View and edit syllabus units">
+          📁 View / Edit Units
+        </button>
+        <button type="button" class="secondary-btn" id="export-questions-btn" title="Download backup data as JSON">
+          💾 Backup JSON
+        </button>
+        <button type="button" class="secondary-btn" id="import-questions-btn" title="Upload and import previously exported JSON file">
+          &uarr; Import JSON
+        </button>
+        <input type="file" id="import-file-input" accept=".json,application/json" style="display: none;">
+      </div>
+      <div class="btn-group">
+        <button type="button" class="secondary-btn" id="reset-defaults-btn" title="Restore original 62 lab manual practicals">
+          &#8634; Reset to Defaults
+        </button>
+      </div>
+    </section>
+
+    <!-- Dashboard Navigation Tabs -->
+    <div class="dashboard-tabs">
+      <button type="button" class="tab-btn active" id="tab-questions-btn">
+        📋 Practical Questions <span class="tab-badge" id="tab-questions-count">62</span>
+      </button>
+      <button type="button" class="tab-btn" id="tab-units-btn">
+        📁 Syllabus Units &amp; Modules <span class="tab-badge" id="tab-units-count">4</span>
+      </button>
+    </div>
+
+    <!-- VIEW 1: Questions Management -->
+    <div id="section-questions">
+      <!-- Search & Filters -->
+      <section class="filter-row">
+        <div class="search-box">
+          <span class="icon">&#128269;</span>
+          <input type="text" id="admin-search-input" class="form-control" placeholder="Search by title, number, code, category, logic..." aria-label="Search questions">
+        </div>
+        <select id="filter-unit" class="filter-select" aria-label="Filter by unit">
+          <option value="all">All Units</option>
+        </select>
+        <select id="filter-category" class="filter-select" aria-label="Filter by category">
+          <option value="all">All Categories</option>
+        </select>
+        <div id="filtered-count-display" style="font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); white-space: nowrap;">
+          Showing 62 programs
+        </div>
+      </section>
+
+      <!-- Questions Table / Grid -->
+      <section class="glass table-wrap">
+        <table class="q-table" id="questions-table">
+          <thead>
+            <tr>
+              <th style="width: 75px;">Tag</th>
+              <th style="width: 150px;">Unit &amp; No.</th>
+              <th>Question Title &amp; Logic Summary</th>
+              <th style="width: 180px;">Category</th>
+              <th style="width: 190px; text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="questions-table-body">
+            <!-- Injected dynamically by admin.js -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <!-- VIEW 2: Units Management -->
+    <div id="section-units" style="display: none;">
+      <section class="glass table-wrap" style="padding: 22px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h3 style="margin: 0 0 6px; font-family: var(--mono); font-size: 18px; color: var(--text);">
+              📁 Syllabus Units &amp; Modules
+            </h3>
+            <p style="margin: 0; font-size: 13px; color: var(--text-muted);">
+              Add new units or edit existing units. Any changes immediately update the live student lab manual.
+            </p>
+          </div>
+          <button type="button" class="clay-btn" id="add-unit-section-btn" style="background: linear-gradient(150deg, #10b981, #059669); color: #fff;">
+            <span>+</span> Add New Unit
+          </button>
+        </div>
+
+        <table class="q-table" id="dashboard-units-table">
+          <thead>
+            <tr>
+              <th style="width: 120px;">Unit ID</th>
+              <th>Title &amp; Subtitle</th>
+              <th style="width: 130px; text-align: center;">Total Practicals</th>
+              <th style="width: 180px; text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="dashboard-units-table-body">
+            <!-- Injected dynamically by admin.js -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- =========================================================================
+       3. MODALS
+       ========================================================================= -->
+
+  <!-- Question Add / Edit Modal -->
+  <div class="modal-overlay" id="editor-modal">
+    <div class="glass modal-box">
+      <div class="modal-header">
+        <h3 id="editor-modal-title">Add New Practical Program</h3>
+        <button type="button" class="modal-close-btn" data-modal-close="editor-modal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="question-form">
+        <div class="form-row">
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label for="field-unit" style="margin-bottom: 0;">Unit / Module *</label>
+              <div>
+                <button type="button" id="quick-add-unit-btn" class="mini-link-btn" title="Add a new unit right now">+ Add Unit</button>
+                <span style="color: var(--border-soft); margin: 0 4px;">|</span>
+                <button type="button" id="quick-edit-unit-btn" class="mini-link-btn" title="Edit currently selected unit">✏️ Edit Unit</button>
+              </div>
+            </div>
+            <select id="field-unit" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label for="field-practical-num">Practical Number *</label>
+            <input type="number" id="field-practical-num" class="form-control" min="1" max="999" required placeholder="1">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="field-tag">Display Tag *</label>
+            <input type="text" id="field-tag" class="form-control" required placeholder="Q1">
+          </div>
+          <div class="form-group">
+            <label for="field-category">Category / Topic</label>
+            <input type="text" id="field-category" class="form-control" placeholder="e.g. Basic Python, OOP, Control Flow">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="field-title">Question Title / Aim *</label>
+          <input type="text" id="field-title" class="form-control" required placeholder="e.g. Write a program to swap two numbers without temp variable">
+        </div>
+
+        <div class="form-group">
+          <label for="field-logic">Logic / Explanation *</label>
+          <textarea id="field-logic" class="form-control" required placeholder="Explain the approach or concept behind the program..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="field-code">Python Code *</label>
+          <textarea id="field-code" class="form-control code-font" required placeholder="# Python program&#10;print('Hello World')"></textarea>
+          <small style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 4px; display: block;">Tip: Press Tab to indent code.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="field-output">Output</label>
+          <textarea id="field-output" class="form-control code-font" placeholder="Expected terminal or graph output..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="field-chart-src">Optional Chart Image URL / Path</label>
+            <input type="text" id="field-chart-src" class="form-control" placeholder="./assets/images/chart_q12.png or data:image/png;base64,...">
+          </div>
+          <div class="form-group">
+            <label for="field-chart-alt">Chart Description (Alt text)</label>
+            <input type="text" id="field-chart-alt" class="form-control" placeholder="Bar graph showing salary distribution">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="secondary-btn" id="editor-clear-btn">Clear</button>
+          <button type="button" class="secondary-btn" data-modal-close="editor-modal">Cancel</button>
+          <button type="submit" class="clay-btn">Save Practical</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Student Card Preview Modal -->
+  <div class="modal-overlay" id="preview-modal">
+    <div class="glass modal-box">
+      <div class="modal-header">
+        <h3>Student View Preview</h3>
+        <button type="button" class="modal-close-btn" data-modal-close="preview-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <p style="font-family: var(--mono); font-size: 12.5px; color: var(--text-muted); margin-top: 0;">
+        This shows how students will see this practical question on the live website:
+      </p>
+      <div id="preview-content-box" class="preview-card">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="secondary-btn" data-modal-close="preview-modal">Close Preview</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="delete-modal">
+    <div class="glass modal-box" style="max-width: 480px; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">⚠️</div>
+      <h3 style="font-family: var(--mono); margin: 0 0 10px; color: var(--text);">Confirm Deletion</h3>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">
+        Are you sure you want to delete <strong id="delete-item-name" style="color: #fff;">this question</strong>?
+        <br><br>
+        This will remove the question from the browser's stored practicals.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="secondary-btn" data-modal-close="delete-modal">Cancel</button>
+        <button type="button" class="danger-btn" id="confirm-delete-btn">Yes, Delete Question</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Units Management List Modal -->
+  <div class="modal-overlay" id="units-modal">
+    <div class="glass modal-box" style="max-width: 820px;">
+      <div class="modal-header">
+        <h3>Manage Syllabus Units</h3>
+        <button type="button" class="modal-close-btn" data-modal-close="units-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <p style="color: var(--text-muted); font-size: 13.5px; margin: 0;">
+          Add, edit, or delete syllabus units. Changes reflect immediately on the student manual.
+        </p>
+        <button type="button" class="clay-btn" id="create-unit-btn" style="padding: 7px 14px; font-size: 12.5px;">
+          + Add New Unit
+        </button>
+      </div>
+
+      <div class="table-wrap" style="padding: 0; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid var(--border-soft);">
+        <table class="q-table" id="units-table">
+          <thead>
+            <tr>
+              <th style="width: 110px;">Unit</th>
+              <th>Title &amp; Subtitle</th>
+              <th style="width: 110px; text-align: center;">Programs</th>
+              <th style="width: 160px; text-align: right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="units-table-body">
+            <!-- Rendered dynamically by admin.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer" style="margin-top: 18px;">
+        <button type="button" class="secondary-btn" data-modal-close="units-modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unit Add / Edit Modal -->
+  <div class="modal-overlay" id="unit-editor-modal">
+    <div class="glass modal-box" style="max-width: 580px;">
+      <div class="modal-header">
+        <h3 id="unit-editor-title">Add New Syllabus Unit</h3>
+        <button type="button" class="modal-close-btn" data-modal-close="unit-editor-modal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="unit-form">
+        <div class="form-group">
+          <label for="field-unit-num">Unit Identifier / Number *</label>
+          <input type="text" id="field-unit-num" class="form-control" required placeholder="e.g. Unit V">
+          <small style="font-family: var(--mono); font-size: 11.5px; color: var(--text-dim); margin-top: 3px; display: block;">
+            Displayed on tabs, headings, and badges (e.g. Unit I, Unit II, Unit V).
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="field-unit-title">Unit Title *</label>
+          <input type="text" id="field-unit-title" class="form-control" required placeholder="e.g. Advanced Python &amp; Web Frameworks">
+        </div>
+
+        <div class="form-group">
+          <label for="field-unit-sub">Subtitle / Summary</label>
+          <input type="text" id="field-unit-sub" class="form-control" placeholder="e.g. Solved programs &mdash; aim, logic, code and output">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="secondary-btn" data-modal-close="unit-editor-modal">Cancel</button>
+          <button type="submit" class="clay-btn">Save Unit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Unit Confirmation Modal -->
+  <div class="modal-overlay" id="delete-unit-modal">
+    <div class="glass modal-box" style="max-width: 520px; text-align: center;">
+      <div style="font-size: 40px; margin-bottom: 10px;">⚠️</div>
+      <h3 style="font-family: var(--mono); margin: 0 0 10px; color: var(--text);">Confirm Unit Deletion</h3>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;">
+        Are you sure you want to delete <strong id="delete-unit-target-name" style="color: #fff;">this unit</strong>?
+      </p>
+
+      <div style="background: rgba(224, 71, 90, 0.12); border: 1px solid rgba(224, 71, 90, 0.3); border-radius: 10px; padding: 12px 14px; text-align: left; margin-bottom: 18px;">
+        <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; color: #ffb3be; font-size: 13px;">
+          <input type="checkbox" id="delete-unit-questions-checkbox" checked style="margin-top: 3px;">
+          <span>
+            Also permanently delete all <strong id="delete-unit-questions-count">0</strong> practical questions belonging to this unit.
+          </span>
+        </label>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="secondary-btn" data-modal-close="delete-unit-modal">Cancel</button>
+        <button type="button" class="danger-btn" id="confirm-delete-unit-btn">Yes, Delete Unit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Admin Credentials Modal -->
+  <div class="modal-overlay" id="credentials-modal">
+    <div class="glass modal-box" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Change Admin Credentials</h3>
+        <button type="button" class="modal-close-btn" data-modal-close="credentials-modal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="credentials-form">
+        <div class="form-group">
+          <label for="cred-current-password">Current Password *</label>
+          <input type="password" id="cred-current-password" class="form-control" required placeholder="Enter current admin password">
+        </div>
+
+        <div class="form-group">
+          <label for="cred-new-username">New Admin Username *</label>
+          <input type="text" id="cred-new-username" class="form-control" required placeholder="e.g. admin or new_user">
+        </div>
+
+        <div class="form-group">
+          <label for="cred-new-password">New Password *</label>
+          <input type="password" id="cred-new-password" class="form-control" required placeholder="Enter new password (min 4 characters)">
+        </div>
+
+        <div class="form-group">
+          <label for="cred-confirm-password">Confirm New Password *</label>
+          <input type="password" id="cred-confirm-password" class="form-control" required placeholder="Re-enter new password">
+        </div>
+
+        <div style="font-size: 12px; color: var(--text-dim); margin-top: 6px; line-height: 1.45; font-family: var(--mono);">
+          ℹ️ Saved in browser localStorage. You will use these new credentials for future logins.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="secondary-btn" id="cred-reset-btn" title="Reset back to default admin / admin123">
+            Reset to Default
+          </button>
+          <button type="button" class="secondary-btn" data-modal-close="credentials-modal">Cancel</button>
+          <button type="submit" class="clay-btn">Save New Credentials</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="./js/jspdf.umd.min.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/admin.js"></script>
+</body>
+</html>
