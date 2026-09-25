@@ -684,7 +684,8 @@
     const code = (data.code || '').trim();
     const output = (data.output || '').trim();
     const category = (data.category || unitObj.title.split(',')[0].trim()).trim();
-    const chartSrc = (data.chartSrc || '').trim();
+    const outputImage = (data.outputImage || data.chartSrc || '').trim();
+    const chartSrc = outputImage;
     const chartAlt = (data.chartAlt || (chartSrc ? `Chart for ${title}` : '')).trim();
 
     const codeHtml = highlightCode(code);
@@ -706,6 +707,7 @@
       code: code,
       codeHtml: codeHtml,
       output: output,
+      outputImage: outputImage,
       chartSrc: chartSrc,
       chartAlt: chartAlt,
       dataSearch: dataSearch,
@@ -738,7 +740,8 @@
     const code = updatedData.code !== undefined ? updatedData.code.trim() : current.code;
     const output = updatedData.output !== undefined ? updatedData.output.trim() : current.output;
     const category = updatedData.category !== undefined ? updatedData.category.trim() : current.category;
-    const chartSrc = updatedData.chartSrc !== undefined ? updatedData.chartSrc.trim() : (current.chartSrc || '');
+    const outputImage = updatedData.outputImage !== undefined ? updatedData.outputImage.trim() : (updatedData.chartSrc !== undefined ? updatedData.chartSrc.trim() : (current.outputImage || current.chartSrc || ''));
+    const chartSrc = outputImage;
     const chartAlt = updatedData.chartAlt !== undefined ? updatedData.chartAlt.trim() : (current.chartAlt || '');
 
     const codeHtml = highlightCode(code);
@@ -760,6 +763,7 @@
       code: code,
       codeHtml: codeHtml,
       output: output,
+      outputImage: outputImage,
       chartSrc: chartSrc,
       chartAlt: chartAlt,
       dataSearch: dataSearch,
@@ -782,6 +786,42 @@
 
     saveQuestions(filtered);
     return true;
+  }
+
+  function deleteQuestions(ids) {
+    if (!Array.isArray(ids) || ids.length === 0) return 0;
+    const idSet = new Set(ids.map(id => String(id)));
+    const questions = loadQuestions();
+    const initialLength = questions.length;
+    const filtered = questions.filter(q => !idSet.has(String(q.id)));
+    const deletedCount = initialLength - filtered.length;
+    if (deletedCount > 0) {
+      saveQuestions(filtered);
+    }
+    return deletedCount;
+  }
+
+  function findDuplicateQuestions(subjectId = null, semesterId = null) {
+    const list = loadQuestions(subjectId, semesterId);
+    const seen = new Map();
+    const duplicates = [];
+    list.forEach(q => {
+      const key = (q.title || q.question || '').trim().toLowerCase();
+      if (!key) return;
+      if (seen.has(key)) {
+        duplicates.push(q);
+      } else {
+        seen.set(key, q);
+      }
+    });
+    return duplicates;
+  }
+
+  function deleteDuplicateQuestions(subjectId = null, semesterId = null) {
+    const duplicates = findDuplicateQuestions(subjectId, semesterId);
+    if (duplicates.length === 0) return 0;
+    const dupIds = duplicates.map(q => q.id);
+    return deleteQuestions(dupIds);
   }
 
   function reorderQuestions(unitId, fromIndex, toIndex, subjectId = null) {
@@ -1252,6 +1292,9 @@
     addQuestion,
     updateQuestion,
     deleteQuestion,
+    deleteQuestions,
+    findDuplicateQuestions,
+    deleteDuplicateQuestions,
     reorderQuestions,
     searchQuestions,
 

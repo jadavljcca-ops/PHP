@@ -249,6 +249,28 @@
         </div>
       </section>
 
+      <!-- Bulk Actions Bar for Multi-Delete / Same Program Delete -->
+      <section class="glass bulk-actions-bar" id="bulk-actions-bar" style="margin-bottom: 14px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-radius: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text);">
+            <input type="checkbox" id="select-all-questions" style="width: 17px; height: 17px; cursor: pointer;">
+            <span>Select All</span>
+          </label>
+          <span id="bulk-selection-count" class="tab-badge" style="background: rgba(55,118,171,0.25); color: var(--blue-lt);">0 selected</span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <button type="button" class="danger-btn" id="bulk-delete-btn" disabled style="padding: 7px 14px; font-size: 12.5px; opacity: 0.5; cursor: not-allowed; display: inline-flex; align-items: center; gap: 6px;">
+            🗑️ Delete Selected (<span id="bulk-delete-count">0</span>)
+          </button>
+          <button type="button" class="secondary-btn" id="delete-duplicates-btn" title="Find and delete duplicate programs with the same title" style="padding: 7px 14px; font-size: 12.5px; display: inline-flex; align-items: center; gap: 6px;">
+            🔍 Remove Duplicate Programs
+          </button>
+          <button type="button" class="secondary-btn" id="delete-all-subject-btn" title="Delete all programs in current subject" style="padding: 7px 14px; font-size: 12.5px; color: #ef4444; border-color: rgba(239,68,68,0.3); display: inline-flex; align-items: center; gap: 6px;">
+            ⚠️ Delete All in Subject
+          </button>
+        </div>
+      </section>
+
       <!-- Questions Table / Grid -->
       <section class="glass table-wrap">
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 14px 6px; border-bottom: 1px solid var(--border-soft);">
@@ -261,6 +283,9 @@
         <table class="q-table" id="questions-table">
           <thead>
             <tr>
+              <th style="width: 44px; text-align: center;">
+                <input type="checkbox" id="table-head-checkbox" title="Select All Programs">
+              </th>
               <th style="width: 75px;">Tag</th>
               <th style="width: 150px;">Unit &amp; No.</th>
               <th>Question Title &amp; Logic Summary</th>
@@ -418,19 +443,42 @@
           <small style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 4px; display: block;">Tip: Press Tab to indent code.</small>
         </div>
 
+        <!-- Output: Text + Image Upload -->
         <div class="form-group">
-          <label for="field-output">Expected Output</label>
-          <textarea id="field-output" class="form-control code-font" placeholder="Expected terminal or graph output..."></textarea>
+          <label for="field-output">Expected Output (Terminal / Text Output)</label>
+          <textarea id="field-output" class="form-control code-font" placeholder="Expected terminal or graph text output..." rows="3"></textarea>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="field-chart-src">Optional Chart Image URL / Path</label>
-            <input type="text" id="field-chart-src" class="form-control" placeholder="./assets/images/chart_unit-4-q12.png or data:image/png;base64,...">
+        <div class="form-group" style="background: rgba(0,0,0,0.2); padding: 14px; border-radius: 12px; border: 1px solid var(--border-soft); margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <label style="margin-bottom: 0; font-weight: 600; color: var(--text);">
+              🖼️ Output Image / Screenshot
+            </label>
+            <span style="font-size: 11px; font-family: var(--mono); color: var(--text-dim);">File upload &amp; URL supported</span>
           </div>
-          <div class="form-group">
-            <label for="field-chart-alt">Chart Description (Alt text)</label>
-            <input type="text" id="field-chart-alt" class="form-control" placeholder="Bar graph showing salary distribution">
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 10px;">
+            <label class="clay-btn" style="cursor: pointer; padding: 7px 14px; font-size: 12.5px; margin: 0; display: inline-flex; align-items: center; gap: 6px;">
+              📁 Upload Output Image File
+              <input type="file" id="field-output-image-file" accept="image/*" style="display: none;">
+            </label>
+            <span style="font-size: 12px; color: var(--text-dim); font-family: var(--mono);">or enter image URL / path below:</span>
+          </div>
+
+          <input type="text" id="field-chart-src" class="form-control" placeholder="./assets/images/output.png or image URL or paste base64 data..." style="margin-bottom: 10px;">
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="field-chart-alt" style="font-size: 12px; color: var(--text-muted);">Image Description / Caption (Alt text)</label>
+            <input type="text" id="field-chart-alt" class="form-control" placeholder="e.g. Program execution screenshot with result graph">
+          </div>
+
+          <!-- Live Image Preview Box -->
+          <div id="output-image-preview-wrap" style="display: none; margin-top: 12px; padding: 10px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-soft);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 11.5px; font-family: var(--mono); color: var(--text-dim);">Selected Output Image Preview:</span>
+              <button type="button" class="mini-link-btn" id="remove-output-image-btn" style="color: #ef4444; font-size: 11.5px;">❌ Remove Image</button>
+            </div>
+            <img id="output-image-preview" src="" alt="Output Preview" style="max-height: 150px; max-width: 100%; border-radius: 6px; object-fit: contain; display: block; margin: 0 auto; border: 1px solid var(--border-soft);">
           </div>
         </div>
 
@@ -727,6 +775,45 @@
           <button type="submit" class="clay-btn">Save New Credentials</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Bulk Delete Confirmation Modal -->
+  <div class="modal-overlay" id="bulk-delete-modal">
+    <div class="glass modal-box" style="max-width: 540px; text-align: center;">
+      <div style="font-size: 42px; margin-bottom: 10px;">🗑️</div>
+      <h3 style="font-family: var(--mono); margin: 0 0 10px; color: var(--text);">Confirm Bulk Deletion</h3>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;">
+        Are you sure you want to permanently delete <strong id="bulk-modal-count" style="color: #ef4444; font-size: 16px;">0</strong> selected practical programs?
+      </p>
+      <div id="bulk-modal-list" style="max-height: 160px; overflow-y: auto; text-align: left; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 12px; margin-bottom: 18px; font-size: 12.5px; border: 1px solid var(--border-soft); line-height: 1.6;">
+        <!-- Injected dynamically -->
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="secondary-btn" data-modal-close="bulk-delete-modal">Cancel</button>
+        <button type="button" class="danger-btn" id="confirm-bulk-delete-btn">Yes, Delete All Selected</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Duplicates / Same Programs Modal -->
+  <div class="modal-overlay" id="duplicate-delete-modal">
+    <div class="glass modal-box" style="max-width: 540px; text-align: center;">
+      <div style="font-size: 42px; margin-bottom: 10px;">🔍</div>
+      <h3 style="font-family: var(--mono); margin: 0 0 10px; color: var(--text);">Duplicate Programs Detected</h3>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;">
+        Found <strong id="duplicate-modal-count" style="color: var(--yellow); font-size: 16px;">0</strong> programs with identical or matching titles in this subject:
+      </p>
+      <div id="duplicate-modal-list" style="max-height: 160px; overflow-y: auto; text-align: left; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 12px; margin-bottom: 18px; font-size: 12.5px; border: 1px solid var(--border-soft); line-height: 1.6;">
+        <!-- Injected dynamically -->
+      </div>
+      <p style="font-size: 12.5px; color: var(--text-dim); margin-bottom: 18px;">
+        Deleting duplicates keeps the original first copy and deletes redundant copies.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="secondary-btn" data-modal-close="duplicate-delete-modal">Cancel</button>
+        <button type="button" class="danger-btn" id="confirm-duplicate-delete-btn">Yes, Delete Duplicate Programs</button>
+      </div>
     </div>
   </div>
 

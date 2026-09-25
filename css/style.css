@@ -748,3 +748,36 @@ footer .credit b{color:var(--text)}
     display: none !important; /* Keep masthead compact on mobile */
   }
 }
+
+/* ==========================================================================
+   PRACTICAL OUTPUT IMAGE & SCREENSHOT STYLING
+   ========================================================================== */
+.output-image-wrap {
+  margin-top: 14px;
+}
+
+.output-img, .chart {
+  display: block;
+  max-width: 100%;
+  max-height: 420px;
+  width: auto;
+  margin: 8px auto 0;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.output-img:hover, .chart:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55), 0 0 15px rgba(55, 118, 171, 0.3);
+}
+
+body.light-theme .output-img, body.light-theme .chart {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+

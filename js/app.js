@@ -406,7 +406,26 @@
           } else {
             unitQuestions.forEach(q => {
               const codeHighlighted = q.codeHtml || window.PracticalsStorage.highlightCode(q.code);
-              const chartHtml = q.chartSrc ? `<img class="chart" src="${escapeHtml(q.chartSrc)}" alt="${escapeHtml(q.chartAlt || q.title)}" loading="lazy">` : '';
+              const imgSource = q.outputImage || q.chartSrc || '';
+              const chartHtml = imgSource ? `
+                <div class="output-image-wrap" style="margin-top: 14px;">
+                  <div class="q-label">${q.output ? 'Output Image / Screenshot' : escapeHtml(q.outputLabel || 'Output')}</div>
+                  <a href="${escapeHtml(imgSource)}" target="_blank" rel="noopener noreferrer" title="Click to open image in full size">
+                    <img class="chart output-img" src="${escapeHtml(imgSource)}" alt="${escapeHtml(q.chartAlt || q.title || 'Program Output')}" loading="lazy">
+                  </a>
+                  ${q.chartAlt ? `<div style="font-size: 11.5px; color: var(--text-dim); margin-top: 4px; font-family: var(--mono); text-align: center;">${escapeHtml(q.chartAlt)}</div>` : ''}
+                </div>` : '';
+
+              const outputTextHtml = (q.output && q.output.trim()) ? `
+                <div class="q-label">${escapeHtml(q.outputLabel || 'Output')}</div>
+                <div class="out ${escapeHtml(q.outputClass || '')}">${escapeHtml(q.output)}</div>
+              ` : '';
+
+              const defaultOutHtml = (!q.output && !imgSource) ? `
+                <div class="q-label">Output</div>
+                <div class="out" style="color: var(--text-dim); font-style: italic;">Program executed successfully.</div>
+              ` : '';
+
               const searchHay = (q.dataSearch || `${q.title} ${q.logic} ${q.category} ${q.tag}`).toLowerCase();
 
               questionsHtml += `
@@ -425,9 +444,9 @@
                         <pre class="code"><code>${codeHighlighted}</code></pre>
                         <button class="copy-btn" type="button" aria-label="Copy code">copy</button>
                       </div>
-                      <div class="q-label">${escapeHtml(q.outputLabel || 'Output')}</div>
-                      <div class="out ${escapeHtml(q.outputClass || '')}">${escapeHtml(q.output)}</div>
+                      ${outputTextHtml}
                       ${chartHtml}
+                      ${defaultOutHtml}
                     </div>
                   </div>
                 </div>

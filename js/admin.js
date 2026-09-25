@@ -20,6 +20,9 @@
   let currentEditingSubjectId = null;
   let currentDeletingSubjectId = null;
 
+  // Multi-Selection State for Bulk / Duplicate Delete
+  let selectedQuestionIds = new Set();
+
   document.addEventListener('DOMContentLoaded', initAdmin);
 
   function initAdmin() {
@@ -72,6 +75,7 @@
     if (!window.PracticalsStorage) return;
     currentSemesterId = semesterId;
     window.PracticalsStorage.setActiveSemesterId(semesterId);
+    selectedQuestionIds.clear();
 
     // Pick first subject in this semester or null
     const subjectsInSem = window.PracticalsStorage.loadSubjects(semesterId);
@@ -92,6 +96,7 @@
     if (!window.PracticalsStorage) return;
     currentSubjectId = subjectId;
     window.PracticalsStorage.setActiveSubjectId(subjectId);
+    selectedQuestionIds.clear();
 
     const subObj = window.PracticalsStorage.getSubjectById(subjectId);
     if (subObj && subObj.semesterId !== currentSemesterId) {
@@ -440,6 +445,57 @@
     renderSubjectsTable();
   }
 
+  function getCurrentFilteredQuestions() {
+    const searchInput = document.getElementById('admin-search-input');
+    const unitSelect = document.getElementById('filter-unit');
+    const catSelect = document.getElementById('filter-category');
+
+    const query = searchInput ? searchInput.value : '';
+    const unitId = unitSelect ? unitSelect.value : 'all';
+    const category = catSelect ? catSelect.value : 'all';
+
+    return window.PracticalsStorage.searchQuestions(query, unitId, category, currentSubjectId, currentSemesterId);
+  }
+
+  function updateBulkActionsUI(currentList) {
+    const list = currentList || getCurrentFilteredQuestions();
+    const selectAllBtn = document.getElementById('select-all-questions');
+    const tableHeadCheckbox = document.getElementById('table-head-checkbox');
+    const selCountEl = document.getElementById('bulk-selection-count');
+    const bulkDelBtn = document.getElementById('bulk-delete-btn');
+    const bulkDelCount = document.getElementById('bulk-delete-count');
+
+    const totalSelected = selectedQuestionIds.size;
+
+    if (selCountEl) {
+      selCountEl.textContent = `${totalSelected} selected`;
+    }
+    if (bulkDelCount) {
+      bulkDelCount.textContent = totalSelected;
+    }
+
+    if (bulkDelBtn) {
+      if (totalSelected > 0) {
+        bulkDelBtn.disabled = false;
+        bulkDelBtn.style.opacity = '1';
+        bulkDelBtn.style.cursor = 'pointer';
+      } else {
+        bulkDelBtn.disabled = true;
+        bulkDelBtn.style.opacity = '0.5';
+        bulkDelBtn.style.cursor = 'not-allowed';
+      }
+    }
+
+    if (list && list.length > 0) {
+      const allSelected = list.every(q => selectedQuestionIds.has(String(q.id)));
+      if (selectAllBtn) selectAllBtn.checked = allSelected && totalSelected > 0;
+      if (tableHeadCheckbox) tableHeadCheckbox.checked = allSelected && totalSelected > 0;
+    } else {
+      if (selectAllBtn) selectAllBtn.checked = false;
+      if (tableHeadCheckbox) tableHeadCheckbox.checked = false;
+    }
+  }
+
   function filterAndRenderTable() {
     const searchInput = document.getElementById('admin-search-input');
     const unitSelect = document.getElementById('filter-unit');
@@ -463,18 +519,23 @@
     if (filtered.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="5" style="text-align: center; padding: 36px 16px; color: var(--text-dim); font-family: var(--mono);">
+          <td colspan="6" style="text-align: center; padding: 36px 16px; color: var(--text-dim); font-family: var(--mono);">
             No matching practical questions found for this subject. Click "+ Add New Practical" to create one.
           </td>
         </tr>
       `;
+      updateBulkActionsUI(filtered);
       return;
     }
 
     let rowsHtml = '';
     filtered.forEach(q => {
+      const isChecked = selectedQuestionIds.has(String(q.id));
       rowsHtml += `
-        <tr data-id="${escapeHtml(q.id)}">
+        <tr data-id="${escapeHtml(q.id)}" style="${isChecked ? 'background: rgba(239, 68, 68, 0.12);' : ''}">
+          <td style="text-align: center;">
+            <input type="checkbox" class="q-row-checkbox" data-id="${escapeHtml(q.id)}" ${isChecked ? 'checked' : ''} style="cursor: pointer; width: 16px; height: 16px;" aria-label="Select program ${escapeHtml(q.tag || '')}">
+          </td>
           <td>
             <span class="tag-badge">${escapeHtml(q.tag || 'Q')}</span>
           </td>
@@ -487,6 +548,7 @@
             <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 3px; max-width: 480px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
               ${escapeHtml(q.logic ? q.logic.replace(/<[^>]*>/g, '') : '')}
             </div>
+            ${(q.outputImage || q.chartSrc) ? '<span style="font-size: 11px; font-family: var(--mono); color: var(--phosphor); margin-top: 4px; display: inline-block;">🖼️ Has Output Image</span>' : ''}
           </td>
           <td>
             <span class="category-badge">${escapeHtml(q.category || 'General')}</span>
@@ -509,6 +571,53 @@
     });
 
     tbody.innerHTML = rowsHtml;
+    updateBulkActionsUI(filtered);
+  }
+
+  function openBulkDeleteModal() {
+    if (selectedQuestionIds.size === 0) return;
+    const modal = document.getElementById('bulk-delete-modal');
+    const countEl = document.getElementById('bulk-modal-count');
+    const listEl = document.getElementById('bulk-modal-list');
+    if (!modal) return;
+
+    if (countEl) countEl.textContent = selectedQuestionIds.size;
+    if (listEl) {
+      let html = '<ul style="margin: 0; padding-left: 20px;">';
+      selectedQuestionIds.forEach(id => {
+        const q = window.PracticalsStorage.getQuestionById(id);
+        if (q) {
+          html += `<li><strong>${escapeHtml(q.tag || 'Q')}:</strong> ${escapeHtml(q.title)} <span style="color: var(--text-dim); font-size: 11px;">(${escapeHtml(q.unitNum || '')})</span></li>`;
+        }
+      });
+      html += '</ul>';
+      listEl.innerHTML = html;
+    }
+    modal.classList.add('active');
+  }
+
+  function openDuplicateDeleteModal() {
+    const duplicates = window.PracticalsStorage.findDuplicateQuestions(currentSubjectId, currentSemesterId);
+    if (!duplicates || duplicates.length === 0) {
+      showToast('No duplicate programs found in this subject! All programs are unique.', 'info');
+      return;
+    }
+
+    const modal = document.getElementById('duplicate-delete-modal');
+    const countEl = document.getElementById('duplicate-modal-count');
+    const listEl = document.getElementById('duplicate-modal-list');
+    if (!modal) return;
+
+    if (countEl) countEl.textContent = duplicates.length;
+    if (listEl) {
+      let html = '<ul style="margin: 0; padding-left: 20px;">';
+      duplicates.forEach(q => {
+        html += `<li><strong>${escapeHtml(q.tag || 'Q')}:</strong> ${escapeHtml(q.title)} <span style="color: var(--text-dim); font-size: 11px;">(${escapeHtml(q.unitNum || '')})</span></li>`;
+      });
+      html += '</ul>';
+      listEl.innerHTML = html;
+    }
+    modal.classList.add('active');
   }
 
   function bindDashboardEvents() {
@@ -524,9 +633,26 @@
     const catSelect = document.getElementById('filter-category');
     if (catSelect) catSelect.addEventListener('change', filterAndRenderTable);
 
-    // Questions Table Actions
+    // Questions Table Actions (Row Clicks & Checkbox Changes)
     const tbody = document.getElementById('questions-table-body');
     if (tbody) {
+      // Row checkbox change
+      tbody.addEventListener('change', function (e) {
+        const chk = e.target.closest('.q-row-checkbox');
+        if (chk) {
+          const id = chk.getAttribute('data-id');
+          if (chk.checked) {
+            selectedQuestionIds.add(String(id));
+          } else {
+            selectedQuestionIds.delete(String(id));
+          }
+          // Visual row highlight
+          const tr = chk.closest('tr');
+          if (tr) tr.style.background = chk.checked ? 'rgba(239, 68, 68, 0.12)' : '';
+          updateBulkActionsUI();
+        }
+      });
+
       tbody.addEventListener('click', function (e) {
         const unitTrigger = e.target.closest('.edit-unit-trigger');
         if (unitTrigger) {
@@ -555,6 +681,67 @@
           openDeleteConfirmModal(id);
           return;
         }
+      });
+    }
+
+    // Select All Checkbox logic
+    function toggleSelectAll(checked) {
+      const filtered = getCurrentFilteredQuestions();
+      filtered.forEach(q => {
+        if (checked) {
+          selectedQuestionIds.add(String(q.id));
+        } else {
+          selectedQuestionIds.delete(String(q.id));
+        }
+      });
+      filterAndRenderTable();
+    }
+
+    const selectAllBtn = document.getElementById('select-all-questions');
+    if (selectAllBtn) {
+      selectAllBtn.addEventListener('change', function () {
+        toggleSelectAll(this.checked);
+      });
+    }
+
+    const tableHeadCheckbox = document.getElementById('table-head-checkbox');
+    if (tableHeadCheckbox) {
+      tableHeadCheckbox.addEventListener('change', function () {
+        toggleSelectAll(this.checked);
+      });
+    }
+
+    // Bulk Delete Selected Button
+    const bulkDelBtn = document.getElementById('bulk-delete-btn');
+    if (bulkDelBtn) {
+      bulkDelBtn.addEventListener('click', function () {
+        if (selectedQuestionIds.size === 0) {
+          showToast('Please select at least one program to delete.', 'info');
+          return;
+        }
+        openBulkDeleteModal();
+      });
+    }
+
+    // Delete Duplicates / Same Program Button
+    const delDupsBtn = document.getElementById('delete-duplicates-btn');
+    if (delDupsBtn) {
+      delDupsBtn.addEventListener('click', function () {
+        openDuplicateDeleteModal();
+      });
+    }
+
+    // Delete All Programs in Subject Button
+    const delAllSubBtn = document.getElementById('delete-all-subject-btn');
+    if (delAllSubBtn) {
+      delAllSubBtn.addEventListener('click', function () {
+        const allQuestions = window.PracticalsStorage.loadQuestions(currentSubjectId, currentSemesterId);
+        if (allQuestions.length === 0) {
+          showToast('No programs in this subject to delete.', 'info');
+          return;
+        }
+        allQuestions.forEach(q => selectedQuestionIds.add(String(q.id)));
+        openBulkDeleteModal();
       });
     }
 
@@ -818,6 +1005,20 @@
     updateSubjectsDropdown(activeSem, selectedSubId || currentSubjectId);
   }
 
+  function updateOutputImagePreview(src) {
+    const wrap = document.getElementById('output-image-preview-wrap');
+    const img = document.getElementById('output-image-preview');
+    if (!wrap || !img) return;
+
+    if (src && src.trim()) {
+      img.src = src.trim();
+      wrap.style.display = 'block';
+    } else {
+      img.src = '';
+      wrap.style.display = 'none';
+    }
+  }
+
   function openEditorModal(id) {
     currentEditingId = id;
     const modal = document.getElementById('editor-modal');
@@ -826,6 +1027,9 @@
     if (!modal || !form) return;
 
     form.reset();
+
+    const fileInput = document.getElementById('field-output-image-file');
+    if (fileInput) fileInput.value = '';
 
     if (id) {
       // Edit mode
@@ -845,8 +1049,11 @@
       document.getElementById('field-logic').value = q.logic || '';
       document.getElementById('field-code').value = q.code || '';
       document.getElementById('field-output').value = q.output || '';
-      document.getElementById('field-chart-src').value = q.chartSrc || '';
+      
+      const existingImg = q.outputImage || q.chartSrc || '';
+      document.getElementById('field-chart-src').value = existingImg;
       document.getElementById('field-chart-alt').value = q.chartAlt || '';
+      updateOutputImagePreview(existingImg);
     } else {
       // Add mode
       if (modalTitle) modalTitle.textContent = 'Add New Practical Program';
@@ -856,12 +1063,62 @@
       const nextNum = questions.length + 1;
       document.getElementById('field-practical-num').value = nextNum;
       document.getElementById('field-tag').value = `Q${nextNum}`;
+      document.getElementById('field-chart-src').value = '';
+      document.getElementById('field-chart-alt').value = '';
+      updateOutputImagePreview('');
     }
 
     modal.classList.add('active');
   }
 
   function bindEditorEvents() {
+    // Output image file upload handler
+    const imageFileInput = document.getElementById('field-output-image-file');
+    if (imageFileInput) {
+      imageFileInput.addEventListener('change', function (e) {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+
+        if (!file.type.startsWith('image/')) {
+          showToast('Please select a valid image file (PNG, JPG, WebP, GIF, etc.).', 'error');
+          return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+          showToast('Image file size is too large (max 5MB recommended).', 'error');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function (evt) {
+          const base64Data = evt.target.result;
+          const chartSrcInput = document.getElementById('field-chart-src');
+          if (chartSrcInput) chartSrcInput.value = base64Data;
+          updateOutputImagePreview(base64Data);
+          showToast('Output image uploaded & loaded!', 'success');
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Output image URL input listener
+    const chartSrcInput = document.getElementById('field-chart-src');
+    if (chartSrcInput) {
+      chartSrcInput.addEventListener('input', function () {
+        updateOutputImagePreview(this.value);
+      });
+    }
+
+    // Remove output image button
+    const removeImgBtn = document.getElementById('remove-output-image-btn');
+    if (removeImgBtn) {
+      removeImgBtn.addEventListener('click', function () {
+        if (chartSrcInput) chartSrcInput.value = '';
+        if (imageFileInput) imageFileInput.value = '';
+        updateOutputImagePreview('');
+      });
+    }
+
     const form = document.getElementById('question-form');
     if (form) {
       form.addEventListener('submit', function (e) {
@@ -879,6 +1136,7 @@
         const output = document.getElementById('field-output').value.trim();
         const chartSrc = document.getElementById('field-chart-src').value.trim();
         const chartAlt = document.getElementById('field-chart-alt').value.trim();
+        const outputImage = chartSrc;
 
         if (!title) {
           showToast('Validation Error: Question title cannot be empty.', 'error');
@@ -909,6 +1167,7 @@
           logic,
           code,
           output,
+          outputImage,
           chartSrc,
           chartAlt
         };
@@ -938,6 +1197,7 @@
       if (clearBtn) {
         clearBtn.addEventListener('click', function () {
           form.reset();
+          updateOutputImagePreview('');
         });
       }
     }
@@ -1524,7 +1784,12 @@
     if (!modal || !container) return;
 
     const codeHighlighted = q.codeHtml || window.PracticalsStorage.highlightCode(q.code);
-    const chartHtml = q.chartSrc ? `<img class="chart" src="${escapeHtml(q.chartSrc)}" alt="${escapeHtml(q.chartAlt || q.title)}">` : '';
+    const imgSource = q.outputImage || q.chartSrc || '';
+    const chartHtml = imgSource ? `
+      <div style="margin-top: 14px;">
+        <div class="q-label" style="margin-bottom: 6px;">Output Image / Screenshot</div>
+        <img class="chart" src="${escapeHtml(imgSource)}" alt="${escapeHtml(q.chartAlt || q.title)}" style="max-height: 280px; max-width: 100%; border-radius: 8px; border: 1px solid var(--border-soft); display: block;">
+      </div>` : '';
 
     container.innerHTML = `
       <div class="q open" style="border: 1px solid var(--border); border-radius: 14px; padding: 6px 14px; background: rgba(255,255,255,0.02);">
@@ -1541,8 +1806,7 @@
             <div class="code-wrap">
               <pre class="code"><code>${codeHighlighted}</code></pre>
             </div>
-            <div class="q-label">Output</div>
-            <div class="out">${escapeHtml(q.output)}</div>
+            ${q.output ? `<div class="q-label">Expected Output (Text)</div><div class="out">${escapeHtml(q.output)}</div>` : ''}
             ${chartHtml}
           </div>
         </div>
@@ -1566,6 +1830,7 @@
   }
 
   function bindModalEvents() {
+    // Single question delete confirmation
     const confirmDelBtn = document.getElementById('confirm-delete-btn');
     if (confirmDelBtn) {
       confirmDelBtn.addEventListener('click', function () {
@@ -1573,11 +1838,38 @@
           const success = window.PracticalsStorage.deleteQuestion(currentDeletingId);
           if (success) {
             showToast('Program deleted successfully.', 'info');
+            selectedQuestionIds.delete(String(currentDeletingId));
             renderDashboard();
           }
           currentDeletingId = null;
         }
         closeModal('delete-modal');
+      });
+    }
+
+    // Confirm Bulk Delete button
+    const confirmBulkDelBtn = document.getElementById('confirm-bulk-delete-btn');
+    if (confirmBulkDelBtn) {
+      confirmBulkDelBtn.addEventListener('click', function () {
+        if (selectedQuestionIds.size > 0) {
+          const idsToDelete = Array.from(selectedQuestionIds);
+          const count = window.PracticalsStorage.deleteQuestions(idsToDelete);
+          showToast(`Successfully deleted ${count} practical programs!`, 'success');
+          selectedQuestionIds.clear();
+          closeModal('bulk-delete-modal');
+          renderDashboard();
+        }
+      });
+    }
+
+    // Confirm Duplicate Delete button
+    const confirmDupDelBtn = document.getElementById('confirm-duplicate-delete-btn');
+    if (confirmDupDelBtn) {
+      confirmDupDelBtn.addEventListener('click', function () {
+        const count = window.PracticalsStorage.deleteDuplicateQuestions(currentSubjectId, currentSemesterId);
+        showToast(`Successfully removed ${count} duplicate programs!`, 'success');
+        closeModal('duplicate-delete-modal');
+        renderDashboard();
       });
     }
 
