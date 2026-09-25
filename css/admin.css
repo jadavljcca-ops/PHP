@@ -1471,3 +1471,211 @@ body.light-theme .toast.info {
     min-width: calc(50% - 4px);
   }
 }
+
+/* ==========================================================================
+   ACADEMIC WORKSPACE NAVIGATION: SEMESTER & SUBJECT SWITCHER BARS
+   ========================================================================== */
+
+.admin-nav-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(22, 32, 51, 0.50), rgba(10, 18, 32, 0.50));
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+body.light-theme .admin-nav-bar {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.50), rgba(241, 245, 249, 0.50));
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.admin-bar-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 4px;
+}
+.admin-bar-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+.admin-bar-title {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+body.light-theme .admin-bar-title {
+  color: #000000 !important;
+}
+
+.admin-bar-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+/* Semester Buttons in Admin */
+.admin-sem-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 38px;
+}
+body.light-theme .admin-sem-btn {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #000000 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.admin-sem-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--yellow);
+  transform: translateY(-1px);
+}
+body.light-theme .admin-sem-btn:hover {
+  background: #f1f5f9;
+  border-color: #475569;
+}
+.admin-sem-btn.active {
+  background: linear-gradient(150deg, var(--yellow-lt), var(--yellow));
+  color: #241b00 !important;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(255, 212, 59, 0.35);
+}
+body.light-theme .admin-sem-btn.active {
+  background: linear-gradient(150deg, #fbbf24, #f59e0b);
+  color: #1e1b4b !important;
+}
+
+/* Subject Pills in Admin */
+.admin-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+body.light-theme .admin-sub-pill {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.admin-sub-pill:hover {
+  border-color: var(--blue-lt);
+}
+.admin-sub-pill.active {
+  background: rgba(55, 118, 171, 0.25);
+  border-color: var(--blue-lt);
+  box-shadow: 0 0 12px rgba(55, 118, 171, 0.3);
+}
+body.light-theme .admin-sub-pill.active {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.sub-tab-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+body.light-theme .sub-tab-btn {
+  color: #000000 !important;
+}
+.sub-tab-btn .badge {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--yellow);
+}
+body.light-theme .sub-tab-btn .badge {
+  background: #e2e8f0;
+  color: #1e3a8a;
+}
+.admin-sub-pill.active .sub-tab-btn .badge {
+  background: var(--yellow);
+  color: #241b00;
+}
+body.light-theme .admin-sub-pill.active .sub-tab-btn .badge {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.sub-edit-btn {
+  background: none;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 10px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 12px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+body.light-theme .sub-edit-btn {
+  border-left-color: #cbd5e1;
+  color: #64748b;
+}
+.sub-edit-btn:hover {
+  color: var(--yellow);
+  background: rgba(255, 255, 255, 0.08);
+}
+body.light-theme .sub-edit-btn:hover {
+  color: #2563eb;
+  background: #f1f5f9;
+}
+
+@media (max-width: 768px) {
+  .admin-nav-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+  .admin-bar-items {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .admin-sem-btn, .admin-sub-pill {
+    width: 100%;
+    justify-content: center;
+  }
+  .sub-tab-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
