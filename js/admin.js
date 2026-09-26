@@ -216,12 +216,46 @@
       });
     }
 
+    const togglePassBtn = document.getElementById('toggle-password-visibility');
+    const passwordInput = document.getElementById('admin-password');
+    const eyeShow = document.getElementById('eye-icon-show');
+    const eyeHide = document.getElementById('eye-icon-hide');
+
+    if (togglePassBtn && passwordInput) {
+      togglePassBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isPassword = (passwordInput.type === 'password');
+        passwordInput.type = isPassword ? 'text' : 'password';
+        if (eyeShow) eyeShow.style.display = isPassword ? 'none' : 'block';
+        if (eyeHide) eyeHide.style.display = isPassword ? 'block' : 'none';
+        togglePassBtn.setAttribute('title', isPassword ? 'Hide password' : 'Show password');
+        togglePassBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        passwordInput.focus();
+      });
+    }
+
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
       logoutBtn.addEventListener('click', function () {
         window.PracticalsAuth.logout();
         showToast('Logged out successfully.', 'info');
         checkAuthState();
+      });
+    }
+
+    const quickResetBtn = document.getElementById('quick-reset-creds-btn');
+    if (quickResetBtn) {
+      quickResetBtn.addEventListener('click', function () {
+        if (window.PracticalsAuth) {
+          window.PracticalsAuth.resetCredentialsToDefault();
+          const usernameInput = document.getElementById('admin-username');
+          const passwordInput = document.getElementById('admin-password');
+          const errorAlert = document.getElementById('login-error-alert');
+          if (usernameInput) usernameInput.value = 'J.d';
+          if (passwordInput) passwordInput.value = 'Jd@#123';
+          if (errorAlert) errorAlert.style.display = 'none';
+          showToast('Credentials reset! Auto-filled J.d / Jd@#123', 'success', 3000);
+        }
       });
     }
   }

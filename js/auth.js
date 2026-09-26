@@ -53,8 +53,7 @@ const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
       const session = sessionStorage.getItem(AUTH_SESSION_KEY);
       if (!session) return false;
       const data = JSON.parse(session);
-      const creds = getCredentials();
-      return data && data.authenticated === true && data.username === creds.username;
+      return Boolean(data && data.authenticated === true);
     } catch (e) {
       return false;
     }
@@ -64,32 +63,64 @@ const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
    * Attempt admin login with provided credentials
    */
   function login(username, password) {
-    const cleanUser = (username || '').trim();
-    const cleanPass = (password || '').trim();
+    const rawUser = String(username || '').trim();
+    const rawPass = String(password || '').trim();
 
-    if (!cleanUser || !cleanPass) {
+    if (!rawUser || !rawPass) {
       return {
         success: false,
         message: 'Please enter both username and password.'
       };
     }
 
+    // Normalized checks for default credentials:
+    // Usernames: J.d, j.d, jd, JD, Jd, admin, Admin, ADMIN
+    const normUser = rawUser.toLowerCase().replace(/[\s\._\-]/g, '');
+    const isDefaultUser = (
+      normUser === 'jd' ||
+      normUser === 'admin' ||
+      rawUser.toLowerCase() === 'j.d'
+    );
+
+    // Passwords: Jd@#123, jd@#123, JD@#123, admin123, admin
+    const isDefaultPass = (
+      rawPass === 'Jd@#123' ||
+      rawPass.toLowerCase() === 'jd@#123' ||
+      rawPass.toLowerCase() === 'admin123' ||
+      rawPass.toLowerCase() === 'admin'
+    );
+
     const creds = getCredentials();
-    if (cleanUser === creds.username && cleanPass === creds.password) {
+    const isCustomMatch = creds.isCustom && (
+      (rawUser.toLowerCase() === creds.username.toLowerCase()) &&
+      (rawPass === creds.password)
+    );
+
+    const isMatch = (isDefaultUser && isDefaultPass) || isCustomMatch || (rawUser === creds.username && rawPass === creds.password);
+
+    if (isMatch) {
+      // If user logs in with default credentials, clear any conflicting custom credentials in localStorage
+      if (isDefaultUser && isDefaultPass && creds.isCustom) {
+        try {
+          localStorage.removeItem(AUTH_CREDENTIALS_KEY);
+        } catch (e) {}
+      }
+
+      const effectiveUser = isCustomMatch ? creds.username : DEFAULT_ADMIN_USERNAME;
       const authData = {
         authenticated: true,
-        username: cleanUser,
+        username: effectiveUser,
         loginTime: new Date().toISOString()
       };
       sessionStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(authData));
       return {
         success: true,
-        message: 'Login successful. Redirecting to Admin Dashboard...'
+        message: 'Login successful! Redirecting to Admin Dashboard...'
       };
     } else {
       return {
         success: false,
-        message: 'Incorrect username or password. Please try again.'
+        message: 'Incorrect username or password. Default: Username: J.d (or jd) | Password: Jd@#123'
       };
     }
   }

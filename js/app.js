@@ -21,7 +21,8 @@
   document.addEventListener('DOMContentLoaded', initApp);
 
   function initApp() {
-    initCodeRain();
+    initAcademicConstellation();
+    initThemeToggle();
     bindPortalEvents();
     initInteractions();
 
@@ -516,10 +517,10 @@
     }
 
     const bootLines = [
-      `>>> import lab_manual`,
-      `>>> lab_manual.load(subject='${subName}', semester='${semName}')`,
-      `>>> Compiling ${questions.length} solved practicals across ${units.length} syllabus units...`,
-      `>>> Ready. Welcome, LJCCA.`
+      `>>> LJCCA Academic Lab Manual Portal [v4.2]`,
+      `>>> Loading Accredited Syllabus: ${subName} (${semName})`,
+      `>>> Verifying ${questions.length} Solved Practicals across ${units.length} Syllabus Units...`,
+      `>>> LJCCA Computer Applications Lab Ready.`
     ];
 
     function typeLine(el, text, cb) {
@@ -559,45 +560,142 @@
   }
 
   /* ==========================================================================
-     5. CODE RAIN CANVAS ANIMATION
+     5. ACADEMIC KNOWLEDGE CONSTELLATION CANVAS ANIMATION
      ========================================================================== */
 
-  function initCodeRain() {
+  function initAcademicConstellation() {
     if (reduced) return;
     const canvas = document.getElementById('rain');
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    const glyphs = "01(){}[]<>=+-*/_:.;&|".split("");
-    const fontSize = 14;
-    let cols, drops;
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
 
-    function size() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      cols = Math.floor(canvas.width / fontSize);
-      drops = new Array(cols).fill(0).map(() => Math.random() * -40);
+    const nodeCount = Math.min(Math.floor((width * height) / 18000), 75);
+    const nodes = [];
+
+    const paletteDark = ['#fdb913', '#e5a000', '#60a5fa', '#bfdbfe', '#fde047'];
+    const paletteLight = ['#003366', '#004080', '#e5a000', '#2563eb', '#059669'];
+
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 1.8 + 1.2,
+        colorIndex: Math.floor(Math.random() * paletteDark.length),
+        pulse: Math.random() * Math.PI * 2,
+        pulseSpeed: 0.02 + Math.random() * 0.02
+      });
     }
 
-    size();
-    window.addEventListener('resize', size);
+    function onResize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', onResize);
 
-    function draw() {
-      ctx.fillStyle = 'rgba(7,12,20,0.08)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = fontSize + 'px monospace';
-      for (let i = 0; i < cols; i++) {
-        const g = glyphs[Math.floor(Math.random() * glyphs.length)];
-        ctx.fillStyle = Math.random() < 0.02 ? '#ffd43b' : '#25507a';
-        ctx.fillText(g, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+    function render() {
+      ctx.clearRect(0, 0, width, height);
+
+      const isLight = document.body && document.body.classList.contains('light-theme');
+      const palette = isLight ? paletteLight : paletteDark;
+      const maxDist = 120;
+
+      // Draw constellation connections
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * (isLight ? 0.22 : 0.28);
+            ctx.strokeStyle = isLight
+              ? `rgba(0, 51, 102, ${alpha})`
+              : `rgba(253, 185, 19, ${alpha * 0.8})`;
+            ctx.lineWidth = 0.85;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
         }
-        drops[i]++;
       }
+
+      // Draw knowledge star nodes
+      for (let i = 0; i < nodes.length; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
+        n.pulse += n.pulseSpeed;
+
+        if (n.x < 0) n.x = width;
+        else if (n.x > width) n.x = 0;
+        if (n.y < 0) n.y = height;
+        else if (n.y > height) n.y = 0;
+
+        const currentRadius = n.radius + Math.sin(n.pulse) * 0.5;
+        const color = palette[n.colorIndex];
+
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, Math.max(currentRadius, 0.8), 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      requestAnimationFrame(render);
     }
 
-    setInterval(draw, 60);
+    render();
+  }
+
+  /* ==========================================================================
+     5B. PORTAL THEME TOGGLE (DARK / LIGHT ACADEMIC MODE)
+     ========================================================================== */
+
+  function initThemeToggle() {
+    const themeBtn = document.getElementById('portal-theme-toggle-btn');
+    if (!themeBtn) return;
+
+    let savedTheme = 'dark';
+    try {
+      savedTheme = localStorage.getItem('python_practicals_theme') || localStorage.getItem('python_practicals_admin_theme') || 'dark';
+    } catch (e) {}
+
+    applyPortalTheme(savedTheme);
+
+    themeBtn.addEventListener('click', function () {
+      const isLight = document.body.classList.contains('light-theme');
+      applyPortalTheme(isLight ? 'dark' : 'light');
+    });
+  }
+
+  function applyPortalTheme(theme) {
+    const isLight = (theme === 'light');
+    if (isLight) {
+      document.body.classList.add('light-theme');
+      document.documentElement.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+      document.documentElement.classList.remove('light-theme');
+    }
+
+    try {
+      localStorage.setItem('python_practicals_theme', isLight ? 'light' : 'dark');
+      localStorage.setItem('python_practicals_admin_theme', isLight ? 'light' : 'dark');
+    } catch (e) {}
+
+    const themeBtn = document.getElementById('portal-theme-toggle-btn');
+    if (themeBtn) {
+      const icon = themeBtn.querySelector('.theme-icon');
+      const text = themeBtn.querySelector('.theme-text');
+      if (icon) icon.textContent = isLight ? '☀️' : '🌙';
+      if (text) text.textContent = isLight ? 'Light' : 'Dark';
+      themeBtn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    }
   }
 
   /* ==========================================================================
