@@ -161,7 +161,7 @@ body.light-theme .glass {
 
 .clay-btn {
   background: linear-gradient(to right, var(--edu-yellow), var(--edu-yellow-dark));
-  color: var(--edu-brand);
+  color: #000000 !important;
   border: none;
   border-radius: 12px;
   padding: 10px 20px;
@@ -180,17 +180,7 @@ body.light-theme .glass {
 .clay-btn:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 20px rgba(253, 185, 19, 0.50);
-}
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.18s ease;
-  min-height: 42px;
-}
-.clay-btn:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
+  color: #000000 !important;
 }
 .clay-btn:active {
   transform: translateY(1px);
@@ -351,7 +341,7 @@ body:not(.light-theme) .secondary-btn,
 body:not(.light-theme) .modal-box,
 body:not(.light-theme) .security-note,
 body:not(.light-theme) .info-banner,
-body:not(.light-theme) .tab-btn,
+body:not(.light-theme) .tab-btn:not(.active),
 body:not(.light-theme) .theme-toggle-btn,
 body:not(.light-theme) .user-badge {
   color: #ffffff;
@@ -875,11 +865,14 @@ body.light-theme .stat-card .val {
   background: rgba(255, 255, 255, 0.1);
   color: var(--text);
 }
-.tab-btn.active {
-  background: linear-gradient(150deg, var(--yellow-lt), var(--yellow));
-  color: #241b00;
-  border-color: transparent;
-  box-shadow: 0 4px 12px rgba(255, 212, 59, 0.25);
+.tab-btn.active,
+body:not(.light-theme) .tab-btn.active,
+body.light-theme .tab-btn.active {
+  background: linear-gradient(150deg, var(--yellow-lt), var(--yellow)) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 14px rgba(253, 185, 19, 0.40) !important;
 }
 .tab-badge {
   background: rgba(0, 0, 0, 0.2);
@@ -887,9 +880,12 @@ body.light-theme .stat-card .val {
   padding: 2px 8px;
   font-size: 11.5px;
 }
-.tab-btn.active .tab-badge {
-  background: rgba(36, 27, 0, 0.2);
-  color: #241b00;
+.tab-btn.active .tab-badge,
+body:not(.light-theme) .tab-btn.active .tab-badge,
+body.light-theme .tab-btn.active .tab-badge {
+  background: rgba(0, 0, 0, 0.18) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
 }
 body.light-theme .tab-btn {
   background: #f1f5f9;
@@ -901,8 +897,8 @@ body.light-theme .tab-btn:hover {
   color: #0f172a;
 }
 body.light-theme .tab-btn.active {
-  background: linear-gradient(150deg, #fbbf24, #f59e0b);
-  color: #1e1b4b;
+  background: linear-gradient(150deg, #fbbf24, #f59e0b) !important;
+  color: #000000 !important;
 }
 
 .mini-link-btn {
@@ -1644,15 +1640,14 @@ body.light-theme .admin-sem-btn:hover {
   background: #f1f5f9;
   border-color: #475569;
 }
-.admin-sem-btn.active {
-  background: linear-gradient(150deg, var(--yellow-lt), var(--yellow));
-  color: #241b00 !important;
-  border-color: transparent;
-  box-shadow: 0 4px 14px rgba(255, 212, 59, 0.35);
-}
+.admin-sem-btn.active,
+body:not(.light-theme) .admin-sem-btn.active,
 body.light-theme .admin-sem-btn.active {
-  background: linear-gradient(150deg, #fbbf24, #f59e0b);
-  color: #1e1b4b !important;
+  background: linear-gradient(150deg, var(--yellow-lt), var(--yellow)) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 14px rgba(253, 185, 19, 0.40);
 }
 
 /* Subject Pills in Admin */
@@ -1804,4 +1799,20 @@ body.light-theme #output-image-preview-wrap {
   border-color: rgba(203, 213, 225, 0.8) !important;
 }
 
-
+/* ==========================================================================
+   GLOBAL HIGH-CONTRAST RULE: Any Yellow Button / Tab Must Have Black Font
+   ========================================================================== */
+.tab-btn.active,
+.tab-btn.active *,
+.tab-btn.active .tab-badge,
+.admin-sem-btn.active,
+.admin-sem-btn.active *,
+.sem-pill-btn.active,
+.sem-pill-btn.active *,
+.clay-btn:not([style*="red"]):not([style*="blue"]):not([style*="green"]):not([style*="10b981"]):not([style*="ef4444"]):not([style*="3b82f6"]),
+.clay-btn:not([style*="red"]):not([style*="blue"]):not([style*="green"]):not([style*="10b981"]):not([style*="ef4444"]):not([style*="3b82f6"]) *,
+button.active[class*="tab"],
+button.active[class*="sem"],
+button.active[class*="pill"] {
+  color: #000000 !important;
+}

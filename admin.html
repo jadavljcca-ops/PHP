@@ -268,55 +268,6 @@
 
     <!-- VIEW 1: Questions Management -->
     <div id="section-questions">
-      <!-- Search & Filters -->
-      <section class="filter-row">
-        <div class="search-box">
-          <span class="icon">&#128269;</span>
-          <input type="text" id="admin-search-input" class="form-control"
-            placeholder="Search by title, number, code, category, logic..." aria-label="Search questions">
-        </div>
-        <select id="filter-unit" class="filter-select" aria-label="Filter by unit">
-          <option value="all">All Units</option>
-        </select>
-        <select id="filter-category" class="filter-select" aria-label="Filter by category">
-          <option value="all">All Categories</option>
-        </select>
-        <div id="filtered-count-display"
-          style="font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); white-space: nowrap;">
-          Showing 62 programs
-        </div>
-      </section>
-
-      <!-- Bulk Actions Bar for Multi-Delete / Same Program Delete -->
-      <section class="glass bulk-actions-bar" id="bulk-actions-bar"
-        style="margin-bottom: 14px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-radius: 12px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <label
-            style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--text);">
-            <input type="checkbox" id="select-all-questions" style="width: 17px; height: 17px; cursor: pointer;">
-            <span>Select All</span>
-          </label>
-          <span id="bulk-selection-count" class="tab-badge"
-            style="background: rgba(55,118,171,0.25); color: var(--blue-lt);">0 selected</span>
-        </div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-          <button type="button" class="danger-btn" id="bulk-delete-btn" disabled
-            style="padding: 7px 14px; font-size: 12.5px; opacity: 0.5; cursor: not-allowed; display: inline-flex; align-items: center; gap: 6px;">
-            🗑️ Delete Selected (<span id="bulk-delete-count">0</span>)
-          </button>
-          <button type="button" class="secondary-btn" id="delete-duplicates-btn"
-            title="Find and delete duplicate programs with the same title"
-            style="padding: 7px 14px; font-size: 12.5px; display: inline-flex; align-items: center; gap: 6px;">
-            🔍 Remove Duplicate Programs
-          </button>
-          <button type="button" class="secondary-btn" id="delete-all-subject-btn"
-            title="Delete all programs in current subject"
-            style="padding: 7px 14px; font-size: 12.5px; color: #ef4444; border-color: rgba(239,68,68,0.3); display: inline-flex; align-items: center; gap: 6px;">
-            ⚠️ Delete All in Subject
-          </button>
-        </div>
-      </section>
-
       <!-- Questions Table / Grid -->
       <section class="glass table-wrap">
         <div

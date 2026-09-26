@@ -775,7 +775,7 @@ body.light-theme .sem-subj-tag {
   align-items: center;
   gap: 8px;
   background: linear-gradient(135deg, #fdb913 0%, #e5a000 100%) !important;
-  color: #003366 !important;
+  color: #000000 !important;
   border: none !important;
   border-radius: 20px !important;
   box-shadow: 0 6px 20px rgba(253, 185, 19, 0.40);
@@ -788,7 +788,7 @@ body.light-theme .sem-subj-tag {
 .sem-select-btn:hover {
   transform: translateY(-3px) scale(1.02) !important;
   background: linear-gradient(135deg, #ffe066 0%, #fdb913 100%) !important;
-  color: #002244 !important;
+  color: #000000 !important;
   box-shadow: 0 12px 28px rgba(253, 185, 19, 0.60), 0 0 20px rgba(253, 185, 19, 0.45) !important;
 }
 
@@ -799,14 +799,14 @@ body.light-theme .sem-subj-tag {
 
 body.light-theme .sem-select-btn {
   background: linear-gradient(135deg, #fdb913 0%, #e5a000 100%) !important;
-  color: #003366 !important;
+  color: #000000 !important;
   border-radius: 20px !important;
   box-shadow: 0 6px 18px rgba(253, 185, 19, 0.35);
 }
 
 body.light-theme .sem-select-btn:hover {
   background: linear-gradient(135deg, #ffe066 0%, #fdb913 100%) !important;
-  color: #002244 !important;
+  color: #000000 !important;
   box-shadow: 0 12px 28px rgba(253, 185, 19, 0.55) !important;
 }
 
@@ -871,10 +871,13 @@ body.light-theme .back-pill-btn {
   background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
 }
-.sem-pill-btn.active {
-  background: linear-gradient(to right, var(--edu-yellow), var(--edu-yellow-dark));
-  color: var(--edu-brand);
-  border-color: transparent;
+.sem-pill-btn.active,
+body:not(.light-theme) .sem-pill-btn.active,
+body.light-theme .sem-pill-btn.active {
+  background: linear-gradient(to right, var(--edu-yellow), var(--edu-yellow-dark)) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border-color: transparent !important;
   box-shadow: 0 4px 14px rgba(253, 185, 19, 0.35);
 }
 body.light-theme .sem-pill-btn {
@@ -983,7 +986,7 @@ body.light-theme .sub-meta-row b { color: var(--edu-brand); }
   align-items: center;
   gap: 8px;
   background: linear-gradient(135deg, #fdb913 0%, #e5a000 100%) !important;
-  color: #003366 !important;
+  color: #000000 !important;
   border: none !important;
   border-radius: 20px !important;
   box-shadow: 0 6px 20px rgba(253, 185, 19, 0.40);
@@ -996,7 +999,7 @@ body.light-theme .sub-meta-row b { color: var(--edu-brand); }
 .sub-open-btn:hover {
   transform: translateY(-3px) scale(1.02) !important;
   background: linear-gradient(135deg, #ffe066 0%, #fdb913 100%) !important;
-  color: #002244 !important;
+  color: #000000 !important;
   box-shadow: 0 12px 28px rgba(253, 185, 19, 0.60), 0 0 20px rgba(253, 185, 19, 0.45) !important;
 }
 
@@ -1007,14 +1010,14 @@ body.light-theme .sub-meta-row b { color: var(--edu-brand); }
 
 body.light-theme .sub-open-btn {
   background: linear-gradient(135deg, #fdb913 0%, #e5a000 100%) !important;
-  color: #003366 !important;
+  color: #000000 !important;
   border-radius: 20px !important;
   box-shadow: 0 6px 18px rgba(253, 185, 19, 0.35);
 }
 
 body.light-theme .sub-open-btn:hover {
   background: linear-gradient(135deg, #ffe066 0%, #fdb913 100%) !important;
-  color: #002244 !important;
+  color: #000000 !important;
   box-shadow: 0 12px 28px rgba(253, 185, 19, 0.55) !important;
 }
 
@@ -1555,5 +1558,23 @@ footer .credit b { color: var(--edu-yellow); }
   .copy-btn { top: 6px; right: 6px; padding: 3px 8px; font-size: 10.5px; }
   .fnav { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
   .fnav-toggle { width: 44px; height: 44px; font-size: 14px; }
-  .fnav-menu button, .fnav-admin { padding: 7px 12px; font-size: 12px; }
 }
+
+/* ==========================================================================
+   GLOBAL HIGH-CONTRAST RULE: Any Yellow Button / Pill Must Have Black Font
+   ========================================================================== */
+.sem-select-btn,
+.sem-select-btn *,
+.sub-open-btn,
+.sub-open-btn *,
+.sem-pill-btn.active,
+.sem-pill-btn.active *,
+.hero-cta-btn,
+.hero-cta-btn *,
+.admin-link-btn,
+.admin-link-btn *,
+.btn-yellow,
+.btn-yellow * {
+  color: #000000 !important;
+}
+
