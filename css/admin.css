@@ -249,6 +249,29 @@ body.light-theme .danger-btn:hover {
   color: #ffffff;
 }
 
+#logout-btn {
+  background: #dc2626 !important;
+  color: #facc15 !important;
+  border: 1px solid #b91c1c !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+}
+#logout-btn:hover {
+  background: #b91c1c !important;
+  color: #fef08a !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.6);
+  transform: translateY(-1px);
+}
+body.light-theme #logout-btn {
+  background: #dc2626 !important;
+  color: #facc15 !important;
+  border-color: #b91c1c !important;
+}
+body.light-theme #logout-btn:hover {
+  background: #b91c1c !important;
+  color: #fef08a !important;
+}
+
 /* ==========================================================================
    THEME TOGGLE BUTTON & SLIDING SWITCH
    ========================================================================== */
