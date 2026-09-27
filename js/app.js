@@ -31,6 +31,48 @@
 
     // Handle browser back/forward buttons
     window.addEventListener('popstate', handleRouteFromUrl);
+
+    // Listen for Supabase cloud sync event
+    window.addEventListener('practicals:cloud-synced', () => {
+      checkPortalCloudStatus();
+      handleRouteFromUrl();
+    });
+
+    // Check Supabase connection and update status pill
+    checkPortalCloudStatus();
+  }
+
+  async function checkPortalCloudStatus() {
+    const dot = document.getElementById('portal-cloud-dot');
+    const text = document.getElementById('portal-cloud-text');
+    const pill = document.getElementById('portal-cloud-status');
+    if (!dot || !text) return;
+
+    if (!window.SupabaseSync) {
+      dot.style.background = '#94a3b8';
+      text.textContent = 'Local Cache';
+      return;
+    }
+
+    try {
+      const res = await window.SupabaseSync.testConnection();
+      if (res && res.ok) {
+        dot.style.background = '#10b981';
+        text.textContent = 'Supabase Sync';
+        if (pill) pill.title = 'Connected to Supabase PostgreSQL database';
+      } else if (res && res.tableMissing) {
+        dot.style.background = '#f59e0b';
+        text.textContent = 'Supabase (Tables Pending)';
+        if (pill) pill.title = 'Connected to Supabase, but SQL schema needs execution.';
+      } else {
+        dot.style.background = '#94a3b8';
+        text.textContent = 'Offline (Local)';
+        if (pill) pill.title = res && res.message ? res.message : 'Offline';
+      }
+    } catch (e) {
+      dot.style.background = '#94a3b8';
+      text.textContent = 'Local Cache';
+    }
   }
 
   /**

@@ -37,6 +37,7 @@
     bindSubjectEvents();
     bindSemesterEvents();
     bindModalEvents();
+    bindSupabaseEvents();
   }
 
   /* ==========================================================================
@@ -1967,6 +1968,284 @@
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+  }
+
+  /* ==========================================================================
+     SUPABASE DATABASE INTEGRATION & CLOUD SYNC
+     ========================================================================== */
+
+  function bindSupabaseEvents() {
+    const openBtn = document.getElementById('open-supabase-btn');
+    const bannerBtn = document.getElementById('banner-supabase-btn');
+    const modal = document.getElementById('supabase-modal');
+    const testBtn = document.getElementById('sb-test-conn-btn');
+    const form = document.getElementById('sb-config-form');
+    const urlInput = document.getElementById('sb-url-input');
+    const keyInput = document.getElementById('sb-key-input');
+    const syncToggle = document.getElementById('sb-sync-toggle');
+    const pushBtn = document.getElementById('sb-push-cloud-btn');
+    const pullBtn = document.getElementById('sb-pull-cloud-btn');
+    const copySqlBtn = document.getElementById('sb-copy-sql-btn');
+
+    function populateModalFields() {
+      if (!window.SupabaseConfig) return;
+      if (urlInput) urlInput.value = window.SupabaseConfig.getUrl();
+      if (keyInput) keyInput.value = window.SupabaseConfig.getKey();
+      if (syncToggle) syncToggle.checked = window.SupabaseConfig.isSyncEnabled();
+    }
+
+    function openSupabaseModal() {
+      if (!modal) return;
+      populateModalFields();
+      modal.classList.add('active');
+      testSupabaseConnectionUI();
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openSupabaseModal);
+    if (bannerBtn) bannerBtn.addEventListener('click', openSupabaseModal);
+
+    if (testBtn) {
+      testBtn.addEventListener('click', () => {
+        testSupabaseConnectionUI();
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!window.SupabaseConfig) return;
+        const newUrl = urlInput.value.trim();
+        const newKey = keyInput.value.trim();
+        const syncOn = syncToggle.checked;
+
+        window.SupabaseConfig.setConfig(newUrl, newKey);
+        window.SupabaseConfig.setSyncEnabled(syncOn);
+        if (window.SupabaseSync) {
+          window.SupabaseSync.initClient();
+        }
+
+        showToast('Supabase credentials saved!', 'success');
+        testSupabaseConnectionUI();
+      });
+    }
+
+    if (pushBtn) {
+      pushBtn.addEventListener('click', async () => {
+        const progressWrap = document.getElementById('sb-progress-wrap');
+        const progressLabel = document.getElementById('sb-progress-label');
+        const progressPct = document.getElementById('sb-progress-pct');
+        const progressBar = document.getElementById('sb-progress-bar');
+
+        if (progressWrap) progressWrap.style.display = 'block';
+        pushBtn.disabled = true;
+        pushBtn.textContent = 'Syncing...';
+
+        try {
+          const res = await window.PracticalsStorage.pushAllToCloud((msg, pct) => {
+            if (progressLabel) progressLabel.textContent = msg;
+            if (progressPct) progressPct.textContent = `${pct}%`;
+            if (progressBar) progressBar.style.width = `${pct}%`;
+          });
+
+          if (res.success) {
+            showToast(res.message || 'All local data uploaded to Supabase!', 'success', 3500);
+            updateBannerStatus(true);
+            testSupabaseConnectionUI();
+          } else {
+            showToast(res.message || 'Push to Supabase failed.', 'error', 4000);
+            if (res.tableMissing) {
+              const alertBox = document.getElementById('sb-tables-alert');
+              if (alertBox) alertBox.style.display = 'block';
+            }
+          }
+        } catch (err) {
+          showToast(err.message || 'Sync error', 'error');
+        } finally {
+          pushBtn.disabled = false;
+          pushBtn.textContent = '⬆️ Upload All Local Data to Supabase';
+        }
+      });
+    }
+
+    if (pullBtn) {
+      pullBtn.addEventListener('click', async () => {
+        pullBtn.disabled = true;
+        pullBtn.textContent = 'Pulling...';
+        try {
+          const res = await window.PracticalsStorage.syncFromCloud();
+          if (res.success) {
+            initWorkspaceState();
+            renderSemesterPills();
+            renderSubjectPills();
+            renderDashboard();
+            showToast('Pulled latest questions from Supabase!', 'success');
+          } else {
+            showToast(res.message || 'Could not pull data from Supabase.', 'error');
+          }
+        } catch (err) {
+          showToast(err.message || 'Pull error', 'error');
+        } finally {
+          pullBtn.disabled = false;
+          pullBtn.textContent = '⬇️ Pull All Data from Supabase';
+        }
+      });
+    }
+
+    if (copySqlBtn) {
+      copySqlBtn.addEventListener('click', () => {
+        const sqlSchema = `-- Supabase Schema for LJCCA Practicals Lab Manual
+CREATE TABLE IF NOT EXISTS public.semesters (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  title TEXT NOT NULL,
+  "desc" TEXT DEFAULT '',
+  created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.subjects (
+  id TEXT PRIMARY KEY,
+  semester_id TEXT REFERENCES public.semesters(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  code TEXT DEFAULT '',
+  icon TEXT DEFAULT '💻',
+  "desc" TEXT DEFAULT '',
+  created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.units (
+  id TEXT PRIMARY KEY,
+  subject_id TEXT REFERENCES public.subjects(id) ON DELETE CASCADE,
+  semester_id TEXT REFERENCES public.semesters(id) ON DELETE CASCADE,
+  num TEXT NOT NULL,
+  title TEXT NOT NULL,
+  sub TEXT DEFAULT '',
+  question_count INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.questions (
+  id TEXT PRIMARY KEY,
+  unit_id TEXT REFERENCES public.units(id) ON DELETE CASCADE,
+  subject_id TEXT REFERENCES public.subjects(id) ON DELETE CASCADE,
+  semester_id TEXT REFERENCES public.semesters(id) ON DELETE CASCADE,
+  unit_num TEXT DEFAULT '',
+  unit_title TEXT DEFAULT '',
+  practical_number INTEGER DEFAULT 1,
+  tag TEXT DEFAULT 'Q1',
+  title TEXT NOT NULL,
+  question TEXT DEFAULT '',
+  category TEXT DEFAULT '',
+  logic TEXT DEFAULT '',
+  code TEXT DEFAULT '',
+  code_html TEXT DEFAULT '',
+  output_label TEXT DEFAULT 'Output',
+  output_class TEXT DEFAULT '',
+  output TEXT DEFAULT '',
+  chart_src TEXT DEFAULT '',
+  chart_alt TEXT DEFAULT '',
+  data_search TEXT DEFAULT '',
+  created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+ALTER TABLE public.semesters ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.subjects ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.units ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.questions ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Allow anon all on semesters" ON public.semesters;
+CREATE POLICY "Allow anon all on semesters" ON public.semesters FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow anon all on subjects" ON public.subjects;
+CREATE POLICY "Allow anon all on subjects" ON public.subjects FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow anon all on units" ON public.units;
+CREATE POLICY "Allow anon all on units" ON public.units FOR ALL USING (true) WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow anon all on questions" ON public.questions;
+CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (true) WITH CHECK (true);`;
+
+        navigator.clipboard.writeText(sqlSchema).then(() => {
+          showToast('SQL Schema copied to clipboard!', 'success');
+        }).catch(() => {
+          showToast('SQL Schema saved in supabase_schema.sql', 'info');
+        });
+      });
+    }
+
+    // Auto-check connection on dashboard load
+    setTimeout(testSupabaseConnectionUI, 500);
+
+    // Listen for data updates
+    window.addEventListener('practicals:cloud-synced', () => {
+      initWorkspaceState();
+      renderSemesterPills();
+      renderSubjectPills();
+      renderDashboard();
+    });
+  }
+
+  async function testSupabaseConnectionUI() {
+    const dot = document.getElementById('sb-status-dot');
+    const text = document.getElementById('sb-status-text');
+    const sub = document.getElementById('sb-status-sub');
+    const alertBox = document.getElementById('sb-tables-alert');
+    const headerStatus = document.getElementById('supabase-header-status');
+    const bannerDesc = document.getElementById('supabase-banner-desc');
+    const bannerTitle = document.getElementById('supabase-banner-title');
+    const bannerIcon = document.getElementById('supabase-banner-icon');
+
+    if (!dot || !text) return;
+
+    dot.style.background = '#eab308';
+    text.textContent = 'Testing connection...';
+    if (sub && window.SupabaseConfig) sub.textContent = window.SupabaseConfig.getUrl();
+
+    if (!window.SupabaseSync) {
+      dot.style.background = '#ef4444';
+      text.textContent = 'Supabase SDK not loaded';
+      return;
+    }
+
+    try {
+      const res = await window.SupabaseSync.testConnection();
+      if (res.ok) {
+        dot.style.background = '#10b981';
+        text.textContent = 'Connected (Cloud Database Ready)';
+        if (alertBox) alertBox.style.display = 'none';
+        if (headerStatus) headerStatus.textContent = 'Supabase Ready';
+        if (bannerIcon) bannerIcon.textContent = '⚡';
+        if (bannerTitle) bannerTitle.textContent = 'Supabase Cloud Connected:';
+        if (bannerDesc) bannerDesc.textContent = 'Practical programs and subjects are live in PostgreSQL Supabase database.';
+      } else if (res.tableMissing) {
+        dot.style.background = '#f59e0b';
+        text.textContent = 'Connected, but tables pending setup';
+        if (alertBox) alertBox.style.display = 'block';
+        if (headerStatus) headerStatus.textContent = 'Tables Pending';
+        if (bannerIcon) bannerIcon.textContent = '⚠️';
+        if (bannerTitle) bannerTitle.textContent = 'Database Tables Needed:';
+        if (bannerDesc) bannerDesc.textContent = 'Supabase is reachable, but tables need to be created. Click "Database Settings & Sync" and run the SQL schema.';
+      } else {
+        dot.style.background = '#ef4444';
+        text.textContent = 'Disconnected / Config Error';
+        if (alertBox) alertBox.style.display = 'none';
+        if (headerStatus) headerStatus.textContent = 'Supabase Offline';
+        if (bannerIcon) bannerIcon.textContent = 'ℹ️';
+        if (bannerTitle) bannerTitle.textContent = 'Local Mode Active:';
+        if (bannerDesc) bannerDesc.textContent = res.message || 'Supabase could not be reached. LocalStorage is active.';
+      }
+    } catch (e) {
+      dot.style.background = '#ef4444';
+      text.textContent = 'Connection test failed';
+    }
+  }
+
+  function updateBannerStatus(connected) {
+    const bannerDesc = document.getElementById('supabase-banner-desc');
+    const bannerTitle = document.getElementById('supabase-banner-title');
+    if (connected && bannerTitle && bannerDesc) {
+      bannerTitle.textContent = 'Supabase Cloud Synchronized:';
+      bannerDesc.textContent = 'All practical programs, subjects, and units are stored safely in PostgreSQL cloud.';
+    }
   }
 
 })();

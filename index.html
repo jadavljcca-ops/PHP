@@ -54,6 +54,12 @@
     </div>
 
     <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+      <!-- Supabase Cloud Indicator -->
+      <div id="portal-cloud-status" class="portal-cloud-pill" title="Supabase Database Status" style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-soft); font-size: 11px; font-family: var(--mono); color: var(--text-dim);">
+        <span id="portal-cloud-dot" style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+        <span id="portal-cloud-text">Supabase Cloud</span>
+      </div>
+
       <button type="button" class="theme-toggle-btn" id="portal-theme-toggle-btn" title="Toggle Theme (Dark / Light)">
         <span class="theme-toggle-track">
           <span class="theme-toggle-thumb"></span>
@@ -179,6 +185,9 @@
   </nav>
 
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase-config.js"></script>
+  <script src="./js/supabase-client.js"></script>
   <script src="./js/data.js"></script>
   <script src="./js/storage.js"></script>
   <script src="./js/app.js"></script>

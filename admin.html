@@ -138,7 +138,9 @@
           <div class="sub" id="dash-header-sub">Manage Semesters, Subjects, Units &amp; Practicals</div>
         </div>
       </div>
-      <div class="admin-header-actions">
+        <button type="button" class="clay-btn" id="open-supabase-btn" title="Supabase Database Settings & Cloud Sync" style="padding: 6px 14px; font-size: 12.5px;">
+          ⚡ <span id="supabase-header-status">Supabase DB</span>
+        </button>
         <button type="button" class="theme-toggle-btn" id="dash-theme-toggle-btn" title="Toggle Theme (Dark / Light)">
           <span class="theme-toggle-track">
             <span class="theme-toggle-thumb"></span>
@@ -160,13 +162,16 @@
       </div>
     </header>
 
-    <!-- Data Storage Limitation Notice Banner -->
-    <div class="info-banner">
-      <span class="icon">&#9432;</span>
-      <div>
-        <strong>Multi-Semester Storage Active:</strong> Programs and subjects are managed in your dashboard. Use
-        <strong>Export Questions (.PDF)</strong> to download a formatted lab manual for the current subject.
+    <!-- Supabase Cloud Storage Status Banner -->
+    <div class="info-banner" id="supabase-banner">
+      <span class="icon" id="supabase-banner-icon">⚡</span>
+      <div style="flex: 1;">
+        <strong id="supabase-banner-title">Supabase Database Integration:</strong>
+        <span id="supabase-banner-desc">Checking connection with Supabase PostgreSQL cloud database...</span>
       </div>
+      <button type="button" class="clay-btn" id="banner-supabase-btn" style="padding: 5px 12px; font-size: 12px; margin-left: 10px;">
+        Database Settings &amp; Sync
+      </button>
     </div>
 
     <!-- =======================================================================
@@ -874,10 +879,108 @@
     </div>
   </div>
 
+  <!-- Supabase Cloud Database Management Modal -->
+  <div class="modal-overlay" id="supabase-modal">
+    <div class="glass modal-box" style="max-width: 640px; text-align: left;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 26px;">⚡</span>
+          <div>
+            <h3 style="font-family: var(--mono); margin: 0; color: var(--text); font-size: 18px;">Supabase Cloud Database</h3>
+            <p style="margin: 2px 0 0; font-size: 12px; color: var(--text-dim);">Live PostgreSQL synchronization &amp; cloud persistence</p>
+          </div>
+        </div>
+        <button type="button" class="modal-close-btn" data-modal-close="supabase-modal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Live Connection Status Card -->
+      <div id="sb-status-box" style="padding: 14px 16px; border-radius: 12px; background: rgba(0,0,0,0.25); border: 1px solid var(--border-soft); margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span id="sb-status-dot" style="width: 12px; height: 12px; border-radius: 50%; background: #eab308; display: inline-block;"></span>
+          <div>
+            <div id="sb-status-text" style="font-weight: 700; font-size: 13.5px; color: var(--text);">Checking connection...</div>
+            <div id="sb-status-sub" style="font-size: 11.5px; color: var(--text-dim); font-family: var(--mono);">nmtdqrcbiisvsktyurbm.supabase.co</div>
+          </div>
+        </div>
+        <button type="button" class="secondary-btn" id="sb-test-conn-btn" style="padding: 6px 12px; font-size: 11.5px;">
+          🔄 Test Connection
+        </button>
+      </div>
+
+      <!-- SQL Schema Alert (shown if tables need to be created) -->
+      <div id="sb-tables-alert" style="display: none; padding: 14px; border-radius: 12px; background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.4); margin-bottom: 18px;">
+        <div style="display: flex; gap: 10px; align-items: flex-start;">
+          <span style="font-size: 20px;">⚠️</span>
+          <div style="flex: 1;">
+            <strong style="color: #facc15; font-size: 13px;">Database Tables Required</strong>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 4px 0 10px; line-height: 1.5;">
+              Supabase project is active, but the required tables (<code style="color: #fef08a;">semesters</code>, <code style="color: #fef08a;">subjects</code>, <code style="color: #fef08a;">units</code>, <code style="color: #fef08a;">questions</code>) haven't been created yet.
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="clay-btn" id="sb-copy-sql-btn" style="padding: 5px 12px; font-size: 12px;">
+                📋 Copy SQL Schema
+              </button>
+              <a href="https://supabase.com/dashboard/project/nmtdqrcbiisvsktyurbm/sql" target="_blank" rel="noopener" class="secondary-btn" style="padding: 5px 12px; font-size: 12px; text-decoration: none;">
+                Open Supabase SQL Editor &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credentials Form -->
+      <form id="sb-config-form" style="margin-bottom: 18px;">
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="sb-url-input" style="font-size: 12px;">Supabase Project URL</label>
+          <input type="text" id="sb-url-input" class="form-control" style="font-family: var(--mono); font-size: 12px;" placeholder="https://xyz.supabase.co" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label for="sb-key-input" style="font-size: 12px;">Supabase Anon / Public Key</label>
+          <input type="password" id="sb-key-input" class="form-control" style="font-family: var(--mono); font-size: 12px;" placeholder="eyJhbGciOi..." required>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 12px; cursor: pointer; color: var(--text-muted);">
+            <input type="checkbox" id="sb-sync-toggle" checked style="accent-color: var(--accent);">
+            Auto-sync changes to Supabase in background
+          </label>
+          <button type="submit" class="secondary-btn" style="padding: 6px 14px; font-size: 12px;">Save Credentials</button>
+        </div>
+      </form>
+
+      <!-- Sync Actions Box -->
+      <div style="padding: 16px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid var(--border-soft);">
+        <div style="font-weight: 600; font-size: 13px; margin-bottom: 8px; color: var(--text);">Cloud Data Synchronization</div>
+        <p style="font-size: 12px; color: var(--text-dim); margin-bottom: 14px;">
+          Push all local practical programs to Supabase, or pull cloud programs down to this browser.
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="button" class="clay-btn" id="sb-push-cloud-btn" style="padding: 7px 14px; font-size: 12.5px;">
+            ⬆️ Upload All Local Data to Supabase
+          </button>
+          <button type="button" class="secondary-btn" id="sb-pull-cloud-btn" style="padding: 7px 14px; font-size: 12.5px;">
+            ⬇️ Pull All Data from Supabase
+          </button>
+        </div>
+        <div id="sb-progress-wrap" style="display: none; margin-top: 12px;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: var(--mono); color: var(--text-muted); margin-bottom: 4px;">
+            <span id="sb-progress-label">Syncing...</span>
+            <span id="sb-progress-pct">0%</span>
+          </div>
+          <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+            <div id="sb-progress-bar" style="width: 0%; height: 100%; background: #10b981; transition: width 0.3s ease;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>
 
   <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./js/supabase-config.js"></script>
+  <script src="./js/supabase-client.js"></script>
   <script src="./js/jspdf.umd.min.js"></script>
   <script src="./js/data.js"></script>
   <script src="./js/storage.js"></script>

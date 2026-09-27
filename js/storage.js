@@ -223,6 +223,9 @@
 
     semesters.push(newSem);
     saveSemesters(semesters);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertSemester(newSem).catch(e => console.warn('Supabase sem sync:', e));
+    }
     return newSem;
   }
 
@@ -240,6 +243,9 @@
 
     list[idx] = merged;
     saveSemesters(list);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertSemester(merged).catch(e => console.warn('Supabase sem sync:', e));
+    }
     return merged;
   }
 
@@ -249,6 +255,9 @@
     if (filtered.length === list.length) return false;
 
     saveSemesters(filtered);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.deleteSemester(id).catch(e => console.warn('Supabase sem delete:', e));
+    }
 
     if (deleteAssociated) {
       const subjects = loadSubjects().filter(sub => String(sub.semesterId) !== String(id));
@@ -362,6 +371,9 @@
 
     subjects.push(newSub);
     saveSubjects(subjects);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertSubject(newSub).catch(e => console.warn('Supabase sub sync:', e));
+    }
     return newSub;
   }
 
@@ -381,6 +393,9 @@
 
     subjects[idx] = merged;
     saveSubjects(subjects);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertSubject(merged).catch(e => console.warn('Supabase sub sync:', e));
+    }
     return merged;
   }
 
@@ -390,6 +405,9 @@
     if (filtered.length === subjects.length) return false;
 
     saveSubjects(filtered);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.deleteSubject(id).catch(e => console.warn('Supabase sub delete:', e));
+    }
 
     if (deleteQuestions) {
       const questions = loadQuestions().filter(q => String(q.subjectId) !== String(id));
@@ -518,6 +536,9 @@
 
     units.push(newUnit);
     saveUnits(units);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertUnit(newUnit).catch(e => console.warn('Supabase unit sync:', e));
+    }
     return newUnit;
   }
 
@@ -538,6 +559,9 @@
 
     units[index] = merged;
     saveUnits(units);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertUnit(merged).catch(e => console.warn('Supabase unit sync:', e));
+    }
 
     // Keep all questions belonging to this unit in sync
     const questions = loadQuestions();
@@ -565,6 +589,9 @@
     }
 
     saveUnits(filteredUnits);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.deleteUnit(id).catch(e => console.warn('Supabase unit delete:', e));
+    }
 
     let deletedQuestionsCount = 0;
     if (deleteQuestions) {
@@ -716,6 +743,9 @@
 
     questions.push(newQuestion);
     saveQuestions(questions);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertQuestion(newQuestion).catch(e => console.warn('Supabase q sync:', e));
+    }
     return newQuestion;
   }
 
@@ -772,6 +802,9 @@
 
     questions[index] = merged;
     saveQuestions(questions);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.upsertQuestion(merged).catch(e => console.warn('Supabase q sync:', e));
+    }
     return merged;
   }
 
@@ -785,6 +818,9 @@
     }
 
     saveQuestions(filtered);
+    if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+      window.SupabaseSync.deleteQuestion(id).catch(e => console.warn('Supabase q delete:', e));
+    }
     return true;
   }
 
@@ -797,6 +833,9 @@
     const deletedCount = initialLength - filtered.length;
     if (deletedCount > 0) {
       saveQuestions(filtered);
+      if (window.SupabaseSync && window.SupabaseConfig && window.SupabaseConfig.isSyncEnabled()) {
+        window.SupabaseSync.deleteQuestions(ids).catch(e => console.warn('Supabase bulk q delete:', e));
+      }
     }
     return deletedCount;
   }
@@ -1255,6 +1294,74 @@
     }
   }
 
+  /* ==========================================================================
+     5. SUPABASE CLOUD DATA SYNCHRONIZATION
+     ========================================================================== */
+
+  async function syncFromCloud() {
+    if (!window.SupabaseSync || !window.SupabaseConfig || !window.SupabaseConfig.isSyncEnabled()) {
+      return { success: false, message: 'Supabase sync disabled or not configured.' };
+    }
+    try {
+      const cloudData = await window.SupabaseSync.fetchAllData();
+      if (!cloudData) {
+        return { success: false, message: 'Could not fetch data from Supabase.' };
+      }
+
+      let updated = false;
+      if (Array.isArray(cloudData.semesters) && cloudData.semesters.length > 0) {
+        localStorage.setItem(STORAGE_KEY_SEMESTERS, JSON.stringify(cloudData.semesters));
+        updated = true;
+      }
+      if (Array.isArray(cloudData.subjects) && cloudData.subjects.length > 0) {
+        localStorage.setItem(STORAGE_KEY_SUBJECTS, JSON.stringify(cloudData.subjects));
+        updated = true;
+      }
+      if (Array.isArray(cloudData.units) && cloudData.units.length > 0) {
+        localStorage.setItem(STORAGE_KEY_UNITS, JSON.stringify(cloudData.units));
+        updated = true;
+      }
+      if (Array.isArray(cloudData.questions) && cloudData.questions.length > 0) {
+        localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(cloudData.questions));
+        updated = true;
+      }
+
+      if (updated) {
+        window.dispatchEvent(new CustomEvent('practicals:cloud-synced', { detail: { source: 'supabase', data: cloudData } }));
+      }
+
+      return { success: true, updated, data: cloudData };
+    } catch (e) {
+      console.error('syncFromCloud error:', e);
+      return { success: false, message: e.message };
+    }
+  }
+
+  async function pushAllToCloud(onProgress) {
+    if (!window.SupabaseSync) {
+      return { success: false, message: 'Supabase client module not loaded.' };
+    }
+    const data = {
+      semesters: loadSemesters(),
+      subjects: loadSubjects(),
+      units: loadUnits(),
+      questions: loadQuestions()
+    };
+    return await window.SupabaseSync.pushAllToCloud(data, onProgress);
+  }
+
+  async function initCloudSync() {
+    if (!window.SupabaseSync) return;
+    try {
+      const conn = await window.SupabaseSync.testConnection();
+      if (conn && conn.ok) {
+        await syncFromCloud();
+      }
+    } catch (e) {
+      console.warn('initCloudSync warning:', e);
+    }
+  }
+
   // Export functions to global window.PracticalsStorage
   window.PracticalsStorage = {
     // Semesters
@@ -1298,6 +1405,11 @@
     reorderQuestions,
     searchQuestions,
 
+    // Cloud Synchronization
+    syncFromCloud,
+    pushAllToCloud,
+    initCloudSync,
+
     // Tools & Utilities
     resetToDefaults,
     exportQuestionsPDF,
@@ -1307,5 +1419,16 @@
     highlightPython,
     escapeHtml
   };
+
+  // Run cloud sync automatically when document loads
+  if (typeof window !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initCloudSync, 100);
+      });
+    } else {
+      setTimeout(initCloudSync, 100);
+    }
+  }
 
 })(window);
