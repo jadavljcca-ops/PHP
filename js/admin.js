@@ -189,7 +189,6 @@
     } else {
       if (loginView) loginView.style.display = 'flex';
       if (dashboardView) dashboardView.style.display = 'none';
-      renderLoginSemesterPills();
     }
   }
 
@@ -204,6 +203,7 @@
 
         const res = window.PracticalsAuth.login(usernameInput.value, passwordInput.value);
         if (res.success) {
+          try { sessionStorage.setItem('python_practicals_admin_current_login', '1'); } catch (e) {}
           if (errorAlert) errorAlert.style.display = 'none';
           showToast(res.message, 'success');
           checkAuthState();
@@ -238,25 +238,10 @@
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
       logoutBtn.addEventListener('click', function () {
+        try { sessionStorage.removeItem('python_practicals_admin_current_login'); } catch (e) {}
         window.PracticalsAuth.logout();
         showToast('Logged out successfully.', 'info');
         checkAuthState();
-      });
-    }
-
-    const quickResetBtn = document.getElementById('quick-reset-creds-btn');
-    if (quickResetBtn) {
-      quickResetBtn.addEventListener('click', function () {
-        if (window.PracticalsAuth) {
-          window.PracticalsAuth.resetCredentialsToDefault();
-          const usernameInput = document.getElementById('admin-username');
-          const passwordInput = document.getElementById('admin-password');
-          const errorAlert = document.getElementById('login-error-alert');
-          if (usernameInput) usernameInput.value = 'J.d';
-          if (passwordInput) passwordInput.value = 'Jd@#123';
-          if (errorAlert) errorAlert.style.display = 'none';
-          showToast('Credentials reset! Auto-filled J.d / Jd@#123', 'success', 3000);
-        }
       });
     }
   }
@@ -264,26 +249,6 @@
   /* ==========================================================================
      WORKSPACE CONTROLS (SEMESTER & SUBJECT BARS)
      ========================================================================== */
-
-  function renderLoginSemesterPills() {
-    const container = document.getElementById('login-sem-pills');
-    if (!container || !window.PracticalsStorage) return;
-
-    const semesters = window.PracticalsStorage.loadSemesters();
-    container.innerHTML = '';
-
-    semesters.forEach(s => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = `sem-pill-btn ${s.id === currentSemesterId ? 'active' : ''}`;
-      btn.textContent = `🎓 ${s.name}`;
-      btn.addEventListener('click', function () {
-        setWorkspaceSemester(s.id);
-        renderLoginSemesterPills();
-      });
-      container.appendChild(btn);
-    });
-  }
 
   function renderSemesterPills() {
     const container = document.getElementById('admin-sem-pills');
@@ -2190,9 +2155,6 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
     const sub = document.getElementById('sb-status-sub');
     const alertBox = document.getElementById('sb-tables-alert');
     const headerStatus = document.getElementById('supabase-header-status');
-    const bannerDesc = document.getElementById('supabase-banner-desc');
-    const bannerTitle = document.getElementById('supabase-banner-title');
-    const bannerIcon = document.getElementById('supabase-banner-icon');
 
     if (!dot || !text) return;
 
@@ -2213,38 +2175,20 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
         text.textContent = 'Connected (Cloud Database Ready)';
         if (alertBox) alertBox.style.display = 'none';
         if (headerStatus) headerStatus.textContent = 'Supabase Ready';
-        if (bannerIcon) bannerIcon.textContent = '⚡';
-        if (bannerTitle) bannerTitle.textContent = 'Supabase Cloud Connected:';
-        if (bannerDesc) bannerDesc.textContent = 'Practical programs and subjects are live in PostgreSQL Supabase database.';
       } else if (res.tableMissing) {
         dot.style.background = '#f59e0b';
         text.textContent = 'Connected, but tables pending setup';
         if (alertBox) alertBox.style.display = 'block';
         if (headerStatus) headerStatus.textContent = 'Tables Pending';
-        if (bannerIcon) bannerIcon.textContent = '⚠️';
-        if (bannerTitle) bannerTitle.textContent = 'Database Tables Needed:';
-        if (bannerDesc) bannerDesc.textContent = 'Supabase is reachable, but tables need to be created. Click "Database Settings & Sync" and run the SQL schema.';
       } else {
         dot.style.background = '#ef4444';
         text.textContent = 'Disconnected / Config Error';
         if (alertBox) alertBox.style.display = 'none';
         if (headerStatus) headerStatus.textContent = 'Supabase Offline';
-        if (bannerIcon) bannerIcon.textContent = 'ℹ️';
-        if (bannerTitle) bannerTitle.textContent = 'Local Mode Active:';
-        if (bannerDesc) bannerDesc.textContent = res.message || 'Supabase could not be reached. LocalStorage is active.';
       }
     } catch (e) {
       dot.style.background = '#ef4444';
       text.textContent = 'Connection test failed';
-    }
-  }
-
-  function updateBannerStatus(connected) {
-    const bannerDesc = document.getElementById('supabase-banner-desc');
-    const bannerTitle = document.getElementById('supabase-banner-title');
-    if (connected && bannerTitle && bannerDesc) {
-      bannerTitle.textContent = 'Supabase Cloud Synchronized:';
-      bannerDesc.textContent = 'All practical programs, subjects, and units are stored safely in PostgreSQL cloud.';
     }
   }
 
