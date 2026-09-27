@@ -863,6 +863,19 @@
     return deleteQuestions(dupIds);
   }
 
+  function deleteSemesterQuestions(semesterId) {
+    if (!semesterId) return 0;
+    const questions = loadQuestions();
+    const toDelete = questions.filter(q => {
+      if (String(q.semesterId) === String(semesterId)) return true;
+      const sub = getSubjectById(q.subjectId);
+      return sub && String(sub.semesterId) === String(semesterId);
+    });
+    if (toDelete.length === 0) return 0;
+    const ids = toDelete.map(q => q.id);
+    return deleteQuestions(ids);
+  }
+
   function reorderQuestions(unitId, fromIndex, toIndex, subjectId = null) {
     const questions = loadQuestions();
     const unitIndices = [];
@@ -1400,6 +1413,7 @@
     updateQuestion,
     deleteQuestion,
     deleteQuestions,
+    deleteSemesterQuestions,
     findDuplicateQuestions,
     deleteDuplicateQuestions,
     reorderQuestions,

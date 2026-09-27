@@ -407,6 +407,17 @@
       activeWsEl.textContent = `${semObj.name} • ${subObj ? subObj.name.split(' ')[0] : 'None'}`;
     }
 
+    // Update semester action buttons labels and practical count
+    const semName = semObj ? semObj.name : 'Current Sem';
+    document.querySelectorAll('.sem-name-label').forEach(el => {
+      el.textContent = semName;
+    });
+    const semTotalCountEl = document.getElementById('sem-total-count');
+    if (semTotalCountEl) {
+      const allSemQ = window.PracticalsStorage.loadQuestions(null, currentSemesterId);
+      semTotalCountEl.textContent = allSemQ.length;
+    }
+
     // Populate Category Filter Dropdown
     const categories = new Set();
     questions.forEach(q => {
@@ -484,6 +495,11 @@
         bulkDelBtn.style.opacity = '0.5';
         bulkDelBtn.style.cursor = 'not-allowed';
       }
+    }
+
+    const clearSelBtn = document.getElementById('clear-selection-btn');
+    if (clearSelBtn) {
+      clearSelBtn.style.display = totalSelected > 0 ? 'inline-block' : 'none';
     }
 
     if (list && list.length > 0) {
@@ -574,14 +590,28 @@
     updateBulkActionsUI(filtered);
   }
 
-  function openBulkDeleteModal() {
+  function openBulkDeleteModal(customTitle = null, customDesc = null) {
     if (selectedQuestionIds.size === 0) return;
     const modal = document.getElementById('bulk-delete-modal');
+    const titleEl = document.getElementById('bulk-modal-title');
+    const descEl = document.getElementById('bulk-modal-desc');
     const countEl = document.getElementById('bulk-modal-count');
     const listEl = document.getElementById('bulk-modal-list');
     if (!modal) return;
 
-    if (countEl) countEl.textContent = selectedQuestionIds.size;
+    if (titleEl) {
+      titleEl.textContent = customTitle || 'Confirm Bulk Deletion';
+    }
+    if (descEl) {
+      if (customDesc) {
+        descEl.innerHTML = customDesc;
+      } else {
+        descEl.innerHTML = `Are you sure you want to permanently delete <strong id="bulk-modal-count" style="color: #ef4444; font-size: 16px;">${selectedQuestionIds.size}</strong> selected practical programs?`;
+      }
+    } else if (countEl) {
+      countEl.textContent = selectedQuestionIds.size;
+    }
+
     if (listEl) {
       let html = '<ul style="margin: 0; padding-left: 20px;">';
       selectedQuestionIds.forEach(id => {
@@ -720,6 +750,59 @@
           return;
         }
         openBulkDeleteModal();
+      });
+    }
+
+    // Select Entire Semester Button
+    const selectEntireSemBtn = document.getElementById('select-entire-sem-btn');
+    if (selectEntireSemBtn) {
+      selectEntireSemBtn.addEventListener('click', function () {
+        const semQuestions = window.PracticalsStorage.loadQuestions(null, currentSemesterId);
+        const semObj = window.PracticalsStorage.getSemesterById(currentSemesterId);
+        const semName = semObj ? semObj.name : 'Current Semester';
+
+        if (!semQuestions || semQuestions.length === 0) {
+          showToast(`No practical programs found in ${semName} to select.`, 'info');
+          return;
+        }
+
+        semQuestions.forEach(q => selectedQuestionIds.add(String(q.id)));
+        filterAndRenderTable();
+        showToast(`Selected all ${semQuestions.length} programs in ${semName}!`, 'info');
+      });
+    }
+
+    // Clear Selection Button
+    const clearSelBtn = document.getElementById('clear-selection-btn');
+    if (clearSelBtn) {
+      clearSelBtn.addEventListener('click', function () {
+        selectedQuestionIds.clear();
+        filterAndRenderTable();
+        showToast('All selections cleared.', 'info');
+      });
+    }
+
+    // Delete Entire Semester Programs Button
+    const delAllSemBtn = document.getElementById('delete-all-sem-btn');
+    if (delAllSemBtn) {
+      delAllSemBtn.addEventListener('click', function () {
+        const semQuestions = window.PracticalsStorage.loadQuestions(null, currentSemesterId);
+        const semObj = window.PracticalsStorage.getSemesterById(currentSemesterId);
+        const semName = semObj ? semObj.name : 'Current Semester';
+
+        if (!semQuestions || semQuestions.length === 0) {
+          showToast(`No practical programs found in ${semName} to delete.`, 'info');
+          return;
+        }
+
+        // Add all semester questions to selectedQuestionIds
+        semQuestions.forEach(q => selectedQuestionIds.add(String(q.id)));
+        filterAndRenderTable();
+
+        openBulkDeleteModal(
+          `Delete Entire ${semName} Programs`,
+          `Are you sure you want to permanently delete ALL <strong id="bulk-modal-count" style="color: #ef4444; font-size: 16px;">${semQuestions.length}</strong> practical programs across all subjects in <strong>${escapeHtml(semName)}</strong>?`
+        );
       });
     }
 
