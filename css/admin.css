@@ -583,11 +583,11 @@ body.light-theme .security-note {
 
 /* Login View */
 .login-wrap {
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px 20px;
 }
 .login-card {
   width: 100%;
