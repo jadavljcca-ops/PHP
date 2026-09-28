@@ -1,8 +1,7 @@
 /**
- * Default Python Practicals Data
- * Extracted from LJCCA Python Programming Practical Lab Manual
- * BS(CA) Semester 5 - 62 Solved Programs across 4 Units
- * Standalone dataset with full fidelity to reference website
+ * Default Practicals Data
+ * Auto-synchronized from Admin Portal on localhost
+ * Last updated: 2026-09-28T14:08:16.517Z
  */
 
 window.DEFAULT_DATA = {
@@ -31,135 +30,79 @@ window.DEFAULT_DATA = {
       "id": "sub-py-sem5",
       "semesterId": "sem-5",
       "name": "Python Programming",
-      "code": "BSCA501",
+      "code": "DSC-C-BCA-353P",
       "icon": "🐍",
-      "desc": "62 solved programs across 4 units — aim, logic, code and real output."
+      "desc": ""
     },
     {
       "id": "sub-c-sem1",
       "semesterId": "sem-1",
       "name": "Programming in C",
-      "code": "BSCA101",
+      "code": "DSC-BCA-112-P",
       "icon": "💻",
       "desc": "Fundamental C practicals, algorithms, loops, arrays, pointers & functions."
     },
     {
       "id": "sub-ds-sem3",
       "semesterId": "sem-3",
-      "name": "Data Structures using C++",
-      "code": "BSCA301",
-      "icon": "🧱",
-      "desc": "Stacks, Queues, Linked Lists, Trees, Graphs & Sorting algorithms."
+      "name": "Object-Oriented Concepts and Java (OOCJ)",
+      "code": "DSC-C-BCA-233P",
+      "icon": "☕︎",
+      "desc": ""
+    },
+    {
+      "id": "sub-internet-and-web-technology-iwt-sem-1",
+      "semesterId": "sem-1",
+      "name": "Internet and Web Technology(IWT)",
+      "code": "DSC-M-BCA-113P",
+      "icon": "</>",
+      "desc": ""
+    },
+    {
+      "id": "sub-hypertext-preprocessor-sem-5",
+      "semesterId": "sem-5",
+      "name": "Hypertext Preprocessor.",
+      "code": "DSC-M-BCA-355P",
+      "icon": "🐘",
+      "desc": ""
     }
   ],
   "units": [
     {
       "id": "unit-1",
-      "subjectId": "sub-py-sem5",
-      "semesterId": "sem-5",
       "num": "Unit I",
       "title": "Introduction to Python, Data Types and Control Flow Statements",
       "sub": "11 solved programs &mdash; aim, logic, code and output",
-      "questionCount": 11
+      "questionCount": 11,
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2",
-      "subjectId": "sub-py-sem5",
-      "semesterId": "sem-5",
       "num": "Unit II",
       "title": "Arrays, Functions, List, Tuples and Dictionaries",
       "sub": "18 solved programs &mdash; aim, logic, code and output",
-      "questionCount": 18
+      "questionCount": 18,
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3",
-      "subjectId": "sub-py-sem5",
-      "semesterId": "sem-5",
       "num": "Unit III",
       "title": "Concepts of OOP and Exception Handling",
       "sub": "17 solved programs &mdash; aim, logic, code and output",
-      "questionCount": 17
+      "questionCount": 17,
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4",
-      "subjectId": "sub-py-sem5",
-      "semesterId": "sem-5",
       "num": "Unit IV",
       "title": "Python Database Management, Data Analysis and Data Visualization",
       "sub": "16 solved programs &mdash; aim, logic, code and output",
-      "questionCount": 16
-    },
-    {
-      "id": "unit-c-1",
-      "subjectId": "sub-c-sem1",
-      "semesterId": "sem-1",
-      "num": "Unit I",
-      "title": "Introduction to C, Data Types & Operators",
-      "sub": "Basic C syntax, input/output & arithmetic expressions",
-      "questionCount": 2
-    },
-    {
-      "id": "unit-c-2",
-      "subjectId": "sub-c-sem1",
-      "semesterId": "sem-1",
-      "num": "Unit II",
-      "title": "Control Flow, Branching & Loop Structures",
-      "sub": "Decision making with if-else, switch & while/for loops",
-      "questionCount": 3
-    },
-    {
-      "id": "unit-c-3",
-      "subjectId": "sub-c-sem1",
-      "semesterId": "sem-1",
-      "num": "Unit III",
-      "title": "Arrays, Strings & Character Operations",
-      "sub": "1D and 2D arrays, string manipulation functions",
-      "questionCount": 1
-    },
-    {
-      "id": "unit-c-4",
-      "subjectId": "sub-c-sem1",
-      "semesterId": "sem-1",
-      "num": "Unit IV",
-      "title": "Functions, Pointers & Structures",
-      "sub": "User-defined functions, recursion, pointers & pass by reference",
-      "questionCount": 1
-    },
-    {
-      "id": "unit-ds-1",
-      "subjectId": "sub-ds-sem3",
-      "semesterId": "sem-3",
-      "num": "Unit I",
-      "title": "Arrays, Searching & Algorithm Complexity",
-      "sub": "Linear Search, Binary Search and memory representations",
-      "questionCount": 2
-    },
-    {
-      "id": "unit-ds-2",
-      "subjectId": "sub-ds-sem3",
-      "semesterId": "sem-3",
-      "num": "Unit II",
-      "title": "Stacks and Queues",
-      "sub": "LIFO & FIFO linear data structures, Push/Pop and Enqueue/Dequeue",
-      "questionCount": 2
-    },
-    {
-      "id": "unit-ds-3",
-      "subjectId": "sub-ds-sem3",
-      "semesterId": "sem-3",
-      "num": "Unit III",
-      "title": "Linked Lists & Dynamic Memory",
-      "sub": "Singly and Doubly Linked Lists insertion, deletion and traversal",
-      "questionCount": 1
-    },
-    {
-      "id": "unit-ds-4",
-      "subjectId": "sub-ds-sem3",
-      "semesterId": "sem-3",
-      "num": "Unit IV",
-      "title": "Trees, Graphs & Sorting Algorithms",
-      "sub": "Bubble sort, insertion sort and binary tree structures",
-      "questionCount": 1
+      "questionCount": 16,
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     }
   ],
   "questions": [
@@ -181,7 +124,9 @@ window.DEFAULT_DATA = {
       "output": "Enter a: 5\nEnter b: 10\nAfter swap: a = 10, b = 5",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "swap two numbers without using a temporary variable python allows simultaneous (tuple) assignment: &lt;b&gt;a, b = b, a&lt;/b&gt; evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed."
+      "dataSearch": "swap two numbers without using a temporary variable python allows simultaneous (tuple) assignment: &lt;b&gt;a, b = b, a&lt;/b&gt; evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q2",
@@ -201,7 +146,9 @@ window.DEFAULT_DATA = {
       "output": "Enter first complex number (e.g. 2+3j): 2+3j\nEnter second complex number (e.g. 1+2j): 1+2j\nSum = (3+5j)",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "display the sum of two complex numbers python has a built-in &lt;b&gt;complex&lt;/b&gt; type (real + imaginary·j). the &lt;b&gt;complex()&lt;/b&gt; constructor parses user input directly, and the &lt;b&gt;+&lt;/b&gt; operator is already overloaded to add real and imaginary parts separately."
+      "dataSearch": "display the sum of two complex numbers python has a built-in &lt;b&gt;complex&lt;/b&gt; type (real + imaginary·j). the &lt;b&gt;complex()&lt;/b&gt; constructor parses user input directly, and the &lt;b&gt;+&lt;/b&gt; operator is already overloaded to add real and imaginary parts separately.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q3",
@@ -221,7 +168,9 @@ window.DEFAULT_DATA = {
       "output": "Original array: [10, 20, 30, 40]\nElement at index 1: 20\nModified array: [10, 99, 30, 40]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a byte-type array; read, modify and display its elements the &lt;b&gt;array&lt;/b&gt; module&#x27;s typecode &lt;b&gt;&#x27;b&#x27;&lt;/b&gt; creates a signed-byte array. elements are read/updated using normal indexing, exactly like a list, and &lt;b&gt;.tolist()&lt;/b&gt; gives a readable view."
+      "dataSearch": "create a byte-type array; read, modify and display its elements the &lt;b&gt;array&lt;/b&gt; module&#x27;s typecode &lt;b&gt;&#x27;b&#x27;&lt;/b&gt; creates a signed-byte array. elements are read/updated using normal indexing, exactly like a list, and &lt;b&gt;.tolist()&lt;/b&gt; gives a readable view.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q4",
@@ -241,7 +190,9 @@ window.DEFAULT_DATA = {
       "output": "Sequence: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "generate a sequence 1 to 30 with an increment of 2 using range &lt;b&gt;range(start, stop, step)&lt;/b&gt; lazily generates a sequence; wrapping it in &lt;b&gt;list()&lt;/b&gt; materialises the values 1, 3, 5 ... up to (but excluding) 31."
+      "dataSearch": "generate a sequence 1 to 30 with an increment of 2 using range &lt;b&gt;range(start, stop, step)&lt;/b&gt; lazily generates a sequence; wrapping it in &lt;b&gt;list()&lt;/b&gt; materialises the values 1, 3, 5 ... up to (but excluding) 31.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q5",
@@ -261,7 +212,9 @@ window.DEFAULT_DATA = {
       "output": "List1: [10, 20, 30, 40, 50] \nList2: [30, 40, 50, 60, 70]\nCommon elements: [30, 40, 50]\nNon-common elements: [10, 20, 60, 70]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "find common and non-common elements in two lists using membership operators the &lt;b&gt;in&lt;/b&gt; / &lt;b&gt;not in&lt;/b&gt; membership operators test set-style containment. a list comprehension picks elements of list1 present in list2 (common); another picks elements from the combined list absent from the common set."
+      "dataSearch": "find common and non-common elements in two lists using membership operators the &lt;b&gt;in&lt;/b&gt; / &lt;b&gt;not in&lt;/b&gt; membership operators test set-style containment. a list comprehension picks elements of list1 present in list2 (common); another picks elements from the combined list absent from the common set.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q6",
@@ -281,7 +234,9 @@ window.DEFAULT_DATA = {
       "output": "id(a) = 140249187142464\nid(b) = 140249187144256\nid(c) = 140249187142464\na is b: False\na is c: True",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "display memory locations using id() and compare objects with identity operators &lt;b&gt;id()&lt;/b&gt; returns an object&#x27;s unique memory address (as an integer) for its lifetime. the &lt;b&gt;is&lt;/b&gt; operator compares identity (same object), not equality of value &amp;mdash; two equal lists can still be different objects."
+      "dataSearch": "display memory locations using id() and compare objects with identity operators &lt;b&gt;id()&lt;/b&gt; returns an object&#x27;s unique memory address (as an integer) for its lifetime. the &lt;b&gt;is&lt;/b&gt; operator compares identity (same object), not equality of value &amp;mdash; two equal lists can still be different objects.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q7",
@@ -301,7 +256,9 @@ window.DEFAULT_DATA = {
       "output": "Enter an expression: 10+8-9*2-(10*2)\nResult: -20",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "evaluate a run-time expression entered by the user using eval() &lt;b&gt;eval()&lt;/b&gt; parses a string as a python expression and executes it, so whatever arithmetic expression the user types is computed immediately, honouring normal operator precedence."
+      "dataSearch": "evaluate a run-time expression entered by the user using eval() &lt;b&gt;eval()&lt;/b&gt; parses a string as a python expression and executes it, so whatever arithmetic expression the user types is computed immediately, honouring normal operator precedence.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q8",
@@ -321,7 +278,9 @@ window.DEFAULT_DATA = {
       "output": "1.Circle  2.Triangle  3.Square  4.Simple Interest  5.Exit\nEnter choice: 1\nRadius: 5\nArea = 78.54\n\n1.Circle  2.Triangle  3.Square  4.Simple Interest  5.Exit\nEnter choice: 5\nExiting...",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "menu-driven program (circle/triangle/square/simple interest/exit) using match-case python 3.10+&#x27;s &lt;b&gt;match&amp;nbsp;case&lt;/b&gt; statement works like a cleaner switch statement over the user&#x27;s menu choice, routing to the right area/si formula, with &lt;b&gt;case _&lt;/b&gt; as the default/invalid-choice branch."
+      "dataSearch": "menu-driven program (circle/triangle/square/simple interest/exit) using match-case python 3.10+&#x27;s &lt;b&gt;match&amp;nbsp;case&lt;/b&gt; statement works like a cleaner switch statement over the user&#x27;s menu choice, routing to the right area/si formula, with &lt;b&gt;case _&lt;/b&gt; as the default/invalid-choice branch.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q9",
@@ -341,7 +300,9 @@ window.DEFAULT_DATA = {
       "output": "Valid input case:\nEnter a number: 7\nValid input: 7\n\nInvalid input case (num = -3):\nEnter a number: \nAssertionError: Number must be greater than zero!",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "assert that the user enters a number greater than zero the &lt;b&gt;assert&lt;/b&gt; statement checks a condition and raises &lt;b&gt;assertionerror&lt;/b&gt; with the given message the moment it is false, which is a quick way to enforce a precondition."
+      "dataSearch": "assert that the user enters a number greater than zero the &lt;b&gt;assert&lt;/b&gt; statement checks a condition and raises &lt;b&gt;assertionerror&lt;/b&gt; with the given message the moment it is false, which is a quick way to enforce a precondition.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q10",
@@ -361,7 +322,9 @@ window.DEFAULT_DATA = {
       "output": "Found case:\nEnter number to search: 23\n23 found in list!\n\nNot-found case:\nEnter number to search: 99\n99 not found in list.",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "search an element in a list using a for loop, demonstrating for...else the rarely-used &lt;b&gt;else&lt;/b&gt; clause on a &lt;b&gt;for&lt;/b&gt; loop runs only if the loop completes without hitting &lt;b&gt;break&lt;/b&gt; &amp;mdash; i.e. only when the search target was never found."
+      "dataSearch": "search an element in a list using a for loop, demonstrating for...else the rarely-used &lt;b&gt;else&lt;/b&gt; clause on a &lt;b&gt;for&lt;/b&gt; loop runs only if the loop completes without hitting &lt;b&gt;break&lt;/b&gt; &amp;mdash; i.e. only when the search target was never found.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-1-q11",
@@ -381,7 +344,9 @@ window.DEFAULT_DATA = {
       "output": "Valid case:\nEnter length in centimeters: 100\n100.0 cm = 39.37 inches\n\nInvalid case:\nEnter length in centimeters: -5\nInvalid entry: length cannot be negative.",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "convert a length in centimeters to inches, validating negative input a simple guard clause (&lt;b&gt;if length_cm &amp;lt; 0&lt;/b&gt;) rejects invalid input before the conversion; otherwise the value is divided by 2.54 (the cm-per-inch constant) and formatted to two decimals."
+      "dataSearch": "convert a length in centimeters to inches, validating negative input a simple guard clause (&lt;b&gt;if length_cm &amp;lt; 0&lt;/b&gt;) rejects invalid input before the conversion; otherwise the value is divided by 2.54 (the cm-per-inch constant) and formatted to two decimals.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q1",
@@ -401,7 +366,9 @@ window.DEFAULT_DATA = {
       "output": "Original array: [10, 20, 30, 40, 50, 60]\nSliced (index 1 to 4): [20, 30, 40]\nUpdated array: [10, 21, 31, 41, 50, 60]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "retrieve, display and update a range of array elements using indexing/slicing slice notation &lt;b&gt;arr[1:4]&lt;/b&gt; both reads and writes a contiguous range at once &amp;mdash; assigning a new array of matching length to the slice updates those positions in a single statement."
+      "dataSearch": "retrieve, display and update a range of array elements using indexing/slicing slice notation &lt;b&gt;arr[1:4]&lt;/b&gt; both reads and writes a contiguous range at once &amp;mdash; assigning a new array of matching length to the slice updates those positions in a single statement.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q2",
@@ -421,7 +388,9 @@ window.DEFAULT_DATA = {
       "output": "After append/insert/remove/pop: [10, 15, 20, 40]\nPopped element: 50\nIndex of 15: 1\nCount of 20: 1",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "demonstrate array class methods: append, insert, remove, pop, index, tolist, count the &lt;b&gt;array&lt;/b&gt; class supports the same core mutating methods as a list. each call is chained on the same object so the running effect of every method is visible in order."
+      "dataSearch": "demonstrate array class methods: append, insert, remove, pop, index, tolist, count the &lt;b&gt;array&lt;/b&gt; class supports the same core mutating methods as a list. each call is chained on the same object so the running effect of every method is visible in order.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q3",
@@ -441,7 +410,9 @@ window.DEFAULT_DATA = {
       "output": "Sorted array: [11, 12, 22, 25, 34, 64, 90]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "sort array elements using the bubble sort technique bubble sort repeatedly walks the array, swapping any adjacent out-of-order pair. after each full pass the largest unsorted element &#x27;bubbles&#x27; to its final position, so n-1 passes fully sort n elements."
+      "dataSearch": "sort array elements using the bubble sort technique bubble sort repeatedly walks the array, swapping any adjacent out-of-order pair. after each full pass the largest unsorted element &#x27;bubbles&#x27; to its final position, so n-1 passes fully sort n elements.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q4",
@@ -461,7 +432,9 @@ window.DEFAULT_DATA = {
       "output": "Element 20 found at index: 3",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "search the position of an element using the index() method &lt;b&gt;array.index(value)&lt;/b&gt; scans the array and returns the position of the first matching element, raising &lt;b&gt;valueerror&lt;/b&gt; if the value is absent."
+      "dataSearch": "search the position of an element using the index() method &lt;b&gt;array.index(value)&lt;/b&gt; scans the array and returns the position of the first matching element, raising &lt;b&gt;valueerror&lt;/b&gt; if the value is absent.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q5",
@@ -481,7 +454,9 @@ window.DEFAULT_DATA = {
       "output": "Prime numbers up to 50: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "generate prime numbers using a function that tests primality &lt;b&gt;is_prime()&lt;/b&gt; checks divisibility only up to &amp;radic;n (via &lt;b&gt;range(2, int(n**0.5)+1)&lt;/b&gt;), which is sufficient because any larger factor would have a matching smaller co-factor already tested."
+      "dataSearch": "generate prime numbers using a function that tests primality &lt;b&gt;is_prime()&lt;/b&gt; checks divisibility only up to &amp;radic;n (via &lt;b&gt;range(2, int(n**0.5)+1)&lt;/b&gt;), which is sufficient because any larger factor would have a matching smaller co-factor already tested.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q6",
@@ -501,7 +476,9 @@ window.DEFAULT_DATA = {
       "output": "Original list: [1, 1, 2, 3, 4, 3, 0, 0]\nList without duplicates: [1, 2, 3, 4, 0]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "remove repeated items from a list so each item appears at most once &lt;b&gt;dict.fromkeys(lst)&lt;/b&gt; builds a dictionary from the list (duplicate keys collapse automatically) while preserving first-seen order (guaranteed since python 3.7); converting back to a list gives the de-duplicated result."
+      "dataSearch": "remove repeated items from a list so each item appears at most once &lt;b&gt;dict.fromkeys(lst)&lt;/b&gt; builds a dictionary from the list (duplicate keys collapse automatically) while preserving first-seen order (guaranteed since python 3.7); converting back to a list gives the de-duplicated result.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q7",
@@ -521,7 +498,9 @@ window.DEFAULT_DATA = {
       "output": "List received in function: [10, 20, 30, 40]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "pass a list to a function and display it lists are passed by object reference in python, so the function receives and can directly print (or mutate) the same list object the caller holds."
+      "dataSearch": "pass a list to a function and display it lists are passed by object reference in python, so the function receives and can directly print (or mutate) the same list object the caller holds.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q8",
@@ -541,7 +520,9 @@ window.DEFAULT_DATA = {
       "output": "Positional: 5 10\nKeyword: Jiya 21\nDefault: Hello, Mohit\nVariable *args: (1, 2, 3)\nVariable **kwargs: {&#x27;city&#x27;: &#x27;Ahmedabad&#x27;, &#x27;pin&#x27;: 380001}",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "demonstrate positional, keyword, default and variable-length arguments python function parameters can be supplied by position, by explicit keyword name, with a fallback default value, or gathered arbitrarily via &lt;b&gt;*args&lt;/b&gt; (extra positionals) and &lt;b&gt;**kwargs&lt;/b&gt; (extra keywords)."
+      "dataSearch": "demonstrate positional, keyword, default and variable-length arguments python function parameters can be supplied by position, by explicit keyword name, with a fallback default value, or gathered arbitrarily via &lt;b&gt;*args&lt;/b&gt; (extra positionals) and &lt;b&gt;**kwargs&lt;/b&gt; (extra keywords).",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q9",
@@ -561,7 +542,9 @@ window.DEFAULT_DATA = {
       "output": "Bigger number: 42",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "lambda/anonymous function to find the bigger of two given numbers a &lt;b&gt;lambda&lt;/b&gt; defines a small unnamed function inline; here it takes two arguments and returns the larger one using a conditional expression, without needing a full &lt;b&gt;def&lt;/b&gt; block."
+      "dataSearch": "lambda/anonymous function to find the bigger of two given numbers a &lt;b&gt;lambda&lt;/b&gt; defines a small unnamed function inline; here it takes two arguments and returns the larger one using a conditional expression, without needing a full &lt;b&gt;def&lt;/b&gt; block.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q10",
@@ -581,7 +564,9 @@ window.DEFAULT_DATA = {
       "output": "Basic: 35000\nDA: 10500.0  HRA: 7000.0\nPF: 4200.0  ITAX: 3500.0\nGross Salary: 52500.0\nNet Salary: 44800.0",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create employee.py (da, hra, pf, itax) and use it to compute gross &amp;amp; net salary &lt;b&gt;employee.py&lt;/b&gt; is written as a reusable module of pure salary-component functions. a second program &lt;b&gt;imports employee as emp&lt;/b&gt; and combines the component values to compute gross (basic + allowances) and net (gross &amp;minus; deductions) salary."
+      "dataSearch": "create employee.py (da, hra, pf, itax) and use it to compute gross &amp;amp; net salary &lt;b&gt;employee.py&lt;/b&gt; is written as a reusable module of pure salary-component functions. a second program &lt;b&gt;imports employee as emp&lt;/b&gt; and combines the component values to compute gross (basic + allowances) and net (gross &amp;minus; deductions) salary.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q11",
@@ -601,7 +586,9 @@ window.DEFAULT_DATA = {
       "output": "Original list: [1, 2, 3, 4, 5]\nAfter append/update/delete: [100, 2, 4, 5, 6]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a list using range() and perform append, update and delete operations &lt;b&gt;list(range(1,6))&lt;/b&gt; builds the initial list; &lt;b&gt;.append()&lt;/b&gt; adds at the end, index assignment updates an element in place, and &lt;b&gt;del lst[i]&lt;/b&gt; removes an element by position."
+      "dataSearch": "create a list using range() and perform append, update and delete operations &lt;b&gt;list(range(1,6))&lt;/b&gt; builds the initial list; &lt;b&gt;.append()&lt;/b&gt; adds at the end, index assignment updates an element in place, and &lt;b&gt;del lst[i]&lt;/b&gt; removes an element by position.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q12",
@@ -621,7 +608,9 @@ window.DEFAULT_DATA = {
       "output": "append(4): [5, 3, 8, 1, 9, 3, 7, 4]\ninsert(0,100): [100, 5, 3, 8, 1, 9, 3, 7, 4]\ncopy(): [100, 5, 3, 8, 1, 9, 3, 7, 4]\nextend([50,60]): [100, 5, 3, 8, 1, 9, 3, 7, 4, 50, 60]\ncount(3): 2\nremove(3): [100, 5, 8, 1, 9, 3, 7, 4, 50, 60]\npop(): [100, 5, 8, 1, 9, 3, 7, 4, 50]\nsort(): [1, 3, 4, 5, 7, 8, 9, 50, 100]\nreverse(): [100, 50, 9, 8, 7, 5, 4, 3, 1]\nclear(): []",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "implement list methods: append, insert, copy, extend, count, remove, pop, sort, reverse, clear each built-in list method is called in sequence on the same 7-element list, and the list is printed after every call so the cumulative effect of each operation is clearly visible."
+      "dataSearch": "implement list methods: append, insert, copy, extend, count, remove, pop, sort, reverse, clear each built-in list method is called in sequence on the same 7-element list, and the list is printed after every call so the cumulative effect of each operation is clearly visible.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q13",
@@ -641,7 +630,9 @@ window.DEFAULT_DATA = {
       "output": "Nested list: [[1, 2, 3], [&#x27;a&#x27;, &#x27;b&#x27;], [True, False, None]]\nSub-list 0: [1, 2, 3]\nSub-list 1: [&#x27;a&#x27;, &#x27;b&#x27;]\nSub-list 2: [True, False, None]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a nested list and display its elements a nested list is simply a list whose elements are themselves lists (of mixed types here). &lt;b&gt;enumerate()&lt;/b&gt; is used to print each sub-list along with its index."
+      "dataSearch": "create a nested list and display its elements a nested list is simply a list whose elements are themselves lists (of mixed types here). &lt;b&gt;enumerate()&lt;/b&gt; is used to print each sub-list along with its index.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q14",
@@ -661,7 +652,9 @@ window.DEFAULT_DATA = {
       "output": "Tuple: (23, 45, 12, 67, 34, 89, 5)\nMin: 5  Max: 89  Sum: 275  Average: 39.29",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "accept elements as a tuple and display minimum, maximum, sum and average tuples support the same built-in aggregate functions as lists &amp;mdash; &lt;b&gt;min()&lt;/b&gt;, &lt;b&gt;max()&lt;/b&gt; and &lt;b&gt;sum()&lt;/b&gt; &amp;mdash; and the average is simply sum divided by &lt;b&gt;len()&lt;/b&gt;."
+      "dataSearch": "accept elements as a tuple and display minimum, maximum, sum and average tuples support the same built-in aggregate functions as lists &amp;mdash; &lt;b&gt;min()&lt;/b&gt;, &lt;b&gt;max()&lt;/b&gt; and &lt;b&gt;sum()&lt;/b&gt; &amp;mdash; and the average is simply sum divided by &lt;b&gt;len()&lt;/b&gt;.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q15",
@@ -681,7 +674,9 @@ window.DEFAULT_DATA = {
       "output": "Original: ((3, &#x27;c&#x27;), (1, &#x27;a&#x27;), (2, &#x27;b&#x27;))\nSorted: ((1, &#x27;a&#x27;), (2, &#x27;b&#x27;), (3, &#x27;c&#x27;))",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "sort a tuple containing nested tuples &lt;b&gt;sorted()&lt;/b&gt; on a tuple of tuples compares element-by-element (first by index 0, then index 1 as a tie-breaker) by default, giving a natural lexicographic order; wrapping the result in &lt;b&gt;tuple()&lt;/b&gt; keeps it immutable."
+      "dataSearch": "sort a tuple containing nested tuples &lt;b&gt;sorted()&lt;/b&gt; on a tuple of tuples compares element-by-element (first by index 0, then index 1 as a tie-breaker) by default, giving a natural lexicographic order; wrapping the result in &lt;b&gt;tuple()&lt;/b&gt; keeps it immutable.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q16",
@@ -701,7 +696,9 @@ window.DEFAULT_DATA = {
       "output": "Scores: {&#x27;Mohit&#x27;: 82, &#x27;Bhavesh&#x27;: 45, &#x27;Jadav&#x27;: 61, &#x27;Pruthvi&#x27;: 30}\nEnter player name to check score: Jadav\nJadav&#x27;s score: 61",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "dictionary of cricket players&#x27; scores; retrieve a score by player name a dictionary maps each player&#x27;s name (key) to their score (value) in o(1) lookup time. &lt;b&gt;.get(name, default)&lt;/b&gt; retrieves the score safely, returning a fallback message if the name isn&#x27;t found."
+      "dataSearch": "dictionary of cricket players&#x27; scores; retrieve a score by player name a dictionary maps each player&#x27;s name (key) to their score (value) in o(1) lookup time. &lt;b&gt;.get(name, default)&lt;/b&gt; retrieves the score safely, returning a fallback message if the name isn&#x27;t found.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q17",
@@ -721,7 +718,9 @@ window.DEFAULT_DATA = {
       "output": "Resulting dictionary: {&#x27;name&#x27;: &#x27;Meet&#x27;, &#x27;age&#x27;: 30, &#x27;city&#x27;: &#x27;Ahmedabad&#x27;}",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "convert the elements of two lists into key-value pairs of a dictionary &lt;b&gt;zip(keys, values)&lt;/b&gt; pairs up the two lists element-by-element into tuples, and &lt;b&gt;dict()&lt;/b&gt; converts that sequence of pairs directly into a dictionary."
+      "dataSearch": "convert the elements of two lists into key-value pairs of a dictionary &lt;b&gt;zip(keys, values)&lt;/b&gt; pairs up the two lists element-by-element into tuples, and &lt;b&gt;dict()&lt;/b&gt; converts that sequence of pairs directly into a dictionary.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-2-q18",
@@ -741,7 +740,9 @@ window.DEFAULT_DATA = {
       "output": "Python: PY501\nDBMS: DB402\nAI: AI601",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "function that accepts a dictionary and displays its elements the function receives the dictionary object by reference and iterates over it with &lt;b&gt;.items()&lt;/b&gt;, which yields each key-value pair together for clean, single-pass printing."
+      "dataSearch": "function that accepts a dictionary and displays its elements the function receives the dictionary object by reference and iterates over it with &lt;b&gt;.items()&lt;/b&gt;, which yields each key-value pair together for clean, single-pass printing.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q1",
@@ -761,7 +762,9 @@ window.DEFAULT_DATA = {
       "output": "Name: Hasnain, Roll No: 101, Marks: 88",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "student class with a multi-parameter constructor and a display() method &lt;b&gt;__init__&lt;/b&gt; is the constructor, called automatically on &lt;b&gt;student(...)&lt;/b&gt;; it accepts more than one parameter and stores each as an instance attribute via &lt;b&gt;self&lt;/b&gt;. &lt;b&gt;display()&lt;/b&gt; then reads those attributes back."
+      "dataSearch": "student class with a multi-parameter constructor and a display() method &lt;b&gt;__init__&lt;/b&gt; is the constructor, called automatically on &lt;b&gt;student(...)&lt;/b&gt;; it accepts more than one parameter and stores each as an instance attribute via &lt;b&gt;self&lt;/b&gt;. &lt;b&gt;display()&lt;/b&gt; then reads those attributes back.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q2",
@@ -781,7 +784,9 @@ window.DEFAULT_DATA = {
       "output": "Janvi studies at LJCCA\nDisha studies at LJCCA\nAfter update -&gt; Janvi: L J College of Computer Applications, Disha: L J College of Computer Applications",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "demonstrate the use of instance variables and class/static variables a variable declared directly inside the class body (&lt;b&gt;college&lt;/b&gt;) is a class variable shared by every instance; a variable assigned via &lt;b&gt;self.&lt;/b&gt; in &lt;b&gt;__init__&lt;/b&gt; is unique per object. changing the class variable through the class name updates it for all instances at once."
+      "dataSearch": "demonstrate the use of instance variables and class/static variables a variable declared directly inside the class body (&lt;b&gt;college&lt;/b&gt;) is a class variable shared by every instance; a variable assigned via &lt;b&gt;self.&lt;/b&gt; in &lt;b&gt;__init__&lt;/b&gt; is unique per object. changing the class variable through the class name updates it for all instances at once.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q3",
@@ -801,7 +806,9 @@ window.DEFAULT_DATA = {
       "output": "Balance via accessor: 5000",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "store data using mutator methods and retrieve it using accessor methods the balance is kept as a name-mangled private attribute (&lt;b&gt;__balance&lt;/b&gt;), only reachable through the class&#x27;s own methods &amp;mdash; a mutator (&lt;b&gt;set_balance&lt;/b&gt;) writes it and an accessor (&lt;b&gt;get_balance&lt;/b&gt;) reads it, which is the standard encapsulation pattern."
+      "dataSearch": "store data using mutator methods and retrieve it using accessor methods the balance is kept as a name-mangled private attribute (&lt;b&gt;__balance&lt;/b&gt;), only reachable through the class&#x27;s own methods &amp;mdash; a mutator (&lt;b&gt;set_balance&lt;/b&gt;) writes it and an accessor (&lt;b&gt;get_balance&lt;/b&gt;) reads it, which is the standard encapsulation pattern.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q4",
@@ -821,7 +828,9 @@ window.DEFAULT_DATA = {
       "output": "Jiya -&gt; LJ University\nMeet -&gt; LJ University",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "use a class method to handle common features of all student instances a &lt;b&gt;@classmethod&lt;/b&gt; receives the class itself (&lt;b&gt;cls&lt;/b&gt;) instead of an instance, so it can modify state shared across every object &amp;mdash; here updating the shared &lt;b&gt;college&lt;/b&gt; value for all current and future student objects."
+      "dataSearch": "use a class method to handle common features of all student instances a &lt;b&gt;@classmethod&lt;/b&gt; receives the class itself (&lt;b&gt;cls&lt;/b&gt;) instead of an instance, so it can modify state shared across every object &amp;mdash; here updating the shared &lt;b&gt;college&lt;/b&gt; value for all current and future student objects.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q5",
@@ -841,7 +850,9 @@ window.DEFAULT_DATA = {
       "output": "Total Student instances created: 3",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "static method that counts the number of instances created for a class each call to the constructor increments a class-level counter. a &lt;b&gt;@staticmethod&lt;/b&gt; doesn&#x27;t need &lt;b&gt;self&lt;/b&gt; or &lt;b&gt;cls&lt;/b&gt; &amp;mdash; it&#x27;s used here purely as a namespaced utility function to report that counter."
+      "dataSearch": "static method that counts the number of instances created for a class each call to the constructor increments a class-level counter. a &lt;b&gt;@staticmethod&lt;/b&gt; doesn&#x27;t need &lt;b&gt;self&lt;/b&gt; or &lt;b&gt;cls&lt;/b&gt; &amp;mdash; it&#x27;s used here purely as a namespaced utility function to report that counter.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q6",
@@ -861,7 +872,9 @@ window.DEFAULT_DATA = {
       "output": "Deposited 5000. New balance: 15000\nWithdrew 3000. New balance: 12000",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "bank class with deposit and withdrawal using instance methods each &lt;b&gt;bank&lt;/b&gt; object keeps its own &lt;b&gt;balance&lt;/b&gt; attribute; &lt;b&gt;deposit()&lt;/b&gt; and &lt;b&gt;withdraw()&lt;/b&gt; are ordinary instance methods that read and mutate &lt;b&gt;self.balance&lt;/b&gt;, with a simple guard against over-withdrawal."
+      "dataSearch": "bank class with deposit and withdrawal using instance methods each &lt;b&gt;bank&lt;/b&gt; object keeps its own &lt;b&gt;balance&lt;/b&gt; attribute; &lt;b&gt;deposit()&lt;/b&gt; and &lt;b&gt;withdraw()&lt;/b&gt; are ordinary instance methods that read and mutate &lt;b&gt;self.balance&lt;/b&gt;, with a simple guard against over-withdrawal.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q7",
@@ -881,7 +894,9 @@ window.DEFAULT_DATA = {
       "output": "ID: 21, Name: Pruthvi, Marks: 91",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "student class with set_/get_ methods (saved as student.py) used from another program &lt;b&gt;student.py&lt;/b&gt; defines the reusable &lt;b&gt;student&lt;/b&gt; class with mutator methods (&lt;b&gt;set_id&lt;/b&gt;, &lt;b&gt;set_name&lt;/b&gt;, &lt;b&gt;set_marks&lt;/b&gt;) and accessor methods (&lt;b&gt;get_id&lt;/b&gt;, &lt;b&gt;get_name&lt;/b&gt;, &lt;b&gt;get_marks&lt;/b&gt;). a separate program simply does &lt;b&gt;from student import student&lt;/b&gt; to reuse it."
+      "dataSearch": "student class with set_/get_ methods (saved as student.py) used from another program &lt;b&gt;student.py&lt;/b&gt; defines the reusable &lt;b&gt;student&lt;/b&gt; class with mutator methods (&lt;b&gt;set_id&lt;/b&gt;, &lt;b&gt;set_name&lt;/b&gt;, &lt;b&gt;set_marks&lt;/b&gt;) and accessor methods (&lt;b&gt;get_id&lt;/b&gt;, &lt;b&gt;get_name&lt;/b&gt;, &lt;b&gt;get_marks&lt;/b&gt;). a separate program simply does &lt;b&gt;from student import student&lt;/b&gt; to reuse it.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q8",
@@ -901,7 +916,9 @@ window.DEFAULT_DATA = {
       "output": "Name: Mohit\nSalary: 45000",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "access the base class constructor and method in a subclass using super() &lt;b&gt;super().__init__(name)&lt;/b&gt; calls the parent &lt;b&gt;person&lt;/b&gt; constructor so the subclass doesn&#x27;t need to duplicate that setup logic, and &lt;b&gt;super().show()&lt;/b&gt; similarly reuses the parent&#x27;s method before extending it."
+      "dataSearch": "access the base class constructor and method in a subclass using super() &lt;b&gt;super().__init__(name)&lt;/b&gt; calls the parent &lt;b&gt;person&lt;/b&gt; constructor so the subclass doesn&#x27;t need to duplicate that setup logic, and &lt;b&gt;super().show()&lt;/b&gt; similarly reuses the parent&#x27;s method before extending it.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q9",
@@ -921,7 +938,9 @@ window.DEFAULT_DATA = {
       "output": "Brand: Tata\nWheels: 4\nBrand: Honda\nWheels: 2",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "single inheritance: two subclasses derived from a single base class both &lt;b&gt;car&lt;/b&gt; and &lt;b&gt;bike&lt;/b&gt; inherit from the common base &lt;b&gt;vehicle&lt;/b&gt;, automatically getting its &lt;b&gt;brand&lt;/b&gt; attribute and &lt;b&gt;info()&lt;/b&gt; method, while each adds its own specialised &lt;b&gt;wheels()&lt;/b&gt; method."
+      "dataSearch": "single inheritance: two subclasses derived from a single base class both &lt;b&gt;car&lt;/b&gt; and &lt;b&gt;bike&lt;/b&gt; inherit from the common base &lt;b&gt;vehicle&lt;/b&gt;, automatically getting its &lt;b&gt;brand&lt;/b&gt; attribute and &lt;b&gt;info()&lt;/b&gt; method, while each adds its own specialised &lt;b&gt;wheels()&lt;/b&gt; method.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q10",
@@ -941,7 +960,9 @@ window.DEFAULT_DATA = {
       "output": "Father: Business\nMother: Music\nChild: Coding",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "multiple inheritance using two base classes &lt;b&gt;class child(father, mother)&lt;/b&gt; inherits from both parent classes at once, so a &lt;b&gt;child&lt;/b&gt; instance has access to methods defined in either base class, plus its own."
+      "dataSearch": "multiple inheritance using two base classes &lt;b&gt;class child(father, mother)&lt;/b&gt; inherits from both parent classes at once, so a &lt;b&gt;child&lt;/b&gt; instance has access to methods defined in either base class, plus its own.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q11",
@@ -961,7 +982,9 @@ window.DEFAULT_DATA = {
       "output": "Hello from B\nMRO: [&#x27;D&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;A&#x27;, &#x27;object&#x27;]",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "understand the order of execution of methods using method resolution order (mro) when multiple base classes define the same method, python resolves which one runs using the c3 linearisation algorithm, exposed via &lt;b&gt;classname.__mro__&lt;/b&gt;; here &lt;b&gt;d(b, c)&lt;/b&gt; picks &lt;b&gt;b&lt;/b&gt;&#x27;s &lt;b&gt;greet()&lt;/b&gt; first because &lt;b&gt;b&lt;/b&gt; precedes &lt;b&gt;c&lt;/b&gt; in the mro."
+      "dataSearch": "understand the order of execution of methods using method resolution order (mro) when multiple base classes define the same method, python resolves which one runs using the c3 linearisation algorithm, exposed via &lt;b&gt;classname.__mro__&lt;/b&gt;; here &lt;b&gt;d(b, c)&lt;/b&gt; picks &lt;b&gt;b&lt;/b&gt;&#x27;s &lt;b&gt;greet()&lt;/b&gt; first because &lt;b&gt;b&lt;/b&gt; precedes &lt;b&gt;c&lt;/b&gt; in the mro.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q12",
@@ -981,7 +1004,9 @@ window.DEFAULT_DATA = {
       "output": "Is s a Student instance? True\nDoes s have method &#x27;study&#x27;? True\nDoes s have method &#x27;fly&#x27;? False",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "check the object type to know whether a method exists in the object or not &lt;b&gt;isinstance()&lt;/b&gt; checks whether an object belongs to a given class, and &lt;b&gt;hasattr(obj, name)&lt;/b&gt; checks &amp;mdash; without calling it &amp;mdash; whether an attribute or method with that name exists on the object."
+      "dataSearch": "check the object type to know whether a method exists in the object or not &lt;b&gt;isinstance()&lt;/b&gt; checks whether an object belongs to a given class, and &lt;b&gt;hasattr(obj, name)&lt;/b&gt; checks &amp;mdash; without calling it &amp;mdash; whether an attribute or method with that name exists on the object.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q13",
@@ -1001,7 +1026,9 @@ window.DEFAULT_DATA = {
       "output": "p1 + p2 = (6, 8)",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "overload the addition operator (+) to act on class objects defining the dunder method &lt;b&gt;__add__(self, other)&lt;/b&gt; lets python route the &lt;b&gt;+&lt;/b&gt; operator between two &lt;b&gt;point&lt;/b&gt; objects to custom logic, here adding their x and y coordinates component-wise."
+      "dataSearch": "overload the addition operator (+) to act on class objects defining the dunder method &lt;b&gt;__add__(self, other)&lt;/b&gt; lets python route the &lt;b&gt;+&lt;/b&gt; operator between two &lt;b&gt;point&lt;/b&gt; objects to custom logic, here adding their x and y coordinates component-wise.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q14",
@@ -1021,7 +1048,9 @@ window.DEFAULT_DATA = {
       "output": "Sum of 2 numbers: 15\nSum of 3 numbers: 30",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "method overloading to find the sum of two or three numbers python doesn&#x27;t support true method overloading (same name, different signatures) like java/c++; the idiomatic equivalent is a single method with an optional/default parameter (&lt;b&gt;c=0&lt;/b&gt;) so it can be called with either 2 or 3 arguments."
+      "dataSearch": "method overloading to find the sum of two or three numbers python doesn&#x27;t support true method overloading (same name, different signatures) like java/c++; the idiomatic equivalent is a single method with an optional/default parameter (&lt;b&gt;c=0&lt;/b&gt;) so it can be called with either 2 or 3 arguments.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q15",
@@ -1041,7 +1070,9 @@ window.DEFAULT_DATA = {
       "output": "Area not defined for generic shape\nArea of square: 36",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "override the superclass method in a subclass &lt;b&gt;square&lt;/b&gt; defines its own &lt;b&gt;area()&lt;/b&gt; method with the same name as the one in &lt;b&gt;shape&lt;/b&gt;; python&#x27;s dynamic dispatch means calling &lt;b&gt;.area()&lt;/b&gt; on a &lt;b&gt;square&lt;/b&gt; object always uses the subclass&#x27;s overriding version."
+      "dataSearch": "override the superclass method in a subclass &lt;b&gt;square&lt;/b&gt; defines its own &lt;b&gt;area()&lt;/b&gt; method with the same name as the one in &lt;b&gt;shape&lt;/b&gt;; python&#x27;s dynamic dispatch means calling &lt;b&gt;.area()&lt;/b&gt; on a &lt;b&gt;square&lt;/b&gt; object always uses the subclass&#x27;s overriding version.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q16",
@@ -1061,7 +1092,9 @@ window.DEFAULT_DATA = {
       "output": "Error: Division by zero is not allowed!",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "handle a built-in exception &amp;mdash; zerodivisionerror dividing by zero raises &lt;b&gt;zerodivisionerror&lt;/b&gt; at runtime; wrapping the risky line in a &lt;b&gt;try/except zerodivisionerror&lt;/b&gt; block catches it and lets the program respond gracefully instead of crashing."
+      "dataSearch": "handle a built-in exception &amp;mdash; zerodivisionerror dividing by zero raises &lt;b&gt;zerodivisionerror&lt;/b&gt; at runtime; wrapping the risky line in a &lt;b&gt;try/except zerodivisionerror&lt;/b&gt; block catches it and lets the program respond gracefully instead of crashing.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-3-q17",
@@ -1081,7 +1114,9 @@ window.DEFAULT_DATA = {
       "output": "Error: List index out of range!",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "handle multiple exceptions a single &lt;b&gt;try&lt;/b&gt; block can be followed by several &lt;b&gt;except&lt;/b&gt; clauses, each matching a different exception type (&lt;b&gt;indexerror&lt;/b&gt;, &lt;b&gt;zerodivisionerror&lt;/b&gt;, or a generic &lt;b&gt;exception&lt;/b&gt; as a catch-all) so different failures get different handling."
+      "dataSearch": "handle multiple exceptions a single &lt;b&gt;try&lt;/b&gt; block can be followed by several &lt;b&gt;except&lt;/b&gt; clauses, each matching a different exception type (&lt;b&gt;indexerror&lt;/b&gt;, &lt;b&gt;zerodivisionerror&lt;/b&gt;, or a generic &lt;b&gt;exception&lt;/b&gt; as a catch-all) so different failures get different handling.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q1",
@@ -1101,7 +1136,9 @@ window.DEFAULT_DATA = {
       "output": "Database &#x27;Sample_DB&#x27; created.\nEMPLOYEE table records:\n(1, &#x27;Jadav&#x27;, 45000.0)\n(2, &#x27;Hasnain&#x27;, 52000.0)\n(3, &#x27;Disha&#x27;, 38000.0)",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create database &quot;sample_db&quot; in mysql with an employee table; check connection/existence and display records &lt;b&gt;mysql.connector.connect()&lt;/b&gt; opens the connection; &lt;b&gt;show databases like&lt;/b&gt; checks whether sample_db already exists before creating it, avoiding a duplicate-database error. &lt;b&gt;executemany()&lt;/b&gt; with &lt;b&gt;insert ignore&lt;/b&gt; loads sample rows, and a final &lt;b&gt;select *&lt;/b&gt; lists them."
+      "dataSearch": "create database &quot;sample_db&quot; in mysql with an employee table; check connection/existence and display records &lt;b&gt;mysql.connector.connect()&lt;/b&gt; opens the connection; &lt;b&gt;show databases like&lt;/b&gt; checks whether sample_db already exists before creating it, avoiding a duplicate-database error. &lt;b&gt;executemany()&lt;/b&gt; with &lt;b&gt;insert ignore&lt;/b&gt; loads sample rows, and a final &lt;b&gt;select *&lt;/b&gt; lists them.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q2",
@@ -1121,7 +1158,9 @@ window.DEFAULT_DATA = {
       "output": "Enter employee id (eid): 2\nEnter salary increase amount: 5000\n1 record(s) updated.",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "increase the salary of an employee by accepting the employee id (eid) from the user a parameterised &lt;b&gt;update ... where eid = %s&lt;/b&gt; query safely (sql-injection-proof) adds the entered hike to the matching employee&#x27;s salary; &lt;b&gt;cursor.rowcount&lt;/b&gt; confirms whether a matching row was actually updated."
+      "dataSearch": "increase the salary of an employee by accepting the employee id (eid) from the user a parameterised &lt;b&gt;update ... where eid = %s&lt;/b&gt; query safely (sql-injection-proof) adds the entered hike to the matching employee&#x27;s salary; &lt;b&gt;cursor.rowcount&lt;/b&gt; confirms whether a matching row was actually updated.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q3",
@@ -1141,7 +1180,9 @@ window.DEFAULT_DATA = {
       "output": "Enter employee id (eid) to delete: 3\n1 record(s) deleted.",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "delete a row from the employee table by accepting the employee id (eid) from the user a parameterised &lt;b&gt;delete from employee where eid = %s&lt;/b&gt; removes the matching row; checking &lt;b&gt;cursor.rowcount&lt;/b&gt; afterwards confirms whether a record with that id actually existed and was removed."
+      "dataSearch": "delete a row from the employee table by accepting the employee id (eid) from the user a parameterised &lt;b&gt;delete from employee where eid = %s&lt;/b&gt; removes the matching row; checking &lt;b&gt;cursor.rowcount&lt;/b&gt; afterwards confirms whether a record with that id actually existed and was removed.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q4",
@@ -1161,7 +1202,9 @@ window.DEFAULT_DATA = {
       "output": "0    10\n1    20\n2    30\n3    40\n4    50\ndtype: int64",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a pandas series from a list of integers &lt;b&gt;pd.series(list)&lt;/b&gt; wraps a plain python list into a labelled, one-dimensional pandas array, automatically assigning a default positional index (0, 1, 2 ...)."
+      "dataSearch": "create a pandas series from a list of integers &lt;b&gt;pd.series(list)&lt;/b&gt; wraps a plain python list into a labelled, one-dimensional pandas array, automatically assigning a default positional index (0, 1, 2 ...).",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q5",
@@ -1181,7 +1224,9 @@ window.DEFAULT_DATA = {
       "output": "Name  Age  Marks\n0    Jadav   20     88\n1  Hasnain   21     92\n2    Disha   19     76",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a dataframe from a .csv file &lt;b&gt;pd.read_csv()&lt;/b&gt; parses a comma-separated file directly into a dataframe, automatically using the first row as column headers and inferring each column&#x27;s data type."
+      "dataSearch": "create a dataframe from a .csv file &lt;b&gt;pd.read_csv()&lt;/b&gt; parses a comma-separated file directly into a dataframe, automatically using the first row as column headers and inferring each column&#x27;s data type.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q6",
@@ -1201,7 +1246,9 @@ window.DEFAULT_DATA = {
       "output": "Name  Marks\n0    Jadav     88\n1  Hasnain     92\n2    Disha     76",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create a dataframe from a dictionary when a dictionary is passed to &lt;b&gt;pd.dataframe()&lt;/b&gt;, each key becomes a column name and its list value becomes that column&#x27;s data, aligned row-wise by position."
+      "dataSearch": "create a dataframe from a dictionary when a dictionary is passed to &lt;b&gt;pd.dataframe()&lt;/b&gt;, each key becomes a column name and its list value becomes that column&#x27;s data, aligned row-wise by position.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q7",
@@ -1221,7 +1268,9 @@ window.DEFAULT_DATA = {
       "output": "DataFrame:\n       Name       City\n0    Jadav  Ahmedabad\n1  Hasnain      Surat\n2    Disha     Rajkot\n\nCity column:\n 0    Ahmedabad\n1        Surat\n2       Rajkot\nName: City, dtype: str",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "dataframe with columns [&#x27;name&#x27;, &#x27;city&#x27;]: access and display the &#x27;city&#x27; column a single column of a dataframe can be selected like a dictionary value, using &lt;b&gt;df[&quot;city&quot;]&lt;/b&gt;, which returns that column as a pandas series."
+      "dataSearch": "dataframe with columns [&#x27;name&#x27;, &#x27;city&#x27;]: access and display the &#x27;city&#x27; column a single column of a dataframe can be selected like a dictionary value, using &lt;b&gt;df[&quot;city&quot;]&lt;/b&gt;, which returns that column as a pandas series.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q8",
@@ -1241,7 +1290,9 @@ window.DEFAULT_DATA = {
       "output": "Name  Age  Score\n1  Hasnain   21     95\n2    Disha   19     88\n0    Jadav   20     78",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "dataframe with columns [&#x27;name&#x27;,&#x27;age&#x27;,&#x27;score&#x27;] sorted by &#x27;score&#x27; in descending order &lt;b&gt;df.sort_values(by=&quot;score&quot;, ascending=false)&lt;/b&gt; reorders the rows by the score column from highest to lowest, keeping the original index labels attached to each row."
+      "dataSearch": "dataframe with columns [&#x27;name&#x27;,&#x27;age&#x27;,&#x27;score&#x27;] sorted by &#x27;score&#x27; in descending order &lt;b&gt;df.sort_values(by=&quot;score&quot;, ascending=false)&lt;/b&gt; reorders the rows by the score column from highest to lowest, keeping the original index labels attached to each row.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q9",
@@ -1261,7 +1312,9 @@ window.DEFAULT_DATA = {
       "output": "Before:\n      A    B\n0  1.0  NaN\n1  NaN  4.0\n2  3.0  5.0\n\nAfter filling with 0:\n      A    B\n0  1.0  0.0\n1  0.0  4.0\n2  3.0  5.0",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "fill missing (none) values in columns &#x27;a&#x27; and &#x27;b&#x27; with 0 &lt;b&gt;none&lt;/b&gt; values become &lt;b&gt;nan&lt;/b&gt; inside a dataframe. &lt;b&gt;df[[cols]].fillna(0)&lt;/b&gt; replaces every nan in the selected columns with 0, and the result is written back into the dataframe."
+      "dataSearch": "fill missing (none) values in columns &#x27;a&#x27; and &#x27;b&#x27; with 0 &lt;b&gt;none&lt;/b&gt; values become &lt;b&gt;nan&lt;/b&gt; inside a dataframe. &lt;b&gt;df[[cols]].fillna(0)&lt;/b&gt; replaces every nan in the selected columns with 0, and the result is written back into the dataframe.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q10",
@@ -1281,7 +1334,9 @@ window.DEFAULT_DATA = {
       "output": "ID     Name  Age\n0   1  Krishna   25\n1   2    Arjun   30",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "create two dataframes and merge them using merge() based on the &#x27;id&#x27; column &lt;b&gt;pd.merge(df1, df2, on=&quot;id&quot;)&lt;/b&gt; performs a sql-style inner join, matching rows from both dataframes wherever the id column values agree, combining their remaining columns side by side."
+      "dataSearch": "create two dataframes and merge them using merge() based on the &#x27;id&#x27; column &lt;b&gt;pd.merge(df1, df2, on=&quot;id&quot;)&lt;/b&gt; performs a sql-style inner join, matching rows from both dataframes wherever the id column values agree, combining their remaining columns side by side.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q11",
@@ -1301,7 +1356,9 @@ window.DEFAULT_DATA = {
       "output": "mean  max  min\nCategory                \nA         20.0   30   10\nB         30.0   40   20",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "group data by &#x27;category&#x27; and calculate mean, max and min of &#x27;value&#x27; for each group &lt;b&gt;df.groupby(&quot;category&quot;)&lt;/b&gt; splits the dataframe into groups sharing the same category, and &lt;b&gt;.agg([...])&lt;/b&gt; applies several aggregate functions to the value column of each group in one call."
+      "dataSearch": "group data by &#x27;category&#x27; and calculate mean, max and min of &#x27;value&#x27; for each group &lt;b&gt;df.groupby(&quot;category&quot;)&lt;/b&gt; splits the dataframe into groups sharing the same category, and &lt;b&gt;.agg([...])&lt;/b&gt; applies several aggregate functions to the value column of each group in one call.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q12",
@@ -1321,7 +1378,9 @@ window.DEFAULT_DATA = {
       "output": "Bar chart generated (see figure below).",
       "chartSrc": "./assets/images/chart_unit-4-q12.png",
       "chartAlt": "Chart output for Bar graph: employee id numbers on X-axis, salaries on Y-axis",
-      "dataSearch": "bar graph: employee id numbers on x-axis, salaries on y-axis &lt;b&gt;matplotlib.pyplot.bar()&lt;/b&gt; draws one bar per employee, with the x-position from the id list and bar height from the salary list; axis labels and a title make the chart self-explanatory."
+      "dataSearch": "bar graph: employee id numbers on x-axis, salaries on y-axis &lt;b&gt;matplotlib.pyplot.bar()&lt;/b&gt; draws one bar per employee, with the x-position from the id list and bar height from the salary list; axis labels and a title make the chart self-explanatory.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q13",
@@ -1341,7 +1400,9 @@ window.DEFAULT_DATA = {
       "output": "Grouped bar chart generated (see figure below).",
       "chartSrc": "./assets/images/chart_unit-4-q13.png",
       "chartAlt": "Chart output for Bar graph comparing employee salaries across two departments",
-      "dataSearch": "bar graph comparing employee salaries across two departments two &lt;b&gt;bar()&lt;/b&gt; calls are offset by half the bar width (&lt;b&gt;x &amp;minus; width/2&lt;/b&gt; and &lt;b&gt;x + width/2&lt;/b&gt;) so the sales and it department bars sit side by side at each employee-id position instead of overlapping."
+      "dataSearch": "bar graph comparing employee salaries across two departments two &lt;b&gt;bar()&lt;/b&gt; calls are offset by half the bar width (&lt;b&gt;x &amp;minus; width/2&lt;/b&gt; and &lt;b&gt;x + width/2&lt;/b&gt;) so the sales and it department bars sit side by side at each employee-id position instead of overlapping.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q14",
@@ -1361,7 +1422,9 @@ window.DEFAULT_DATA = {
       "output": "Histogram generated (see figure below).",
       "chartSrc": "./assets/images/chart_unit-4-q14.png",
       "chartAlt": "Chart output for Histogram showing the number of employees in specific age groups",
-      "dataSearch": "histogram showing the number of employees in specific age groups &lt;b&gt;plt.hist()&lt;/b&gt; automatically counts how many age values fall into each bin (the age-range boundaries passed via &lt;b&gt;bins=[...]&lt;/b&gt;) and draws a bar per bin &amp;mdash; ideal for visualising a frequency distribution."
+      "dataSearch": "histogram showing the number of employees in specific age groups &lt;b&gt;plt.hist()&lt;/b&gt; automatically counts how many age values fall into each bin (the age-range boundaries passed via &lt;b&gt;bins=[...]&lt;/b&gt;) and draws a bar per bin &amp;mdash; ideal for visualising a frequency distribution.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q15",
@@ -1381,7 +1444,9 @@ window.DEFAULT_DATA = {
       "output": "Pie chart generated (see figure below).",
       "chartSrc": "./assets/images/chart_unit-4-q15.png",
       "chartAlt": "Chart output for Pie chart showing the percentage of employees in each department",
-      "dataSearch": "pie chart showing the percentage of employees in each department &lt;b&gt;plt.pie()&lt;/b&gt; converts the raw employee counts into proportional wedge angles automatically; &lt;b&gt;autopct=&quot;%1.1f%%&quot;&lt;/b&gt; labels each wedge with its computed percentage share."
+      "dataSearch": "pie chart showing the percentage of employees in each department &lt;b&gt;plt.pie()&lt;/b&gt; converts the raw employee counts into proportional wedge angles automatically; &lt;b&gt;autopct=&quot;%1.1f%%&quot;&lt;/b&gt; labels each wedge with its computed percentage share.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "unit-4-q16",
@@ -1401,7 +1466,9 @@ window.DEFAULT_DATA = {
       "output": "Line chart generated (see figure below).",
       "chartSrc": "./assets/images/chart_unit-4-q16.png",
       "chartAlt": "Chart output for Line graph showing the profits of a company across various years",
-      "dataSearch": "line graph showing the profits of a company across various years &lt;b&gt;plt.plot()&lt;/b&gt; connects the (year, profit) points with a line, which is the natural chart type for showing a trend over a continuous, ordered axis such as time."
+      "dataSearch": "line graph showing the profits of a company across various years &lt;b&gt;plt.plot()&lt;/b&gt; connects the (year, profit) points with a line, which is the natural chart type for showing a trend over a continuous, ordered axis such as time.",
+      "subjectId": "sub-py-sem5",
+      "semesterId": "sem-5"
     },
     {
       "id": "sem1-c-q1",
