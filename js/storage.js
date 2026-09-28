@@ -181,9 +181,49 @@
     ];
   }
 
+  let localSyncTimer = null;
+  async function triggerLocalFileSync(immediate = false) {
+    if (typeof window === 'undefined' || !window.location) return;
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocal) return;
+
+    const performSync = async () => {
+      try {
+        const fullData = {
+          semesters: loadSemesters(),
+          subjects: loadSubjects(),
+          units: loadUnits(),
+          questions: loadQuestions()
+        };
+        const res = await fetch('/api/save-data', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fullData)
+        });
+        if (res.ok) {
+          const result = await res.json();
+          console.log('[Storage] Saved dataset to js/data.js:', result);
+          window.dispatchEvent(new CustomEvent('practicals:file-synced', { detail: result }));
+          return result;
+        }
+      } catch (err) {
+        console.warn('[Storage] Could not auto-save to js/data.js:', err);
+      }
+    };
+
+    if (immediate) {
+      if (localSyncTimer) clearTimeout(localSyncTimer);
+      return await performSync();
+    }
+
+    if (localSyncTimer) clearTimeout(localSyncTimer);
+    localSyncTimer = setTimeout(performSync, 400);
+  }
+
   function saveSemesters(semesters) {
     try {
       localStorage.setItem(STORAGE_KEY_SEMESTERS, JSON.stringify(semesters));
+      triggerLocalFileSync();
       return true;
     } catch (e) {
       console.error('Failed to save semesters:', e);
@@ -327,6 +367,7 @@
   function saveSubjects(subjects) {
     try {
       localStorage.setItem(STORAGE_KEY_SUBJECTS, JSON.stringify(subjects));
+      triggerLocalFileSync();
       return true;
     } catch (e) {
       console.error('Failed to save subjects:', e);
@@ -490,6 +531,7 @@
   function saveUnits(units) {
     try {
       localStorage.setItem(STORAGE_KEY_UNITS, JSON.stringify(units));
+      triggerLocalFileSync();
       return true;
     } catch (e) {
       console.error('Failed to save units:', e);
@@ -673,6 +715,7 @@
   function saveQuestions(questions) {
     try {
       localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(questions));
+      triggerLocalFileSync();
       return true;
     } catch (e) {
       console.error('Failed to save questions:', e);
@@ -1419,10 +1462,11 @@
     reorderQuestions,
     searchQuestions,
 
-    // Cloud Synchronization
+    // Cloud Synchronization & Local File Sync
     syncFromCloud,
     pushAllToCloud,
     initCloudSync,
+    syncToLocalFile: triggerLocalFileSync,
 
     // Tools & Utilities
     resetToDefaults,

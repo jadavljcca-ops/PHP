@@ -38,6 +38,7 @@
     bindSemesterEvents();
     bindModalEvents();
     bindSupabaseEvents();
+    bindGitHubSyncEvents();
   }
 
   /* ==========================================================================
@@ -2272,6 +2273,93 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
     } catch (e) {
       dot.style.background = '#ef4444';
       text.textContent = 'Connection test failed';
+    }
+  }
+
+  /* ==========================================================================
+     LOCAL FILE SYNC & GITHUB INTEGRATION
+     ========================================================================== */
+
+  function bindGitHubSyncEvents() {
+    const saveBtn = document.getElementById('save-to-file-btn');
+    const pushBtn = document.getElementById('push-github-btn');
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    // If not running on localhost, hide the buttons
+    if (!isLocal) {
+      if (saveBtn) saveBtn.style.display = 'none';
+      if (pushBtn) pushBtn.style.display = 'none';
+      return;
+    }
+
+    // Auto-sync existing browser dataset to js/data.js when admin loads
+    if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {
+      setTimeout(() => {
+        window.PracticalsStorage.syncToLocalFile(false);
+      }, 500);
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', async () => {
+        const textSpan = document.getElementById('save-file-btn-text');
+        const origText = textSpan ? textSpan.textContent : 'Save for GitHub';
+        if (textSpan) textSpan.textContent = 'Saving...';
+        saveBtn.disabled = true;
+
+        try {
+          if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {
+            const res = await window.PracticalsStorage.syncToLocalFile(true);
+            if (res && res.success) {
+              showToast(`✅ Saved to js/data.js (${res.counts ? res.counts.subjects : 0} subjects). Ready to push!`, 'success');
+            } else {
+              showToast('Saved to js/data.js', 'success');
+            }
+          }
+        } catch (err) {
+          showToast('Failed to save to js/data.js: ' + err.message, 'error');
+        } finally {
+          if (textSpan) textSpan.textContent = origText;
+          saveBtn.disabled = false;
+        }
+      });
+    }
+
+    if (pushBtn) {
+      pushBtn.addEventListener('click', async () => {
+        const textSpan = document.getElementById('push-github-btn-text');
+        const origText = textSpan ? textSpan.textContent : 'Push to GitHub';
+
+        const confirmPush = confirm('Kya aap is dataset ko GitHub par commit & push karna chahte hain?');
+        if (!confirmPush) return;
+
+        if (textSpan) textSpan.textContent = 'Pushing...';
+        pushBtn.disabled = true;
+
+        try {
+          // First ensure data.js is updated with all latest items
+          if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {
+            await window.PracticalsStorage.syncToLocalFile(true);
+          }
+
+          const res = await fetch('/api/git-push', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: 'Update practicals dataset from admin portal' })
+          });
+
+          const data = await res.json();
+          if (data && data.success) {
+            showToast('🚀 Successfully pushed to GitHub!', 'success');
+          } else {
+            showToast('Push failed: ' + (data.message || 'Unknown error'), 'error');
+          }
+        } catch (err) {
+          showToast('Git push request failed: ' + err.message, 'error');
+        } finally {
+          if (textSpan) textSpan.textContent = origText;
+          pushBtn.disabled = false;
+        }
+      });
     }
   }
 
