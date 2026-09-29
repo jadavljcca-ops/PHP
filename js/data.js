@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T11:00:08.479Z
+ * Last updated: 2026-09-29T11:01:28.019Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T11:00:08.479Z",
+  "lastUpdated": "2026-09-29T11:01:28.019Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2282,6 +2282,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script for creating a “student” table in “mydb” database with fields student_id, student_name, course, age, mobileno . also display an acknowledgement for the same as “table created successfully”. write a php script for creating a “student” table in “mydb” database with fields student_id, student_name, course, age, mobileno . also display an acknowledgement for the same as “table created successfully”.  general q8",
       "createdAt": "2026-09-29T11:00:06.766Z"
+    },
+    {
+      "id": "q-1790679686308-675",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Write a PHP Script to update record (Stud_Address) of student table where sid=13",
+      "question": "Write a PHP Script to update record (Stud_Address) of student table where sid=13",
+      "category": "General",
+      "logic": "",
+      "code": "#p9.php\n<!--\n9. Write a PHP Script to update record (Stud_Address) of\n   student table where sid=13.\n-->\n\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$sql = \"Update Student set Stud_Address='Ahmedabad' where sid=13\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Record Not Updated\";\n}\nelse\n{\n    echo \"Record Updated\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p9.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">9.</span> Write a PHP Script to update record (Stud_Address) of</span><span class=\"line\">   student table where sid=<span class=\"tok-num\">13.</span></span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Update Student set Stud_Address=&#39;Ahmedabad&#39; where sid=13&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Not Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to update record (stud_address) of student table where sid=13 write a php script to update record (stud_address) of student table where sid=13  general q9",
+      "createdAt": "2026-09-29T11:01:26.308Z"
     }
   ]
 };
