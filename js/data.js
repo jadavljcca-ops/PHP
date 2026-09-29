@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:58:13.827Z
+ * Last updated: 2026-09-29T11:00:08.479Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:58:13.827Z",
+  "lastUpdated": "2026-09-29T11:00:08.479Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2260,6 +2260,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also write code to update product price to 100 whose product id is <4 in product table”. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also write code to update product price to 100 whose product id is <4 in product table”.  general q7",
       "createdAt": "2026-09-29T10:58:12.135Z"
+    },
+    {
+      "id": "q-1790679606765-918",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Write a PHP script for creating a “Student” table in “MyDB” database with fields Student_id, Student_name, Course, Age, MobileNo . Also display an acknowledgement for the same as “Table created successfully”.",
+      "question": "Write a PHP script for creating a “Student” table in “MyDB” database with fields Student_id, Student_name, Course, Age, MobileNo . Also display an acknowledgement for the same as “Table created successfully”.",
+      "category": "General",
+      "logic": "",
+      "code": "#p8.php\n<!--\n8. Write a PHP script for creating a “Student” table in “MyDB”\n   database with fields Student_id, Student_name, Course,\n   Age, MobileNo. Also display an acknowledgement for the\n   same as “Table created successfully”.\n-->\n\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$sql = \"CREATE TABLE Student\n(Student_id INT(2), Student_name VARCHAR(30), Course VARCHAR(20), Age INT(2), MobileNo INT(10))\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Table Not Created!\";\n}\nelse\n{\n    echo \"Table created successfully\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p8.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">8.</span> Write a PHP script <span class=\"tok-kw\">for</span> creating a “Student” table <span class=\"tok-kw\">in</span> “MyDB”</span><span class=\"line\">   database <span class=\"tok-kw\">with</span> fields Student_id, Student_name, Course,</span><span class=\"line\">   Age, MobileNo. Also display an acknowledgement <span class=\"tok-kw\">for</span> the</span><span class=\"line\">   same <span class=\"tok-kw\">as</span> “Table created successfully”.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;CREATE TABLE Student</span></span><span class=\"line\">(Student_id INT(<span class=\"tok-num\">2</span>), Student_name VARCHAR(<span class=\"tok-num\">30</span>), Course VARCHAR(<span class=\"tok-num\">20</span>), Age INT(<span class=\"tok-num\">2</span>), MobileNo INT(<span class=\"tok-num\">10</span>))<span class=\"tok-str\">&quot;;</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Not Created!&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table created successfully&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script for creating a “student” table in “mydb” database with fields student_id, student_name, course, age, mobileno . also display an acknowledgement for the same as “table created successfully”. write a php script for creating a “student” table in “mydb” database with fields student_id, student_name, course, age, mobileno . also display an acknowledgement for the same as “table created successfully”.  general q8",
+      "createdAt": "2026-09-29T11:00:06.766Z"
     }
   ]
 };
