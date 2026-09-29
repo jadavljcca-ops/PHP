@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:44:51.140Z
+ * Last updated: 2026-09-29T09:45:02.616Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:44:51.140Z",
+  "lastUpdated": "2026-09-29T09:45:02.616Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1868,9 +1868,9 @@ window.DEFAULT_DATA = {
       "id": "q-1790675055162-996",
       "semesterId": "sem-5",
       "subjectId": "sub-hypertext-preprocessor-sem-5",
-      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
-      "unitNum": "Unit 1",
-      "unitTitle": "Introduction to PHP",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
       "practicalNumber": 5,
       "tag": "Q5",
       "title": "Create an array with 5 elements and print all array elements.",
@@ -1884,7 +1884,8 @@ window.DEFAULT_DATA = {
       "chartSrc": "",
       "chartAlt": "",
       "dataSearch": "create an array with 5 elements and print all array elements. create an array with 5 elements and print all array elements.  general q5",
-      "createdAt": "2026-09-29T09:44:15.163Z"
+      "createdAt": "2026-09-29T09:44:15.163Z",
+      "updatedAt": "2026-09-29T09:45:00.955Z"
     }
   ]
 };
