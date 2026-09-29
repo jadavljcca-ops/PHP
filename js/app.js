@@ -438,7 +438,7 @@
                 <div class="q" data-search="${escapeHtml(searchHay)}" id="${escapeHtml(q.id)}">
                   <button class="q-btn" aria-expanded="false">
                     <span class="tag">${escapeHtml(q.tag || 'Q')}</span>
-                    <span class="ttl">${escapeHtml(q.title)}</span>
+                    <span class="ttl">${escapeHtml(q.title || q.question || (q.tag ? `${q.tag} Program` : 'Practical Program'))}</span>
                     <span class="car">&#8250;</span>
                   </button>
                   <div class="q-panel">

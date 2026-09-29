@@ -561,7 +561,7 @@
             <span style="font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin-left: 6px;">Prac #${escapeHtml(String(q.practicalNumber || ''))}</span>
           </td>
           <td>
-            <div style="font-weight: 600; color: var(--text);">${escapeHtml(q.title)}</div>
+            <div style="font-weight: 600; color: var(--text);">${escapeHtml(q.title || q.question || (q.tag ? `${q.tag} Program` : 'Practical Program'))}</div>
             <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 3px; max-width: 480px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
               ${escapeHtml(q.logic ? q.logic.replace(/<[^>]*>/g, '') : '')}
             </div>
@@ -1124,7 +1124,7 @@
       }
 
       populateEditorDropdowns(q.semesterId || currentSemesterId, q.subjectId || currentSubjectId, q.unitId);
-      if (modalTitle) modalTitle.textContent = `Edit Program: ${q.tag || ''} - ${q.title}`;
+      if (modalTitle) modalTitle.textContent = `Edit Program: ${q.tag || ''} - ${q.title || 'Practical Program'}`;
 
       document.getElementById('field-practical-num').value = q.practicalNumber || '';
       document.getElementById('field-tag').value = q.tag || '';
@@ -1222,12 +1222,6 @@
         const chartAlt = document.getElementById('field-chart-alt').value.trim();
         const outputImage = chartSrc;
 
-        if (!title) {
-          showToast('Validation Error: Question title cannot be empty.', 'error');
-          document.getElementById('field-title').focus();
-          return;
-        }
-
         if (!subjectId) {
           showToast('Validation Error: Please select or add a subject first.', 'error');
           return;
@@ -1239,14 +1233,18 @@
           return;
         }
 
+        const effectiveTag = tag || `Q${practicalNumber}`;
+        const effectiveTitle = title || '';
+        const effectiveQuestion = effectiveTitle || (effectiveTag ? `${effectiveTag} Practical` : `Practical ${practicalNumber}`);
+
         const payload = {
           semesterId,
           subjectId,
           unitId,
           practicalNumber,
-          tag: tag || `Q${practicalNumber}`,
-          title,
-          question: title,
+          tag: effectiveTag,
+          title: effectiveTitle,
+          question: effectiveQuestion,
           category: category || 'General',
           logic,
           code,
