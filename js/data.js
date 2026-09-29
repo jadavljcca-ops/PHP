@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T04:26:16.753Z
+ * Last updated: 2026-09-29T04:26:33.995Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T04:26:16.753Z",
+  "lastUpdated": "2026-09-29T04:26:33.995Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -111,6 +111,15 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-1",
       "num": "Unit 1",
       "title": "jd",
+      "sub": "solved programs — aim, logic, code and output",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-2-sub-c-sem1",
+      "subjectId": "sub-c-sem1",
+      "semesterId": "sem-1",
+      "num": "Unit 2",
+      "title": "dfefef",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
