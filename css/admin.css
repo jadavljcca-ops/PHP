@@ -551,6 +551,18 @@ body.light-theme .user-badge {
   border-color: #fde68a;
 }
 
+/* Auto-Push Button Border */
+.auto-push-label,
+#auto-push-wrapper {
+  border: 0.5px solid #000000 !important;
+}
+body.light-theme .auto-push-label,
+body.light-theme #auto-push-wrapper {
+  border: 0.5px solid #000000 !important;
+  color: #000000 !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
 /* Notice Banner */
 .info-banner {
   background: rgba(22, 32, 51, 0.50);
