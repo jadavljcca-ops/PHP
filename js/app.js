@@ -419,10 +419,9 @@
           <section class="wrap" style="padding: 40px 0; text-align: center;">
             <div class="glass" style="padding: 30px 20px;">
               <h3 style="margin: 0 0 8px; font-family: var(--mono);">No Practicals Added Yet</h3>
-              <p style="color: var(--text-muted); font-size: 14px; margin: 0 0 16px;">
+              <p style="color: var(--text-muted); font-size: 14px; margin: 0;">
                 Practical programs for <b>${escapeHtml(subObj ? subObj.name : 'this subject')}</b> have not been published yet.
               </p>
-              <a href="./admin.html" class="clay-btn" style="display: inline-flex;">Manage in Admin Panel &rarr;</a>
             </div>
           </section>
         `;
