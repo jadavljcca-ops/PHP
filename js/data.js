@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:39:36.568Z
+ * Last updated: 2026-09-29T08:43:35.215Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:39:36.568Z",
+  "lastUpdated": "2026-09-29T08:43:35.215Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1522,12 +1522,13 @@ window.DEFAULT_DATA = {
       "logic": "",
       "code": "#p1.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p1.php\" method=\"POST\">\n\t\n\tenter number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value =\"check\">\n\t</form>\n</body>\n</html>\n\n#p1.php\n<?php\n$num = $_POST[\"num\"];\n\nif($num >0)\n{\n\techo $num . \" is positive number.\";\n}\nelse if($num <0)\n{\n\techo $num . \" is negative number.\";\n}\nelse\n{\n\techo $num.\"  is zero\";\n}\n?>",
       "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p1.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p1.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tenter number :</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;num&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value =<span class=\"tok-str\">&quot;check&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p1.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$num = $_POST[<span class=\"tok-str\">&quot;num&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>($num &gt;<span class=\"tok-num\">0</span>)</span><span class=\"line\">{</span><span class=\"line\">\techo $num . <span class=\"tok-str\">&quot; is positive number.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span> <span class=\"tok-kw\">if</span>($num &lt;<span class=\"tok-num\">0</span>)</span><span class=\"line\">{</span><span class=\"line\">\techo $num . <span class=\"tok-str\">&quot; is negative number.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">\techo $num.<span class=\"tok-str\">&quot;  is zero&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
-      "output": "",
+      "output": "enter number : 12\n12 is positive number.",
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
       "dataSearch": " q1 practical  general q1",
-      "createdAt": "2026-09-29T08:39:34.919Z"
+      "createdAt": "2026-09-29T08:39:34.919Z",
+      "updatedAt": "2026-09-29T08:43:33.559Z"
     }
   ]
 };
