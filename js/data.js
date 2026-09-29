@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T07:57:50.583Z
+ * Last updated: 2026-09-29T08:06:20.434Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T07:57:50.583Z",
+  "lastUpdated": "2026-09-29T08:06:20.434Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -104,15 +104,6 @@ window.DEFAULT_DATA = {
       "questionCount": 16,
       "subjectId": "sub-py-sem5",
       "semesterId": "sem-5"
-    },
-    {
-      "id": "unit-1-sub-c-sem1",
-      "subjectId": "sub-c-sem1",
-      "semesterId": "sem-1",
-      "num": "Unit 1",
-      "title": "jd",
-      "sub": "solved programs — aim, logic, code and output",
-      "questionCount": 0
     },
     {
       "id": "unit-2-sub-c-sem1",
