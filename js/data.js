@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:05:23.046Z
+ * Last updated: 2026-09-29T09:07:50.084Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:05:23.046Z",
+  "lastUpdated": "2026-09-29T09:07:50.084Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1597,6 +1597,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "accept a string from user. write php program to check whether that entered string is palindrome or not. accept a string from user. write php program to check whether that entered string is palindrome or not.  general q4",
       "createdAt": "2026-09-29T09:05:21.394Z"
+    },
+    {
+      "id": "q-1790672868431-995",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Write a PHP program to accept a number from user and find its square and cube.",
+      "question": "Write a PHP program to accept a number from user and find its square and cube.",
+      "category": "General",
+      "logic": "#p5.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p5.php\" method=\"POST\">\n\t\n\tEnter Number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"Find\">\n\t</form>\n</body>\n</html>\n\n#p5.php\n<?php\n\n$num=$_POST['num'];\n\n$square = $num * $num;\n$cube = $num * $num * $num;\n\necho \" Square = \" .$square;\necho \"<br>\";\necho \"Cube = \" .$cube;\n?>",
+      "code": "Enter Number : 12\nSquare = 144\nCube = 1728",
+      "codeHtml": "<span class=\"line\">Enter Number : <span class=\"tok-num\">12</span></span><span class=\"line\">Square = <span class=\"tok-num\">144</span></span><span class=\"line\">Cube = <span class=\"tok-num\">1728</span></span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program to accept a number from user and find its square and cube. write a php program to accept a number from user and find its square and cube. #p5.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p5.php\" method=\"post\">\n\t\n\tenter number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"find\">\n\t</form>\n</body>\n</html>\n\n#p5.php\n<?php\n\n$num=$_post['num'];\n\n$square = $num * $num;\n$cube = $num * $num * $num;\n\necho \" square = \" .$square;\necho \"<br>\";\necho \"cube = \" .$cube;\n?> general q5",
+      "createdAt": "2026-09-29T09:07:48.431Z"
     }
   ]
 };
