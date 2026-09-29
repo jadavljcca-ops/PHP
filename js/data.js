@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:14:06.652Z
+ * Last updated: 2026-09-29T08:18:05.630Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:14:06.652Z",
+  "lastUpdated": "2026-09-29T08:18:05.630Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -104,6 +104,15 @@ window.DEFAULT_DATA = {
       "questionCount": 16,
       "subjectId": "sub-py-sem5",
       "semesterId": "sem-5"
+    },
+    {
+      "id": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "semesterId": "sem-5",
+      "num": "Unit 1",
+      "title": "Introduction to PHP",
+      "sub": "solved programs — aim, logic, code and output",
+      "questionCount": 0
     }
   ],
   "questions": [
