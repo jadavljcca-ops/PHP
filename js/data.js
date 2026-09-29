@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:52:43.269Z
+ * Last updated: 2026-09-29T10:54:38.538Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:52:43.269Z",
+  "lastUpdated": "2026-09-29T10:54:38.538Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2194,6 +2194,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a form containing one input field (product_id) and a  delete button. when the user clicks on the delete button a php script should get executed and should delete the record of the product for the product_id specified. create a form containing one input field (product_id) and a  delete button. when the user clicks on the delete button a php script should get executed and should delete the record of the product for the product_id specified.  general q4",
       "createdAt": "2026-09-29T10:52:41.555Z"
+    },
+    {
+      "id": "q-1790679276840-734",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Create a form containing two input fields (Product_id,  Rate) and Update button. When the user clicks on the Update button, the Rate of the Product_id specified should get updated by 5% of the current rate using a PHP script.",
+      "question": "Create a form containing two input fields (Product_id,  Rate) and Update button. When the user clicks on the Update button, the Rate of the Product_id specified should get updated by 5% of the current rate using a PHP script.",
+      "category": "General",
+      "logic": "",
+      "code": "#p5.html\n<!--\n5. Create a form containing two input fields (Product_id, Rate)\nand Update button. When the user clicks on the Update button,\nthe Rate of the Product_id specified should get updated by 5%\nof the current rate using a PHP script.\n-->\n\n<html>\n<body>\n\n<form action=\"p5.php\" method=\"POST\">\n\n<h1>Update Product Rate</h1><br><br>\n\nProduct ID:\n<input type=\"number\" name=\"id\"><br><br>\n\nRate:\n<input type=\"number\" name=\"rate\"><br><br>\n\n<input type=\"submit\" value=\"Update Record\" name=\"submit\">\n\n</form>\n\n</body>\n</html>\n\n#p5.php\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$id = $_POST['id'];\n$rate = $_POST['rate'];\n\n$newrate = $rate + ($rate * 5 / 100);\n\n$sql = \"Update Product set Rate=$newrate where Pro_id=$id\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Record Not Updated\";\n}\nelse\n{\n    echo \"Record Updated\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p5.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">5.</span> Create a form containing two <span class=\"tok-fn\">input</span> fields (Product_id, Rate)</span><span class=\"line\"><span class=\"tok-kw\">and</span> Update button. When the user clicks on the Update button,</span><span class=\"line\">the Rate of the Product_id specified should get updated by <span class=\"tok-num\">5</span>%</span><span class=\"line\">of the current rate <span class=\"tok-kw\">using</span> a PHP script.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p5.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;h1&gt;Update Product Rate&lt;/h1&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Product ID:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;id&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Rate:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;rate&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Update Record&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p5.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$id = $_POST[<span class=\"tok-str\">&#39;id&#39;</span>];</span><span class=\"line\">$rate = $_POST[<span class=\"tok-str\">&#39;rate&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$newrate = $rate + ($rate * <span class=\"tok-num\">5</span> / <span class=\"tok-num\">100</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Update Product set Rate=$newrate where Pro_id=$id&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Not Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Update Product Rate\nProduct ID: 101\nRate: 1000",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing two input fields (product_id,  rate) and update button. when the user clicks on the update button, the rate of the product_id specified should get updated by 5% of the current rate using a php script. create a form containing two input fields (product_id,  rate) and update button. when the user clicks on the update button, the rate of the product_id specified should get updated by 5% of the current rate using a php script.  general q5",
+      "createdAt": "2026-09-29T10:54:36.842Z"
     }
   ]
 };
