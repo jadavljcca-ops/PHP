@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:43:35.215Z
+ * Last updated: 2026-09-29T08:46:55.000Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:43:35.215Z",
+  "lastUpdated": "2026-09-29T08:46:55.000Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1516,8 +1516,8 @@ window.DEFAULT_DATA = {
       "unitTitle": "Introduction to PHP",
       "practicalNumber": 1,
       "tag": "Q1",
-      "title": "",
-      "question": "Q1 Practical",
+      "title": "Write a  PHP program to check whether the number entered is Positive / Negative or Zero entered by user",
+      "question": "Write a  PHP program to check whether the number entered is Positive / Negative or Zero entered by user",
       "category": "General",
       "logic": "",
       "code": "#p1.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p1.php\" method=\"POST\">\n\t\n\tenter number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value =\"check\">\n\t</form>\n</body>\n</html>\n\n#p1.php\n<?php\n$num = $_POST[\"num\"];\n\nif($num >0)\n{\n\techo $num . \" is positive number.\";\n}\nelse if($num <0)\n{\n\techo $num . \" is negative number.\";\n}\nelse\n{\n\techo $num.\"  is zero\";\n}\n?>",
@@ -1526,9 +1526,9 @@ window.DEFAULT_DATA = {
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": " q1 practical  general q1",
+      "dataSearch": "write a  php program to check whether the number entered is positive / negative or zero entered by user write a  php program to check whether the number entered is positive / negative or zero entered by user  general q1",
       "createdAt": "2026-09-29T08:39:34.919Z",
-      "updatedAt": "2026-09-29T08:43:33.559Z"
+      "updatedAt": "2026-09-29T08:46:53.331Z"
     }
   ]
 };
