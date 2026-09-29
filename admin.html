@@ -286,9 +286,6 @@
           <span id="bulk-selection-count" style="font-family: var(--mono); font-size: 12px; font-weight: 700; background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.35); padding: 3px 10px; border-radius: 999px;">
             0 selected
           </span>
-          <button type="button" class="secondary-btn" id="select-entire-sem-btn" style="padding: 6px 13px; font-size: 12.5px;" title="Select all practical programs across this entire semester">
-            🎯 Select Entire Semester (<span class="sem-name-label">Sem 5</span>)
-          </button>
           <button type="button" class="secondary-btn" id="clear-selection-btn" style="display: none; padding: 6px 12px; font-size: 12px; opacity: 0.85;" title="Deselect all selected programs">
             ✕ Clear Selection
           </button>
@@ -296,19 +293,9 @@
 
         <!-- Right: Action Buttons -->
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <!-- 1. Delete Selected Programs Button -->
-          <button type="button" class="danger-btn" id="bulk-delete-btn" disabled style="opacity: 0.5; cursor: not-allowed; padding: 8px 16px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;" title="Delete all currently selected programs together">
-            <span>🗑️</span> Delete Selected Programs (<span id="bulk-delete-count">0</span>)
-          </button>
-
-          <!-- 2. Delete Entire Semester Programs Button -->
+          <!-- Delete Entire Semester Programs Button -->
           <button type="button" class="danger-btn" id="delete-all-sem-btn" style="background: linear-gradient(135deg, #b91c1c, #991b1b); border: 1px solid #ef4444; color: #fff; padding: 8px 16px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;" title="Delete all practical programs belonging to this entire semester">
             <span>⚠️</span> Delete Entire Semester (<span class="sem-name-label">Sem 5</span>)
-          </button>
-
-          <!-- 3. Delete Duplicates Button -->
-          <button type="button" class="secondary-btn" id="delete-duplicates-btn" style="border-color: rgba(245, 158, 11, 0.4); color: #f59e0b; padding: 8px 14px; font-size: 12.5px; display: inline-flex; align-items: center; gap: 5px;" title="Detect and delete duplicate programs in current subject">
-            <span>🔍</span> Duplicates
           </button>
         </div>
       </section>
