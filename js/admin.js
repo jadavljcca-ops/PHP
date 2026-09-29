@@ -73,8 +73,45 @@
     }
   }
 
+  function showSwitchSubjectAlert(subObj, semObj = null) {
+    if (!subObj) return;
+    const semName = semObj ? semObj.name : (window.PracticalsStorage && currentSemesterId ? (window.PracticalsStorage.getSemesterById(currentSemesterId)?.name || currentSemesterId) : '');
+    const icon = subObj.icon || '📚';
+    const subName = subObj.name || 'Subject';
+    const subCode = subObj.code ? subObj.code : '';
+
+    if (typeof Swal !== 'undefined') {
+      Swal.fire({
+        title: 'Switch Subject',
+        html: `
+          <div style="font-size: 14.5px; color: #1e293b; margin-top: 8px; line-height: 1.5;">
+            Active Subject changed to:<br>
+            <div style="margin-top: 8px; font-size: 18px; font-weight: 700; color: #1d4ed8;">
+              <span style="font-size: 22px; margin-right: 6px;">${escapeHtml(icon)}</span>${escapeHtml(subName)}
+            </div>
+            ${subCode ? `<div style="margin-top: 4px; font-size: 12px; color: #64748b; font-family: var(--mono, monospace);">${escapeHtml(subCode)} ${semName ? `&bull; ${escapeHtml(semName)}` : ''}</div>` : ''}
+          </div>
+        `,
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3b82f6',
+        timer: 2000,
+        timerProgressBar: true,
+        background: '#ffffff',
+        color: '#000000',
+        backdrop: 'rgba(255, 255, 255, 0.70)',
+        customClass: {
+          popup: 'swal2-custom-white-card'
+        }
+      });
+    } else {
+      showToast(`Switch Subject: ${subName}`, 'info', 2000);
+    }
+  }
+
   function setWorkspaceSemester(semesterId) {
     if (!window.PracticalsStorage) return;
+    const oldSubjectId = currentSubjectId;
     currentSemesterId = semesterId;
     window.PracticalsStorage.setActiveSemesterId(semesterId);
     selectedQuestionIds.clear();
@@ -91,11 +128,17 @@
     renderDashboard();
 
     const semObj = window.PracticalsStorage.getSemesterById(semesterId);
-    showToast(`Switched workspace to ${semObj ? semObj.name : semesterId}`, 'info', 1600);
+    const subObj = currentSubjectId ? window.PracticalsStorage.getSubjectById(currentSubjectId) : null;
+    if (oldSubjectId && currentSubjectId && oldSubjectId !== currentSubjectId && subObj) {
+      showSwitchSubjectAlert(subObj, semObj);
+    } else {
+      showToast(`Switched workspace to ${semObj ? semObj.name : semesterId}`, 'info', 1600);
+    }
   }
 
   function setWorkspaceSubject(subjectId) {
     if (!window.PracticalsStorage) return;
+    const previousSubjectId = currentSubjectId;
     currentSubjectId = subjectId;
     window.PracticalsStorage.setActiveSubjectId(subjectId);
     selectedQuestionIds.clear();
@@ -111,7 +154,11 @@
     renderDashboard();
 
     if (subObj) {
-      showToast(`Active Subject: ${subObj.name}`, 'info', 1600);
+      if (previousSubjectId && previousSubjectId !== subjectId) {
+        showSwitchSubjectAlert(subObj);
+      } else {
+        showToast(`Active Subject: ${subObj.name}`, 'info', 1600);
+      }
     }
   }
 

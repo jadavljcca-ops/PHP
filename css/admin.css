@@ -1914,3 +1914,53 @@ button.active[class*="sem"],
 button.active[class*="pill"] {
   color: #000000 !important;
 }
+
+/* ==========================================================================
+   SWEETALERT2 CUSTOM THEMING (White Card, Black Text, White Frosted Backdrop)
+   ========================================================================== */
+.swal2-container {
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.70) !important;
+  z-index: 99999 !important;
+}
+
+.swal2-popup,
+.swal2-custom-white-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+  padding: 26px 24px !important;
+}
+
+.swal2-title {
+  color: #000000 !important;
+  font-family: var(--mono, 'JetBrains Mono', monospace) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  padding: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+.swal2-html-container {
+  color: #1e293b !important;
+  font-size: 14.5px !important;
+  margin: 10px 0 0 0 !important;
+}
+
+.swal2-confirm {
+  background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  padding: 9px 24px !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+  border: none !important;
+}
+
+.swal2-timer-progress-bar {
+  background: #3b82f6 !important;
+}
+

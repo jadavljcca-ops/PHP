@@ -283,8 +283,35 @@
       return;
     }
 
+    const previousSubId = currentSubjectId;
     currentSemesterId = semObj ? semObj.id : semesterId;
     currentSubjectId = subjectId;
+
+    if (previousSubId && previousSubId !== subjectId && typeof Swal !== 'undefined') {
+      Swal.fire({
+        title: 'Switch Subject',
+        html: `
+          <div style="font-size: 14.5px; color: #1e293b; margin-top: 8px; line-height: 1.5;">
+            Opened Lab Manual for:<br>
+            <div style="margin-top: 8px; font-size: 18px; font-weight: 700; color: #1d4ed8;">
+              <span style="font-size: 22px; margin-right: 6px;">${escapeHtml(subObj.icon || '📚')}</span>${escapeHtml(subObj.name)}
+            </div>
+            ${subObj.code ? `<div style="margin-top: 4px; font-size: 12px; color: #64748b; font-family: var(--mono, monospace);">${escapeHtml(subObj.code)}</div>` : ''}
+          </div>
+        `,
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#3b82f6',
+        timer: 1800,
+        timerProgressBar: true,
+        background: '#ffffff',
+        color: '#000000',
+        backdrop: 'rgba(255, 255, 255, 0.70)',
+        customClass: {
+          popup: 'swal2-custom-white-card'
+        }
+      });
+    }
 
     if (updateHistory) {
       const newUrl = `${window.location.pathname}?sem=${encodeURIComponent(currentSemesterId)}&sub=${encodeURIComponent(subjectId)}`;
