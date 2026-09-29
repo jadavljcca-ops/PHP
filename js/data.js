@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:18:18.101Z
+ * Last updated: 2026-09-29T08:18:31.598Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:18:18.101Z",
+  "lastUpdated": "2026-09-29T08:18:31.598Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -120,7 +120,7 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-5",
       "num": "Unit 2",
       "title": "Advanced PHP",
-      "sub": "solved programs — aim, logic, code and output",
+      "sub": "",
       "questionCount": 0
     }
   ],
