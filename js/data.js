@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:00:57.251Z
+ * Last updated: 2026-09-29T10:03:30.294Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:00:57.251Z",
+  "lastUpdated": "2026-09-29T10:03:30.294Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2106,6 +2106,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create two functions in php, parameterized and non parameterized for implementing string concatenation operation. create two functions in php, parameterized and non parameterized for implementing string concatenation operation.  general q15",
       "createdAt": "2026-09-29T10:00:55.556Z"
+    },
+    {
+      "id": "q-1790676208598-375",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Write a PHP script for that creates a database named \"DB1\"in MySQL. And also create a table “myTable” in above created database “DB-1”.",
+      "question": "Write a PHP script for that creates a database named \"DB1\"in MySQL. And also create a table “myTable” in above created database “DB-1”.",
+      "category": "General",
+      "logic": "",
+      "code": "#p1.php\n<!--\n1. Write a PHP script for that creates a database named \"DB-1\" in MySQL.\n   And also create a table \"myTable\" in above created database \"DB-1\".\n-->\n\n<?php\n\n$host = \"localhost\";\n$username = \"root\";\n$password = \"\";\n\n$cn = mysqli_connect($host, $username, $password);\n\nif (!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done<br>\";\n}\n\n$sql = \"CREATE DATABASE `DB-1`\";\n\n$result = mysqli_query($cn, $sql);\n\nif (!$result)\n{\n    echo \"Database Not Created!<br>\";\n}\nelse\n{\n    echo \"Database Created!<br>\";\n}\n\nmysqli_select_db($cn, \"DB-1\");\n\n$sql = \"CREATE TABLE myTable\n(id INT(2), name VARCHAR(15), age INT(2))\";\n\n$result = mysqli_query($cn, $sql);\n\nif (!$result)\n{\n    echo \"Table Not Created!\";\n}\nelse\n{\n    echo \"Table Created!\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p1.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">1.</span> Write a PHP script <span class=\"tok-kw\">for</span> that creates a database named <span class=\"tok-str\">&quot;DB-1&quot;</span> <span class=\"tok-kw\">in</span> MySQL.</span><span class=\"line\">   And also create a table <span class=\"tok-str\">&quot;myTable&quot;</span> <span class=\"tok-kw\">in</span> above created database <span class=\"tok-str\">&quot;DB-1&quot;</span>.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$host = <span class=\"tok-str\">&quot;localhost&quot;</span>;</span><span class=\"line\">$username = <span class=\"tok-str\">&quot;root&quot;</span>;</span><span class=\"line\">$password = <span class=\"tok-str\">&quot;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect($host, $username, $password);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;CREATE DATABASE `DB-1`&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn, $sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Database Not Created!&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Database Created!&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">mysqli_select_db($cn, <span class=\"tok-str\">&quot;DB-1&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;CREATE TABLE myTable</span></span><span class=\"line\">(id INT(<span class=\"tok-num\">2</span>), name VARCHAR(<span class=\"tok-num\">15</span>), age INT(<span class=\"tok-num\">2</span>))<span class=\"tok-str\">&quot;;</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn, $sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Not Created!&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Created!&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Connection Done\nDatabase Created!\nTable Created!",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script for that creates a database named \"db1\"in mysql. and also create a table “mytable” in above created database “db-1”. write a php script for that creates a database named \"db1\"in mysql. and also create a table “mytable” in above created database “db-1”.  general q1",
+      "createdAt": "2026-09-29T10:03:28.599Z"
     }
   ]
 };
