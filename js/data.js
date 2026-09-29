@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:02:34.156Z
+ * Last updated: 2026-09-29T09:05:23.046Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:02:34.156Z",
+  "lastUpdated": "2026-09-29T09:05:23.046Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1575,6 +1575,28 @@ window.DEFAULT_DATA = {
       "dataSearch": "write a php program that prints fibonacci series till the number entered by user. write a php program that prints fibonacci series till the number entered by user.  general q3",
       "createdAt": "2026-09-29T08:51:44.615Z",
       "updatedAt": "2026-09-29T09:02:32.465Z"
+    },
+    {
+      "id": "q-1790672721393-328",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 4,
+      "tag": "Q4",
+      "title": "Accept a string from user. Write PHP program to check whether that entered string is palindrome or not.",
+      "question": "Accept a string from user. Write PHP program to check whether that entered string is palindrome or not.",
+      "category": "General",
+      "logic": "",
+      "code": "#p4.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p4.php\" method=\"POST\">\n\t\n\tEnter a String : \n\t\n\t<input type=\"text\" id=\"s1\"><br><br>\n\t\n\t<input type=\"submit\" value=\"submit\">\n\t</form>\n</body>\n</html>\n\n#p4.php\n<?php\n$s=$_POST[\"s1\"];\n\n$s1=$s;\n$s2=\"\";\n\nfor($i=strlen($s)-1;$i>=0;$i--)\n{\n\t$s2=$s2.$s[$i];\n}\n\necho \"Reverse of string is $s2.<br> <br>\";\n\nif($s2==$s1)\n{\n\techo $s2. \" string is palindrome.\";\n}\nelse\n{\n\techo $s2.\" string is not palindrome.\";\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p4.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p4.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter a String : </span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;s1&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;submit&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p4.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$s=$_POST[<span class=\"tok-str\">&quot;s1&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$s1=$s;</span><span class=\"line\">$s2=<span class=\"tok-str\">&quot;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">for</span>($i=<span class=\"tok-fn\">strlen</span>($s)-<span class=\"tok-num\">1</span>;$i&gt;=<span class=\"tok-num\">0</span>;$i--)</span><span class=\"line\">{</span><span class=\"line\">\t$s2=$s2.$s[$i];</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Reverse of string is $s2.&lt;br&gt; &lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>($s2==$s1)</span><span class=\"line\">{</span><span class=\"line\">\techo $s2. <span class=\"tok-str\">&quot; string is palindrome.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">\techo $s2.<span class=\"tok-str\">&quot; string is not palindrome.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter a String : jd\n\nReverse of string is dj.\ndj string is not palindrome.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "accept a string from user. write php program to check whether that entered string is palindrome or not. accept a string from user. write php program to check whether that entered string is palindrome or not.  general q4",
+      "createdAt": "2026-09-29T09:05:21.394Z"
     }
   ]
 };
