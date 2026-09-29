@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:03:30.294Z
+ * Last updated: 2026-09-29T10:06:52.655Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:03:30.294Z",
+  "lastUpdated": "2026-09-29T10:06:52.655Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2128,6 +2128,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script for that creates a database named \"db1\"in mysql. and also create a table “mytable” in above created database “db-1”. write a php script for that creates a database named \"db1\"in mysql. and also create a table “mytable” in above created database “db-1”.  general q1",
       "createdAt": "2026-09-29T10:03:28.599Z"
+    },
+    {
+      "id": "q-1790676410961-867",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "2. Write a PHP script for creating a “Product” table in “MyDB” database with fields Pro_id, Pro_name, Pro_price, Qty, Rate . Also display an acknowledgement for the same as “Table created successfully”.",
+      "question": "2. Write a PHP script for creating a “Product” table in “MyDB” database with fields Pro_id, Pro_name, Pro_price, Qty, Rate . Also display an acknowledgement for the same as “Table created successfully”.",
+      "category": "General",
+      "logic": "",
+      "code": "#p2.php\n<!--\n2. Write a PHP script for creating a “Product” table in “MyDB”\n   database with fields Pro_id, Pro_name, Pro_price, Qty, Rate.\n   Also display an acknowledgement for the same as\n   “Table created successfully”.\n   ✅ MyDB database પહેલેથી બનાવેલું હોવું જોઈએ.\n-->\n\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\n$sql = \"CREATE TABLE Product\n(Pro_id INT(2), Pro_name VARCHAR(15), Pro_price INT(6), Qty INT(6), Rate INT(6))\";\n\nif (!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$result = mysqli_query($cn, $sql);\n\nif (!$result)\n{\n    echo \"Table Not Created!\";\n}\nelse\n{\n    echo \"Table created successfully\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p2.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">2.</span> Write a PHP script <span class=\"tok-kw\">for</span> creating a “Product” table <span class=\"tok-kw\">in</span> “MyDB”</span><span class=\"line\">   database <span class=\"tok-kw\">with</span> fields Pro_id, Pro_name, Pro_price, Qty, Rate.</span><span class=\"line\">   Also display an acknowledgement <span class=\"tok-kw\">for</span> the same <span class=\"tok-kw\">as</span></span><span class=\"line\">   “Table created successfully”.</span><span class=\"line\">   ✅ MyDB database પહેલેથી બનાવેલું હોવું જોઈએ.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;CREATE TABLE Product</span></span><span class=\"line\">(Pro_id INT(<span class=\"tok-num\">2</span>), Pro_name VARCHAR(<span class=\"tok-num\">15</span>), Pro_price INT(<span class=\"tok-num\">6</span>), Qty INT(<span class=\"tok-num\">6</span>), Rate INT(<span class=\"tok-num\">6</span>))<span class=\"tok-str\">&quot;;</span></span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn, $sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Not Created!&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table created successfully&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "2. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also display an acknowledgement for the same as “table created successfully”. 2. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also display an acknowledgement for the same as “table created successfully”.  general q2",
+      "createdAt": "2026-09-29T10:06:50.962Z"
     }
   ]
 };
