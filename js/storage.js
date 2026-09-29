@@ -14,6 +14,42 @@
   const STORAGE_KEY_QUESTIONS = 'python_practicals_questions_v1';
   const STORAGE_KEY_ACTIVE_SEM = 'python_practicals_active_sem_v1';
   const STORAGE_KEY_ACTIVE_SUB = 'python_practicals_active_sub_v1';
+  const STORAGE_KEY_DATA_SYNC_TIME = 'python_practicals_data_last_sync_v2';
+
+  // Automatically sync dataset from window.DEFAULT_DATA if updated on GitHub
+  function syncDefaultDataIfUpdated() {
+    if (typeof window === 'undefined' || !window.DEFAULT_DATA) return;
+    const defaultData = window.DEFAULT_DATA;
+    const defaultTime = defaultData.lastUpdated;
+
+    const hasStoredQuestions = !!localStorage.getItem(STORAGE_KEY_QUESTIONS);
+    const lastSyncTime = localStorage.getItem(STORAGE_KEY_DATA_SYNC_TIME);
+
+    const isNewer = defaultTime && (!lastSyncTime || new Date(defaultTime) > new Date(lastSyncTime));
+    const shouldSync = !hasStoredQuestions || isNewer;
+
+    if (shouldSync) {
+      if (Array.isArray(defaultData.semesters) && defaultData.semesters.length > 0) {
+        localStorage.setItem(STORAGE_KEY_SEMESTERS, JSON.stringify(defaultData.semesters));
+      }
+      if (Array.isArray(defaultData.subjects) && defaultData.subjects.length > 0) {
+        localStorage.setItem(STORAGE_KEY_SUBJECTS, JSON.stringify(defaultData.subjects));
+      }
+      if (Array.isArray(defaultData.units) && defaultData.units.length > 0) {
+        localStorage.setItem(STORAGE_KEY_UNITS, JSON.stringify(defaultData.units));
+      }
+      if (Array.isArray(defaultData.questions)) {
+        localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(defaultData.questions));
+      }
+      if (defaultTime) {
+        localStorage.setItem(STORAGE_KEY_DATA_SYNC_TIME, defaultTime);
+      }
+      console.log('[Storage] Synchronized dataset with DEFAULT_DATA (lastUpdated:', defaultTime, ')');
+    }
+  }
+
+  // Run initial sync check right away
+  syncDefaultDataIfUpdated();
 
   // Helper to escape HTML characters
   function escapeHtml(str) {
@@ -190,6 +226,7 @@
     const performSync = async () => {
       try {
         const fullData = {
+          lastUpdated: new Date().toISOString(),
           semesters: loadSemesters(),
           subjects: loadSubjects(),
           units: loadUnits(),
@@ -202,6 +239,9 @@
         });
         if (res.ok) {
           const result = await res.json();
+          if (result && result.lastUpdated) {
+            localStorage.setItem(STORAGE_KEY_DATA_SYNC_TIME, result.lastUpdated);
+          }
           console.log('[Storage] Saved dataset to js/data.js:', result);
           window.dispatchEvent(new CustomEvent('practicals:file-synced', { detail: result }));
           return result;

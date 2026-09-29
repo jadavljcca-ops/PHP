@@ -2283,12 +2283,15 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
   function bindGitHubSyncEvents() {
     const saveBtn = document.getElementById('save-to-file-btn');
     const pushBtn = document.getElementById('push-github-btn');
+    const autoPushWrapper = document.getElementById('auto-push-wrapper');
+    const autoPushCheckbox = document.getElementById('auto-push-github-checkbox');
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
     // If not running on localhost, hide the buttons
     if (!isLocal) {
       if (saveBtn) saveBtn.style.display = 'none';
       if (pushBtn) pushBtn.style.display = 'none';
+      if (autoPushWrapper) autoPushWrapper.style.display = 'none';
       return;
     }
 
@@ -2298,6 +2301,75 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
         window.PracticalsStorage.syncToLocalFile(false);
       }, 500);
     }
+
+    let isPushing = false;
+    async function triggerGitHubPush(commitMsg = 'Update practicals dataset from admin portal', silent = false) {
+      if (isPushing) return;
+      isPushing = true;
+
+      const textSpan = document.getElementById('push-github-btn-text');
+      const origText = textSpan ? textSpan.textContent : 'Push to GitHub';
+
+      if (!silent) {
+        if (textSpan) textSpan.textContent = 'Pushing...';
+        if (pushBtn) pushBtn.disabled = true;
+      }
+
+      try {
+        // First ensure js/data.js is updated with all latest items immediately
+        if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {
+          await window.PracticalsStorage.syncToLocalFile(true);
+        }
+
+        const res = await fetch('/api/git-push', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: commitMsg })
+        });
+
+        const data = await res.json();
+        if (data && data.success) {
+          showToast('🚀 Changes successfully pushed to GitHub!', 'success');
+        } else {
+          showToast('Push failed: ' + (data.message || 'Unknown error'), 'error');
+        }
+      } catch (err) {
+        showToast('Git push error: ' + err.message, 'error');
+      } finally {
+        if (!silent) {
+          if (textSpan) textSpan.textContent = origText;
+          if (pushBtn) pushBtn.disabled = false;
+        }
+        isPushing = false;
+      }
+    }
+
+    // Auto-Push checkbox handling
+    if (autoPushCheckbox) {
+      const isAutoPush = localStorage.getItem('admin_auto_push_github') === 'true';
+      autoPushCheckbox.checked = isAutoPush;
+
+      autoPushCheckbox.addEventListener('change', () => {
+        localStorage.setItem('admin_auto_push_github', autoPushCheckbox.checked ? 'true' : 'false');
+        if (autoPushCheckbox.checked) {
+          showToast('⚡ Auto-Push to GitHub enabled! Any additions or deletions will be pushed automatically.', 'success');
+        } else {
+          showToast('Auto-Push disabled. Use the "Push to GitHub" button manually.', 'info');
+        }
+      });
+    }
+
+    // Listen for file synced events from storage.js
+    window.addEventListener('practicals:file-synced', (e) => {
+      const isAutoPush = localStorage.getItem('admin_auto_push_github') === 'true';
+      if (isAutoPush && !isPushing) {
+        // Debounce auto-push slightly so rapid edits don't spawn multiple git commands
+        if (window._autoPushDebounce) clearTimeout(window._autoPushDebounce);
+        window._autoPushDebounce = setTimeout(() => {
+          triggerGitHubPush('Auto-push practicals update from admin portal', true);
+        }, 1200);
+      }
+    });
 
     if (saveBtn) {
       saveBtn.addEventListener('click', async () => {
@@ -2326,39 +2398,9 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
 
     if (pushBtn) {
       pushBtn.addEventListener('click', async () => {
-        const textSpan = document.getElementById('push-github-btn-text');
-        const origText = textSpan ? textSpan.textContent : 'Push to GitHub';
-
-        const confirmPush = confirm('Kya aap is dataset ko GitHub par commit & push karna chahte hain?');
+        const confirmPush = confirm('Do you want to commit and push all current practicals to GitHub?');
         if (!confirmPush) return;
-
-        if (textSpan) textSpan.textContent = 'Pushing...';
-        pushBtn.disabled = true;
-
-        try {
-          // First ensure data.js is updated with all latest items
-          if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {
-            await window.PracticalsStorage.syncToLocalFile(true);
-          }
-
-          const res = await fetch('/api/git-push', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: 'Update practicals dataset from admin portal' })
-          });
-
-          const data = await res.json();
-          if (data && data.success) {
-            showToast('🚀 Successfully pushed to GitHub!', 'success');
-          } else {
-            showToast('Push failed: ' + (data.message || 'Unknown error'), 'error');
-          }
-        } catch (err) {
-          showToast('Git push request failed: ' + err.message, 'error');
-        } finally {
-          if (textSpan) textSpan.textContent = origText;
-          pushBtn.disabled = false;
-        }
+        await triggerGitHubPush('Update practicals dataset from admin portal', false);
       });
     }
   }

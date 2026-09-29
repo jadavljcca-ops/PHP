@@ -89,11 +89,14 @@ const server = http.createServer((req, res) => {
           return;
         }
 
+        const nowIso = new Date().toISOString();
+        parsed.lastUpdated = nowIso;
+
         const dataJsPath = path.join(__dirname, 'js', 'data.js');
         const fileContent = `/**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: ${new Date().toISOString()}
+ * Last updated: ${nowIso}
  */
 
 window.DEFAULT_DATA = ${JSON.stringify(parsed, null, 2)};
@@ -105,6 +108,7 @@ window.DEFAULT_DATA = ${JSON.stringify(parsed, null, 2)};
         sendJson(200, {
           success: true,
           message: 'Saved to js/data.js successfully',
+          lastUpdated: nowIso,
           counts: {
             semesters: (parsed.semesters || []).length,
             subjects: (parsed.subjects || []).length,
@@ -134,25 +138,34 @@ window.DEFAULT_DATA = ${JSON.stringify(parsed, null, 2)};
       } catch (e) {}
 
       const escapedMsg = commitMsg.replace(/"/g, '\\"');
-      const gitCmd = `git add . && git commit -m "${escapedMsg}" && git push origin main`;
-      console.log(`[Git Push] Executing: ${gitCmd}`);
 
-      exec(gitCmd, { cwd: __dirname }, (error, stdout, stderr) => {
-        if (error) {
-          console.error('[Git Push Error]:', stderr || error.message);
-          sendJson(500, {
-            success: false,
-            message: 'Git push failed: ' + (stderr || error.message),
-            details: stdout
-          });
-          return;
+      // Check if there are changes to commit, or if we just need to push
+      exec('git status --porcelain', { cwd: __dirname }, (statusErr, statusOut) => {
+        let gitCmd = '';
+        if (statusOut && statusOut.trim()) {
+          gitCmd = `git add -A && git commit -m "${escapedMsg}" && git push origin main`;
+        } else {
+          gitCmd = `git push origin main`;
         }
+        console.log(`[Git Push] Executing: ${gitCmd}`);
 
-        console.log('[Git Push Success]:', stdout);
-        sendJson(200, {
-          success: true,
-          message: 'Successfully committed and pushed to GitHub!',
-          output: stdout
+        exec(gitCmd, { cwd: __dirname }, (error, stdout, stderr) => {
+          if (error) {
+            console.error('[Git Push Error]:', stderr || error.message);
+            sendJson(500, {
+              success: false,
+              message: 'Git push failed: ' + (stderr || error.message),
+              details: stdout
+            });
+            return;
+          }
+
+          console.log('[Git Push Success]:', stdout);
+          sendJson(200, {
+            success: true,
+            message: 'Successfully committed and pushed to GitHub!',
+            output: stdout
+          });
         });
       });
     });
