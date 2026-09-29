@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:25:59.997Z
+ * Last updated: 2026-09-29T09:30:21.461Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:25:59.997Z",
+  "lastUpdated": "2026-09-29T09:30:21.461Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1730,6 +1730,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. note:  input should be collected from user using an html page. create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. note:  input should be collected from user using an html page.  general q10",
       "createdAt": "2026-09-29T09:25:58.319Z"
+    },
+    {
+      "id": "q-1790674219765-918",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 11,
+      "tag": "Q11",
+      "title": "Create a function that accepts a number as argument and displays sum of digit of a number. E.g. If Number is 123 then sum of Digits is 6 i.e., 1+2+3 =6 Note: Input should be collected from user using an HTML page.",
+      "question": "Create a function that accepts a number as argument and displays sum of digit of a number. E.g. If Number is 123 then sum of Digits is 6 i.e., 1+2+3 =6 Note: Input should be collected from user using an HTML page.",
+      "category": "General",
+      "logic": "",
+      "code": "#11.html\n<!--\n11. Create a function that accepts a number as argument anddisplays sum of digit of a number.E.g. If\nNumber is 123 then sum of Digits is 6 i.e., 1+2+3 = 6Note: Input should be collected from user using\nan HTML page.\n-->\n\n<html>\n<head>\n    <title>Sum of Digits</title>\n</head>\n<body>\n\n<h2>Sum of Digits</h2>\n\n<form action=\"p11.php\" method=\"post\">\n\n    Enter Number:\n    <input type=\"number\" name=\"num\"><br><br>\n\n    <input type=\"submit\" value=\"Calculate\">\n\n</form>\n\n</body>\n</html>\n\n#11.php\n<?php\n\nfunction sumDigit($n)\n{\n    $sum = 0;\n\n    while($n > 0)\n    {\n        $digit = $n % 10;\n        $sum = $sum + $digit;\n        $n = $n / 10;\n    }\n\n    echo \"Sum of Digits = \" . $sum;\n}\n\nsumDigit($_POST['num']);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#11.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">11.</span> Create a function that accepts a number <span class=\"tok-kw\">as</span> argument anddisplays <span class=\"tok-fn\">sum</span> of digit of a number.E.g. If</span><span class=\"line\">Number <span class=\"tok-kw\">is</span> <span class=\"tok-num\">123</span> then <span class=\"tok-fn\">sum</span> of Digits <span class=\"tok-kw\">is</span> <span class=\"tok-num\">6</span> i.e., <span class=\"tok-num\">1</span>+<span class=\"tok-num\">2</span>+<span class=\"tok-num\">3</span> = <span class=\"tok-num\">6</span>Note: Input should be collected <span class=\"tok-kw\">from</span> user <span class=\"tok-kw\">using</span></span><span class=\"line\">an HTML page.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">    &lt;title&gt;Sum of Digits&lt;/title&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;h2&gt;Sum of Digits&lt;/h2&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p11.php&quot;</span> method=<span class=\"tok-str\">&quot;post&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    Enter Number:</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;num&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Calculate&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#11.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">function sumDigit($n)</span><span class=\"line\">{</span><span class=\"line\">    $<span class=\"tok-fn\">sum</span> = <span class=\"tok-num\">0</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">while</span>($n &gt; <span class=\"tok-num\">0</span>)</span><span class=\"line\">    {</span><span class=\"line\">        $digit = $n % <span class=\"tok-num\">10</span>;</span><span class=\"line\">        $<span class=\"tok-fn\">sum</span> = $<span class=\"tok-fn\">sum</span> + $digit;</span><span class=\"line\">        $n = $n / <span class=\"tok-num\">10</span>;</span><span class=\"line\">    }</span><span class=\"line\">&nbsp;</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Sum of Digits = &quot;</span> . $<span class=\"tok-fn\">sum</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">sumDigit($_POST[<span class=\"tok-str\">&#39;num&#39;</span>]);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Sum of Digits\nEnter Number: 12\n\nSum of Digits = 3",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a function that accepts a number as argument and displays sum of digit of a number. e.g. if number is 123 then sum of digits is 6 i.e., 1+2+3 =6 note: input should be collected from user using an html page. create a function that accepts a number as argument and displays sum of digit of a number. e.g. if number is 123 then sum of digits is 6 i.e., 1+2+3 =6 note: input should be collected from user using an html page.  general q11",
+      "createdAt": "2026-09-29T09:30:19.766Z"
     }
   ]
 };
