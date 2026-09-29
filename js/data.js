@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:30:21.461Z
+ * Last updated: 2026-09-29T09:33:55.282Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:30:21.461Z",
+  "lastUpdated": "2026-09-29T09:33:55.282Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1752,6 +1752,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a function that accepts a number as argument and displays sum of digit of a number. e.g. if number is 123 then sum of digits is 6 i.e., 1+2+3 =6 note: input should be collected from user using an html page. create a function that accepts a number as argument and displays sum of digit of a number. e.g. if number is 123 then sum of digits is 6 i.e., 1+2+3 =6 note: input should be collected from user using an html page.  general q11",
       "createdAt": "2026-09-29T09:30:19.766Z"
+    },
+    {
+      "id": "q-1790674433603-356",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 12,
+      "tag": "Q12",
+      "title": "Write a PHP program that changes color of the web page using switch case.",
+      "question": "Write a PHP program that changes color of the web page using switch case.",
+      "category": "General",
+      "logic": "",
+      "code": "#p12.html\n<!--\n12. Write a PHP program that changes color of the web pageusing switch case.\n-->\n\n<html>\n<head>\n    <title>Change Color</title>\n</head>\n<body>\n\n<form action=\"p12.php\" method=\"post\">\n\n    Select Color:\n    <select name=\"color\">\n        <option value=\"red\">Red</option>\n        <option value=\"purple\">purple</option>\n        <option value=\"green\">Green</option>\n        <option value=\"yellow\">Yellow</option>\n    </select>\n\n    <input type=\"submit\" value=\"Change Color\">\n\n</form>\n\n</body>\n</html>\n\n#p12.php\n<?php\n\n$color = $_POST['color'];\n\nswitch($color)\n{\n    case \"red\":\n        $bg = \"red\";\n        break;\n\n    case \"purple\":\n        $bg = \"purple\";\n        break;\n\n    case \"green\":\n        $bg = \"green\";\n        break;\n\n    case \"yellow\":\n        $bg = \"yellow\";\n        break;\n}\n\necho \"<body style='background-color:$bg;'>\";\n\necho \"<h2>Web Page Color Changed</h2>\";\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p12.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">12.</span> Write a PHP program that changes color of the web pageusing <span class=\"tok-kw\">switch</span> <span class=\"tok-kw\">case</span>.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">    &lt;title&gt;Change Color&lt;/title&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p12.php&quot;</span> method=<span class=\"tok-str\">&quot;post&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    Select Color:</span><span class=\"line\">    &lt;select name=<span class=\"tok-str\">&quot;color&quot;</span>&gt;</span><span class=\"line\">        &lt;option value=<span class=\"tok-str\">&quot;red&quot;</span>&gt;Red&lt;/option&gt;</span><span class=\"line\">        &lt;option value=<span class=\"tok-str\">&quot;purple&quot;</span>&gt;purple&lt;/option&gt;</span><span class=\"line\">        &lt;option value=<span class=\"tok-str\">&quot;green&quot;</span>&gt;Green&lt;/option&gt;</span><span class=\"line\">        &lt;option value=<span class=\"tok-str\">&quot;yellow&quot;</span>&gt;Yellow&lt;/option&gt;</span><span class=\"line\">    &lt;/select&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Change Color&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p12.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$color = $_POST[<span class=\"tok-str\">&#39;color&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">switch</span>($color)</span><span class=\"line\">{</span><span class=\"line\">    <span class=\"tok-kw\">case</span> <span class=\"tok-str\">&quot;red&quot;</span>:</span><span class=\"line\">        $bg = <span class=\"tok-str\">&quot;red&quot;</span>;</span><span class=\"line\">        <span class=\"tok-kw\">break</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">case</span> <span class=\"tok-str\">&quot;purple&quot;</span>:</span><span class=\"line\">        $bg = <span class=\"tok-str\">&quot;purple&quot;</span>;</span><span class=\"line\">        <span class=\"tok-kw\">break</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">case</span> <span class=\"tok-str\">&quot;green&quot;</span>:</span><span class=\"line\">        $bg = <span class=\"tok-str\">&quot;green&quot;</span>;</span><span class=\"line\">        <span class=\"tok-kw\">break</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">case</span> <span class=\"tok-str\">&quot;yellow&quot;</span>:</span><span class=\"line\">        $bg = <span class=\"tok-str\">&quot;yellow&quot;</span>;</span><span class=\"line\">        <span class=\"tok-kw\">break</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;body style=&#39;background-color:$bg;&#39;&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;h2&gt;Web Page Color Changed&lt;/h2&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Select Color: \nRed\nGreen\nBlue\nYellow",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program that changes color of the web page using switch case. write a php program that changes color of the web page using switch case.  general q12",
+      "createdAt": "2026-09-29T09:33:53.605Z"
     }
   ]
 };
