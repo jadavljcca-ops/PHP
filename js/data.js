@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:45:02.616Z
+ * Last updated: 2026-09-29T09:46:36.753Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:45:02.616Z",
+  "lastUpdated": "2026-09-29T09:46:36.753Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1886,6 +1886,28 @@ window.DEFAULT_DATA = {
       "dataSearch": "create an array with 5 elements and print all array elements. create an array with 5 elements and print all array elements.  general q5",
       "createdAt": "2026-09-29T09:44:15.163Z",
       "updatedAt": "2026-09-29T09:45:00.955Z"
+    },
+    {
+      "id": "q-1790675195070-375",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 6,
+      "tag": "Q6",
+      "title": "Create an array with 5 elements. Find and display minimum and maximum value from the array.",
+      "question": "Create an array with 5 elements. Find and display minimum and maximum value from the array.",
+      "category": "General",
+      "logic": "",
+      "code": "#p6.php\n<!--\n6. Create an array with 5 elements. Find and display minimum and maximum value from the array.\n-->\n\n<?php\n\n$arr = [10, 25, 5, 40, 15];\n\n$min = min($arr);\n$max = max($arr);\n\necho \"Minimum value = \" . $min . \"<br>\";\necho \"Maximum value = \" . $max;\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p6.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">6.</span> Create an array <span class=\"tok-kw\">with</span> <span class=\"tok-num\">5</span> elements. Find <span class=\"tok-kw\">and</span> display minimum <span class=\"tok-kw\">and</span> maximum value <span class=\"tok-kw\">from</span> the array.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">10</span>, <span class=\"tok-num\">25</span>, <span class=\"tok-num\">5</span>, <span class=\"tok-num\">40</span>, <span class=\"tok-num\">15</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$<span class=\"tok-fn\">min</span> = <span class=\"tok-fn\">min</span>($arr);</span><span class=\"line\">$<span class=\"tok-fn\">max</span> = <span class=\"tok-fn\">max</span>($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Minimum value = &quot;</span> . $<span class=\"tok-fn\">min</span> . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Maximum value = &quot;</span> . $<span class=\"tok-fn\">max</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Minimum value = 5\nMaximum value = 40",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create an array with 5 elements. find and display minimum and maximum value from the array. create an array with 5 elements. find and display minimum and maximum value from the array.  general q6",
+      "createdAt": "2026-09-29T09:46:35.071Z"
     }
   ]
 };
