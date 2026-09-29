@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T11:02:13.209Z
+ * Last updated: 2026-09-29T11:03:44.592Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T11:02:13.209Z",
+  "lastUpdated": "2026-09-29T11:03:44.592Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2304,6 +2304,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script to update record (stud_address) of student table where sid=13 write a php script to update record (stud_address) of student table where sid=13  general q9",
       "createdAt": "2026-09-29T11:01:26.308Z"
+    },
+    {
+      "id": "q-1790679822886-640",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Write a PHP Script to Delete Record of Student Table by clicking on Delete Button by specifying Student_ID.",
+      "question": "Write a PHP Script to Delete Record of Student Table by clicking on Delete Button by specifying Student_ID.",
+      "category": "General",
+      "logic": "",
+      "code": "#p10.html\n<!--\n10. Write a PHP Script to Delete Record of Student Table by\n    clicking on Delete Button by specifying Student_ID.\n-->\n\n<html>\n<body>\n\n<form action=\"p10.php\" method=\"POST\">\n\n<h1>Delete Student Record</h1><br><br>\n\nStudent ID:\n<input type=\"number\" name=\"id\"><br><br>\n\n<input type=\"submit\" value=\"Delete Record\" name=\"submit\">\n\n</form>\n\n</body>\n</html>\n\n#p10.php\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$id = $_POST['id'];\n\n$sql = \"Delete from Student where Student_id=$id\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Record Not Deleted\";\n}\nelse\n{\n    echo \"Record Deleted\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p10.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">10.</span> Write a PHP Script to Delete Record of Student Table by</span><span class=\"line\">    clicking on Delete Button by specifying Student_ID.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p10.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;h1&gt;Delete Student Record&lt;/h1&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Student ID:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;id&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Delete Record&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p10.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$id = $_POST[<span class=\"tok-str\">&#39;id&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Delete from Student where Student_id=$id&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Not Deleted&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Deleted&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Delete Student Record\nStudent ID: 1",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to delete record of student table by clicking on delete button by specifying student_id. write a php script to delete record of student table by clicking on delete button by specifying student_id.  general q10",
+      "createdAt": "2026-09-29T11:03:42.889Z"
     }
   ]
 };
