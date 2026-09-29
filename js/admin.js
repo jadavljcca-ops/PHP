@@ -312,15 +312,32 @@
     container.innerHTML = '';
 
     semesters.forEach(s => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = `admin-sem-btn ${s.id === currentSemesterId ? 'active' : ''}`;
-      btn.innerHTML = `<span>🎓</span> <b>${escapeHtml(s.name)}</b>`;
-      btn.title = `Switch to ${s.title}`;
-      btn.addEventListener('click', () => {
-        setWorkspaceSemester(s.id);
+      const pill = document.createElement('div');
+      pill.className = 'admin-sub-pill' + (s.id === currentSemesterId ? ' active' : '');
+      pill.style.cssText = 'display:flex;align-items:center;gap:2px;';
+
+      const switchBtn = document.createElement('button');
+      switchBtn.type = 'button';
+      switchBtn.className = `admin-sem-btn${s.id === currentSemesterId ? ' active' : ''}`;
+      switchBtn.innerHTML = `<span>🎓</span> <b>${escapeHtml(s.name)}</b>`;
+      switchBtn.title = `Switch to ${escapeHtml(s.title)}`;
+      switchBtn.addEventListener('click', () => setWorkspaceSemester(s.id));
+
+      const delBtn = document.createElement('button');
+      delBtn.type = 'button';
+      delBtn.className = 'sub-edit-btn';
+      delBtn.title = `Delete ${escapeHtml(s.name)}`;
+      delBtn.setAttribute('aria-label', `Delete ${escapeHtml(s.name)}`);
+      delBtn.textContent = '🗑️';
+      delBtn.style.cssText = 'color:#ef4444;font-size:13px;';
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openDeleteSemesterModal(s.id);
       });
-      container.appendChild(btn);
+
+      pill.appendChild(switchBtn);
+      pill.appendChild(delBtn);
+      container.appendChild(pill);
     });
   }
 
@@ -1623,6 +1640,18 @@
     modal.classList.add('active');
   }
 
+  /* ── Semester Delete Modal ────────────────────────────────────────────────── */
+  let _pendingDeleteSemId = null;
+
+  function openDeleteSemesterModal(semId) {
+    _pendingDeleteSemId = semId;
+    const semObj = window.PracticalsStorage.getSemesterById(semId);
+    const nameEl = document.getElementById('delete-sem-name-display');
+    if (nameEl && semObj) nameEl.textContent = `${semObj.name} — ${semObj.title}`;
+    const modal = document.getElementById('delete-semester-modal');
+    if (modal) modal.classList.add('active');
+  }
+
   function bindSemesterEvents() {
     const form = document.getElementById('semester-form');
     if (form) {
@@ -1649,6 +1678,40 @@
 
         closeModal('semester-editor-modal');
         renderSemesterPills();
+      });
+    }
+
+    // Delete semester confirm button
+    const confirmDelBtn = document.getElementById('confirm-delete-semester-btn');
+    if (confirmDelBtn) {
+      confirmDelBtn.addEventListener('click', function () {
+        if (!_pendingDeleteSemId) return;
+        const semId = _pendingDeleteSemId;
+        const semObj = window.PracticalsStorage.getSemesterById(semId);
+        const semName = semObj ? semObj.name : semId;
+
+        const deleted = window.PracticalsStorage.deleteSemester(semId, true);
+        if (deleted) {
+          showToast(`Semester "${semName}" and all its data deleted.`, 'success');
+
+          // If the deleted semester was active, switch to another
+          if (currentSemesterId === semId) {
+            const remaining = window.PracticalsStorage.loadSemesters();
+            if (remaining.length > 0) {
+              setWorkspaceSemester(remaining[0].id);
+            } else {
+              currentSemesterId = null;
+              currentSubjectId = null;
+              renderDashboard();
+            }
+          }
+          renderSemesterPills();
+        } else {
+          showToast(`Failed to delete semester "${semName}".`, 'error');
+        }
+
+        _pendingDeleteSemId = null;
+        closeModal('delete-semester-modal');
       });
     }
   }

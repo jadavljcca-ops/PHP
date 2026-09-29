@@ -643,6 +643,33 @@
     </div>
   </div>
 
+  <!-- Delete Semester Confirmation Modal -->
+  <div class="modal-overlay" id="delete-semester-modal">
+    <div class="glass modal-box" style="max-width: 480px; text-align: center;">
+      <div style="font-size: 44px; margin-bottom: 10px;">🗑️</div>
+      <h3 style="font-family: var(--mono); margin: 0 0 8px; color: var(--text);">Delete Semester?</h3>
+      <p style="color: var(--text-muted); font-size: 13.5px; margin: 0 0 6px;">
+        You are about to permanently delete:
+      </p>
+      <div id="delete-sem-name-display"
+        style="font-size: 20px; font-weight: 700; color: var(--accent, #e53e3e); margin: 8px 0 14px; font-family: var(--mono);">
+        Sem 5
+      </div>
+      <p style="color: var(--text-muted); font-size: 12.5px; margin: 0 0 20px; line-height: 1.6;">
+        ⚠️ This will also delete <strong>all subjects, units, and practicals</strong> associated with this semester.<br>
+        <strong>This action cannot be undone.</strong>
+      </p>
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" class="secondary-btn" data-modal-close="delete-semester-modal"
+          style="min-width: 110px;">Cancel</button>
+        <button type="button" id="confirm-delete-semester-btn" class="danger-btn"
+          style="min-width: 140px; background: linear-gradient(135deg,#dc2626,#b91c1c); color:#fff; border:none; padding:10px 20px; border-radius:8px; font-weight:600; cursor:pointer;">
+          🗑️ Yes, Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Delete Subject Confirmation Modal -->
   <div class="modal-overlay" id="delete-subject-modal">
     <div class="glass modal-box" style="max-width: 520px; text-align: center;">
