@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:23:24.447Z
+ * Last updated: 2026-09-29T09:25:59.997Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:23:24.447Z",
+  "lastUpdated": "2026-09-29T09:25:59.997Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1708,6 +1708,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program to print all even numbers till the entered number. write a php program to print all even numbers till the entered number.  general q9",
       "createdAt": "2026-09-29T09:23:22.773Z"
+    },
+    {
+      "id": "q-1790673958317-324",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. Note:  Input should be collected from user using an HTML page.",
+      "question": "Create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. Note:  Input should be collected from user using an HTML page.",
+      "category": "General",
+      "logic": "",
+      "code": "#p10.html\n<!--\n10. Create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers\nis prime or not.Note: Input should be collected from user using an HTML page.\n-->\n<html>\n<head>\n    <title>Prime Sum</title>\n</head>\n<body>\n\n<h2>Check Sum is Prime or Not</h2>\n\n<form action=\"p10.php\" method=\"post\">\n    Enter Number 1:\n    <input type=\"number\" name=\"n1\"><br><br>\n\n    Enter Number 2:\n    <input type=\"number\" name=\"n2\"><br><br>\n\n    Enter Number 3:\n    <input type=\"number\" name=\"n3\"><br><br>\n\n    <input type=\"submit\" value=\"Check\">\n</form>\n\n</body>\n</html> \n\n#p10.php\n<?php\nfunction prime($a, $b, $c)\n{\n    $sum = $a + $b + $c;\n    $count = 0;\n\n    for($i = 1; $i <= $sum; $i++)\n    {\n        if($sum % $i == 0)\n        {\n            $count++;\n        }\n    }\n\n    echo \"Sum  of 3 numbers : = \" . $sum . \"<br>\";\n\n    if($count == 2)\n    {\n        echo \"Sum is Prime\";\n    }\n    else\n    {\n        echo \"Sum is Not Prime\";\n    }\n}\n\nprime($_POST['n1'], $_POST['n2'], $_POST['n3']);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p10.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">10.</span> Create a function that accepts <span class=\"tok-num\">3</span> numbers <span class=\"tok-kw\">as</span> parameters <span class=\"tok-kw\">and</span> check whether the <span class=\"tok-fn\">sum</span> of <span class=\"tok-num\">3</span> numbers</span><span class=\"line\"><span class=\"tok-kw\">is</span> prime <span class=\"tok-kw\">or</span> <span class=\"tok-kw\">not</span>.Note: Input should be collected <span class=\"tok-kw\">from</span> user <span class=\"tok-kw\">using</span> an HTML page.</span><span class=\"line\">--&gt;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">    &lt;title&gt;Prime Sum&lt;/title&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;h2&gt;Check Sum <span class=\"tok-kw\">is</span> Prime <span class=\"tok-kw\">or</span> Not&lt;/h2&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p10.php&quot;</span> method=<span class=\"tok-str\">&quot;post&quot;</span>&gt;</span><span class=\"line\">    Enter Number <span class=\"tok-num\">1</span>:</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;n1&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    Enter Number <span class=\"tok-num\">2</span>:</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;n2&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    Enter Number <span class=\"tok-num\">3</span>:</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;n3&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Check&quot;</span>&gt;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt; </span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p10.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">function prime($a, $b, $c)</span><span class=\"line\">{</span><span class=\"line\">    $<span class=\"tok-fn\">sum</span> = $a + $b + $c;</span><span class=\"line\">    $count = <span class=\"tok-num\">0</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">for</span>($i = <span class=\"tok-num\">1</span>; $i &lt;= $<span class=\"tok-fn\">sum</span>; $i++)</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span>($<span class=\"tok-fn\">sum</span> % $i == <span class=\"tok-num\">0</span>)</span><span class=\"line\">        {</span><span class=\"line\">            $count++;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">&nbsp;</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Sum  of 3 numbers : = &quot;</span> . $<span class=\"tok-fn\">sum</span> . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    <span class=\"tok-kw\">if</span>($count == <span class=\"tok-num\">2</span>)</span><span class=\"line\">    {</span><span class=\"line\">        echo <span class=\"tok-str\">&quot;Sum is Prime&quot;</span>;</span><span class=\"line\">    }</span><span class=\"line\">    <span class=\"tok-kw\">else</span></span><span class=\"line\">    {</span><span class=\"line\">        echo <span class=\"tok-str\">&quot;Sum is Not Prime&quot;</span>;</span><span class=\"line\">    }</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">prime($_POST[<span class=\"tok-str\">&#39;n1&#39;</span>], $_POST[<span class=\"tok-str\">&#39;n2&#39;</span>], $_POST[<span class=\"tok-str\">&#39;n3&#39;</span>]);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Check Sum is Prime or Not\nEnter Number 1: 12\nEnter Number 2: 13\nEnter Number 3: 14\n\nSum of 3 numbers : = 39\nSum is Not Prime",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. note:  input should be collected from user using an html page. create a function that accepts 3 numbers as parameters and check whether the sum of 3 numbers is prime or not. note:  input should be collected from user using an html page.  general q10",
+      "createdAt": "2026-09-29T09:25:58.319Z"
     }
   ]
 };
