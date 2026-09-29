@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:57:01.109Z
+ * Last updated: 2026-09-29T10:58:13.827Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:57:01.109Z",
+  "lastUpdated": "2026-09-29T10:58:13.827Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2238,6 +2238,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a form containing one input field (product_id) and a search button. when the user clicks on the search button a php script should get executed and should display the details of the product for the product_id specified. create a form containing one input field (product_id) and a search button. when the user clicks on the search button a php script should get executed and should display the details of the product for the product_id specified.  general q6",
       "createdAt": "2026-09-29T10:56:59.396Z"
+    },
+    {
+      "id": "q-1790679492134-530",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Write a PHP script for creating a “Product” table in “MyDB” database with fields Pro_id, Pro_name, Pro_price, Qty, Rate . Also write code to update product price to 100 whose product id is <4 in Product table”.",
+      "question": "Write a PHP script for creating a “Product” table in “MyDB” database with fields Pro_id, Pro_name, Pro_price, Qty, Rate . Also write code to update product price to 100 whose product id is <4 in Product table”.",
+      "category": "General",
+      "logic": "",
+      "code": "#p7.php\n<!--\n7. Write a PHP script for creating a “Product” table in “MyDB”\n   database with fields Pro_id, Pro_name, Pro_price, Qty, Rate.\n   Also write code to update product price to 100\n   whose product id is <4 in Product table.\n-->\n\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done<br>\";\n}\n\n$sql = \"CREATE TABLE Product\n(Pro_id INT(2), Pro_name VARCHAR(15), Pro_price INT(6), Qty INT(6), Rate INT(6))\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Table Not Created!<br>\";\n}\nelse\n{\n    echo \"Table Created!<br>\";\n}\n\n$sql = \"Update Product set Pro_price=100 where Pro_id<4\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Price Not Updated\";\n}\nelse\n{\n    echo \"Price Updated\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p7.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">7.</span> Write a PHP script <span class=\"tok-kw\">for</span> creating a “Product” table <span class=\"tok-kw\">in</span> “MyDB”</span><span class=\"line\">   database <span class=\"tok-kw\">with</span> fields Pro_id, Pro_name, Pro_price, Qty, Rate.</span><span class=\"line\">   Also write code to update product price to <span class=\"tok-num\">100</span></span><span class=\"line\">   whose product id <span class=\"tok-kw\">is</span> &lt;<span class=\"tok-num\">4</span> <span class=\"tok-kw\">in</span> Product table.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;CREATE TABLE Product</span></span><span class=\"line\">(Pro_id INT(<span class=\"tok-num\">2</span>), Pro_name VARCHAR(<span class=\"tok-num\">15</span>), Pro_price INT(<span class=\"tok-num\">6</span>), Qty INT(<span class=\"tok-num\">6</span>), Rate INT(<span class=\"tok-num\">6</span>))<span class=\"tok-str\">&quot;;</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Not Created!&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Table Created!&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Update Product set Pro_price=100 where Pro_id&lt;4&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Price Not Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Price Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also write code to update product price to 100 whose product id is <4 in product table”. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also write code to update product price to 100 whose product id is <4 in product table”.  general q7",
+      "createdAt": "2026-09-29T10:58:12.135Z"
     }
   ]
 };
