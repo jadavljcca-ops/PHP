@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T11:06:02.786Z
+ * Last updated: 2026-09-29T11:07:23.200Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T11:06:02.786Z",
+  "lastUpdated": "2026-09-29T11:07:23.200Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2348,6 +2348,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program to update a record with your own value into the table student against each column (student id, student name, course id, and mobile no).  note:  (a)\tinput should be collected from user using an html page.  (b)\tmake sure student id, course id, and mobile no must not be negative.  (c)\tstudent name should not be blank. write a php program to update a record with your own value into the table student against each column (student id, student name, course id, and mobile no).  note:  (a)\tinput should be collected from user using an html page.  (b)\tmake sure student id, course id, and mobile no must not be negative.  (c)\tstudent name should not be blank.  general q11",
       "createdAt": "2026-09-29T11:06:01.045Z"
+    },
+    {
+      "id": "q-1790680041469-752",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 12,
+      "tag": "Q12",
+      "title": "Write a PHP Script to Update Record of Employee table  (Empname, Empsalary, Empaddress) from Employee Table. Update Employee Name to “ABC” whose Employee number is 3.",
+      "question": "Write a PHP Script to Update Record of Employee table  (Empname, Empsalary, Empaddress) from Employee Table. Update Employee Name to “ABC” whose Employee number is 3.",
+      "category": "General",
+      "logic": "",
+      "code": "#p12.php\n<!--\n12. Write a PHP Script to Update Record of Employee table\n    (Empname, Empsalary, Empaddress) from Employee Table.\n    Update Employee Name to “ABC” whose Employee number is 3.\n-->\n\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$sql = \"Update Employee set Empname='ABC' where Empno=3\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Record Not Updated\";\n}\nelse\n{\n    echo \"Record Updated\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p12.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">12.</span> Write a PHP Script to Update Record of Employee table</span><span class=\"line\">    (Empname, Empsalary, Empaddress) <span class=\"tok-kw\">from</span> Employee Table.</span><span class=\"line\">    Update Employee Name to “ABC” whose Employee number <span class=\"tok-kw\">is</span> <span class=\"tok-num\">3.</span></span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Update Employee set Empname=&#39;ABC&#39; where Empno=3&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Not Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Updated&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to update record of employee table  (empname, empsalary, empaddress) from employee table. update employee name to “abc” whose employee number is 3. write a php script to update record of employee table  (empname, empsalary, empaddress) from employee table. update employee name to “abc” whose employee number is 3.  general q12",
+      "createdAt": "2026-09-29T11:07:21.471Z"
     }
   ]
 };
