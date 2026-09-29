@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:18:31.598Z
+ * Last updated: 2026-09-29T08:19:13.374Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:18:31.598Z",
+  "lastUpdated": "2026-09-29T08:19:13.374Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -121,6 +121,15 @@ window.DEFAULT_DATA = {
       "num": "Unit 2",
       "title": "Advanced PHP",
       "sub": "",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "semesterId": "sem-5",
+      "num": "Unit 3",
+      "title": "MySQL",
+      "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
   ],
