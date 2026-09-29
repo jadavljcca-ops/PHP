@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:48:17.928Z
+ * Last updated: 2026-09-29T09:49:47.998Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:48:17.928Z",
+  "lastUpdated": "2026-09-29T09:49:47.998Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1930,6 +1930,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program that deletes duplicate values from array. write a php program that deletes duplicate values from array.  general q7",
       "createdAt": "2026-09-29T09:48:16.257Z"
+    },
+    {
+      "id": "q-1790675386321-702",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Write a PHP program that checks whether the element is exists in the array or not. Give acknowledgement from the same.",
+      "question": "Write a PHP program that checks whether the element is exists in the array or not. Give acknowledgement from the same.",
+      "category": "General",
+      "logic": "",
+      "code": "#p8.php\n<!--\n8. Write a PHP program that checks whether the element is exists in the array or not. Give \nacknowledgement from the same.in_array() check કરે છે કે element array માં છે કે નહીં.\n-->\n\n<?php\n\n$arr = [10, 20, 30, 40, 50];\n\n$num = 30;\n\nif(in_array($num, $arr))\n{\n    echo \"Element exists in the array.\";\n}\nelse\n{\n    echo \"Element does not exist in the array.\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p8.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">8.</span> Write a PHP program that checks whether the element <span class=\"tok-kw\">is</span> exists <span class=\"tok-kw\">in</span> the array <span class=\"tok-kw\">or</span> <span class=\"tok-kw\">not</span>. Give </span><span class=\"line\">acknowledgement <span class=\"tok-kw\">from</span> the same.in_array() check કરે છે કે element array માં છે કે નહીં.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">10</span>, <span class=\"tok-num\">20</span>, <span class=\"tok-num\">30</span>, <span class=\"tok-num\">40</span>, <span class=\"tok-num\">50</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$num = <span class=\"tok-num\">30</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(in_array($num, $arr))</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Element exists in the array.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Element does not exist in the array.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Element exists in the array.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program that checks whether the element is exists in the array or not. give acknowledgement from the same. write a php program that checks whether the element is exists in the array or not. give acknowledgement from the same.  general q8",
+      "createdAt": "2026-09-29T09:49:46.322Z"
     }
   ]
 };
