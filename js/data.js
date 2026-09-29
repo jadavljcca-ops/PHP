@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:10:52.445Z
+ * Last updated: 2026-09-29T09:15:02.520Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:10:52.445Z",
+  "lastUpdated": "2026-09-29T09:15:02.520Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1620,6 +1620,28 @@ window.DEFAULT_DATA = {
       "dataSearch": "write a php program to accept a number from user and find its square and cube. write a php program to accept a number from user and find its square and cube.  general q5",
       "createdAt": "2026-09-29T09:07:48.431Z",
       "updatedAt": "2026-09-29T09:10:50.796Z"
+    },
+    {
+      "id": "q-1790673300857-964",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 6,
+      "tag": "Q6",
+      "title": "Write a PHP program to find sum of n numbers. Take input from user.",
+      "question": "Write a PHP program to find sum of n numbers. Take input from user.",
+      "category": "General",
+      "logic": "",
+      "code": "#p6.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p6.php\" method=\"POST\">\n\t\n\tEnter Number:\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"Find sum\">\n\t</form>\n</body>\n</html>\n\n#p6.php\n<?php\n$n=$_POST['num'];\n$sum=0;\n\nfor($i=1;$i<=$n;$i++)\n{\n\t$sum = $sum + $i;\n}\n\necho \" sum = \" .$sum;\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p6.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p6.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter Number:</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;num&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Find sum&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p6.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$n=$_POST[<span class=\"tok-str\">&#39;num&#39;</span>];</span><span class=\"line\">$<span class=\"tok-fn\">sum</span>=<span class=\"tok-num\">0</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">for</span>($i=<span class=\"tok-num\">1</span>;$i&lt;=$n;$i++)</span><span class=\"line\">{</span><span class=\"line\">\t$<span class=\"tok-fn\">sum</span> = $<span class=\"tok-fn\">sum</span> + $i;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot; sum = &quot;</span> .$<span class=\"tok-fn\">sum</span>;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter Number: 12\nsum = 78",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program to find sum of n numbers. take input from user. write a php program to find sum of n numbers. take input from user.  general q6",
+      "createdAt": "2026-09-29T09:15:00.858Z"
     }
   ]
 };
