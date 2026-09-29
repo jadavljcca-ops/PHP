@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:55:45.578Z
+ * Last updated: 2026-09-29T09:57:02.231Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:55:45.578Z",
+  "lastUpdated": "2026-09-29T09:57:02.231Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2040,6 +2040,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program in php to demonstrate the use of multidimensional arrays. write a program in php to demonstrate the use of multidimensional arrays.  general q12",
       "createdAt": "2026-09-29T09:55:43.861Z"
+    },
+    {
+      "id": "q-1790675820545-704",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 13,
+      "tag": "Q13",
+      "title": "Write a program in PHP to sort the array of given 5 numbers in ascending and descending order.",
+      "question": "Write a program in PHP to sort the array of given 5 numbers in ascending and descending order.",
+      "category": "General",
+      "logic": "",
+      "code": "#13.php\n<!--\n13. Write a program in PHP to sort the array of given 5 numbers in ascending and descending order.\n-->\n\n<?php\n\n$arr = [40, 10, 50, 20, 30];\n\nsort($arr); #Ascending\n\necho \"Ascending Order:<br>\";\nprint_r($arr);\n\nrsort($arr); #Descending\n\necho \"<br><br>Descending Order:<br>\";\nprint_r($arr);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#13.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">13.</span> Write a program <span class=\"tok-kw\">in</span> PHP to sort the array of given <span class=\"tok-num\">5</span> numbers <span class=\"tok-kw\">in</span> ascending <span class=\"tok-kw\">and</span> descending order.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">40</span>, <span class=\"tok-num\">10</span>, <span class=\"tok-num\">50</span>, <span class=\"tok-num\">20</span>, <span class=\"tok-num\">30</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">sort($arr); <span class=\"tok-com\">#Ascending</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Ascending Order:&lt;br&gt;&quot;</span>;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">rsort($arr); <span class=\"tok-com\">#Descending</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&lt;br&gt;Descending Order:&lt;br&gt;&quot;</span>;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Ascending Order:\nArray ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 [4] => 50 )\n\nDescending Order:\nArray ( [0] => 50 [1] => 40 [2] => 30 [3] => 20 [4] => 10 )",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program in php to sort the array of given 5 numbers in ascending and descending order. write a program in php to sort the array of given 5 numbers in ascending and descending order.  general q13",
+      "createdAt": "2026-09-29T09:57:00.545Z"
     }
   ]
 };
