@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T04:26:33.995Z
+ * Last updated: 2026-09-29T04:27:43.313Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T04:26:33.995Z",
+  "lastUpdated": "2026-09-29T04:27:43.313Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1642,6 +1642,28 @@ window.DEFAULT_DATA = {
       "chartSrc": "",
       "chartAlt": "",
       "dataSearch": "swap two numbers using call by reference pointers in c"
+    },
+    {
+      "id": "q-1790656061624-941",
+      "semesterId": "sem-1",
+      "subjectId": "sub-c-sem1",
+      "unitId": "unit-1-sub-c-sem1",
+      "unitNum": "Unit 1",
+      "unitTitle": "jd",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed.",
+      "question": "Python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed.",
+      "category": "General",
+      "logic": "Python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed.",
+      "code": "a, b = int(input(\"Enter a: \")), int(input(\"Enter b: \"))\na, b = b, a\nprint(f\"After swap: a = {a}, b = {b}\")",
+      "codeHtml": "<span class=\"line\">a, b = <span class=\"tok-kw\">int</span>(<span class=\"tok-fn\">input</span>(<span class=\"tok-str\">&quot;Enter a: &quot;</span>)), <span class=\"tok-kw\">int</span>(<span class=\"tok-fn\">input</span>(<span class=\"tok-str\">&quot;Enter b: &quot;</span>))</span><span class=\"line\">a, b = b, a</span><span class=\"line\"><span class=\"tok-fn\">print</span>(f<span class=\"tok-str\">&quot;After swap: a = {a}, b = {b}&quot;</span>)</span>",
+      "output": "Enter a: 5\nEnter b: 10\nAfter swap: a = 10, b = 5",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed. python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed. python allows simultaneous (tuple) assignment: a, b = b, a evaluates the right side as a tuple first and then assigns both names at once, so no third variable is needed. general q8",
+      "createdAt": "2026-09-29T04:27:41.627Z"
     }
   ]
 };
