@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:42:35.241Z
+ * Last updated: 2026-09-29T09:44:16.826Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:42:35.241Z",
+  "lastUpdated": "2026-09-29T09:44:16.826Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1862,6 +1862,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message. write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message.  general q4",
       "createdAt": "2026-09-29T09:42:33.570Z"
+    },
+    {
+      "id": "q-1790675055162-996",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Create an array with 5 elements and print all array elements.",
+      "question": "Create an array with 5 elements and print all array elements.",
+      "category": "General",
+      "logic": "",
+      "code": "#p5.php\n<!--\n5. Create an array with 5 elements and print all array elements.\n-->\n\n<?php\n\n$arr = [10, 20, 30, 40, 50];\n\necho \"Array elements are:<br>\";\n\nprint_r($arr);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p5.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">5.</span> Create an array <span class=\"tok-kw\">with</span> <span class=\"tok-num\">5</span> elements <span class=\"tok-kw\">and</span> <span class=\"tok-fn\">print</span> all array elements.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">10</span>, <span class=\"tok-num\">20</span>, <span class=\"tok-num\">30</span>, <span class=\"tok-num\">40</span>, <span class=\"tok-num\">50</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Array elements are:&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Array elements are:\nArray ( [0] => 10 [1] => 20 [2] => 30 [3] => 40 [4] => 50 )",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create an array with 5 elements and print all array elements. create an array with 5 elements and print all array elements.  general q5",
+      "createdAt": "2026-09-29T09:44:15.163Z"
     }
   ]
 };
