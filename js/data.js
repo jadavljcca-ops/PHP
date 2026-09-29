@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:36:32.247Z
+ * Last updated: 2026-09-29T09:38:33.712Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:36:32.247Z",
+  "lastUpdated": "2026-09-29T09:38:33.712Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1796,6 +1796,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script to set a cookie named \"username\" with the value \"welcome\" with an expiration time of one hour and display its value. write a php script to set a cookie named \"username\" with the value \"welcome\" with an expiration time of one hour and display its value.  general q1",
       "createdAt": "2026-09-29T09:36:30.567Z"
+    },
+    {
+      "id": "q-1790674712026-406",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "Write a PHP script to delete a cookie named \"welcome\".",
+      "question": "Write a PHP script to delete a cookie named \"welcome\".",
+      "category": "General",
+      "logic": "#p2.php\n<!-- # 2. Write a PHP script to delete a cookie named \"welcome\".-->\n<?php\n\nsetcookie(\"welcome\", \"\", time() - 3600);\n\nif(isset($_COOKIE[\"welcome\"]))\n{\n    echo \"Cookie is not deleted\";\n}\nelse\n{\n    echo \"Cookie deleted successfully\";\n}\n\n?>",
+      "code": "Cookie deleted successfully",
+      "codeHtml": "<span class=\"line\">Cookie deleted successfully</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to delete a cookie named \"welcome\". write a php script to delete a cookie named \"welcome\". #p2.php\n<!-- # 2. write a php script to delete a cookie named \"welcome\".-->\n<?php\n\nsetcookie(\"welcome\", \"\", time() - 3600);\n\nif(isset($_cookie[\"welcome\"]))\n{\n    echo \"cookie is not deleted\";\n}\nelse\n{\n    echo \"cookie deleted successfully\";\n}\n\n?> general q2",
+      "createdAt": "2026-09-29T09:38:32.026Z"
     }
   ]
 };
