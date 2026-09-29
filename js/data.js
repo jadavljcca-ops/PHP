@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:51:14.059Z
+ * Last updated: 2026-09-29T09:53:00.283Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:51:14.059Z",
+  "lastUpdated": "2026-09-29T09:53:00.283Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1974,6 +1974,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create an associative array and display its elements. create an associative array and display its elements.  general q9",
       "createdAt": "2026-09-29T09:51:12.379Z"
+    },
+    {
+      "id": "q-1790675578593-361",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement",
+      "question": "Create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement",
+      "category": "General",
+      "logic": "",
+      "code": "#p10.php\n<!--\n10. Create an array named $sub, assign five elements to it and display the elements assigned using \nfor loop and foreach statement.\n-->\n\n<?php\n\n$sub = [\"PHP\", \"Java\", \"Python\", \"C++\", \"SQL\"];\n\necho \"Using for loop:<br>\";\n\nfor($i = 0; $i < 5; $i++)\n{\n    echo $sub[$i] . \"<br>\";\n}\n\necho \"<br>Using foreach loop:<br>\";\n\nforeach($sub as $i)\n{\n    echo $i . \"<br>\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p10.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">10.</span> Create an array named $sub, assign five elements to it <span class=\"tok-kw\">and</span> display the elements assigned <span class=\"tok-kw\">using</span> </span><span class=\"line\"><span class=\"tok-kw\">for</span> loop <span class=\"tok-kw\">and</span> foreach statement.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sub = [<span class=\"tok-str\">&quot;PHP&quot;</span>, <span class=\"tok-str\">&quot;Java&quot;</span>, <span class=\"tok-str\">&quot;Python&quot;</span>, <span class=\"tok-str\">&quot;C++&quot;</span>, <span class=\"tok-str\">&quot;SQL&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Using for loop:&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">for</span>($i = <span class=\"tok-num\">0</span>; $i &lt; <span class=\"tok-num\">5</span>; $i++)</span><span class=\"line\">{</span><span class=\"line\">    echo $sub[$i] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;Using foreach loop:&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">foreach($sub <span class=\"tok-kw\">as</span> $i)</span><span class=\"line\">{</span><span class=\"line\">    echo $i . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Using for loop:\nPHP\nJava\nPython\nC++\nSQL\n\nUsing foreach loop:\nPHP\nJava\nPython\nC++\nSQL",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement  general q10",
+      "createdAt": "2026-09-29T09:52:58.593Z"
     }
   ]
 };
