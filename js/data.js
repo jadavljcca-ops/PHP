@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:21:23.532Z
+ * Last updated: 2026-09-29T09:23:24.447Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:21:23.532Z",
+  "lastUpdated": "2026-09-29T09:23:24.447Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1686,6 +1686,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "accept a number from user as “radius” of a circle. write php program find area of a circle.   ( area = pi * radius * radius). accept a number from user as “radius” of a circle. write php program find area of a circle.   ( area = pi * radius * radius).  general q8",
       "createdAt": "2026-09-29T09:21:21.863Z"
+    },
+    {
+      "id": "q-1790673802772-423",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Write a PHP program to print all even numbers till the entered number.",
+      "question": "Write a PHP program to print all even numbers till the entered number.",
+      "category": "General",
+      "logic": "",
+      "code": "#p9.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p9.php\" method=\"POST\">\n\t\n\tEnter  Number:\n\t<input type=\"Number\" name=\"n1\"><br>\n\t\n\t<input type=\"submit\" value=\"submit\">\n\t</form>\n</body>\n</html>\n\n#p9.php\n<?php\n$n=$_POST[\"n1\"];\n\necho \"<h1>List Of Even Numbers : </h1>\";\n\nfor($i=0;$i<$n;$i=$i+2)\n{\n\techo \" $i <br>\";\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p9.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p9.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter  Number:</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;Number&quot;</span> name=<span class=\"tok-str\">&quot;n1&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;submit&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p9.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$n=$_POST[<span class=\"tok-str\">&quot;n1&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;h1&gt;List Of Even Numbers : &lt;/h1&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">for</span>($i=<span class=\"tok-num\">0</span>;$i&lt;$n;$i=$i+<span class=\"tok-num\">2</span>)</span><span class=\"line\">{</span><span class=\"line\">\techo <span class=\"tok-str\">&quot; $i &lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter Number: 13\n0\n2\n4\n6\n8\n10\n12",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program to print all even numbers till the entered number. write a php program to print all even numbers till the entered number.  general q9",
+      "createdAt": "2026-09-29T09:23:22.773Z"
     }
   ]
 };
