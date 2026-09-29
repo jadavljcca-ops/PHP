@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:53:00.283Z
+ * Last updated: 2026-09-29T09:54:32.700Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:53:00.283Z",
+  "lastUpdated": "2026-09-29T09:54:32.700Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1996,6 +1996,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement create an array named $sub, assign five elements to it and display the elements assigned using for loop and foreach statement  general q10",
       "createdAt": "2026-09-29T09:52:58.593Z"
+    },
+    {
+      "id": "q-1790675671025-949",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 11,
+      "tag": "Q11",
+      "title": "Create an array named $student that stores 5 elements bounded to different keys and access the same using the key element.",
+      "question": "Create an array named $student that stores 5 elements bounded to different keys and access the same using the key element.",
+      "category": "General",
+      "logic": "",
+      "code": "#p11.php\n<!--\n11. Create an array named $student that stores 5 elements bounded to different keys and access the \nsame using the key element.\n-->\n\n<?php\n\n$student = [\n    \"name\" => \"Jiya\",\n    \"age\" => 19,\n    \"city\" => \"Ahmedabad\",\n    \"course\" => \"BCA\",\n    \"semester\" => 5\n];\n\necho \"Name = \" . $student[\"name\"] . \"<br>\";\necho \"Age = \" . $student[\"age\"] . \"<br>\";\necho \"City = \" . $student[\"city\"] . \"<br>\";\necho \"Course = \" . $student[\"course\"] . \"<br>\";\necho \"Semester = \" . $student[\"semester\"];\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p11.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">11.</span> Create an array named $student that stores <span class=\"tok-num\">5</span> elements bounded to different keys <span class=\"tok-kw\">and</span> access the </span><span class=\"line\">same <span class=\"tok-kw\">using</span> the key element.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$student = [</span><span class=\"line\">    <span class=\"tok-str\">&quot;name&quot;</span> =&gt; <span class=\"tok-str\">&quot;Jiya&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;age&quot;</span> =&gt; <span class=\"tok-num\">19</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;city&quot;</span> =&gt; <span class=\"tok-str\">&quot;Ahmedabad&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;course&quot;</span> =&gt; <span class=\"tok-str\">&quot;BCA&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;semester&quot;</span> =&gt; <span class=\"tok-num\">5</span></span><span class=\"line\">];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Name = &quot;</span> . $student[<span class=\"tok-str\">&quot;name&quot;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Age = &quot;</span> . $student[<span class=\"tok-str\">&quot;age&quot;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;City = &quot;</span> . $student[<span class=\"tok-str\">&quot;city&quot;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Course = &quot;</span> . $student[<span class=\"tok-str\">&quot;course&quot;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Semester = &quot;</span> . $student[<span class=\"tok-str\">&quot;semester&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Name = Jiya\nAge = 19\nCity = Ahmedabad\nCourse = BCA\nSemester = 5",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create an array named $student that stores 5 elements bounded to different keys and access the same using the key element. create an array named $student that stores 5 elements bounded to different keys and access the same using the key element.  general q11",
+      "createdAt": "2026-09-29T09:54:31.026Z"
     }
   ]
 };
