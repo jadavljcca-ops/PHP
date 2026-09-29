@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T10:08:03.558Z
+ * Last updated: 2026-09-29T10:50:20.374Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T10:08:03.558Z",
+  "lastUpdated": "2026-09-29T10:50:20.374Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2150,6 +2150,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "2. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also display an acknowledgement for the same as “table created successfully”. 2. write a php script for creating a “product” table in “mydb” database with fields pro_id, pro_name, pro_price, qty, rate . also display an acknowledgement for the same as “table created successfully”.  general q2",
       "createdAt": "2026-09-29T10:06:50.962Z"
+    },
+    {
+      "id": "q-1790679018657-863",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-3-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 3",
+      "unitTitle": "MySQL",
+      "practicalNumber": 3,
+      "tag": "Q3",
+      "title": "Create a form containing four input fields(Pro_id,  Pro_name, Pro_price, QOH) and Submit button. When the user clicks on the submit button, PHP script should be executed which inserts the record in the product table.",
+      "question": "Create a form containing four input fields(Pro_id,  Pro_name, Pro_price, QOH) and Submit button. When the user clicks on the submit button, PHP script should be executed which inserts the record in the product table.",
+      "category": "General",
+      "logic": "",
+      "code": "#p3.html\n<!--\n3. Create a form containing four input fields (Pro_id,\nPro_name, Pro_price, QOH) and Submit button. When the\nuser clicks on the submit button, PHP script should be\nexecuted which inserts the record in the product table.\n-->\n\n<html>\n<body>\n\n<form action=\"p3.php\" method=\"POST\">\n\n<h1>Insert Product Record</h1><br><br>\n\nProduct ID:\n<input type=\"number\" name=\"id\"><br><br>\n\nProduct Name:\n<input type=\"text\" name=\"nm\"><br><br>\n\nProduct Price:\n<input type=\"number\" name=\"price\"><br><br>\n\nQOH:\n<input type=\"number\" name=\"qoh\"><br><br>\n\n<input type=\"submit\" value=\"Insert Record\" name=\"submit\">\n\n</form>\n\n</body>\n</html>\n\n#p3.php\n<?php\n\n$cn = mysqli_connect(\"localhost\",\"root\",\"\",\"MyDB\");\n\nif(!$cn)\n{\n    die(\"Connection not done\");\n}\nelse\n{\n    echo \"Connection Done\";\n}\n\n$id = $_POST['id'];\n$nm = $_POST['nm'];\n$price = $_POST['price'];\n$qoh = $_POST['qoh'];\n\n$sql = \"Insert into Product value ($id,'$nm',$price,$qoh)\";\n\n$result = mysqli_query($cn,$sql);\n\nif(!$result)\n{\n    echo \"Record Not Inserted\";\n}\nelse\n{\n    echo \"Record Inserted\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p3.html</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">3.</span> Create a form containing four <span class=\"tok-fn\">input</span> fields (Pro_id,</span><span class=\"line\">Pro_name, Pro_price, QOH) <span class=\"tok-kw\">and</span> Submit button. When the</span><span class=\"line\">user clicks on the submit button, PHP script should be</span><span class=\"line\">executed which inserts the record <span class=\"tok-kw\">in</span> the product table.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;form action=<span class=\"tok-str\">&quot;p3.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;h1&gt;Insert Product Record&lt;/h1&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Product ID:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;id&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Product Name:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> name=<span class=\"tok-str\">&quot;nm&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Product Price:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;price&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">QOH:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;qoh&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Insert Record&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p3.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$cn = mysqli_connect(<span class=\"tok-str\">&quot;localhost&quot;</span>,<span class=\"tok-str\">&quot;root&quot;</span>,<span class=\"tok-str\">&quot;&quot;</span>,<span class=\"tok-str\">&quot;MyDB&quot;</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$cn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&quot;Connection not done&quot;</span>);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Connection Done&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">$id = $_POST[<span class=\"tok-str\">&#39;id&#39;</span>];</span><span class=\"line\">$nm = $_POST[<span class=\"tok-str\">&#39;nm&#39;</span>];</span><span class=\"line\">$price = $_POST[<span class=\"tok-str\">&#39;price&#39;</span>];</span><span class=\"line\">$qoh = $_POST[<span class=\"tok-str\">&#39;qoh&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;Insert into Product value ($id,&#39;$nm&#39;,$price,$qoh)&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">$result = mysqli_query($cn,$sql);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$result)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Not Inserted&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Record Inserted&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Insert Product Record\nProduct ID: 001\nProduct Name: Jd\nProduct Price: 10000\nQOH: 12",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing four input fields(pro_id,  pro_name, pro_price, qoh) and submit button. when the user clicks on the submit button, php script should be executed which inserts the record in the product table. create a form containing four input fields(pro_id,  pro_name, pro_price, qoh) and submit button. when the user clicks on the submit button, php script should be executed which inserts the record in the product table.  general q3",
+      "createdAt": "2026-09-29T10:50:18.660Z"
     }
   ]
 };
