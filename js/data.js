@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:15:02.520Z
+ * Last updated: 2026-09-29T09:18:49.317Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:15:02.520Z",
+  "lastUpdated": "2026-09-29T09:18:49.317Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1642,6 +1642,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program to find sum of n numbers. take input from user. write a php program to find sum of n numbers. take input from user.  general q6",
       "createdAt": "2026-09-29T09:15:00.858Z"
+    },
+    {
+      "id": "q-1790673527629-226",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Accept a two numbers from user. Write a PHP program to Add, Subtract and Multiply the numbers and displays result.",
+      "question": "Accept a two numbers from user. Write a PHP program to Add, Subtract and Multiply the numbers and displays result.",
+      "category": "General",
+      "logic": "",
+      "code": "#p7.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p7.php\" method=\"POST\">\n\t\n\tEnter 1st number:\n\t<input type=\"Number\" name=\"n1\"><br><br>\n\t\n\tEnter 2nd number:\n\t<input type=\"Number\" name=\"n2\"><br><br>\n\t\n\t<input type=\"submit\" value=\"Calculate\">\n\t</form>\n</body>\n</html>\n\n#p7.php\n<?php\n\n$a=$_POST['n1'];\n$b=$_POST['n2'];\n\necho \"Addition = \" .($a + $b);\necho \"<br>\";\n\necho \"substraction = \" .($a - $b);\necho \"<br>\";\n\necho \"Multipication = \" .($a * $b);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p7.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p7.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter <span class=\"tok-num\">1</span>st number:</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;Number&quot;</span> name=<span class=\"tok-str\">&quot;n1&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter <span class=\"tok-num\">2</span>nd number:</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;Number&quot;</span> name=<span class=\"tok-str\">&quot;n2&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Calculate&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p7.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$a=$_POST[<span class=\"tok-str\">&#39;n1&#39;</span>];</span><span class=\"line\">$b=$_POST[<span class=\"tok-str\">&#39;n2&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Addition = &quot;</span> .($a + $b);</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;substraction = &quot;</span> .($a - $b);</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Multipication = &quot;</span> .($a * $b);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter 1st number: 12\nEnter 2nd number: 13\n\nAddition = 25\nsubstraction = -1\nMultipication = 156",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "accept a two numbers from user. write a php program to add, subtract and multiply the numbers and displays result. accept a two numbers from user. write a php program to add, subtract and multiply the numbers and displays result.  general q7",
+      "createdAt": "2026-09-29T09:18:47.631Z"
     }
   ]
 };
