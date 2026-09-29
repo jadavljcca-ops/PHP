@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:07:50.084Z
+ * Last updated: 2026-09-29T09:10:52.445Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:07:50.084Z",
+  "lastUpdated": "2026-09-29T09:10:52.445Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1610,15 +1610,16 @@ window.DEFAULT_DATA = {
       "title": "Write a PHP program to accept a number from user and find its square and cube.",
       "question": "Write a PHP program to accept a number from user and find its square and cube.",
       "category": "General",
-      "logic": "#p5.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p5.php\" method=\"POST\">\n\t\n\tEnter Number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"Find\">\n\t</form>\n</body>\n</html>\n\n#p5.php\n<?php\n\n$num=$_POST['num'];\n\n$square = $num * $num;\n$cube = $num * $num * $num;\n\necho \" Square = \" .$square;\necho \"<br>\";\necho \"Cube = \" .$cube;\n?>",
-      "code": "Enter Number : 12\nSquare = 144\nCube = 1728",
-      "codeHtml": "<span class=\"line\">Enter Number : <span class=\"tok-num\">12</span></span><span class=\"line\">Square = <span class=\"tok-num\">144</span></span><span class=\"line\">Cube = <span class=\"tok-num\">1728</span></span>",
-      "output": "",
+      "logic": "",
+      "code": "#p5.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p5.php\" method=\"POST\">\n\t\n\tEnter Number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"Find\">\n\t</form>\n</body>\n</html>\n\n#p5.php\n<?php\n\n$num=$_POST['num'];\n\n$square = $num * $num;\n$cube = $num * $num * $num;\n\necho \" Square = \" .$square;\necho \"<br>\";\necho \"Cube = \" .$cube;\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p5.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p5.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter Number :</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> name=<span class=\"tok-str\">&quot;num&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Find&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p5.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$num=$_POST[<span class=\"tok-str\">&#39;num&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$square = $num * $num;</span><span class=\"line\">$cube = $num * $num * $num;</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot; Square = &quot;</span> .$square;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Cube = &quot;</span> .$cube;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter Number : 12\nSquare = 144\nCube = 1728",
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "write a php program to accept a number from user and find its square and cube. write a php program to accept a number from user and find its square and cube. #p5.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p5.php\" method=\"post\">\n\t\n\tenter number :\n\t\n\t<input type=\"number\" name=\"num\"><br>\n\t<input type=\"submit\" value=\"find\">\n\t</form>\n</body>\n</html>\n\n#p5.php\n<?php\n\n$num=$_post['num'];\n\n$square = $num * $num;\n$cube = $num * $num * $num;\n\necho \" square = \" .$square;\necho \"<br>\";\necho \"cube = \" .$cube;\n?> general q5",
-      "createdAt": "2026-09-29T09:07:48.431Z"
+      "dataSearch": "write a php program to accept a number from user and find its square and cube. write a php program to accept a number from user and find its square and cube.  general q5",
+      "createdAt": "2026-09-29T09:07:48.431Z",
+      "updatedAt": "2026-09-29T09:10:50.796Z"
     }
   ]
 };
