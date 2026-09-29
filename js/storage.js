@@ -16,6 +16,12 @@
   const STORAGE_KEY_ACTIVE_SUB = 'python_practicals_active_sub_v1';
   const STORAGE_KEY_DATA_SYNC_TIME = 'python_practicals_data_last_sync_v2';
 
+  // ── In-memory cache ──────────────────────────────────────────────────────────
+  // Avoids repeated JSON.parse on every render call (data.js can be 300 KB+).
+  const _cache = { semesters: null, subjects: null, units: null, questions: null };
+  function _bust(key) { _cache[key] = null; }
+  function _bustAll() { _cache.semesters = null; _cache.subjects = null; _cache.units = null; _cache.questions = null; }
+
   // Automatically sync dataset from window.DEFAULT_DATA if updated on GitHub
   function syncDefaultDataIfUpdated() {
     if (typeof window === 'undefined' || !window.DEFAULT_DATA) return;
@@ -192,11 +198,13 @@
      ========================================================================== */
 
   function loadSemesters() {
+    if (_cache.semesters) return _cache.semesters;
     try {
       const stored = localStorage.getItem(STORAGE_KEY_SEMESTERS);
       if (stored) {
         const parsed = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
+          _cache.semesters = parsed;
           return parsed;
         }
       }
@@ -210,11 +218,13 @@
       return cloned;
     }
 
-    return [
+    const defaults = [
       { id: 'sem-1', name: 'Sem 1', title: 'Semester 1', desc: 'First Year Foundation & Programming Core' },
       { id: 'sem-3', name: 'Sem 3', title: 'Semester 3', desc: 'Second Year Core Computing & Data Structures' },
       { id: 'sem-5', name: 'Sem 5', title: 'Semester 5', desc: 'Third Year Advanced Computing & Python' }
     ];
+    _cache.semesters = defaults;
+    return defaults;
   }
 
   let localSyncTimer = null;
@@ -262,6 +272,7 @@
 
   function saveSemesters(semesters) {
     try {
+      _bust('semesters');
       localStorage.setItem(STORAGE_KEY_SEMESTERS, JSON.stringify(semesters));
       triggerLocalFileSync();
       return true;
@@ -370,32 +381,35 @@
      ========================================================================== */
 
   function loadSubjects(semesterId = null) {
-    let subjects = [];
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY_SUBJECTS);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          subjects = parsed;
+    let subjects = _cache.subjects;
+    if (!subjects) {
+      subjects = [];
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY_SUBJECTS);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            subjects = parsed;
+          }
         }
+      } catch (e) {
+        console.warn('Failed to load subjects from localStorage:', e);
       }
-    } catch (e) {
-      console.warn('Failed to load subjects from localStorage:', e);
-    }
 
-    if (subjects.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.subjects)) {
-      subjects = JSON.parse(JSON.stringify(window.DEFAULT_DATA.subjects));
-      saveSubjects(subjects);
-    }
+      if (subjects.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.subjects)) {
+        subjects = JSON.parse(JSON.stringify(window.DEFAULT_DATA.subjects));
+        saveSubjects(subjects);
+      }
 
-    // Fallback default subjects if still empty
-    if (subjects.length === 0) {
-      subjects = [
-        { id: 'sub-py-sem5', semesterId: 'sem-5', name: 'Python Programming', code: 'BSCA501', icon: '🐍', desc: '62 solved programs across 4 units — aim, logic, code & real output.' },
-        { id: 'sub-c-sem1', semesterId: 'sem-1', name: 'Programming in C', code: 'BSCA101', icon: '💻', desc: 'Fundamental C practicals, algorithms, loops, arrays & functions.' },
-        { id: 'sub-ds-sem3', semesterId: 'sem-3', name: 'Data Structures using C++', code: 'BSCA301', icon: '🧱', desc: 'Stacks, Queues, Linked Lists, Trees & Sorting algorithms.' }
-      ];
-      saveSubjects(subjects);
+      if (subjects.length === 0) {
+        subjects = [
+          { id: 'sub-py-sem5', semesterId: 'sem-5', name: 'Python Programming', code: 'BSCA501', icon: '🐍', desc: '62 solved programs across 4 units — aim, logic, code & real output.' },
+          { id: 'sub-c-sem1', semesterId: 'sem-1', name: 'Programming in C', code: 'BSCA101', icon: '💻', desc: 'Fundamental C practicals, algorithms, loops, arrays & functions.' },
+          { id: 'sub-ds-sem3', semesterId: 'sem-3', name: 'Data Structures using C++', code: 'BSCA301', icon: '🧱', desc: 'Stacks, Queues, Linked Lists, Trees & Sorting algorithms.' }
+        ];
+        saveSubjects(subjects);
+      }
+      _cache.subjects = subjects;
     }
 
     if (semesterId && semesterId !== 'all') {
@@ -406,6 +420,7 @@
 
   function saveSubjects(subjects) {
     try {
+      _bust('subjects');
       localStorage.setItem(STORAGE_KEY_SUBJECTS, JSON.stringify(subjects));
       triggerLocalFileSync();
       return true;
@@ -525,38 +540,43 @@
      ========================================================================== */
 
   function loadUnits(subjectId = null, semesterId = null) {
-    let units = [];
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY_UNITS);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          units = parsed;
+    let units = _cache.units;
+    if (!units) {
+      units = [];
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY_UNITS);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            units = parsed;
+          }
         }
+      } catch (e) {
+        console.warn('Failed to load units from localStorage:', e);
       }
-    } catch (e) {
-      console.warn('Failed to load units from localStorage:', e);
-    }
 
-    if (units.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.units)) {
-      units = JSON.parse(JSON.stringify(window.DEFAULT_DATA.units));
-      saveUnits(units);
-    }
+      if (units.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.units)) {
+        units = JSON.parse(JSON.stringify(window.DEFAULT_DATA.units));
+        saveUnits(units);
+      }
 
-    // Default migration: assign default subjectId and semesterId if missing
-    let modified = false;
-    units.forEach(u => {
-      if (!u.subjectId) {
-        u.subjectId = (u.id.startsWith('unit-c') ? 'sub-c-sem1' : (u.id.startsWith('unit-ds') ? 'sub-ds-sem3' : 'sub-py-sem5'));
-        modified = true;
+      // Default migration: assign default subjectId and semesterId if missing
+      let modified = false;
+      units.forEach(u => {
+        if (!u.subjectId) {
+          u.subjectId = (u.id.startsWith('unit-c') ? 'sub-c-sem1' : (u.id.startsWith('unit-ds') ? 'sub-ds-sem3' : 'sub-py-sem5'));
+          modified = true;
+        }
+        if (!u.semesterId) {
+          u.semesterId = (u.subjectId === 'sub-c-sem1' ? 'sem-1' : (u.subjectId === 'sub-ds-sem3' ? 'sem-3' : 'sem-5'));
+          modified = true;
+        }
+      });
+      if (modified) {
+        saveUnits(units);
+      } else {
+        _cache.units = units;
       }
-      if (!u.semesterId) {
-        u.semesterId = (u.subjectId === 'sub-c-sem1' ? 'sem-1' : (u.subjectId === 'sub-ds-sem3' ? 'sem-3' : 'sem-5'));
-        modified = true;
-      }
-    });
-    if (modified) {
-      saveUnits(units);
     }
 
     if (subjectId && subjectId !== 'all') {
@@ -570,6 +590,7 @@
 
   function saveUnits(units) {
     try {
+      _bust('units');
       localStorage.setItem(STORAGE_KEY_UNITS, JSON.stringify(units));
       triggerLocalFileSync();
       return true;
@@ -702,47 +723,50 @@
      ========================================================================== */
 
   function loadQuestions(subjectId = null, semesterId = null) {
-    let questions = [];
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY_QUESTIONS);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          questions = parsed;
+    let questions = _cache.questions;
+    if (!questions) {
+      questions = [];
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY_QUESTIONS);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            questions = parsed;
+          }
         }
+      } catch (e) {
+        console.warn('Failed to load questions from localStorage:', e);
       }
-    } catch (e) {
-      console.warn('Failed to load questions from localStorage:', e);
+
+      if (questions.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.questions)) {
+        questions = JSON.parse(JSON.stringify(window.DEFAULT_DATA.questions));
+        saveQuestions(questions);
+      }
+
+      // BACKWARD COMPATIBILITY & MIGRATION:
+      let changed = false;
+      questions.forEach(q => {
+        if (!q.subjectId) {
+          if (q.id && q.id.startsWith('sem1-c')) q.subjectId = 'sub-c-sem1';
+          else if (q.id && q.id.startsWith('sem3-ds')) q.subjectId = 'sub-ds-sem3';
+          else q.subjectId = 'sub-py-sem5';
+          changed = true;
+        }
+        if (!q.semesterId) {
+          if (q.subjectId === 'sub-c-sem1') q.semesterId = 'sem-1';
+          else if (q.subjectId === 'sub-ds-sem3') q.semesterId = 'sem-3';
+          else q.semesterId = 'sem-5';
+          changed = true;
+        }
+      });
+
+      if (changed) {
+        saveQuestions(questions);
+      } else {
+        _cache.questions = questions;
+      }
     }
 
-    if (questions.length === 0 && window.DEFAULT_DATA && Array.isArray(window.DEFAULT_DATA.questions)) {
-      questions = JSON.parse(JSON.stringify(window.DEFAULT_DATA.questions));
-      saveQuestions(questions);
-    }
-
-    // BACKWARD COMPATIBILITY & MIGRATION:
-    // Ensure all questions have semesterId & subjectId
-    let changed = false;
-    questions.forEach(q => {
-      if (!q.subjectId) {
-        if (q.id && q.id.startsWith('sem1-c')) q.subjectId = 'sub-c-sem1';
-        else if (q.id && q.id.startsWith('sem3-ds')) q.subjectId = 'sub-ds-sem3';
-        else q.subjectId = 'sub-py-sem5';
-        changed = true;
-      }
-      if (!q.semesterId) {
-        if (q.subjectId === 'sub-c-sem1') q.semesterId = 'sem-1';
-        else if (q.subjectId === 'sub-ds-sem3') q.semesterId = 'sem-3';
-        else q.semesterId = 'sem-5';
-        changed = true;
-      }
-    });
-
-    if (changed) {
-      saveQuestions(questions);
-    }
-
-    // Filter strictly if subjectId or semesterId provided
     if (subjectId && subjectId !== 'all') {
       return questions.filter(q => String(q.subjectId) === String(subjectId));
     }
@@ -754,6 +778,7 @@
 
   function saveQuestions(questions) {
     try {
+      _bust('questions');
       localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(questions));
       triggerLocalFileSync();
       return true;

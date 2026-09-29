@@ -367,6 +367,62 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  /* Build the inner HTML for a list of question objects */
+  function buildQuestionsHtml(unitQuestions) {
+    if (!unitQuestions || unitQuestions.length === 0) {
+      return `<div class="empty-msg" style="padding:24px;text-align:center;color:var(--text-dim);font-size:13.5px;">No programs currently available in this unit.</div>`;
+    }
+    let html = '';
+    unitQuestions.forEach(q => {
+      const codeHighlighted = q.codeHtml || window.PracticalsStorage.highlightCode(q.code);
+      const imgSource = q.outputImage || q.chartSrc || '';
+      const chartHtml = imgSource ? `
+        <div class="output-image-wrap" style="margin-top:14px;">
+          <div class="q-label">${q.output ? 'Output Image / Screenshot' : escapeHtml(q.outputLabel || 'Output')}</div>
+          <a href="${escapeHtml(imgSource)}" target="_blank" rel="noopener noreferrer" title="Click to open image in full size">
+            <img class="chart output-img" src="${escapeHtml(imgSource)}" alt="${escapeHtml(q.chartAlt || q.title || 'Program Output')}" loading="lazy">
+          </a>
+          ${q.chartAlt ? `<div style="font-size:11.5px;color:var(--text-dim);margin-top:4px;font-family:var(--mono);text-align:center;">${escapeHtml(q.chartAlt)}</div>` : ''}
+        </div>` : '';
+
+      const outputTextHtml = (q.output && q.output.trim()) ? `
+        <div class="q-label">${escapeHtml(q.outputLabel || 'Output')}</div>
+        <div class="out ${escapeHtml(q.outputClass || '')}">${escapeHtml(q.output)}</div>
+      ` : '';
+
+      const defaultOutHtml = (!q.output && !imgSource) ? `
+        <div class="q-label">Output</div>
+        <div class="out" style="color:var(--text-dim);font-style:italic;">Program executed successfully.</div>
+      ` : '';
+
+      const searchHay = (q.dataSearch || `${q.title} ${q.logic} ${q.category} ${q.tag}`).toLowerCase();
+
+      html += `
+        <div class="q" data-search="${escapeHtml(searchHay)}" id="${escapeHtml(q.id)}">
+          <button class="q-btn" aria-expanded="false">
+            <span class="tag">${escapeHtml(q.tag || 'Q')}</span>
+            <span class="ttl">${escapeHtml(q.title || q.question || (q.tag ? `${q.tag} Program` : 'Practical Program'))}</span>
+            <span class="car">&#8250;</span>
+          </button>
+          <div class="q-panel">
+            <div class="q-body">
+              ${(q.logic && q.logic.trim()) ? `<div class="q-label">Logic</div><p class="q-logic">${q.logic}</p>` : ''}
+              <div class="q-label">Program</div>
+              <div class="code-wrap">
+                <pre class="code"><code>${codeHighlighted}</code></pre>
+                <button class="copy-btn" type="button" aria-label="Copy code">copy</button>
+              </div>
+              ${outputTextHtml}
+              ${chartHtml}
+              ${defaultOutHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    return html;
+  }
+
   function renderManualPracticals(semesterId, subjectId) {
     if (!window.PracticalsStorage) return;
 
@@ -431,59 +487,8 @@
           const section = document.createElement('section');
           section.className = 'unit-section';
           section.id = unit.id;
-
-          let questionsHtml = '';
-          if (unitQuestions.length === 0) {
-            questionsHtml = `<div class="empty-msg" style="padding: 24px; text-align: center; color: var(--text-dim); font-size: 13.5px;">No programs currently available in this unit.</div>`;
-          } else {
-            unitQuestions.forEach(q => {
-              const codeHighlighted = q.codeHtml || window.PracticalsStorage.highlightCode(q.code);
-              const imgSource = q.outputImage || q.chartSrc || '';
-              const chartHtml = imgSource ? `
-                <div class="output-image-wrap" style="margin-top: 14px;">
-                  <div class="q-label">${q.output ? 'Output Image / Screenshot' : escapeHtml(q.outputLabel || 'Output')}</div>
-                  <a href="${escapeHtml(imgSource)}" target="_blank" rel="noopener noreferrer" title="Click to open image in full size">
-                    <img class="chart output-img" src="${escapeHtml(imgSource)}" alt="${escapeHtml(q.chartAlt || q.title || 'Program Output')}" loading="lazy">
-                  </a>
-                  ${q.chartAlt ? `<div style="font-size: 11.5px; color: var(--text-dim); margin-top: 4px; font-family: var(--mono); text-align: center;">${escapeHtml(q.chartAlt)}</div>` : ''}
-                </div>` : '';
-
-              const outputTextHtml = (q.output && q.output.trim()) ? `
-                <div class="q-label">${escapeHtml(q.outputLabel || 'Output')}</div>
-                <div class="out ${escapeHtml(q.outputClass || '')}">${escapeHtml(q.output)}</div>
-              ` : '';
-
-              const defaultOutHtml = (!q.output && !imgSource) ? `
-                <div class="q-label">Output</div>
-                <div class="out" style="color: var(--text-dim); font-style: italic;">Program executed successfully.</div>
-              ` : '';
-
-              const searchHay = (q.dataSearch || `${q.title} ${q.logic} ${q.category} ${q.tag}`).toLowerCase();
-
-              questionsHtml += `
-                <div class="q" data-search="${escapeHtml(searchHay)}" id="${escapeHtml(q.id)}">
-                  <button class="q-btn" aria-expanded="false">
-                    <span class="tag">${escapeHtml(q.tag || 'Q')}</span>
-                    <span class="ttl">${escapeHtml(q.title || q.question || (q.tag ? `${q.tag} Program` : 'Practical Program'))}</span>
-                    <span class="car">&#8250;</span>
-                  </button>
-                  <div class="q-panel">
-                    <div class="q-body">
-                      ${(q.logic && q.logic.trim()) ? `<div class="q-label">Logic</div><p class="q-logic">${q.logic}</p>` : ''}
-                      <div class="q-label">Program</div>
-                      <div class="code-wrap">
-                        <pre class="code"><code>${codeHighlighted}</code></pre>
-                        <button class="copy-btn" type="button" aria-label="Copy code">copy</button>
-                      </div>
-                      ${outputTextHtml}
-                      ${chartHtml}
-                      ${defaultOutHtml}
-                    </div>
-                  </div>
-                </div>
-              `;
-            });
-          }
+          // Mark section for lazy rendering; q-list starts empty (skeleton shown)
+          section.dataset.lazy = '1';
 
           section.innerHTML = `
             <div class="wrap">
@@ -493,9 +498,7 @@
                 <p class="sub">${unitQuestions.length} solved programs &mdash; aim, logic, code and output</p>
               </div>
               <input class="search" type="text" placeholder="Search ${escapeHtml(unit.num)} programs&hellip;" aria-label="Search ${escapeHtml(unit.num)} programs">
-              <div class="glass q-list">
-                ${questionsHtml}
-              </div>
+              <div class="glass q-list"><div class="lazy-placeholder" style="padding:24px;text-align:center;color:var(--text-dim);font-size:13px;font-family:var(--mono);">Loading programs…</div></div>
             </div>
           `;
 
@@ -520,6 +523,42 @@
       adminBtn.className = 'fnav-admin';
       adminBtn.innerHTML = '⚙️ Admin Panel';
       fnavMenu.appendChild(adminBtn);
+    }
+
+    // 4. Lazy-render question cards via IntersectionObserver
+    //    Each unit section starts with a skeleton placeholder.
+    //    When the section enters the viewport the real cards are injected.
+    if ('IntersectionObserver' in window) {
+      const lazyObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const section = entry.target;
+          if (section.dataset.lazyDone) return;
+          section.dataset.lazyDone = '1';
+          obs.unobserve(section);
+          const unitId = section.id;
+          const unit = units.find(u => u.id === unitId);
+          if (!unit) return;
+          const unitQuestions = questions.filter(q => q.unitId === unit.id);
+          const qList = section.querySelector('.q-list');
+          if (!qList) return;
+          qList.innerHTML = buildQuestionsHtml(unitQuestions);
+        });
+      }, { rootMargin: '200px' });
+
+      document.querySelectorAll('#units-container .unit-section[data-lazy]').forEach(sec => {
+        lazyObs.observe(sec);
+      });
+    } else {
+      // Fallback: render all immediately for old browsers
+      document.querySelectorAll('#units-container .unit-section[data-lazy]').forEach(section => {
+        const unitId = section.id;
+        const unit = units.find(u => u.id === unitId);
+        if (!unit) return;
+        const unitQuestions = questions.filter(q => q.unitId === unit.id);
+        const qList = section.querySelector('.q-list');
+        if (qList) qList.innerHTML = buildQuestionsHtml(unitQuestions);
+      });
     }
   }
 
@@ -628,7 +667,15 @@
     }
     window.addEventListener('resize', onResize);
 
-    function render() {
+    let lastFrame = 0;
+    function render(ts) {
+      // Throttle to ~30fps to save CPU
+      if (ts - lastFrame < 33) {
+        requestAnimationFrame(render);
+        return;
+      }
+      lastFrame = ts;
+
       ctx.clearRect(0, 0, width, height);
 
       const isLight = document.body && document.body.classList.contains('light-theme');
@@ -680,7 +727,7 @@
       requestAnimationFrame(render);
     }
 
-    render();
+    requestAnimationFrame(render);
   }
 
   /* ==========================================================================
