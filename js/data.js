@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:34:06.982Z
+ * Last updated: 2026-09-29T09:36:32.247Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:34:06.982Z",
+  "lastUpdated": "2026-09-29T09:36:32.247Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1774,6 +1774,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program that changes color of the web page using switch case. write a php program that changes color of the web page using switch case.  general q12",
       "createdAt": "2026-09-29T09:33:53.605Z"
+    },
+    {
+      "id": "q-1790674590566-707",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Write a PHP script to set a cookie named \"username\" with the value \"Welcome\" with an expiration time of one hour and display its value.",
+      "question": "Write a PHP script to set a cookie named \"username\" with the value \"Welcome\" with an expiration time of one hour and display its value.",
+      "category": "General",
+      "logic": "",
+      "code": "<!-- 1. Write a PHP script to set a cookie named \"username\" with the value \"Welcome\" with an \nexpiration time of one hour and display its value. -->\n<?php\n\nsetcookie(\"username\", \"Welcome\", time() + 3600);\n\nif(isset($_COOKIE[\"username\"]))\n{\n    echo \"Cookie Value = \" . $_COOKIE[\"username\"];\n}\nelse\n{\n    echo \"Cookie Set Successfully. Refresh the page.\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\">&lt;!-- <span class=\"tok-num\">1.</span> Write a PHP script to <span class=\"tok-fn\">set</span> a cookie named <span class=\"tok-str\">&quot;username&quot;</span> <span class=\"tok-kw\">with</span> the value <span class=\"tok-str\">&quot;Welcome&quot;</span> <span class=\"tok-kw\">with</span> an </span><span class=\"line\">expiration time of one hour <span class=\"tok-kw\">and</span> display its value. --&gt;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">setcookie(<span class=\"tok-str\">&quot;username&quot;</span>, <span class=\"tok-str\">&quot;Welcome&quot;</span>, time() + <span class=\"tok-num\">3600</span>);</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(isset($_COOKIE[<span class=\"tok-str\">&quot;username&quot;</span>]))</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Cookie Value = &quot;</span> . $_COOKIE[<span class=\"tok-str\">&quot;username&quot;</span>];</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Cookie Set Successfully. Refresh the page.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Cookie Set Successfully. Refresh the page.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to set a cookie named \"username\" with the value \"welcome\" with an expiration time of one hour and display its value. write a php script to set a cookie named \"username\" with the value \"welcome\" with an expiration time of one hour and display its value.  general q1",
+      "createdAt": "2026-09-29T09:36:30.567Z"
     }
   ]
 };
