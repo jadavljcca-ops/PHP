@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:19:43.517Z
+ * Last updated: 2026-09-29T08:19:57.372Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:19:43.517Z",
+  "lastUpdated": "2026-09-29T08:19:57.372Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -111,7 +111,7 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-5",
       "num": "Unit 1",
       "title": "Introduction to PHP",
-      "sub": "solved programs — aim, logic, code and output",
+      "sub": "",
       "questionCount": 0
     },
     {
@@ -129,7 +129,7 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-5",
       "num": "Unit 3",
       "title": "MySQL",
-      "sub": "solved programs — aim, logic, code and output",
+      "sub": "",
       "questionCount": 0
     },
     {
