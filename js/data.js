@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T08:06:32.365Z
+ * Last updated: 2026-09-29T08:14:06.652Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T08:06:32.365Z",
+  "lastUpdated": "2026-09-29T08:14:06.652Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -62,7 +62,7 @@ window.DEFAULT_DATA = {
     {
       "id": "sub-hypertext-preprocessor-sem-5",
       "semesterId": "sem-5",
-      "name": "Hypertext Preprocessor.",
+      "name": "Hypertext Preprocessor.(PHP)",
       "code": "DSC-M-BCA-355P",
       "icon": "🐘",
       "desc": ""
