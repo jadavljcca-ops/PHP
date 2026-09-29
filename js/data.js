@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:44:16.826Z
+ * Last updated: 2026-09-29T09:44:51.140Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:44:16.826Z",
+  "lastUpdated": "2026-09-29T09:44:51.140Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1845,9 +1845,9 @@ window.DEFAULT_DATA = {
       "id": "q-1790674953570-686",
       "semesterId": "sem-5",
       "subjectId": "sub-hypertext-preprocessor-sem-5",
-      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
-      "unitNum": "Unit 1",
-      "unitTitle": "Introduction to PHP",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
       "practicalNumber": 4,
       "tag": "Q4",
       "title": "Write a PHP script to check if a cookie named \"visited\" exists. If it does, display a welcome message; otherwise, display a default message.",
@@ -1861,7 +1861,8 @@ window.DEFAULT_DATA = {
       "chartSrc": "",
       "chartAlt": "",
       "dataSearch": "write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message. write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message.  general q4",
-      "createdAt": "2026-09-29T09:42:33.570Z"
+      "createdAt": "2026-09-29T09:42:33.570Z",
+      "updatedAt": "2026-09-29T09:44:49.481Z"
     },
     {
       "id": "q-1790675055162-996",
