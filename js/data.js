@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:18:49.317Z
+ * Last updated: 2026-09-29T09:21:23.532Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:18:49.317Z",
+  "lastUpdated": "2026-09-29T09:21:23.532Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1664,6 +1664,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "accept a two numbers from user. write a php program to add, subtract and multiply the numbers and displays result. accept a two numbers from user. write a php program to add, subtract and multiply the numbers and displays result.  general q7",
       "createdAt": "2026-09-29T09:18:47.631Z"
+    },
+    {
+      "id": "q-1790673681862-480",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Accept a number from user as “Radius” of a circle. Write PHP program find Area of a Circle.   ( Area = PI * radius * radius).",
+      "question": "Accept a number from user as “Radius” of a circle. Write PHP program find Area of a Circle.   ( Area = PI * radius * radius).",
+      "category": "General",
+      "logic": "",
+      "code": "#p8.html\n<html>\n<head>\n</head>\n<body>\n\t<form action=\"p8.php\" method=\"POST\">\n\t\n\tEnter Radius :\n\t\n\t<input type=\"Number\" name=\"Radius\"><br>\n\t\n\t<input type=\"submit\" value=\"Find area\">\n\t</form>\n</body>\n</html>\n\n#p8.php\n<?php\n$r = $_POST['Radius'];\n\n$area = 3.14 * $r * $r;\n\necho \"Area Of Circle = \" .$area;\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p8.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">\t&lt;form action=<span class=\"tok-str\">&quot;p8.php&quot;</span> method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">\t</span><span class=\"line\">\tEnter Radius :</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;Number&quot;</span> name=<span class=\"tok-str\">&quot;Radius&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">\t</span><span class=\"line\">\t&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> value=<span class=\"tok-str\">&quot;Find area&quot;</span>&gt;</span><span class=\"line\">\t&lt;/form&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p8.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$r = $_POST[<span class=\"tok-str\">&#39;Radius&#39;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$area = <span class=\"tok-num\">3.14</span> * $r * $r;</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Area Of Circle = &quot;</span> .$area;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter Radius : 13\nArea Of Circle = 530.66",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "accept a number from user as “radius” of a circle. write php program find area of a circle.   ( area = pi * radius * radius). accept a number from user as “radius” of a circle. write php program find area of a circle.   ( area = pi * radius * radius).  general q8",
+      "createdAt": "2026-09-29T09:21:21.863Z"
     }
   ]
 };
