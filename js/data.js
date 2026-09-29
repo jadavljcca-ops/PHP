@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:57:02.231Z
+ * Last updated: 2026-09-29T09:58:18.883Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:57:02.231Z",
+  "lastUpdated": "2026-09-29T09:58:18.883Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2062,6 +2062,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program in php to sort the array of given 5 numbers in ascending and descending order. write a program in php to sort the array of given 5 numbers in ascending and descending order.  general q13",
       "createdAt": "2026-09-29T09:57:00.545Z"
+    },
+    {
+      "id": "q-1790675897199-461",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 14,
+      "tag": "Q14",
+      "title": "Write a program to count the total number of times a specific value appears in an array.",
+      "question": "Write a program to count the total number of times a specific value appears in an array.",
+      "category": "General",
+      "logic": "",
+      "code": "#14.php\n<!--\n14. Write a program to count the total number of times a specific value appears in an array.\n-->\n\n<?php\n\n$arr = [1, 2, 3, 1, 2, 7, 3, 2, 3, 2, 1, 3];\n\necho \"Original Array:<br>\";\nprint_r($arr);\n\n$num = 3;\n$c = 0;\n\nforeach($arr as $i)\n{\n    if($i == $num)\n    {\n        $c++;\n    }\n}\n\necho \"<br><br>The $num repeated in the array: $c times\";\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#14.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">14.</span> Write a program to count the total number of times a specific value appears <span class=\"tok-kw\">in</span> an array.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">1</span>, <span class=\"tok-num\">2</span>, <span class=\"tok-num\">3</span>, <span class=\"tok-num\">1</span>, <span class=\"tok-num\">2</span>, <span class=\"tok-num\">7</span>, <span class=\"tok-num\">3</span>, <span class=\"tok-num\">2</span>, <span class=\"tok-num\">3</span>, <span class=\"tok-num\">2</span>, <span class=\"tok-num\">1</span>, <span class=\"tok-num\">3</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Original Array:&lt;br&gt;&quot;</span>;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">$num = <span class=\"tok-num\">3</span>;</span><span class=\"line\">$c = <span class=\"tok-num\">0</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">foreach($arr <span class=\"tok-kw\">as</span> $i)</span><span class=\"line\">{</span><span class=\"line\">    <span class=\"tok-kw\">if</span>($i == $num)</span><span class=\"line\">    {</span><span class=\"line\">        $c++;</span><span class=\"line\">    }</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&lt;br&gt;The $num repeated in the array: $c times&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Original Array:\nArray ( [0] => 1 [1] => 2 [2] => 3 [3] => 1 [4] => 2 [5] => 7 [6] => 3 [7] => 2 [8] => 3 [9] => 2 [10] => 1 [11] => 3 )\n\nThe 3 repeated in the array: 4 times",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to count the total number of times a specific value appears in an array. write a program to count the total number of times a specific value appears in an array.  general q14",
+      "createdAt": "2026-09-29T09:58:17.200Z"
     }
   ]
 };
