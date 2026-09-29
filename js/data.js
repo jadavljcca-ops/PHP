@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:58:18.883Z
+ * Last updated: 2026-09-29T10:00:57.251Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:58:18.883Z",
+  "lastUpdated": "2026-09-29T10:00:57.251Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2084,6 +2084,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to count the total number of times a specific value appears in an array. write a program to count the total number of times a specific value appears in an array.  general q14",
       "createdAt": "2026-09-29T09:58:17.200Z"
+    },
+    {
+      "id": "q-1790676055556-850",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 15,
+      "tag": "Q15",
+      "title": "Create two functions in PHP, parameterized and non parameterized for implementing string concatenation operation.",
+      "question": "Create two functions in PHP, parameterized and non parameterized for implementing string concatenation operation.",
+      "category": "General",
+      "logic": "",
+      "code": "#p15.php\n<!--\n15. Create two functions in PHP, parameterized and non-parameterized\nfor implementing string concatenation operation.\n-->\n\n<?php\n\n// Non-Parameterized Function\n\nfunction concat()\n{\n    $s1 = \"Hello\";\n    $s2 = \"World\";\n\n    echo \"Non-Parameterized: \" . $s1 . \" \" . $s2 . \"<br>\";\n}\n\nconcat();\n\n\n// Parameterized Function\n\nfunction concat_string($s1, $s2)\n{\n    echo \"Parameterized: \" . $s1 . \" \" . $s2;\n}\n\nif(isset($_POST[\"concat\"]))\n{\n    $s1 = $_POST[\"s1\"];\n    $s2 = $_POST[\"s2\"];\n\n    concat_string($s1, $s2);\n}\n\n?>\n\n<html>\n<body>\n<hr>\n<form method=\"POST\" action=\"P15.php\">\n\nEnter String 1:\n<input type=\"text\" name=\"s1\"><br><br>\n\nEnter String 2:\n<input type=\"text\" name=\"s2\"><br><br>\n\n<input type=\"submit\" name=\"concat\" value=\"Concatenate\">\n\n</form>\n\n</body>\n</html>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p15.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">15.</span> Create two functions <span class=\"tok-kw\">in</span> PHP, parameterized <span class=\"tok-kw\">and</span> non-parameterized</span><span class=\"line\"><span class=\"tok-kw\">for</span> implementing string concatenation operation.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">// Non-Parameterized Function</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">function concat()</span><span class=\"line\">{</span><span class=\"line\">    $s1 = <span class=\"tok-str\">&quot;Hello&quot;</span>;</span><span class=\"line\">    $s2 = <span class=\"tok-str\">&quot;World&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Non-Parameterized: &quot;</span> . $s1 . <span class=\"tok-str\">&quot; &quot;</span> . $s2 . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">concat();</span><span class=\"line\">&nbsp;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">// Parameterized Function</span></span><span class=\"line\">&nbsp;</span><span class=\"line\">function concat_string($s1, $s2)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Parameterized: &quot;</span> . $s1 . <span class=\"tok-str\">&quot; &quot;</span> . $s2;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(isset($_POST[<span class=\"tok-str\">&quot;concat&quot;</span>]))</span><span class=\"line\">{</span><span class=\"line\">    $s1 = $_POST[<span class=\"tok-str\">&quot;s1&quot;</span>];</span><span class=\"line\">    $s2 = $_POST[<span class=\"tok-str\">&quot;s2&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">    concat_string($s1, $s2);</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&lt;hr&gt;</span><span class=\"line\">&lt;form method=<span class=\"tok-str\">&quot;POST&quot;</span> action=<span class=\"tok-str\">&quot;P15.php&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Enter String <span class=\"tok-num\">1</span>:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> name=<span class=\"tok-str\">&quot;s1&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">Enter String <span class=\"tok-num\">2</span>:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> name=<span class=\"tok-str\">&quot;s2&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> name=<span class=\"tok-str\">&quot;concat&quot;</span> value=<span class=\"tok-str\">&quot;Concatenate&quot;</span>&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span>",
+      "output": "Non-Parameterized: Hello World\nEnter String 1: JD\nEnter String 2:  LJCCA\n\nNon-Parameterized: Hello World\nParameterized: jd jadav",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create two functions in php, parameterized and non parameterized for implementing string concatenation operation. create two functions in php, parameterized and non parameterized for implementing string concatenation operation.  general q15",
+      "createdAt": "2026-09-29T10:00:55.556Z"
     }
   ]
 };
