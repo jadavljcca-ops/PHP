@@ -2394,6 +2394,99 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
      LOCAL FILE SYNC & GITHUB INTEGRATION
      ========================================================================== */
 
+  /* ── GitHub API Push (works on Vercel too) ─────────────────────────────── */
+  const GH_PAT_KEY   = 'gh_pat_for_push';
+  const GH_REPO_KEY  = 'gh_repo_for_push';   // e.g. "owner/repo"
+  const GH_FILE_PATH = 'js/data.js';          // file to update in the repo
+  const GH_BRANCH    = 'main';
+
+  /**
+   * Push the full dataset to GitHub via the Contents API.
+   * Requires a PAT with `repo` scope stored in localStorage.
+   * Returns { success, message }.
+   */
+  async function pushViaGitHubAPI(silent = false) {
+    const pat  = localStorage.getItem(GH_PAT_KEY)  || '';
+    const repo = localStorage.getItem(GH_REPO_KEY) || '';
+
+    if (!pat || !repo) {
+      if (!silent) openGitHubSetupPanel();
+      return { success: false, message: 'GitHub PAT / repo not configured.' };
+    }
+
+    try {
+      const data = {
+        lastUpdated: new Date().toISOString(),
+        semesters: window.PracticalsStorage.loadSemesters(),
+        subjects:  window.PracticalsStorage.loadSubjects(),
+        units:     window.PracticalsStorage.loadUnits(),
+        questions: window.PracticalsStorage.loadQuestions()
+      };
+
+      const fileContent =
+        `/**\n * Default Practicals Data\n * Auto-synchronized from Admin Portal\n * Last updated: ${data.lastUpdated}\n */\n\nwindow.DEFAULT_DATA = ${JSON.stringify(data, null, 2)};\n`;
+
+      const encoded = btoa(unescape(encodeURIComponent(fileContent)));
+
+      // 1. Get current SHA of the file (required for update)
+      const metaRes = await fetch(
+        `https://api.github.com/repos/${repo}/contents/${GH_FILE_PATH}?ref=${GH_BRANCH}`,
+        { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
+      );
+
+      let sha = '';
+      if (metaRes.ok) {
+        const meta = await metaRes.json();
+        sha = meta.sha || '';
+      } else if (metaRes.status !== 404) {
+        const err = await metaRes.json();
+        return { success: false, message: err.message || `GitHub meta fetch failed (${metaRes.status})` };
+      }
+
+      // 2. PUT new content
+      const body = {
+        message: `chore: sync practicals data from admin portal [${new Date().toLocaleString('en-IN')}]`,
+        content: encoded,
+        branch:  GH_BRANCH
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(
+        `https://api.github.com/repos/${repo}/contents/${GH_FILE_PATH}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: `token ${pat}`,
+            Accept: 'application/vnd.github.v3+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(body)
+        }
+      );
+
+      if (putRes.ok) {
+        return { success: true, message: '🚀 data.js pushed to GitHub! Vercel will redeploy shortly.' };
+      } else {
+        const err = await putRes.json();
+        return { success: false, message: err.message || `GitHub PUT failed (${putRes.status})` };
+      }
+    } catch (e) {
+      return { success: false, message: 'GitHub API error: ' + e.message };
+    }
+  }
+
+  /** Open the GitHub PAT setup panel embedded in the admin UI */
+  function openGitHubSetupPanel() {
+    const panel = document.getElementById('gh-api-setup-panel');
+    if (panel) {
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+      const patInput  = document.getElementById('gh-pat-input');
+      const repoInput = document.getElementById('gh-repo-input');
+      if (patInput)  patInput.value  = localStorage.getItem(GH_PAT_KEY)  || '';
+      if (repoInput) repoInput.value = localStorage.getItem(GH_REPO_KEY) || '';
+    }
+  }
+
   function bindGitHubSyncEvents() {
     const saveBtn = document.getElementById('save-to-file-btn');
     const pushBtn = document.getElementById('push-github-btn');
@@ -2401,13 +2494,111 @@ CREATE POLICY "Allow anon all on questions" ON public.questions FOR ALL USING (t
     const autoPushCheckbox = document.getElementById('auto-push-github-checkbox');
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-    // If not running on localhost, hide the buttons
     if (!isLocal) {
+      // On Vercel: hide local-server buttons, wire up GitHub API panel
       if (saveBtn) saveBtn.style.display = 'none';
-      if (pushBtn) pushBtn.style.display = 'none';
       if (autoPushWrapper) autoPushWrapper.style.display = 'none';
-      return;
+
+      // Show the GitHub API push button instead (repurpose or inject)
+      if (pushBtn) {
+        const span = document.getElementById('push-github-btn-text');
+        if (span) span.textContent = '🚀 Push to GitHub (API)';
+        pushBtn.style.display = '';
+        pushBtn.addEventListener('click', async () => {
+          const pat = localStorage.getItem(GH_PAT_KEY);
+          if (!pat) { openGitHubSetupPanel(); return; }
+          pushBtn.disabled = true;
+          const r = await pushViaGitHubAPI(false);
+          showToast(r.message, r.success ? 'success' : 'error', 4500);
+          pushBtn.disabled = false;
+        });
+      }
+
+      // Inject GitHub API setup panel if not already in HTML
+      if (!document.getElementById('gh-api-setup-panel')) {
+        const panel = document.createElement('div');
+        panel.id = 'gh-api-setup-panel';
+        panel.style.cssText = 'display:none;background:var(--glass-bg,rgba(255,255,255,.08));border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:10px 0;';
+        panel.innerHTML = `
+          <p style="margin:0 0 12px;font-weight:700;font-size:13.5px;">🔑 GitHub API Setup</p>
+          <p style="margin:0 0 10px;font-size:12px;color:var(--text-muted);">Enter once. PAT is saved in your browser only (never sent to any server).<br>
+            Create a PAT at <a href="https://github.com/settings/tokens" target="_blank" rel="noopener" style="color:#3b82f6;">github.com/settings/tokens</a> with <code>repo</code> scope.
+          </p>
+          <div style="display:grid;gap:8px;">
+            <input id="gh-repo-input" class="form-control" placeholder="owner/repo  (e.g. jadavljcca-ops/PHP)" style="font-size:13px;">
+            <input id="gh-pat-input" class="form-control" type="password" placeholder="GitHub Personal Access Token (ghp_xxx...)" style="font-size:13px;">
+            <button type="button" id="gh-api-save-btn" class="clay-btn" style="justify-content:center;font-size:13px;">💾 Save &amp; Test</button>
+          </div>
+          <p id="gh-api-status" style="margin:8px 0 0;font-size:12px;"></p>
+        `;
+        // Insert after pushBtn's parent or in the toolbar
+        const toolbar = pushBtn ? pushBtn.closest('div') || pushBtn.parentElement : document.body;
+        toolbar.appendChild(panel);
+
+        document.getElementById('gh-api-save-btn').addEventListener('click', async () => {
+          const pat  = (document.getElementById('gh-pat-input').value  || '').trim();
+          const repo = (document.getElementById('gh-repo-input').value || '').trim();
+          const status = document.getElementById('gh-api-status');
+
+          if (!pat || !repo) { status.textContent = '⚠️ Both fields are required.'; return; }
+
+          localStorage.setItem(GH_PAT_KEY,  pat);
+          localStorage.setItem(GH_REPO_KEY, repo);
+          status.textContent = '🔄 Testing connection...';
+
+          const res = await fetch(`https://api.github.com/repos/${repo}`,
+            { headers: { Authorization: `token ${pat}`, Accept: 'application/vnd.github.v3+json' } }
+          );
+          if (res.ok) {
+            status.style.color = '#10b981';
+            status.textContent = '✅ Connected! Credentials saved.';
+            showToast('GitHub API credentials saved!', 'success');
+          } else {
+            status.style.color = '#ef4444';
+            status.textContent = '❌ Invalid PAT or repo. Check and retry.';
+          }
+        });
+      }
+
+      // Show the setup panel toggle button
+      const ghSetupToggle = document.getElementById('gh-setup-toggle-btn');
+      if (ghSetupToggle) {
+        ghSetupToggle.style.display = '';
+        ghSetupToggle.addEventListener('click', openGitHubSetupPanel);
+      }
+
+      // Auto-push via GitHub API whenever storage saves
+      window.addEventListener('practicals:file-synced', async () => {
+        const isAutoPush = localStorage.getItem('admin_auto_push_github') === 'true';
+        const pat = localStorage.getItem(GH_PAT_KEY);
+        if (!isAutoPush || !pat) return;
+        if (window._ghApiDebounce) clearTimeout(window._ghApiDebounce);
+        window._ghApiDebounce = setTimeout(async () => {
+          const r = await pushViaGitHubAPI(true);
+          if (r.success) showToast('📡 Auto-pushed to GitHub via API!', 'success', 3000);
+          else console.warn('[GH Auto-push]', r.message);
+        }, 1500);
+      });
+
+      // Also re-expose auto-push toggle
+      if (autoPushWrapper) autoPushWrapper.style.display = '';
+      if (autoPushCheckbox) {
+        autoPushCheckbox.checked = localStorage.getItem('admin_auto_push_github') === 'true';
+        autoPushCheckbox.addEventListener('change', () => {
+          localStorage.setItem('admin_auto_push_github', autoPushCheckbox.checked ? 'true' : 'false');
+          if (autoPushCheckbox.checked) {
+            if (!localStorage.getItem(GH_PAT_KEY)) openGitHubSetupPanel();
+            showToast('⚡ Auto-push to GitHub (API) enabled!', 'success');
+          } else {
+            showToast('Auto-push disabled.', 'info');
+          }
+        });
+      }
+
+      return; // Skip localhost-only logic below
     }
+
+
 
     // Auto-sync existing browser dataset to js/data.js when admin loads
     if (window.PracticalsStorage && typeof window.PracticalsStorage.syncToLocalFile === 'function') {

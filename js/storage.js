@@ -1432,18 +1432,22 @@
       let updated = false;
       if (Array.isArray(cloudData.semesters) && cloudData.semesters.length > 0) {
         localStorage.setItem(STORAGE_KEY_SEMESTERS, JSON.stringify(cloudData.semesters));
+        _cache.semesters = cloudData.semesters;   // update cache directly
         updated = true;
       }
       if (Array.isArray(cloudData.subjects) && cloudData.subjects.length > 0) {
         localStorage.setItem(STORAGE_KEY_SUBJECTS, JSON.stringify(cloudData.subjects));
+        _cache.subjects = cloudData.subjects;
         updated = true;
       }
       if (Array.isArray(cloudData.units) && cloudData.units.length > 0) {
         localStorage.setItem(STORAGE_KEY_UNITS, JSON.stringify(cloudData.units));
+        _cache.units = cloudData.units;
         updated = true;
       }
       if (Array.isArray(cloudData.questions) && cloudData.questions.length > 0) {
         localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(cloudData.questions));
+        _cache.questions = cloudData.questions;
         updated = true;
       }
 
@@ -1472,6 +1476,12 @@
   }
 
   async function initCloudSync() {
+    // Wait up to 4s for SupabaseSync SDK to be ready (async script load race condition)
+    let retries = 0;
+    while (!window.SupabaseSync && retries < 8) {
+      await new Promise(r => setTimeout(r, 500));
+      retries++;
+    }
     if (!window.SupabaseSync) return;
     try {
       const conn = await window.SupabaseSync.testConnection();
