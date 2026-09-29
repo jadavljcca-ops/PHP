@@ -121,9 +121,15 @@
   const THEME_STORAGE_KEY = 'python_practicals_admin_theme';
 
   function initTheme() {
-    let savedTheme = 'dark';
+    let savedTheme = 'light';
     try {
-      savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
+      if (!localStorage.getItem('python_practicals_admin_theme_v2')) {
+        savedTheme = 'light';
+        localStorage.setItem(THEME_STORAGE_KEY, 'light');
+        localStorage.setItem('python_practicals_admin_theme_v2', 'light');
+      } else {
+        savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light';
+      }
     } catch (e) {}
 
     applyTheme(savedTheme, false);
