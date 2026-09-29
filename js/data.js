@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:38:33.712Z
+ * Last updated: 2026-09-29T09:40:30.175Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:38:33.712Z",
+  "lastUpdated": "2026-09-29T09:40:30.175Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1818,6 +1818,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script to delete a cookie named \"welcome\". write a php script to delete a cookie named \"welcome\". #p2.php\n<!-- # 2. write a php script to delete a cookie named \"welcome\".-->\n<?php\n\nsetcookie(\"welcome\", \"\", time() - 3600);\n\nif(isset($_cookie[\"welcome\"]))\n{\n    echo \"cookie is not deleted\";\n}\nelse\n{\n    echo \"cookie deleted successfully\";\n}\n\n?> general q2",
       "createdAt": "2026-09-29T09:38:32.026Z"
+    },
+    {
+      "id": "q-1790674828504-261",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 3,
+      "tag": "Q3",
+      "title": "Write a PHP script to retrieve and display the value of the session variable \"loginid\".",
+      "question": "Write a PHP script to retrieve and display the value of the session variable \"loginid\".",
+      "category": "General",
+      "logic": "#p3.php\n<!--\n3. Write a PHP script to retrieve and display the value of the session variable \"loginid\".\n-->\n\n<?php\n\nsession_start();\n\n$_SESSION[\"loginid\"] = \"Pruthvi\";\n\nif(isset($_SESSION[\"loginid\"]))\n{\n    echo \"Login ID = \" . $_SESSION[\"loginid\"];\n}\nelse\n{\n    echo \"Session variable not found\";\n}\n\n?>",
+      "code": "Login ID = Pruthvi",
+      "codeHtml": "<span class=\"line\">Login ID = Pruthvi</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to retrieve and display the value of the session variable \"loginid\". write a php script to retrieve and display the value of the session variable \"loginid\". #p3.php\n<!--\n3. write a php script to retrieve and display the value of the session variable \"loginid\".\n-->\n\n<?php\n\nsession_start();\n\n$_session[\"loginid\"] = \"pruthvi\";\n\nif(isset($_session[\"loginid\"]))\n{\n    echo \"login id = \" . $_session[\"loginid\"];\n}\nelse\n{\n    echo \"session variable not found\";\n}\n\n?> general q3",
+      "createdAt": "2026-09-29T09:40:28.504Z"
     }
   ]
 };
