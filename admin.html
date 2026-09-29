@@ -17,7 +17,7 @@
     (function () {
       try {
         var savedTheme = localStorage.getItem('python_practicals_admin_theme');
-        if (savedTheme !== 'dark') {
+        if (savedTheme === 'light') {
           document.documentElement.classList.add('light-theme');
           document.addEventListener('DOMContentLoaded', function () {
             if (document.body) document.body.classList.add('light-theme');

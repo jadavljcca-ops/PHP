@@ -121,9 +121,9 @@
   const THEME_STORAGE_KEY = 'python_practicals_admin_theme';
 
   function initTheme() {
-    let savedTheme = 'light';
+    let savedTheme = 'dark';
     try {
-      savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'light';
+      savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || 'dark';
     } catch (e) {}
 
     applyTheme(savedTheme, false);
