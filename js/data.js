@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:40:30.175Z
+ * Last updated: 2026-09-29T09:42:35.241Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:40:30.175Z",
+  "lastUpdated": "2026-09-29T09:42:35.241Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1840,6 +1840,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php script to retrieve and display the value of the session variable \"loginid\". write a php script to retrieve and display the value of the session variable \"loginid\". #p3.php\n<!--\n3. write a php script to retrieve and display the value of the session variable \"loginid\".\n-->\n\n<?php\n\nsession_start();\n\n$_session[\"loginid\"] = \"pruthvi\";\n\nif(isset($_session[\"loginid\"]))\n{\n    echo \"login id = \" . $_session[\"loginid\"];\n}\nelse\n{\n    echo \"session variable not found\";\n}\n\n?> general q3",
       "createdAt": "2026-09-29T09:40:28.504Z"
+    },
+    {
+      "id": "q-1790674953570-686",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 4,
+      "tag": "Q4",
+      "title": "Write a PHP script to check if a cookie named \"visited\" exists. If it does, display a welcome message; otherwise, display a default message.",
+      "question": "Write a PHP script to check if a cookie named \"visited\" exists. If it does, display a welcome message; otherwise, display a default message.",
+      "category": "General",
+      "logic": "",
+      "code": "#p4.php\n<!--\n4. Write a PHP script to check if a cookie named \"visited\" exists.\nIf it does, display a welcome message; otherwise,\ndisplay a default message.\n-->\n\n<?php\n\nif(isset($_COOKIE[\"visited\"]))\n{\n    echo \"Welcome, you have visited this website before.\";\n}\nelse\n{\n    setcookie(\"visited\", \"yes\", time() + 3600);\n    echo \"Hello, welcome to our website.\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p4.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">4.</span> Write a PHP script to check <span class=\"tok-kw\">if</span> a cookie named <span class=\"tok-str\">&quot;visited&quot;</span> exists.</span><span class=\"line\">If it does, display a welcome message; otherwise,</span><span class=\"line\">display a <span class=\"tok-kw\">default</span> message.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">if</span>(isset($_COOKIE[<span class=\"tok-str\">&quot;visited&quot;</span>]))</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Welcome, you have visited this website before.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    setcookie(<span class=\"tok-str\">&quot;visited&quot;</span>, <span class=\"tok-str\">&quot;yes&quot;</span>, time() + <span class=\"tok-num\">3600</span>);</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Hello, welcome to our website.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Hello, welcome to our website.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message. write a php script to check if a cookie named \"visited\" exists. if it does, display a welcome message; otherwise, display a default message.  general q4",
+      "createdAt": "2026-09-29T09:42:33.570Z"
     }
   ]
 };
