@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:46:36.753Z
+ * Last updated: 2026-09-29T09:48:17.928Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:46:36.753Z",
+  "lastUpdated": "2026-09-29T09:48:17.928Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1908,6 +1908,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create an array with 5 elements. find and display minimum and maximum value from the array. create an array with 5 elements. find and display minimum and maximum value from the array.  general q6",
       "createdAt": "2026-09-29T09:46:35.071Z"
+    },
+    {
+      "id": "q-1790675296257-106",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Write a PHP program that deletes duplicate values from array.",
+      "question": "Write a PHP program that deletes duplicate values from array.",
+      "category": "General",
+      "logic": "",
+      "code": "#p7.php\n<!--\n7. Write a PHP program that deletes duplicate values from array.\narray_unique($arr) → duplicate values delete કરે છે.\n-->\n\n<?php\n\n$arr = [10, 20, 10, 30, 20];\n\necho \"Original Array:<br>\";\nprint_r($arr);\n\n$arr = array_unique($arr);\n\necho \"<br><br>Array after deleting duplicate values:<br>\";\nprint_r($arr);\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p7.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">7.</span> Write a PHP program that deletes duplicate values <span class=\"tok-kw\">from</span> array.</span><span class=\"line\">array_unique($arr) → duplicate values <span class=\"tok-kw\">delete</span> કરે છે.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [<span class=\"tok-num\">10</span>, <span class=\"tok-num\">20</span>, <span class=\"tok-num\">10</span>, <span class=\"tok-num\">30</span>, <span class=\"tok-num\">20</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Original Array:&lt;br&gt;&quot;</span>;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = array_unique($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;&lt;br&gt;Array after deleting duplicate values:&lt;br&gt;&quot;</span>;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Original Array:\nArray ( [0] => 10 [1] => 20 [2] => 10 [3] => 30 [4] => 20 )\n\nArray after deleting duplicate values:\nArray ( [0] => 10 [1] => 20 [3] => 30 )",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program that deletes duplicate values from array. write a php program that deletes duplicate values from array.  general q7",
+      "createdAt": "2026-09-29T09:48:16.257Z"
     }
   ]
 };
