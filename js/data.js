@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:49:47.998Z
+ * Last updated: 2026-09-29T09:51:14.059Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:49:47.998Z",
+  "lastUpdated": "2026-09-29T09:51:14.059Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -1952,6 +1952,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program that checks whether the element is exists in the array or not. give acknowledgement from the same. write a php program that checks whether the element is exists in the array or not. give acknowledgement from the same.  general q8",
       "createdAt": "2026-09-29T09:49:46.322Z"
+    },
+    {
+      "id": "q-1790675472378-210",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Create an associative array and display its elements.",
+      "question": "Create an associative array and display its elements.",
+      "category": "General",
+      "logic": "",
+      "code": "#p9.php\n<!--\n9. Create an associative array and display its elements.\n-->\n\n<?php\n\n$arr = [\n    \"Jiya\" => \"100\",\n    \"Mahek\" => \"80\",\n    \"Pruthvi\" => \"60\",\n    \"Nandini\" => \"70\",\n    \"Tanvi\" => \"50\"\n];\n\nprint_r($arr);\necho \"<hr>\";\necho \"<br>Array elements are:<br>\";\n\nforeach($arr as $k => $v)\n{\n    echo \"Key is $k and value is $v<br>\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p9.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">9.</span> Create an associative array <span class=\"tok-kw\">and</span> display its elements.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$arr = [</span><span class=\"line\">    <span class=\"tok-str\">&quot;Jiya&quot;</span> =&gt; <span class=\"tok-str\">&quot;100&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;Mahek&quot;</span> =&gt; <span class=\"tok-str\">&quot;80&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;Pruthvi&quot;</span> =&gt; <span class=\"tok-str\">&quot;60&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;Nandini&quot;</span> =&gt; <span class=\"tok-str\">&quot;70&quot;</span>,</span><span class=\"line\">    <span class=\"tok-str\">&quot;Tanvi&quot;</span> =&gt; <span class=\"tok-str\">&quot;50&quot;</span></span><span class=\"line\">];</span><span class=\"line\">&nbsp;</span><span class=\"line\">print_r($arr);</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;hr&gt;&quot;</span>;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;&lt;br&gt;Array elements are:&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\">foreach($arr <span class=\"tok-kw\">as</span> $k =&gt; $v)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;Key is $k and value is $v&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Array ( [Jiya] => 100 [Mahek] => 80 [Pruthvi] => 60 [Nandini] => 70 [Tanvi] => 50 )\n\nArray elements are:\nKey is Jiya and value is 100\nKey is Mahek and value is 80\nKey is Pruthvi and value is 60\nKey is Nandini and value is 70\nKey is Tanvi and value is 50",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create an associative array and display its elements. create an associative array and display its elements.  general q9",
+      "createdAt": "2026-09-29T09:51:12.379Z"
     }
   ]
 };
