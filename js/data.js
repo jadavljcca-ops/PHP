@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-29T09:54:32.700Z
+ * Last updated: 2026-09-29T09:55:45.578Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-29T09:54:32.700Z",
+  "lastUpdated": "2026-09-29T09:55:45.578Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2018,6 +2018,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create an array named $student that stores 5 elements bounded to different keys and access the same using the key element. create an array named $student that stores 5 elements bounded to different keys and access the same using the key element.  general q11",
       "createdAt": "2026-09-29T09:54:31.026Z"
+    },
+    {
+      "id": "q-1790675743860-99",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-2-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 2",
+      "unitTitle": "Advanced PHP",
+      "practicalNumber": 12,
+      "tag": "Q12",
+      "title": "Write a program in PHP to demonstrate the use of multidimensional arrays.",
+      "question": "Write a program in PHP to demonstrate the use of multidimensional arrays.",
+      "category": "General",
+      "logic": "",
+      "code": "#p12.php\n<!--\n12. Write a program in PHP to demonstrate the use of multidimensional arrays.\n-->\n\n<?php\n\n$student = \n[                             #Main array\n    [\"Jiya\", 19, \"BCA\"],       #one array\n    [\"Mahek\", 20, \"BCA\"],       #second array\n    [\"Nandini\", 19, \"BCA\"]       #third  array\n];\n\necho \"Multidimensional Array:<br>\";\n\nfor($i = 0; $i < 3; $i++)\n{\n    echo $student[$i][0] . \" \";\n    echo $student[$i][1] . \" \";\n    echo $student[$i][2] . \"<br>\";\n}\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p12.php</span></span><span class=\"line\">&lt;!--</span><span class=\"line\"><span class=\"tok-num\">12.</span> Write a program <span class=\"tok-kw\">in</span> PHP to demonstrate the use of multidimensional arrays.</span><span class=\"line\">--&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$student = </span><span class=\"line\">[                             <span class=\"tok-com\">#Main array</span></span><span class=\"line\">    [<span class=\"tok-str\">&quot;Jiya&quot;</span>, <span class=\"tok-num\">19</span>, <span class=\"tok-str\">&quot;BCA&quot;</span>],       <span class=\"tok-com\">#one array</span></span><span class=\"line\">    [<span class=\"tok-str\">&quot;Mahek&quot;</span>, <span class=\"tok-num\">20</span>, <span class=\"tok-str\">&quot;BCA&quot;</span>],       <span class=\"tok-com\">#second array</span></span><span class=\"line\">    [<span class=\"tok-str\">&quot;Nandini&quot;</span>, <span class=\"tok-num\">19</span>, <span class=\"tok-str\">&quot;BCA&quot;</span>]       <span class=\"tok-com\">#third  array</span></span><span class=\"line\">];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Multidimensional Array:&lt;br&gt;&quot;</span>;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">for</span>($i = <span class=\"tok-num\">0</span>; $i &lt; <span class=\"tok-num\">3</span>; $i++)</span><span class=\"line\">{</span><span class=\"line\">    echo $student[$i][<span class=\"tok-num\">0</span>] . <span class=\"tok-str\">&quot; &quot;</span>;</span><span class=\"line\">    echo $student[$i][<span class=\"tok-num\">1</span>] . <span class=\"tok-str\">&quot; &quot;</span>;</span><span class=\"line\">    echo $student[$i][<span class=\"tok-num\">2</span>] . <span class=\"tok-str\">&quot;&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Multidimensional Array:\nJiya 19 BCA\nMahek 20 BCA\nNandini 19 BCA",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program in php to demonstrate the use of multidimensional arrays. write a program in php to demonstrate the use of multidimensional arrays.  general q12",
+      "createdAt": "2026-09-29T09:55:43.861Z"
     }
   ]
 };
