@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-30T09:25:26.381Z
+ * Last updated: 2026-09-30T09:28:42.270Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-30T09:25:26.381Z",
+  "lastUpdated": "2026-09-30T09:28:42.270Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2436,6 +2436,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a form containing one input field (myname). when the user enters his/her name and press any key, the form should display a welcome message for the user.  implement using ajax. create a form containing one input field (myname). when the user enters his/her name and press any key, the form should display a welcome message for the user.  implement using ajax.  general q1",
       "createdAt": "2026-09-30T09:25:24.649Z"
+    },
+    {
+      "id": "q-1790760520554-387",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "Create a form to enter a string. Write a PHP program for converting a string into uppercase using AJAX.",
+      "question": "Create a form to enter a string. Write a PHP program for converting a string into uppercase using AJAX.",
+      "category": "General",
+      "logic": "",
+      "code": "#p1.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n\t\n    var str = document.getElementById(\"txtname\").value;\n\t\n    xmlhttp.open(\"GET\", \"p2.php?q=\" + str, true);\n\t\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n            document.getElementById(\"txtresultname\").value = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\nEnter string : \n<input type=\"text\" id=\"txtname\"><br><br>\nResult string : \n<input type=\"text\" id=\"txtresultname\"><br>\n<input type=\"submit\" name=\"submit\" onclick=\"showdata();\">\n</body>\n</html>\n\n#p2.php\n<?php\n\n$n = $_GET[\"q\"];\n\n$n1 = strtoupper($n);\n\necho $n1;\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p1.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">\t</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;txtname&quot;</span>).value;</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p2.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;txtresultname&quot;</span>).value = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter string : </span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;txtname&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">Result string : </span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;txtresultname&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span> onclick=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p2.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$n = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">$n1 = strtoupper($n);</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo $n1;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter string : jd\nResult string : JD",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form to enter a string. write a php program for converting a string into uppercase using ajax. create a form to enter a string. write a php program for converting a string into uppercase using ajax.  general q2",
+      "createdAt": "2026-09-30T09:28:40.555Z"
     }
   ]
 };
