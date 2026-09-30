@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-09-30T09:06:30.780Z
+ * Last updated: 2026-09-30T09:25:26.381Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-09-30T09:06:30.780Z",
+  "lastUpdated": "2026-09-30T09:25:26.381Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2414,6 +2414,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program to update a record with your own value into the table employee against each column (employee id, employee name, job code, salary and mobile no). note: (a) input should be collected from user using an html page. (b) make sure employee id, salary, and mobile no must not be negative. (c) employee name should not be blank. (d) salary length must not be greater than 5 digits. write a php program to update a record with your own value into the table employee against each column (employee id, employee name, job code, salary and mobile no). note: (a) input should be collected from user using an html page. (b) make sure employee id, salary, and mobile no must not be negative. (c) employee name should not be blank. (d) salary length must not be greater than 5 digits.  general q14",
       "createdAt": "2026-09-29T11:09:38.894Z"
+    },
+    {
+      "id": "q-1790760324646-704",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Create a form containing one input field (MyName). When the user enters his/her name and press any key, the form should display a welcome message for the user.  Implement using AJAX.",
+      "question": "Create a form containing one input field (MyName). When the user enters his/her name and press any key, the form should display a welcome message for the user.  Implement using AJAX.",
+      "category": "General",
+      "logic": "",
+      "code": "#p1.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n\t\n    var str = document.getElementById(\"txtname\").value;\n\t\n    xmlhttp.open(\"GET\", \"p1.php?q=\" + str, true);\n\t\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\nEnter string : \n<input type=\"text\" id=\"txtname\" onkeyup=\"showdata();\"><br><br>\n<div id=\"info\"></div>\n</body>\n</html>\n\n#p1.php\n<?php\n\n$n = $_GET[\"q\"];\n\necho \"Welcome user : \" . $n;\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p1.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">\t</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;txtname&quot;</span>).value;</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p1.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter string : </span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;txtname&quot;</span> onkeyup=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;&lt;br&gt;&lt;br&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p1.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$n = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;Welcome user : &quot;</span> . $n;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter string : Jd\nWelcome user : jd",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing one input field (myname). when the user enters his/her name and press any key, the form should display a welcome message for the user.  implement using ajax. create a form containing one input field (myname). when the user enters his/her name and press any key, the form should display a welcome message for the user.  implement using ajax.  general q1",
+      "createdAt": "2026-09-30T09:25:24.649Z"
     }
   ]
 };
