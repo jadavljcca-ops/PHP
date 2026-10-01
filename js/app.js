@@ -258,10 +258,6 @@
           <span>&bull;</span>
           <span><b>${subUnits.length}</b> Units</span>
         </div>
-
-        <button type="button" class="clay-btn sub-open-btn" data-sub-target="${escapeHtml(sub.id)}" data-sem-target="${escapeHtml(semesterId)}">
-          Open Lab Manual &rarr;
-        </button>
       `;
 
       container.appendChild(card);
@@ -525,6 +521,26 @@
       fnavMenu.appendChild(adminBtn);
     }
 
+    // Helper to render practical questions for a unit section immediately
+    function renderUnitSectionQuestions(section) {
+      if (!section || section.dataset.lazyDone) return;
+      section.dataset.lazyDone = '1';
+      const unitId = section.id;
+      const unit = units.find(u => u.id === unitId);
+      if (!unit) return;
+      const unitQuestions = questions.filter(q => q.unitId === unit.id);
+      const qList = section.querySelector('.q-list');
+      if (qList) {
+        qList.innerHTML = buildQuestionsHtml(unitQuestions);
+      }
+    }
+
+    // Expose for instant navigation upon clicking Unit 1, 2, 3, 4
+    window.__ensureUnitRendered = function(unitId) {
+      const sec = document.getElementById(unitId);
+      if (sec) renderUnitSectionQuestions(sec);
+    };
+
     // 4. Lazy-render question cards via IntersectionObserver
     //    Each unit section starts with a skeleton placeholder.
     //    When the section enters the viewport the real cards are injected.
@@ -534,15 +550,8 @@
           if (!entry.isIntersecting) return;
           const section = entry.target;
           if (section.dataset.lazyDone) return;
-          section.dataset.lazyDone = '1';
           obs.unobserve(section);
-          const unitId = section.id;
-          const unit = units.find(u => u.id === unitId);
-          if (!unit) return;
-          const unitQuestions = questions.filter(q => q.unitId === unit.id);
-          const qList = section.querySelector('.q-list');
-          if (!qList) return;
-          qList.innerHTML = buildQuestionsHtml(unitQuestions);
+          renderUnitSectionQuestions(section);
         });
       }, { rootMargin: '200px' });
 
@@ -552,12 +561,7 @@
     } else {
       // Fallback: render all immediately for old browsers
       document.querySelectorAll('#units-container .unit-section[data-lazy]').forEach(section => {
-        const unitId = section.id;
-        const unit = units.find(u => u.id === unitId);
-        if (!unit) return;
-        const unitQuestions = questions.filter(q => q.unitId === unit.id);
-        const qList = section.querySelector('.q-list');
-        if (qList) qList.innerHTML = buildQuestionsHtml(unitQuestions);
+        renderUnitSectionQuestions(section);
       });
     }
   }
@@ -781,29 +785,37 @@
      ========================================================================== */
 
   function bindPortalEvents() {
-    // 1. Semester Card / Button Click in View 1
     document.addEventListener('click', function (e) {
-      const semCard = e.target.closest('.semester-card');
-      const semBtn = e.target.closest('[data-sem-target]');
+      // 1. Subject Card / "Open Lab Manual" Button Click in View 2
+      const subBtn = e.target.closest('[data-sub-target]');
+      if (subBtn) {
+        e.preventDefault();
+        const subId = subBtn.getAttribute('data-sub-target');
+        const semId = subBtn.getAttribute('data-sem-id') || subBtn.getAttribute('data-sem-target') || currentSemesterId;
+        showManualView(semId, subId, true);
+        return;
+      }
+      const subCard = e.target.closest('.subject-card');
+      if (subCard) {
+        e.preventDefault();
+        const subId = subCard.getAttribute('data-sub-id');
+        showManualView(currentSemesterId, subId, true);
+        return;
+      }
+
+      // 2. Semester Card / "Explore Subjects" Button Click in View 1
+      const semBtn = e.target.closest('.sem-select-btn, [data-sem-target]:not([data-sub-target])');
       if (semBtn) {
         e.preventDefault();
         const semId = semBtn.getAttribute('data-sem-target');
         showSubjectsView(semId, true);
         return;
       }
-      if (semCard && !e.target.closest('button')) {
+      const semCard = e.target.closest('.semester-card');
+      if (semCard) {
+        e.preventDefault();
         const semId = semCard.getAttribute('data-sem-id');
         showSubjectsView(semId, true);
-        return;
-      }
-
-      // 2. Subject Button Click in View 2 (Only open manual when clicking the button)
-      const subBtn = e.target.closest('[data-sub-target]');
-      if (subBtn) {
-        e.preventDefault();
-        const subId = subBtn.getAttribute('data-sub-target');
-        const semId = subBtn.getAttribute('data-sem-target') || currentSemesterId;
-        showManualView(semId, subId, true);
         return;
       }
 
@@ -863,34 +875,102 @@
         return;
       }
 
-      // Floating nav toggle
+      // Helper to open/close floating nav and update toggle button state
+      function setFnavOpen(isOpen) {
+        const fnav = document.getElementById('fnav');
+        const fnavToggle = document.getElementById('fnavToggle');
+        if (fnav) {
+          if (isOpen) {
+            fnav.classList.add('open');
+          } else {
+            fnav.classList.remove('open');
+          }
+        }
+        if (fnavToggle) {
+          fnavToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          fnavToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+          fnavToggle.setAttribute('title', isOpen ? 'Close menu' : 'Open menu');
+        }
+      }
+
+      // 1. Floating nav toggle click (Hamburger ☰ / Cross ✕ button)
       const fnavToggle = e.target.closest('#fnavToggle');
       if (fnavToggle) {
+        e.preventDefault();
         const fnav = document.getElementById('fnav');
-        if (fnav) fnav.classList.toggle('open');
+        const isCurrentlyOpen = fnav && fnav.classList.contains('open');
+        setFnavOpen(!isCurrentlyOpen);
         return;
       }
 
-      // Floating menu item click
-      const fnavBtn = e.target.closest('.fnav-menu button');
-      if (fnavBtn) {
-        const fnav = document.getElementById('fnav');
-        if (fnav) fnav.classList.remove('open');
-        return;
-      }
-
-      // Smooth scroll navigation to unit
+      // 2. Smooth scroll navigation to unit (Top, Unit 1, Unit 2, Unit 3, Unit 4)
       const navTarget = e.target.closest('[data-target]');
       if (navTarget) {
+        e.preventDefault();
+        // Always close floating menu when a destination is picked
+        setFnavOpen(false);
+
         const targetId = navTarget.getAttribute('data-target');
+        if (targetId === 'hero') {
+          window.scrollTo({
+            top: 0,
+            behavior: reduced ? 'auto' : 'smooth'
+          });
+          return;
+        }
+
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
-          targetEl.scrollIntoView({
-            behavior: reduced ? 'auto' : 'smooth',
-            block: 'start'
+          // Immediately populate practical questions if not yet rendered
+          if (typeof window.__ensureUnitRendered === 'function') {
+            window.__ensureUnitRendered(targetId);
+          }
+
+          // Subtle pulse highlight on destination unit
+          targetEl.classList.add('just-navigated');
+          setTimeout(() => targetEl.classList.remove('just-navigated'), 1400);
+
+          // Calculate offset accounting for sticky masthead header
+          const masthead = document.querySelector('.masthead');
+          const offset = masthead ? (masthead.offsetHeight + 24) : 80;
+          const rect = targetEl.getBoundingClientRect();
+          const targetY = window.pageYOffset + rect.top - offset;
+
+          window.scrollTo({
+            top: Math.max(0, targetY),
+            behavior: reduced ? 'auto' : 'smooth'
           });
         }
         return;
+      }
+
+      // 3. Floating menu links (e.g. Admin Panel link)
+      const fnavLink = e.target.closest('.fnav-menu a');
+      if (fnavLink) {
+        setFnavOpen(false);
+        return;
+      }
+
+      // 4. Click outside floating nav closes the menu
+      const fnav = document.getElementById('fnav');
+      if (fnav && fnav.classList.contains('open') && !fnav.contains(e.target)) {
+        setFnavOpen(false);
+      }
+    });
+
+    // Close floating nav on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        const fnav = document.getElementById('fnav');
+        if (fnav && fnav.classList.contains('open')) {
+          fnav.classList.remove('open');
+          const fnavToggle = document.getElementById('fnavToggle');
+          if (fnavToggle) {
+            fnavToggle.setAttribute('aria-expanded', 'false');
+            fnavToggle.setAttribute('aria-label', 'Open navigation menu');
+            fnavToggle.setAttribute('title', 'Open menu');
+          }
+        }
       }
     });
 

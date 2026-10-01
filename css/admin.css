@@ -729,10 +729,6 @@ body.light-theme .form-control:focus {
   width: 100%;
 }
 
-.password-field-wrapper input {
-  padding-right: 46px;
-}
-
 .password-toggle-btn {
   position: absolute;
   right: 8px;
