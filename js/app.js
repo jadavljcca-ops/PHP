@@ -797,19 +797,13 @@
         return;
       }
 
-      // 2. Subject Card / Button Click in View 2
+      // 2. Subject Button Click in View 2 (Only open manual when clicking the button)
       const subBtn = e.target.closest('[data-sub-target]');
-      const subCard = e.target.closest('.subject-card');
       if (subBtn) {
         e.preventDefault();
         const subId = subBtn.getAttribute('data-sub-target');
         const semId = subBtn.getAttribute('data-sem-target') || currentSemesterId;
         showManualView(semId, subId, true);
-        return;
-      }
-      if (subCard && !e.target.closest('button')) {
-        const subId = subCard.getAttribute('data-sub-id');
-        showManualView(currentSemesterId, subId, true);
         return;
       }
 
