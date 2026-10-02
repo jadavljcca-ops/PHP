@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:04:55.274Z
+ * Last updated: 2026-10-02T02:05:18.051Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:04:55.274Z",
+  "lastUpdated": "2026-10-02T02:05:18.051Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2506,6 +2506,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a form containing a combobox with some product names as items. whenever a user selects a particular product from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button).  implement using ajax. create a form containing a combobox with some product names as items. whenever a user selects a particular product from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button).  implement using ajax.  general q3",
       "createdAt": "2026-09-30T09:35:31.007Z"
+    },
+    {
+      "id": "q-1790906716351-720",
+      "semesterId": "sem-3",
+      "subjectId": "sub-tableau-sem-3",
+      "unitId": "unit-1-sub-tableau-sem-3",
+      "unitNum": "Unit 1",
+      "unitTitle": "All Unit Video Link",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "",
+      "question": "Q1 Practical",
+      "category": "General",
+      "logic": "",
+      "code": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
+      "codeHtml": "<span class=\"line\">https:<span class=\"tok-com\">//drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing</span></span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": " q1 practical  general q1",
+      "createdAt": "2026-10-02T02:05:16.352Z"
     }
   ]
 };
