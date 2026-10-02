@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:00:03.404Z
+ * Last updated: 2026-10-02T02:02:21.913Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:00:03.404Z",
+  "lastUpdated": "2026-10-02T02:02:21.913Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -65,6 +65,14 @@ window.DEFAULT_DATA = {
       "name": "Hypertext Preprocessor.(PHP)",
       "code": "DSC-M-BCA-355P",
       "icon": "🐘",
+      "desc": ""
+    },
+    {
+      "id": "sub-tableau-sem-3",
+      "semesterId": "sem-3",
+      "name": "Tableau",
+      "code": "IDC-BCA-235P",
+      "icon": "💻",
       "desc": ""
     }
   ],
