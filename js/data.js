@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:37:46.893Z
+ * Last updated: 2026-10-02T02:39:22.607Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:37:46.893Z",
+  "lastUpdated": "2026-10-02T02:39:22.607Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2662,6 +2662,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using ajax. write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using ajax.  general q9",
       "createdAt": "2026-10-02T02:34:35.600Z"
+    },
+    {
+      "id": "q-1790908760905-718",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Write a PHP program to print user data using AJAX. Make one drop down select user id and print specific user detail by matching user id.",
+      "question": "Write a PHP program to print user data using AJAX. Make one drop down select user id and print specific user detail by matching user id.",
+      "category": "General",
+      "logic": "",
+      "code": "#p10.html\n<html><head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n    var str = document.getElementById(\"cmboptions\").value;\n    xmlhttp.open(\"GET\", \"p10.php?q=\" + str, true);\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n\t\t\tdocument.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\n<select id=\"cmboptions\" onchange=\"showdata();\">\n    <option>1</option><option>2</option>\n    <option>3</option><option>4</option>\n    <option>5</option>\n</select>\n<div id=\"info\"></div>\n</body>\n</html>\n\n#p10.php\n<?php\n$host = 'localhost'; $user = 'root'; $pass = ''; $dbname = 'db_1';\n$conn = mysqli_connect($host, $user, $pass, $dbname);\nif(!$conn)\n{\n    die('Could not connect: ' . mysqli_connect_error());\n}\necho 'Connected successfully<br/>';\n$id = $_GET[\"q\"];\n$sql = \"SELECT * FROM usertable where user_id=\" . $id;\n$retval = mysqli_query($conn, $sql);\nif (mysqli_num_rows($retval) > 0)\n{\n    while($row = mysqli_fetch_array($retval))\n    {\n        echo \"User ID : \" . $row['user_id'] . \"<br> \" .\n             \"User Name : \" . $row['user_name'] . \"<br> \" .\n             \"Designation : \" . $row['desig'] . \"<br> \" .\n             \"Salary : \" . $row['Salary'] . \"<br> <br>\";\n    }\n}\nelse\n{\n    echo \"0 results\";\n}\nmysqli_close($conn);\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p10.html</span></span><span class=\"line\">&lt;html&gt;&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;cmboptions&quot;</span>).value;</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p10.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">\t\t\tdocument.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">&nbsp;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&lt;select id=<span class=\"tok-str\">&quot;cmboptions&quot;</span> onchange=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;</span><span class=\"line\">    &lt;option&gt;<span class=\"tok-num\">1</span>&lt;/option&gt;&lt;option&gt;<span class=\"tok-num\">2</span>&lt;/option&gt;</span><span class=\"line\">    &lt;option&gt;<span class=\"tok-num\">3</span>&lt;/option&gt;&lt;option&gt;<span class=\"tok-num\">4</span>&lt;/option&gt;</span><span class=\"line\">    &lt;option&gt;<span class=\"tok-num\">5</span>&lt;/option&gt;</span><span class=\"line\">&lt;/select&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p10.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$host = <span class=\"tok-str\">&#39;localhost&#39;</span>; $user = <span class=\"tok-str\">&#39;root&#39;</span>; $<span class=\"tok-kw\">pass</span> = <span class=\"tok-str\">&#39;&#39;</span>; $dbname = <span class=\"tok-str\">&#39;db_1&#39;</span>;</span><span class=\"line\">$conn = mysqli_connect($host, $user, $<span class=\"tok-kw\">pass</span>, $dbname);</span><span class=\"line\"><span class=\"tok-kw\">if</span>(!$conn)</span><span class=\"line\">{</span><span class=\"line\">    die(<span class=\"tok-str\">&#39;Could not connect: &#39;</span> . mysqli_connect_error());</span><span class=\"line\">}</span><span class=\"line\">echo <span class=\"tok-str\">&#39;Connected successfully&lt;br/&gt;&#39;</span>;</span><span class=\"line\">$id = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">$sql = <span class=\"tok-str\">&quot;SELECT * FROM usertable where user_id=&quot;</span> . $id;</span><span class=\"line\">$retval = mysqli_query($conn, $sql);</span><span class=\"line\"><span class=\"tok-kw\">if</span> (mysqli_num_rows($retval) &gt; <span class=\"tok-num\">0</span>)</span><span class=\"line\">{</span><span class=\"line\">    <span class=\"tok-kw\">while</span>($row = mysqli_fetch_array($retval))</span><span class=\"line\">    {</span><span class=\"line\">        echo <span class=\"tok-str\">&quot;User ID : &quot;</span> . $row[<span class=\"tok-str\">&#39;user_id&#39;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt; &quot;</span> .</span><span class=\"line\">             <span class=\"tok-str\">&quot;User Name : &quot;</span> . $row[<span class=\"tok-str\">&#39;user_name&#39;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt; &quot;</span> .</span><span class=\"line\">             <span class=\"tok-str\">&quot;Designation : &quot;</span> . $row[<span class=\"tok-str\">&#39;desig&#39;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt; &quot;</span> .</span><span class=\"line\">             <span class=\"tok-str\">&quot;Salary : &quot;</span> . $row[<span class=\"tok-str\">&#39;Salary&#39;</span>] . <span class=\"tok-str\">&quot;&lt;br&gt; &lt;br&gt;&quot;</span>;</span><span class=\"line\">    }</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;0 results&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">mysqli_close($conn);</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a php program to print user data using ajax. make one drop down select user id and print specific user detail by matching user id. write a php program to print user data using ajax. make one drop down select user id and print specific user detail by matching user id.  general q10",
+      "createdAt": "2026-10-02T02:39:20.906Z"
     }
   ]
 };
