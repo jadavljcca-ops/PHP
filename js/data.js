@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:05:36.793Z
+ * Last updated: 2026-10-02T03:11:43.129Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:05:36.793Z",
+  "lastUpdated": "2026-10-02T03:11:43.129Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2809,6 +2809,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to evaluate simple interest of a given principle, rate and time. write a program to evaluate simple interest of a given principle, rate and time.  general q1",
       "createdAt": "2026-10-02T03:05:34.253Z"
+    },
+    {
+      "id": "q-1790910701418-892",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "A motor cycle dealer sells two-wheelers to his customer on loan, which is to be repaid in 5 years. The dealer charges simple interest for the whole term on the day of giving the loan itself. The total amount is then divided by 60(months) and is collected as equated monthly installment (EMI). Write a program to calculate the EMI for a loan of Rs. X, where X is given from command line argument. Print the EMI value in rupees",
+      "question": "A motor cycle dealer sells two-wheelers to his customer on loan, which is to be repaid in 5 years. The dealer charges simple interest for the whole term on the day of giving the loan itself. The total amount is then divided by 60(months) and is collected as equated monthly installment (EMI). Write a program to calculate the EMI for a loan of Rs. X, where X is given from command line argument. Print the EMI value in rupees",
+      "category": "General",
+      "logic": "",
+      "code": "/* 2-A motor cycle dealer sells two-wheelers to his customer on loan,\nwhich is to be repaid in 5 years. The dealer charges simple interest\nfor the whole term on the day of giving the loan itself. The total\namount is then divided by 60(months) and is collected as equated\nmonthly installment (EMI). Write a program to calculate the EMI for\na loan of Rs. X, where X is given from command line argument. Print\nthe EMI value in rupees*/\nclass u1p2\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint amt=Integer.parseInt(args[0]);\n\t\tfloat rate=Float.parseFloat(args[1]);\n\t\tint y=5;\n\t\tfloat si=0.0f;\n\t\tsi=(amt*rate*y)/100;\n\t\tfloat netamt=amt+si;\n\t\tfloat emi=netamt/12;\n\t\t\n\t\tSystem.out.println(\"Amount is \"+amt);\n\t\tSystem.out.println(\"Rate is \"+rate);\n\t\tSystem.out.println(\"Year is \"+y);\n\t\tSystem.out.println(\"Sinple Interest is \"+si);\n\t\tSystem.out.println(\"Net amount is \"+netamt);\n\t\tSystem.out.println(\"EMI is \"+emi);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">2</span>-A motor cycle dealer sells two-wheelers to his customer on loan,</span><span class=\"line\">which <span class=\"tok-kw\">is</span> to be repaid <span class=\"tok-kw\">in</span> <span class=\"tok-num\">5</span> years. The dealer charges simple interest</span><span class=\"line\"><span class=\"tok-kw\">for</span> the whole term on the day of giving the loan itself. The total</span><span class=\"line\">amount <span class=\"tok-kw\">is</span> then divided by <span class=\"tok-num\">60</span>(months) <span class=\"tok-kw\">and</span> <span class=\"tok-kw\">is</span> collected <span class=\"tok-kw\">as</span> equated</span><span class=\"line\">monthly installment (EMI). Write a program to calculate the EMI <span class=\"tok-kw\">for</span></span><span class=\"line\">a loan of Rs. X, where X <span class=\"tok-kw\">is</span> given <span class=\"tok-kw\">from</span> command line argument. Print</span><span class=\"line\">the EMI value <span class=\"tok-kw\">in</span> rupees*/</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p2</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> amt=Integer.parseInt(args[<span class=\"tok-num\">0</span>]);</span><span class=\"line\">\t\t<span class=\"tok-kw\">float</span> rate=Float.parseFloat(args[<span class=\"tok-num\">1</span>]);</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> y=<span class=\"tok-num\">5</span>;</span><span class=\"line\">\t\t<span class=\"tok-kw\">float</span> si=<span class=\"tok-num\">0.0</span>f;</span><span class=\"line\">\t\tsi=(amt*rate*y)/<span class=\"tok-num\">100</span>;</span><span class=\"line\">\t\t<span class=\"tok-kw\">float</span> netamt=amt+si;</span><span class=\"line\">\t\t<span class=\"tok-kw\">float</span> emi=netamt/<span class=\"tok-num\">12</span>;</span><span class=\"line\">\t\t</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Amount is &quot;</span>+amt);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Rate is &quot;</span>+rate);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Year is &quot;</span>+y);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Sinple Interest is &quot;</span>+si);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Net amount is &quot;</span>+netamt);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;EMI is &quot;</span>+emi);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "//Command line argument 5000 5.5\nAmount is : 5000\nRate is : 5.5\nYear is : 5\nSimple interest is : 1375.0",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "a motor cycle dealer sells two-wheelers to his customer on loan, which is to be repaid in 5 years. the dealer charges simple interest for the whole term on the day of giving the loan itself. the total amount is then divided by 60(months) and is collected as equated monthly installment (emi). write a program to calculate the emi for a loan of rs. x, where x is given from command line argument. print the emi value in rupees a motor cycle dealer sells two-wheelers to his customer on loan, which is to be repaid in 5 years. the dealer charges simple interest for the whole term on the day of giving the loan itself. the total amount is then divided by 60(months) and is collected as equated monthly installment (emi). write a program to calculate the emi for a loan of rs. x, where x is given from command line argument. print the emi value in rupees  general q2",
+      "createdAt": "2026-10-02T03:11:41.420Z"
     }
   ]
 };
