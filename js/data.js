@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:29:57.997Z
+ * Last updated: 2026-10-02T03:31:46.098Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:29:57.997Z",
+  "lastUpdated": "2026-10-02T03:31:46.098Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3183,6 +3183,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write an interface called exam with a method pass(int mark) that returns a boolean. write another interface called classify with a method division(int average) which returns a string. write a class called result which implements both exam and classify. the pass method should return true if the marks is greater than or equal to 35 else false. the division method must return “first” when the parameter average is 60 or more, “second” when average is 50 or more but below 60, “no division” when average is less than 50. write an interface called exam with a method pass(int mark) that returns a boolean. write another interface called classify with a method division(int average) which returns a string. write a class called result which implements both exam and classify. the pass method should return true if the marks is greater than or equal to 35 else false. the division method must return “first” when the parameter average is 60 or more, “second” when average is 50 or more but below 60, “no division” when average is less than 50.  general q8",
       "createdAt": "2026-10-02T03:29:56.229Z"
+    },
+    {
+      "id": "q-1790911904338-616",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Create class calculaƟon with an abstract method area( ). Create Rectangle and Triangle subclasses of calculaƟon and find area of rectangle and triangle.",
+      "question": "Create class calculaƟon with an abstract method area( ). Create Rectangle and Triangle subclasses of calculaƟon and find area of rectangle and triangle.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 9-Create class calculation with an abstract method area( ).\nCreate Rectangle and Triangle subclasses of calculation and\nfind area of rectangle and triangle. */\n\nabstract class Calculation\n{\n\tabstract public void area(int a,int b);\n}\nclass Triangle\n{\n\tpublic void area(int a,int b)\n\t{\n\tfloat c;\n\tc=(a+b)/2f;\n\tSystem.out.println(\"Area of triangle is : \"+c);\n\t} \n}\nclass Rectangle\n{\n\tpublic void area(int a,int b)\n\t{\n\tint c=a*b;\n\tSystem.out.println(\"Area of rectangle is : \"+c);\n\t}\n}\nclass u2p9\n{\n\tpublic static void main(String args[])\n\t{\n\tTriangle t=new Triangle();\n\tRectangle r=new Rectangle();\n\tt.area(3,5);\n\tr.area(6,7);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">9</span>-Create <span class=\"tok-kw\">class</span> calculation <span class=\"tok-kw\">with</span> an abstract method area( ).</span><span class=\"line\">Create Rectangle <span class=\"tok-kw\">and</span> Triangle subclasses of calculation <span class=\"tok-kw\">and</span></span><span class=\"line\">find area of rectangle <span class=\"tok-kw\">and</span> triangle. */</span><span class=\"line\">&nbsp;</span><span class=\"line\">abstract <span class=\"tok-kw\">class</span> Calculation</span><span class=\"line\">{</span><span class=\"line\">\tabstract <span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> area(<span class=\"tok-kw\">int</span> a,<span class=\"tok-kw\">int</span> b);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Triangle</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> area(<span class=\"tok-kw\">int</span> a,<span class=\"tok-kw\">int</span> b)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">float</span> c;</span><span class=\"line\">\tc=(a+b)/<span class=\"tok-num\">2</span>f;</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Area of triangle is : &quot;</span>+c);</span><span class=\"line\">\t} </span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Rectangle</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> area(<span class=\"tok-kw\">int</span> a,<span class=\"tok-kw\">int</span> b)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> c=a*b;</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Area of rectangle is : &quot;</span>+c);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p9</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tTriangle t=<span class=\"tok-kw\">new</span> Triangle();</span><span class=\"line\">\tRectangle r=<span class=\"tok-kw\">new</span> Rectangle();</span><span class=\"line\">\tt.area(<span class=\"tok-num\">3</span>,<span class=\"tok-num\">5</span>);</span><span class=\"line\">\tr.area(<span class=\"tok-num\">6</span>,<span class=\"tok-num\">7</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Area of triangle is : 4.0\nArea of rectangle is : 42",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create class calculaɵon with an abstract method area( ). create rectangle and triangle subclasses of calculaɵon and find area of rectangle and triangle. create class calculaɵon with an abstract method area( ). create rectangle and triangle subclasses of calculaɵon and find area of rectangle and triangle.  general q9",
+      "createdAt": "2026-10-02T03:31:44.339Z"
     }
   ]
 };
