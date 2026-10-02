@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:31:46.098Z
+ * Last updated: 2026-10-02T03:33:11.388Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:31:46.098Z",
+  "lastUpdated": "2026-10-02T03:33:11.388Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3205,6 +3205,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create class calculaɵon with an abstract method area( ). create rectangle and triangle subclasses of calculaɵon and find area of rectangle and triangle. create class calculaɵon with an abstract method area( ). create rectangle and triangle subclasses of calculaɵon and find area of rectangle and triangle.  general q9",
       "createdAt": "2026-10-02T03:31:44.339Z"
+    },
+    {
+      "id": "q-1790911989639-629",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "The abstract Vegetable class has four subclasses named cabbage, carrot and potato. Write an applicaƟon that demonstrates how to establish this class hierarchy. Declare one instance variable of type string that indicates the color of a vegetable. Create and display instances of these object. Override the toString() method of object to return a string with the name of the vegetable and its color.",
+      "question": "The abstract Vegetable class has four subclasses named cabbage, carrot and potato. Write an applicaƟon that demonstrates how to establish this class hierarchy. Declare one instance variable of type string that indicates the color of a vegetable. Create and display instances of these object. Override the toString() method of object to return a string with the name of the vegetable and its color.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 10- The abstract Vegetable class has four subclasses named\ncabbage, carrot and potato. Write an applicaƟon that\ndemonstrates how to establish this class hierarchy. Declare\none instance variable of type string that indicates the color of\na vegetable. Create and display instances of these object.\nOverride the toString() method of object to return a string\nwith the name of the vegetable and its color. */\n\nabstract class Vegetable\n{\n\tString color;\n\tabstract public String toString();\n}\nclass Cabbage extends Vegetable\n{\n\tCabbage(String s)\n\t{\n\tcolor=s;\n\t}\n\tpublic String toString()\n\t{\n\treturn (\"Cabbage color is \"+color);\n\t}\n}\nclass Carrot extends Vegetable\n{\n\tCarrot(String s)\n\t{\n\tcolor=s;\n\t}\n\tpublic String toString()\n\t{\n\treturn (\"Carrot color is \"+color);\n\t}\n}\nclass Potato extends Vegetable\n{\n\tPotato(String s)\n\t{\n\tcolor=s;\n\t}\n\tpublic String toString()\n\t{\n\treturn (\"Potato color is \"+color);\n\t}\n}\nclass u2p10\n{\n\tpublic static void main(String args[])\n\t{\n\tCabbage c=new Cabbage(\"Light Green\");\n\tCarrot c1=new Carrot(\"Orange\");\n\tPotato p=new Potato(\"Skin\");\n\tSystem.out.println(c.toString());\n\tSystem.out.println(c1.toString());\n\tSystem.out.println(p.toString());\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">10</span>- The abstract Vegetable <span class=\"tok-kw\">class</span> has four subclasses named</span><span class=\"line\">cabbage, carrot <span class=\"tok-kw\">and</span> potato. Write an applicaƟon that</span><span class=\"line\">demonstrates how to establish this <span class=\"tok-kw\">class</span> hierarchy. Declare</span><span class=\"line\">one instance variable of <span class=\"tok-fn\">type</span> string that indicates the color of</span><span class=\"line\">a vegetable. Create <span class=\"tok-kw\">and</span> display instances of these object.</span><span class=\"line\">Override the toString() method of object to <span class=\"tok-kw\">return</span> a string</span><span class=\"line\"><span class=\"tok-kw\">with</span> the name of the vegetable <span class=\"tok-kw\">and</span> its color. */</span><span class=\"line\">&nbsp;</span><span class=\"line\">abstract <span class=\"tok-kw\">class</span> Vegetable</span><span class=\"line\">{</span><span class=\"line\">\tString color;</span><span class=\"line\">\tabstract <span class=\"tok-kw\">public</span> String toString();</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Cabbage extends Vegetable</span><span class=\"line\">{</span><span class=\"line\">\tCabbage(String s)</span><span class=\"line\">\t{</span><span class=\"line\">\tcolor=s;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> String toString()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">return</span> (<span class=\"tok-str\">&quot;Cabbage color is &quot;</span>+color);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Carrot extends Vegetable</span><span class=\"line\">{</span><span class=\"line\">\tCarrot(String s)</span><span class=\"line\">\t{</span><span class=\"line\">\tcolor=s;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> String toString()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">return</span> (<span class=\"tok-str\">&quot;Carrot color is &quot;</span>+color);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Potato extends Vegetable</span><span class=\"line\">{</span><span class=\"line\">\tPotato(String s)</span><span class=\"line\">\t{</span><span class=\"line\">\tcolor=s;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> String toString()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">return</span> (<span class=\"tok-str\">&quot;Potato color is &quot;</span>+color);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p10</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tCabbage c=<span class=\"tok-kw\">new</span> Cabbage(<span class=\"tok-str\">&quot;Light Green&quot;</span>);</span><span class=\"line\">\tCarrot c1=<span class=\"tok-kw\">new</span> Carrot(<span class=\"tok-str\">&quot;Orange&quot;</span>);</span><span class=\"line\">\tPotato p=<span class=\"tok-kw\">new</span> Potato(<span class=\"tok-str\">&quot;Skin&quot;</span>);</span><span class=\"line\">\tSystem.out.println(c.toString());</span><span class=\"line\">\tSystem.out.println(c1.toString());</span><span class=\"line\">\tSystem.out.println(p.toString());</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Cabbage color is Light Green\nCarrot color is Orange\nPotato color is Skin",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "the abstract vegetable class has four subclasses named cabbage, carrot and potato. write an applicaɵon that demonstrates how to establish this class hierarchy. declare one instance variable of type string that indicates the color of a vegetable. create and display instances of these object. override the tostring() method of object to return a string with the name of the vegetable and its color. the abstract vegetable class has four subclasses named cabbage, carrot and potato. write an applicaɵon that demonstrates how to establish this class hierarchy. declare one instance variable of type string that indicates the color of a vegetable. create and display instances of these object. override the tostring() method of object to return a string with the name of the vegetable and its color.  general q10",
+      "createdAt": "2026-10-02T03:33:09.640Z"
     }
   ]
 };
