@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:16:28.445Z
+ * Last updated: 2026-10-02T04:17:30.786Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:16:28.445Z",
+  "lastUpdated": "2026-10-02T04:17:30.786Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3603,6 +3603,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program that create and starts five threads. each thread is instantiated from the same class. it executes a loop with ten iterations. each iteration displays the character 'x' and sleep for 500 milliseconds. the application waits for all threads to complete and then display a message ‘hello’ write a program that create and starts five threads. each thread is instantiated from the same class. it executes a loop with ten iterations. each iteration displays the character 'x' and sleep for 500 milliseconds. the application waits for all threads to complete and then display a message ‘hello’  general q7",
       "createdAt": "2026-10-02T04:16:26.736Z"
+    },
+    {
+      "id": "q-1790914648439-170",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecƟvely. AŌer all thread finish, main thread should print message “ Task Completed”. Write this program with use of runnable interface.",
+      "question": "Write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecƟvely. AŌer all thread finish, main thread should print message “ Task Completed”. Write this program with use of runnable interface.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 8-Write a java program to create 2 threads each thread\ncalculates the sum and average of 1 to 10 and 11 to 20\nrespectively. After all thread finish, main thread should print\nmessage “ Task Completed”. Write this program with use of\nrunnable interface. */\n\nclass u4p8\n{\n\tpublic static void main(String args[])\n\t{\n\tSum s=new Sum();\n\tAverage a=new Average();\n\ts.start();\n\ta.start();\n\ttry{\n\ts.join();\n\ta.join();\n\t}\n\tcatch(InterruptedException e)\n\t{\n\tSystem.out.println(\"There is some exception..\");\n\t}\n\tSystem.out.println(\"Task completed..\");\n\t}\n}\nclass Sum extends Thread\n{\n\tint i,s=0;\n\tpublic void run()\n\t{\n\tfor(i=1;i<=10;i++)\n\t{\n\ts+=i;\n\tSystem.out.println(\"The sum of 10 numbers is: \"+s);\n\t}\n  }\n}\nclass Average extends Thread\n{\n\tint i,s=0,avg=0;\n\tpublic void run()\n\t{\n\tfor(i=11;i<=20;i++)\n\t{\n\ts+=i;\n\t}\n\tavg=s/10;\n\tSystem.out.println(\"The average of 10 number is :\"+avg);\n  }\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">8</span>-Write a java program to create <span class=\"tok-num\">2</span> threads each thread</span><span class=\"line\">calculates the <span class=\"tok-fn\">sum</span> <span class=\"tok-kw\">and</span> average of <span class=\"tok-num\">1</span> to <span class=\"tok-num\">10</span> <span class=\"tok-kw\">and</span> <span class=\"tok-num\">11</span> to <span class=\"tok-num\">20</span></span><span class=\"line\">respectively. After all thread finish, <span class=\"tok-fn\">main</span> thread should <span class=\"tok-fn\">print</span></span><span class=\"line\">message “ Task Completed”. Write this program <span class=\"tok-kw\">with</span> use of</span><span class=\"line\">runnable interface. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p8</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tSum s=<span class=\"tok-kw\">new</span> Sum();</span><span class=\"line\">\tAverage a=<span class=\"tok-kw\">new</span> Average();</span><span class=\"line\">\ts.start();</span><span class=\"line\">\ta.start();</span><span class=\"line\">\t<span class=\"tok-kw\">try</span>{</span><span class=\"line\">\ts.join();</span><span class=\"line\">\ta.join();</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(InterruptedException e)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;There is some exception..&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Task completed..&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Sum extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> i,s=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">1</span>;i&lt;=<span class=\"tok-num\">10</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\ts+=i;</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The sum of 10 numbers is: &quot;</span>+s);</span><span class=\"line\">\t}</span><span class=\"line\">  }</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Average extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> i,s=<span class=\"tok-num\">0</span>,avg=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">11</span>;i&lt;=<span class=\"tok-num\">20</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\ts+=i;</span><span class=\"line\">\t}</span><span class=\"line\">\tavg=s/<span class=\"tok-num\">10</span>;</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The average of 10 number is :&quot;</span>+avg);</span><span class=\"line\">  }</span><span class=\"line\">}</span>",
+      "output": "The sum of 10 numbers is : 1\nThe sum of 10 numbers is : 3\nThe sum of 10 numbers is : 6\nThe average of 10 number is : 15\nThe sum of 10 numbers is : 10\nThe sum of 10 numbers is : 15\nThe sum of 10 numbers is : 21\nThe sum of 10 numbers is : 28\nThe sum of 10 numbers is : 36\nThe sum of 10 numbers is : 45\nThe sum of 10 numbers is : 55\nTask completed..",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecɵvely. aōer all thread finish, main thread should print message “ task completed”. write this program with use of runnable interface. write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecɵvely. aōer all thread finish, main thread should print message “ task completed”. write this program with use of runnable interface.  general q8",
+      "createdAt": "2026-10-02T04:17:28.440Z"
     }
   ]
 };
