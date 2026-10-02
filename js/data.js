@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:12:42.192Z
+ * Last updated: 2026-10-02T03:13:26.828Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:12:42.192Z",
+  "lastUpdated": "2026-10-02T03:13:26.828Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2853,6 +2853,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "a car accessories shop assigns code 1 to seat covers, 2 to steering wheel covers , 3 to car lighting and 4 for air purifiers. all other items have code 5 or more. while selling the goods, a sales tax of 2% to seat covers ,3% to steering wheel covers, 4% to car lighting, 2.5% to air purifiers and 1.2% for all other items is charged. a list containing the product code and price is given for making a bill. write a java program using switch statements to prepare a bill. a car accessories shop assigns code 1 to seat covers, 2 to steering wheel covers , 3 to car lighting and 4 for air purifiers. all other items have code 5 or more. while selling the goods, a sales tax of 2% to seat covers ,3% to steering wheel covers, 4% to car lighting, 2.5% to air purifiers and 1.2% for all other items is charged. a list containing the product code and price is given for making a bill. write a java program using switch statements to prepare a bill.  general q3",
       "createdAt": "2026-10-02T03:12:40.480Z"
+    },
+    {
+      "id": "q-1790910805085-853",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 4,
+      "tag": "Q4",
+      "title": "Write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator.",
+      "question": "Write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 4-Write a java program to scan 3 integer values from the\ncommand line argument and display the maximum\nnumber using conditional operator.*/\nimport java.util.Scanner;\nclass u1p4\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint a,b,c,max; \n\t\t  a=Integer.parseInt(args[0]); \n\t\t  b=Integer.parseInt(args[1]); \n\t\t  c=Integer.parseInt(args[2]); \n\t\t  \n\t\t  if(a==b && b==c)\n\t\t  {\n\t\t\t  System.out.println(\"All are Same\");\n\t\t  }\n\t\t  else\n\t\t  {\n\t\t\tif(a>b && a>c)\n\t\t\t\t{max=a;}\n\t\t\telse if(b>a && b>c)\n\t\t\t\t{max=b;}\n\t\t\telse\n\t\t\t\t{max=c;}\n\t\t\tSystem.out.println(\"Manimum number is :-->  \"+max);\n\t\t  }\n\t}//main over\n}//class over",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">4</span>-Write a java program to scan <span class=\"tok-num\">3</span> integer values <span class=\"tok-kw\">from</span> the</span><span class=\"line\">command line argument <span class=\"tok-kw\">and</span> display the maximum</span><span class=\"line\">number <span class=\"tok-kw\">using</span> conditional operator.*/</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.util.Scanner;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p4</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a,b,c,<span class=\"tok-fn\">max</span>; </span><span class=\"line\">\t\t  a=Integer.parseInt(args[<span class=\"tok-num\">0</span>]); </span><span class=\"line\">\t\t  b=Integer.parseInt(args[<span class=\"tok-num\">1</span>]); </span><span class=\"line\">\t\t  c=Integer.parseInt(args[<span class=\"tok-num\">2</span>]); </span><span class=\"line\">\t\t  </span><span class=\"line\">\t\t  <span class=\"tok-kw\">if</span>(a==b &amp;&amp; b==c)</span><span class=\"line\">\t\t  {</span><span class=\"line\">\t\t\t  System.out.println(<span class=\"tok-str\">&quot;All are Same&quot;</span>);</span><span class=\"line\">\t\t  }</span><span class=\"line\">\t\t  <span class=\"tok-kw\">else</span></span><span class=\"line\">\t\t  {</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">if</span>(a&gt;b &amp;&amp; a&gt;c)</span><span class=\"line\">\t\t\t\t{<span class=\"tok-fn\">max</span>=a;}</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">else</span> <span class=\"tok-kw\">if</span>(b&gt;a &amp;&amp; b&gt;c)</span><span class=\"line\">\t\t\t\t{<span class=\"tok-fn\">max</span>=b;}</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">else</span></span><span class=\"line\">\t\t\t\t{<span class=\"tok-fn\">max</span>=c;}</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Manimum number is :--&gt;  &quot;</span>+<span class=\"tok-fn\">max</span>);</span><span class=\"line\">\t\t  }</span><span class=\"line\">\t}<span class=\"tok-com\">//main over</span></span><span class=\"line\">}<span class=\"tok-com\">//class over</span></span>",
+      "output": "//Command line argument 24 45 22\nThe maximum number is :45",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator. write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator.  general q4",
+      "createdAt": "2026-10-02T03:13:25.086Z"
     }
   ]
 };
