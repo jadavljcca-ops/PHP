@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:40:29.438Z
+ * Last updated: 2026-10-02T03:48:36.123Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:40:29.438Z",
+  "lastUpdated": "2026-10-02T03:48:36.123Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3250,6 +3250,28 @@ window.DEFAULT_DATA = {
       "dataSearch": "create a package p and within that package create class packclass which have method called findmax( ) which find maximum value from three numbers. now import the package within another class democlass and now display the maximum number. create a package p and within that package create class packclass which have method called findmax( ) which find maximum value from three numbers. now import the package within another class democlass and now display the maximum number.  general q1",
       "createdAt": "2026-10-02T03:39:37.423Z",
       "updatedAt": "2026-10-02T03:40:27.714Z"
+    },
+    {
+      "id": "q-1790912914383-641",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "Write a program that creates three different classes in three different packages and access them from default package. All the three packages should be at the same level.",
+      "question": "Write a program that creates three different classes in three different packages and access them from default package. All the three packages should be at the same level.",
+      "category": "General",
+      "logic": "",
+      "code": "- નીચેનો code pack1 નામનું folder બનાવો અને તેમાં નીચેનો code A.java થી save કરો.\npackage Pack1;\npublic class A\n{\n public void show()\n {\n System.out.println(\"The Class A is in PackagePack1..\");\n }\n} \n\n- નીચેનો code pack2 નામનું folder બનાવો અને તેમાં નીચેનો code B.java થી save કરો.\npackage Pack2;\npublic class B\n{\n public void show()\n {\n System.out.println(\"The Class B is in PackagePack2..\"); \n}\n}\n\n- નીચેનો code pack3 નામનું folder બનાવો અને તેમાં નીચેનો code C.java થી save કરો.\npackage Pack3;\npublic class C\n{\n public void show()\n {\n System.out.println(\"The Class C is in PackagePack3..\");\n }\n} \n\n\n- નીચેનો code u3p2.java થી save કરો.\n\n/* 2-Write a program that creates three different classes in three\ndifferent packages and access them from default package. All\nthe three packages should be at the same level. */\n\nimport Pack1.*;\nimport Pack2.*;\nimport Pack3.*;\nclass u3p2\n{\npublic static void main(String args[])\n {\n A a1=new A();\n B b1=new B();\n C c1=new C();\n a1.show();\n b1.show();\n c1.show();\n }\n}",
+      "codeHtml": "<span class=\"line\">- નીચેનો code pack1 નામનું folder બનાવો અને તેમાં નીચેનો code A.java થી save કરો.</span><span class=\"line\">package Pack1;</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">class</span> A</span><span class=\"line\">{</span><span class=\"line\"> <span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> show()</span><span class=\"line\"> {</span><span class=\"line\"> System.out.println(<span class=\"tok-str\">&quot;The Class A is in PackagePack1..&quot;</span>);</span><span class=\"line\"> }</span><span class=\"line\">} </span><span class=\"line\">&nbsp;</span><span class=\"line\">- નીચેનો code pack2 નામનું folder બનાવો અને તેમાં નીચેનો code B.java થી save કરો.</span><span class=\"line\">package Pack2;</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">class</span> B</span><span class=\"line\">{</span><span class=\"line\"> <span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> show()</span><span class=\"line\"> {</span><span class=\"line\"> System.out.println(<span class=\"tok-str\">&quot;The Class B is in PackagePack2..&quot;</span>); </span><span class=\"line\">}</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">- નીચેનો code pack3 નામનું folder બનાવો અને તેમાં નીચેનો code C.java થી save કરો.</span><span class=\"line\">package Pack3;</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">class</span> C</span><span class=\"line\">{</span><span class=\"line\"> <span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> show()</span><span class=\"line\"> {</span><span class=\"line\"> System.out.println(<span class=\"tok-str\">&quot;The Class C is in PackagePack3..&quot;</span>);</span><span class=\"line\"> }</span><span class=\"line\">} </span><span class=\"line\">&nbsp;</span><span class=\"line\">&nbsp;</span><span class=\"line\">- નીચેનો code u3p2.java થી save કરો.</span><span class=\"line\">&nbsp;</span><span class=\"line\">/* <span class=\"tok-num\">2</span>-Write a program that creates three different classes <span class=\"tok-kw\">in</span> three</span><span class=\"line\">different packages <span class=\"tok-kw\">and</span> access them <span class=\"tok-kw\">from</span> <span class=\"tok-kw\">default</span> package. All</span><span class=\"line\">the three packages should be at the same level. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">import</span> Pack1.*;</span><span class=\"line\"><span class=\"tok-kw\">import</span> Pack2.*;</span><span class=\"line\"><span class=\"tok-kw\">import</span> Pack3.*;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u3p2</span><span class=\"line\">{</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\"> {</span><span class=\"line\"> A a1=<span class=\"tok-kw\">new</span> A();</span><span class=\"line\"> B b1=<span class=\"tok-kw\">new</span> B();</span><span class=\"line\"> C c1=<span class=\"tok-kw\">new</span> C();</span><span class=\"line\"> a1.show();</span><span class=\"line\"> b1.show();</span><span class=\"line\"> c1.show();</span><span class=\"line\"> }</span><span class=\"line\">}</span>",
+      "output": "Compiling class A\njavac Pack1\\A.java\nCompiling class B\njavac Pack2\\B.java\nCompiling class C\njavac Pack3\\C.java\nCompiling the main class.\njavac U3P2.java\nRunning the program.\njava U3P2\nThe Class A is in Package Pack1..\nThe Class B is in Package Pack2..\nThe Class C is in Package Pack3..",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program that creates three different classes in three different packages and access them from default package. all the three packages should be at the same level. write a program that creates three different classes in three different packages and access them from default package. all the three packages should be at the same level.  general q2",
+      "createdAt": "2026-10-02T03:48:34.384Z"
     }
   ]
 };
