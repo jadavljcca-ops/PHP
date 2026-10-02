@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:03:15.397Z
+ * Last updated: 2026-10-02T04:04:43.053Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:03:15.397Z",
+  "lastUpdated": "2026-10-02T04:04:43.053Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -199,7 +199,7 @@ window.DEFAULT_DATA = {
       "subjectId": "sub-ds-sem3",
       "semesterId": "sem-3",
       "num": "Unit 4",
-      "title": "Excep􀆟on Handling and Mul􀆟threading",
+      "title": "Exception Handling and Multithreading",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
