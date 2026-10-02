@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:18:21.777Z
+ * Last updated: 2026-10-02T03:21:14.924Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:18:21.777Z",
+  "lastUpdated": "2026-10-02T03:21:14.924Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3007,6 +3007,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators. write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators.  general q10",
       "createdAt": "2026-10-02T03:18:19.999Z"
+    },
+    {
+      "id": "q-1790911273184-810",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Write a program to sort the elements of one dimensional array. Read value of array elements through command line argument.",
+      "question": "Write a program to sort the elements of one dimensional array. Read value of array elements through command line argument.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 1-Write a program to sort the elements of one dimensional\narray. Read value of array elements through command line\nargument*/\nimport java.util.Scanner;\nclass u2p1\n{\n\tpublic static void main (String args[])\n\t{\n\t\tint i,j,t;\n\t\tint a[]=new int[5];\n\t\tScanner s=new Scanner(System.in);\n\t\tfor(i=0;i<5;i++)\n\t\t\ta[i]=Integer.parseInt(args[i]);\n\t\tfor(i=0; i<5; i++)\n\t\t\tSystem.out.println(a[i]);\n\t\t\n\t\tfor(i=0; i<5; i++)\n\t\t{\n\t\t\tfor(j=i+1; j<5; j++)\n\t\t\t{\n\t\t\t\tt=a[i];\n\t\t\t\ta[i]=a[j];\n\t\t\t\ta[j]=t;\n\t\t\t}\n\t\t}\n\t\tSystem.out.println(\"After the sotring array:\");\n\t\tfor(i=0; i<5; i++)\n\t\t{\n\t\t\tSystem.out.println(a[i]);\n\t\t}\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">1</span>-Write a program to sort the elements of one dimensional</span><span class=\"line\">array. Read value of array elements through command line</span><span class=\"line\">argument*/</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.util.Scanner;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p1</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span> (String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> i,j,t;</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a[]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\t\tScanner s=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\t\t\ta[i]=Integer.parseInt(args[i]);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t\tSystem.out.println(a[i]);</span><span class=\"line\">\t\t</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">for</span>(j=i+<span class=\"tok-num\">1</span>; j&lt;<span class=\"tok-num\">5</span>; j++)</span><span class=\"line\">\t\t\t{</span><span class=\"line\">\t\t\t\tt=a[i];</span><span class=\"line\">\t\t\t\ta[i]=a[j];</span><span class=\"line\">\t\t\t\ta[j]=t;</span><span class=\"line\">\t\t\t}</span><span class=\"line\">\t\t}</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;After the sotring array:&quot;</span>);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\tSystem.out.println(a[i]);</span><span class=\"line\">\t\t}</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "//Command line argument 3 4 22 10 4\na[0]=3\na[1]=4\na[2]=22\na[3]=10\na[4]=4\nArray aŌer sorƟng:\na[0]=22\na[1]=10\na[2]=4\na[3]=4\na[4]=3",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to sort the elements of one dimensional array. read value of array elements through command line argument. write a program to sort the elements of one dimensional array. read value of array elements through command line argument.  general q1",
+      "createdAt": "2026-10-02T03:21:13.185Z"
     }
   ]
 };
