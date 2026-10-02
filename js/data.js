@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:02:21.913Z
+ * Last updated: 2026-10-02T02:04:27.022Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:02:21.913Z",
+  "lastUpdated": "2026-10-02T02:04:27.022Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -147,6 +147,15 @@ window.DEFAULT_DATA = {
       "num": "Unit 4",
       "title": "AJAX and Validation",
       "sub": "",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-1-sub-tableau-sem-3",
+      "subjectId": "sub-tableau-sem-3",
+      "semesterId": "sem-3",
+      "num": "Unit 1",
+      "title": "All Unit Video Link",
+      "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
   ],
