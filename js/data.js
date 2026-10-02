@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:17:34.100Z
+ * Last updated: 2026-10-02T03:18:21.777Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:17:34.100Z",
+  "lastUpdated": "2026-10-02T03:18:21.777Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2985,6 +2985,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "a bank gives 6.5% per annum interest on deposits made in that bank. write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of rs.5000 for compound interest. create necessary methods and constructors too. a bank gives 6.5% per annum interest on deposits made in that bank. write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of rs.5000 for compound interest. create necessary methods and constructors too.  general q9",
       "createdAt": "2026-10-02T03:17:32.370Z"
+    },
+    {
+      "id": "q-1790911099998-457",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators.",
+      "question": "Write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 10-Write a java program to display powers of 2 i.e.\n2,4,8,16 etc up to 1024 using bitwise operators. */\nclass u1p10\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint a=2,n;\n\t\tn=Integer.parseInt(args[0]);\n\t\tfor(int i=0; i<n; i++)\n\t\t{\n\t\t\tif(i==n-1)\n\t\t\t{\n\t\t\t\tSystem.out.print(a<<i);\n\t\t\t\tSystem.out.println(\".\");\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tSystem.out.print(a<<i);\n\t\t\t\tSystem.out.println(\",\");\n\t\t\t}\n\t\t}\n\t}//main over\n}//class over",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">10</span>-Write a java program to display powers of <span class=\"tok-num\">2</span> i.e.</span><span class=\"line\"><span class=\"tok-num\">2</span>,<span class=\"tok-num\">4</span>,<span class=\"tok-num\">8</span>,<span class=\"tok-num\">16</span> etc up to <span class=\"tok-num\">1024</span> <span class=\"tok-kw\">using</span> bitwise operators. */</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p10</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a=<span class=\"tok-num\">2</span>,n;</span><span class=\"line\">\t\tn=Integer.parseInt(args[<span class=\"tok-num\">0</span>]);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>; i&lt;n; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">if</span>(i==n-<span class=\"tok-num\">1</span>)</span><span class=\"line\">\t\t\t{</span><span class=\"line\">\t\t\t\tSystem.out.<span class=\"tok-fn\">print</span>(a&lt;&lt;i);</span><span class=\"line\">\t\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;.&quot;</span>);</span><span class=\"line\">\t\t\t}</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">else</span></span><span class=\"line\">\t\t\t{</span><span class=\"line\">\t\t\t\tSystem.out.<span class=\"tok-fn\">print</span>(a&lt;&lt;i);</span><span class=\"line\">\t\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;,&quot;</span>);</span><span class=\"line\">\t\t\t}</span><span class=\"line\">\t\t}</span><span class=\"line\">\t}<span class=\"tok-com\">//main over</span></span><span class=\"line\">}<span class=\"tok-com\">//class over</span></span>",
+      "output": "//Command line argument 3 4 22 10 4\na[0]=3\na[1]=4\na[2]=22\na[3]=10\na[4]=4\nArray after sorting:\na[0]=22\na[1]=10\na[2]=4\na[3]=4\na[4]=3",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators. write a java program to display powers of 2 i.e. 2,4,8,16 etc up to 1024 using bitwise operators.  general q10",
+      "createdAt": "2026-10-02T03:18:19.999Z"
     }
   ]
 };
