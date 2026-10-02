@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:26:48.670Z
+ * Last updated: 2026-10-02T03:27:50.421Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:26:48.670Z",
+  "lastUpdated": "2026-10-02T03:27:50.421Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3139,6 +3139,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a class called numberdata that accept any array of the five numbers. create a sub class called numplay which provides methods for followings: 1. display numbers entered. 2. sum of the number. 3. average of the numbers. 4. maximum of the numbers. 5. minimum of the numbers. create a class that provides menu for above methods. give choice from the command-line argument. create a class called numberdata that accept any array of the five numbers. create a sub class called numplay which provides methods for followings: 1. display numbers entered. 2. sum of the number. 3. average of the numbers. 4. maximum of the numbers. 5. minimum of the numbers. create a class that provides menu for above methods. give choice from the command-line argument.  general q6",
       "createdAt": "2026-10-02T03:26:46.916Z"
+    },
+    {
+      "id": "q-1790911668690-340",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Declare an abstract class Vehicle with an abstract method named numWheels().provide subclasses Car and Truck that each implements this method. Create instance of these subclasses and demonstrate the use of this method.",
+      "question": "Declare an abstract class Vehicle with an abstract method named numWheels().provide subclasses Car and Truck that each implements this method. Create instance of these subclasses and demonstrate the use of this method.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 7-Declare an abstract class Vehicle with an abstract method\nnamed numWheels().provide subclasses Car and Truck that\neach implements this method. Create instance of these\nsubclasses and demonstrate the use of this method. */\n\nabstract class Vehicle\n{\n\tabstract public void numWheel();\n}\nclass Car extends Vehicle\n{\n\tpublic void numWheel()\n\t{ \n\tSystem.out.println(\"Car has 4 wheels...\");\n\t}\n}\nclass Truck extends Vehicle\n{\n\tpublic void numWheel()\n\t{\n\tSystem.out.println(\"Truck has 6 wheels...\");\n\t}\n}\nclass u2p7\n{\n\tpublic static void main(String args[])\n\t{\n\tCar c1=new Car();\n\tTruck t1=new Truck();\n\tc1.numWheel();\n\tt1.numWheel();\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">7</span>-Declare an abstract <span class=\"tok-kw\">class</span> Vehicle <span class=\"tok-kw\">with</span> an abstract method</span><span class=\"line\">named numWheels().provide subclasses Car <span class=\"tok-kw\">and</span> Truck that</span><span class=\"line\">each implements this method. Create instance of these</span><span class=\"line\">subclasses <span class=\"tok-kw\">and</span> demonstrate the use of this method. */</span><span class=\"line\">&nbsp;</span><span class=\"line\">abstract <span class=\"tok-kw\">class</span> Vehicle</span><span class=\"line\">{</span><span class=\"line\">\tabstract <span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> numWheel();</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Car extends Vehicle</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> numWheel()</span><span class=\"line\">\t{ </span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Car has 4 wheels...&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Truck extends Vehicle</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> numWheel()</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Truck has 6 wheels...&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p7</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tCar c1=<span class=\"tok-kw\">new</span> Car();</span><span class=\"line\">\tTruck t1=<span class=\"tok-kw\">new</span> Truck();</span><span class=\"line\">\tc1.numWheel();</span><span class=\"line\">\tt1.numWheel();</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Car has 4 wheels...\nTruck has 6 wheels...",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "declare an abstract class vehicle with an abstract method named numwheels().provide subclasses car and truck that each implements this method. create instance of these subclasses and demonstrate the use of this method. declare an abstract class vehicle with an abstract method named numwheels().provide subclasses car and truck that each implements this method. create instance of these subclasses and demonstrate the use of this method.  general q8",
+      "createdAt": "2026-10-02T03:27:48.691Z"
     }
   ]
 };
