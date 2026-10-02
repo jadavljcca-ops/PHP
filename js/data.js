@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:01:53.555Z
+ * Last updated: 2026-10-02T04:03:15.397Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:01:53.555Z",
+  "lastUpdated": "2026-10-02T04:03:15.397Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3427,6 +3427,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program to accept a string from user and perform the following menu driven operaɵons(using methods of string class) 1.display string in uppercase 2.display string in lowercase 3.check for equality with another string 4.display substring from a given string write a java program to accept a string from user and perform the following menu driven operaɵons(using methods of string class) 1.display string in uppercase 2.display string in lowercase 3.check for equality with another string 4.display substring from a given string  general q9",
       "createdAt": "2026-10-02T04:01:51.830Z"
+    },
+    {
+      "id": "q-1790913793664-891",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Write a java program that takes a string from user and display its capacity Append a new string to exisƟng string and display string capacity aŌer appending.",
+      "question": "Write a java program that takes a string from user and display its capacity Append a new string to exisƟng string and display string capacity aŌer appending.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 10-Write a java program that takes a string from user and display\nits capacity Append a new string to existing string and display\nstring capacity after appending.*/\n\nclass u3p10\n{\npublic static void main(String args[])\n\t{\n\tScanner s=new Scanner(System.in);\n\tSystem.out.println(\"Enter String:\");\n\tString s1=s.next();\n\tStringBuffer s2=new StringBuffer(s1);\n\tSystem.out.println(\"The String is : \"+s2);\n\tSystem.out.println(\"Enter String to be Append :\");\n\tString a=s.next();\n\tStringBuffer a1=new StringBuffer(a);\n\ts2.append(a1);\n\tSystem.out.println(\"String aŌer Appending is :\"+s2);\n\tSystem.out.println(\"Capacity is : \"+s2.capacity());\n    }\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">10</span>-Write a java program that takes a string <span class=\"tok-kw\">from</span> user <span class=\"tok-kw\">and</span> display</span><span class=\"line\">its capacity Append a <span class=\"tok-kw\">new</span> string to existing string <span class=\"tok-kw\">and</span> display</span><span class=\"line\">string capacity after appending.*/</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u3p10</span><span class=\"line\">{</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tScanner s=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Enter String:&quot;</span>);</span><span class=\"line\">\tString s1=s.next();</span><span class=\"line\">\tStringBuffer s2=<span class=\"tok-kw\">new</span> StringBuffer(s1);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The String is : &quot;</span>+s2);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Enter String to be Append :&quot;</span>);</span><span class=\"line\">\tString a=s.next();</span><span class=\"line\">\tStringBuffer a1=<span class=\"tok-kw\">new</span> StringBuffer(a);</span><span class=\"line\">\ts2.append(a1);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;String aŌer Appending is :&quot;</span>+s2);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Capacity is : &quot;</span>+s2.capacity());</span><span class=\"line\">    }</span><span class=\"line\">}</span>",
+      "output": "Enter String: LJ\nThe String is : LJ\nEnter String to be Append : BCA\nString afer Appending is : LJBCA\nCapacity is : 18",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program that takes a string from user and display its capacity append a new string to exisɵng string and display string capacity aōer appending. write a java program that takes a string from user and display its capacity append a new string to exisɵng string and display string capacity aōer appending.  general q10",
+      "createdAt": "2026-10-02T04:03:13.664Z"
     }
   ]
 };
