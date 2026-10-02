@@ -120,7 +120,7 @@ const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
     } else {
       return {
         success: false,
-        message: 'Incorrect username or password. Default: Username: J.d (or jd) | Password: Jd@#123'
+        message: 'Username and password is wrong'
       };
     }
   }
