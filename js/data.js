@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:48:36.123Z
+ * Last updated: 2026-10-02T03:48:58.659Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:48:36.123Z",
+  "lastUpdated": "2026-10-02T03:48:58.659Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3034,9 +3034,9 @@ window.DEFAULT_DATA = {
       "id": "q-1790911328140-650",
       "semesterId": "sem-3",
       "subjectId": "sub-ds-sem3",
-      "unitId": "unit-4-sub-ds-sem3",
-      "unitNum": "Unit 4",
-      "unitTitle": "Excep􀆟on Handling and Mul􀆟threading",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
       "practicalNumber": 2,
       "tag": "Q2",
       "title": "Write a program to create an array to store 5 integer values. Also iniƟalize the array with 5 numbers and display the array Elements in reverse order.",
@@ -3050,7 +3050,8 @@ window.DEFAULT_DATA = {
       "chartSrc": "",
       "chartAlt": "",
       "dataSearch": "write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order. write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order.  general q2",
-      "createdAt": "2026-10-02T03:22:08.141Z"
+      "createdAt": "2026-10-02T03:22:08.141Z",
+      "updatedAt": "2026-10-02T03:48:56.925Z"
     },
     {
       "id": "q-1790911396640-140",
