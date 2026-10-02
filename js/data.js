@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:24:17.454Z
+ * Last updated: 2026-10-02T03:25:12.836Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:24:17.454Z",
+  "lastUpdated": "2026-10-02T03:25:12.836Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3095,6 +3095,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write program to create an array of company name and another array of price quoted by the company. fetch the company name who has quoted the lowest amount. write program to create an array of company name and another array of price quoted by the company. fetch the company name who has quoted the lowest amount.  general q4",
       "createdAt": "2026-10-02T03:24:15.728Z"
+    },
+    {
+      "id": "q-1790911511106-667",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Write an interface called numbers, with a method in Process(int x, int y). Write a class called Sum, in which the method Process finds the sum of two numbers and returns an int value. Write another class called Average, in which the Process method finds the average of the two numbers and returns an int.",
+      "question": "Write an interface called numbers, with a method in Process(int x, int y). Write a class called Sum, in which the method Process finds the sum of two numbers and returns an int value. Write another class called Average, in which the Process method finds the average of the two numbers and returns an int.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 5-Write an interface called numbers, with a method in\nProcess(int x, int y). Write a class called Sum, in which the\nmethod Process finds the sum of two numbers and returns\nan int value. Write another class called Average, in which the\nProcess method finds the average of the two numbers and\nreturns an int.*/\n\ninterface Number\n{\n\tint process(int x, int y);\n}\nclass Sum implements Number\n{\n\tpublic int process(int x, int y)\n\t{return (x+y);}\n}\nclass Avg implements Number\n{\n\tpublic int process(int x, int y)\n\t{return ((x+y)/2);}\n}\nclass u2p5\n{\n\tpublic static void main(String args[])\n\t{\n\t\tSum s=new Sum();\n\t\tAvg a=new Avg();\n\t\tSystem.out.println(\"the sum are \"+s.process(10,20));\n\t\tSystem.out.println(\"the sum are \"+a.process(10,20));\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">5</span>-Write an interface called numbers, <span class=\"tok-kw\">with</span> a method <span class=\"tok-kw\">in</span></span><span class=\"line\">Process(<span class=\"tok-kw\">int</span> x, <span class=\"tok-kw\">int</span> y). Write a <span class=\"tok-kw\">class</span> called Sum, <span class=\"tok-kw\">in</span> which the</span><span class=\"line\">method Process finds the <span class=\"tok-fn\">sum</span> of two numbers <span class=\"tok-kw\">and</span> returns</span><span class=\"line\">an <span class=\"tok-kw\">int</span> value. Write another <span class=\"tok-kw\">class</span> called Average, <span class=\"tok-kw\">in</span> which the</span><span class=\"line\">Process method finds the average of the two numbers <span class=\"tok-kw\">and</span></span><span class=\"line\">returns an <span class=\"tok-kw\">int</span>.*/</span><span class=\"line\">&nbsp;</span><span class=\"line\">interface Number</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> process(<span class=\"tok-kw\">int</span> x, <span class=\"tok-kw\">int</span> y);</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Sum implements Number</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">int</span> process(<span class=\"tok-kw\">int</span> x, <span class=\"tok-kw\">int</span> y)</span><span class=\"line\">\t{<span class=\"tok-kw\">return</span> (x+y);}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Avg implements Number</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">int</span> process(<span class=\"tok-kw\">int</span> x, <span class=\"tok-kw\">int</span> y)</span><span class=\"line\">\t{<span class=\"tok-kw\">return</span> ((x+y)/<span class=\"tok-num\">2</span>);}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p5</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\tSum s=<span class=\"tok-kw\">new</span> Sum();</span><span class=\"line\">\t\tAvg a=<span class=\"tok-kw\">new</span> Avg();</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;the sum are &quot;</span>+s.process(<span class=\"tok-num\">10</span>,<span class=\"tok-num\">20</span>));</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;the sum are &quot;</span>+a.process(<span class=\"tok-num\">10</span>,<span class=\"tok-num\">20</span>));</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "The sum of two numbers are : 25\nThe average of two numbers are : 12",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write an interface called numbers, with a method in process(int x, int y). write a class called sum, in which the method process finds the sum of two numbers and returns an int value. write another class called average, in which the process method finds the average of the two numbers and returns an int. write an interface called numbers, with a method in process(int x, int y). write a class called sum, in which the method process finds the sum of two numbers and returns an int value. write another class called average, in which the process method finds the average of the two numbers and returns an int.  general q5",
+      "createdAt": "2026-10-02T03:25:11.107Z"
     }
   ]
 };
