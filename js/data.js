@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:59:03.992Z
+ * Last updated: 2026-10-02T04:00:01.060Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:59:03.992Z",
+  "lastUpdated": "2026-10-02T04:00:01.060Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3383,6 +3383,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program to store a string str = “hello, good morning”. find and display the length of the string. replace the word “morning” by “evening” and display the new string (use stringbufffer class) write a java program to store a string str = “hello, good morning”. find and display the length of the string. replace the word “morning” by “evening” and display the new string (use stringbufffer class)  general q7",
       "createdAt": "2026-10-02T03:59:02.275Z"
+    },
+    {
+      "id": "q-1790913599335-836",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 8,
+      "tag": "Q8",
+      "title": "Write a java program to convert an integer number into its binary and octal equivalent.",
+      "question": "Write a java program to convert an integer number into its binary and octal equivalent.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 8-Write a java program to convert an integer number into its\nbinary and octal equivalent. */\n\nclass u3p8\n{\npublic static void main(String args[])\n {\n\tScanner s=new Scanner(System.in);\n\tSystem.out.println(\"Enter integer value:\");\n\tint s1=s.nextInt();\n\tString bstr=Integer.toBinaryString(s1);\n\tString ostr=Integer.toOctalString(s1);\n\tSystem.out.println(\"Binary Equivalent : \"+bstr);\n\tSystem.out.println(\"Octal Equivalent : \"+ostr);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">8</span>-Write a java program to convert an integer number into its</span><span class=\"line\">binary <span class=\"tok-kw\">and</span> octal equivalent. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u3p8</span><span class=\"line\">{</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\"> {</span><span class=\"line\">\tScanner s=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Enter integer value:&quot;</span>);</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> s1=s.nextInt();</span><span class=\"line\">\tString bstr=Integer.toBinaryString(s1);</span><span class=\"line\">\tString ostr=Integer.toOctalString(s1);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Binary Equivalent : &quot;</span>+bstr);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Octal Equivalent : &quot;</span>+ostr);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Enter integer value: 16\nBinary Equivalent : 10000\nOctal Equivalent : 20",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to convert an integer number into its binary and octal equivalent. write a java program to convert an integer number into its binary and octal equivalent.  general q8",
+      "createdAt": "2026-10-02T03:59:59.336Z"
     }
   ]
 };
