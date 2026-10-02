@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:58:17.367Z
+ * Last updated: 2026-10-02T03:59:03.992Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:58:17.367Z",
+  "lastUpdated": "2026-10-02T03:59:03.992Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3361,6 +3361,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program that takes a string from the user and validate it. the string should be at least 5 characters and should contain at least one digit. display an appropriate valid message. write a program that takes a string from the user and validate it. the string should be at least 5 characters and should contain at least one digit. display an appropriate valid message.  general q6",
       "createdAt": "2026-10-02T03:58:15.661Z"
+    },
+    {
+      "id": "q-1790913542274-943",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Write a java program to store a string STR = “Hello, Good Morning”. Find and display the length of the string. Replace the word “Morning” by “Evening” and display the new string (use StringBufffer class)",
+      "question": "Write a java program to store a string STR = “Hello, Good Morning”. Find and display the length of the string. Replace the word “Morning” by “Evening” and display the new string (use StringBufffer class)",
+      "category": "General",
+      "logic": "",
+      "code": "/* 7-Write a java program to store a string STR = “Hello, Good\nMorning”. Find and display the length of the string. Replace\nthe word “Morning” by “Evening” and display the new string\n(use StringBufffer class) */\n\nclass u3p7\n{\n\tpublic static void main(String args[])\n\t{\n\tStringBuffer s=new StringBuffer(\"Hello, Good Morning..\");\n\tSystem.out.println(\"The String is : \"+s);\n\tSystem.out.println(\"Capacity is : \"+s.capacity());\n\tSystem.out.println(\"The String replaced by Evening: \"+s.replace(12,19,\"Evening\"));\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">7</span>-Write a java program to store a string STR = “Hello, Good</span><span class=\"line\">Morning”. Find <span class=\"tok-kw\">and</span> display the length of the string. Replace</span><span class=\"line\">the word “Morning” by “Evening” <span class=\"tok-kw\">and</span> display the <span class=\"tok-kw\">new</span> string</span><span class=\"line\">(use StringBufffer <span class=\"tok-kw\">class</span>) */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u3p7</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tStringBuffer s=<span class=\"tok-kw\">new</span> StringBuffer(<span class=\"tok-str\">&quot;Hello, Good Morning..&quot;</span>);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The String is : &quot;</span>+s);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Capacity is : &quot;</span>+s.capacity());</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The String replaced by Evening: &quot;</span>+s.replace(<span class=\"tok-num\">12</span>,<span class=\"tok-num\">19</span>,<span class=\"tok-str\">&quot;Evening&quot;</span>));</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "The String is : Hello, Good Morning..\nCapacity is : 37\nThe String replaced by Evening : Hello, Good Evening..",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to store a string str = “hello, good morning”. find and display the length of the string. replace the word “morning” by “evening” and display the new string (use stringbufffer class) write a java program to store a string str = “hello, good morning”. find and display the length of the string. replace the word “morning” by “evening” and display the new string (use stringbufffer class)  general q7",
+      "createdAt": "2026-10-02T03:59:02.275Z"
     }
   ]
 };
