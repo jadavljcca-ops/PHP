@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:14:13.378Z
+ * Last updated: 2026-10-02T03:15:01.628Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:14:13.378Z",
+  "lastUpdated": "2026-10-02T03:15:01.628Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2897,6 +2897,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (hypotenuse = square root (x*x + y *y)) write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (hypotenuse = square root (x*x + y *y))  general q5",
       "createdAt": "2026-10-02T03:14:11.429Z"
+    },
+    {
+      "id": "q-1790910899887-326",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 6,
+      "tag": "Q6",
+      "title": "Write a program to calculate the area of square and rectangle by overloading the area method. 7 Create a complex number class.",
+      "question": "Write a program to calculate the area of square and rectangle by overloading the area method. 7 Create a complex number class.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 6-Write a program to calculate the area of square and\nrectangle by overloading the area method. 7 Create a\ncomplex number class. */\nimport java.util.Scanner;\nclass u1p6\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint l,w;\n\t\tScanner s=new Scanner(System.in);\n\t\tSystem.out.print(\"Enter a value of L.:--> \");\n\t\tl=s.nextInt();\n\t\tSystem.out.print(\"Enter a value of W.:--> \");\n\t\tw=s.nextInt();\n\t\tarea(l);\n\t\tarea(l,w);\n\t}//main over\n\tpublic static void area(int l)\n\t{\n\t\tint sa=l*l;\n\t\tSystem.out.println(\"Area of square is \"+sa);\n\t}\n\tpublic static void area(int l, int w)\n\t{\n\t\tint re=l*w;\n\t\tSystem.out.println(\"Area of rectengle is \"+re);\n\t}\n}//class over",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">6</span>-Write a program to calculate the area of square <span class=\"tok-kw\">and</span></span><span class=\"line\">rectangle by overloading the area method. <span class=\"tok-num\">7</span> Create a</span><span class=\"line\">complex number <span class=\"tok-kw\">class</span>. */</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.util.Scanner;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p6</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> l,w;</span><span class=\"line\">\t\tScanner s=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\t\tSystem.out.<span class=\"tok-fn\">print</span>(<span class=\"tok-str\">&quot;Enter a value of L.:--&gt; &quot;</span>);</span><span class=\"line\">\t\tl=s.nextInt();</span><span class=\"line\">\t\tSystem.out.<span class=\"tok-fn\">print</span>(<span class=\"tok-str\">&quot;Enter a value of W.:--&gt; &quot;</span>);</span><span class=\"line\">\t\tw=s.nextInt();</span><span class=\"line\">\t\tarea(l);</span><span class=\"line\">\t\tarea(l,w);</span><span class=\"line\">\t}<span class=\"tok-com\">//main over</span></span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> area(<span class=\"tok-kw\">int</span> l)</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> sa=l*l;</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Area of square is &quot;</span>+sa);</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> area(<span class=\"tok-kw\">int</span> l, <span class=\"tok-kw\">int</span> w)</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> re=l*w;</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Area of rectengle is &quot;</span>+re);</span><span class=\"line\">\t}</span><span class=\"line\">}<span class=\"tok-com\">//class over</span></span>",
+      "output": "Enter l value as integer:5\nEnter w value as integer:10\nArea of square is : 25\nArea of rectangle is : 50",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to calculate the area of square and rectangle by overloading the area method. 7 create a complex number class. write a program to calculate the area of square and rectangle by overloading the area method. 7 create a complex number class.  general q6",
+      "createdAt": "2026-10-02T03:14:59.888Z"
     }
   ]
 };
