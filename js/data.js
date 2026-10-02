@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:03:47.882Z
+ * Last updated: 2026-10-02T03:05:36.793Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:03:47.882Z",
+  "lastUpdated": "2026-10-02T03:05:36.793Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2787,6 +2787,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program that checks a particular mobile number already exists in the student (stuid, stu_name, mob, country) table or not. if mobile number exists then display a message \"mobile number already registered. try another mobile number\". if it does not exist then add the data in the student table. implement using ajax. write a program that checks a particular mobile number already exists in the student (stuid, stu_name, mob, country) table or not. if mobile number exists then display a message \"mobile number already registered. try another mobile number\". if it does not exist then add the data in the student table. implement using ajax.  general q13",
       "createdAt": "2026-10-02T02:56:40.123Z"
+    },
+    {
+      "id": "q-1790910334252-669",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Write a program to evaluate simple interest of a given principle, rate and time.",
+      "question": "Write a program to evaluate simple interest of a given principle, rate and time.",
+      "category": "General",
+      "logic": "",
+      "code": "class U1P1 \n{ \n\t \tpublic static void main(String arg[]) \n\t \t{ \n\t \t \tint p,n,si,r; \n \t \tp=5000;  \t \tr=4; \n\t \t \tn=5; \n\t \t \tsi=p*r*n/100; \n\t \t \tSystem.out.println(\"Simple interest is:\"+si); \n\t \t \tSystem.out.println(\"At the rate of:\"+r); \n\t \t \tSystem.out.println(\"And years:\"+n); \n\t \t} \n}",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-kw\">class</span> U1P1 </span><span class=\"line\">{ </span><span class=\"line\">\t \t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String arg[]) </span><span class=\"line\">\t \t{ </span><span class=\"line\">\t \t \t<span class=\"tok-kw\">int</span> p,n,si,r; </span><span class=\"line\"> \t \tp=<span class=\"tok-num\">5000</span>;  \t \tr=<span class=\"tok-num\">4</span>; </span><span class=\"line\">\t \t \tn=<span class=\"tok-num\">5</span>; </span><span class=\"line\">\t \t \tsi=p*r*n/<span class=\"tok-num\">100</span>; </span><span class=\"line\">\t \t \tSystem.out.println(<span class=\"tok-str\">&quot;Simple interest is:&quot;</span>+si); </span><span class=\"line\">\t \t \tSystem.out.println(<span class=\"tok-str\">&quot;At the rate of:&quot;</span>+r); </span><span class=\"line\">\t \t \tSystem.out.println(<span class=\"tok-str\">&quot;And years:&quot;</span>+n); </span><span class=\"line\">\t \t} </span><span class=\"line\">}</span>",
+      "output": "Simple interest is:1000 \nAt the rate of:4 \nAnd years:5",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to evaluate simple interest of a given principle, rate and time. write a program to evaluate simple interest of a given principle, rate and time.  general q1",
+      "createdAt": "2026-10-02T03:05:34.253Z"
     }
   ]
 };
