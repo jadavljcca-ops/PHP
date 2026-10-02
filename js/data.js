@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:21:14.924Z
+ * Last updated: 2026-10-02T03:22:09.870Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:21:14.924Z",
+  "lastUpdated": "2026-10-02T03:22:09.870Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3029,6 +3029,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to sort the elements of one dimensional array. read value of array elements through command line argument. write a program to sort the elements of one dimensional array. read value of array elements through command line argument.  general q1",
       "createdAt": "2026-10-02T03:21:13.185Z"
+    },
+    {
+      "id": "q-1790911328140-650",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Excep􀆟on Handling and Mul􀆟threading",
+      "practicalNumber": 2,
+      "tag": "Q2",
+      "title": "Write a program to create an array to store 5 integer values. Also iniƟalize the array with 5 numbers and display the array Elements in reverse order.",
+      "question": "Write a program to create an array to store 5 integer values. Also iniƟalize the array with 5 numbers and display the array Elements in reverse order.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 2-Write a program to create an array to store 5 integer values.\nAlso initialize the array with 5 numbers and display the array\nElements in reverse order. */\nclass u2p2\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint i;\n\t\tint a[]={3,4,5,2,1};\n\t\tfor(i=0; i<5; i++)\n\t\t\tSystem.out.println(a[i]);\n\t\t\t\n\t\tSystem.out.println(\"everse array\");\n\t\tfor(i=5-1; i>=0; i--)\n\t\t\tSystem.out.println(a[i]);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">2</span>-Write a program to create an array to store <span class=\"tok-num\">5</span> integer values.</span><span class=\"line\">Also initialize the array <span class=\"tok-kw\">with</span> <span class=\"tok-num\">5</span> numbers <span class=\"tok-kw\">and</span> display the array</span><span class=\"line\">Elements <span class=\"tok-kw\">in</span> reverse order. */</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p2</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> i;</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a[]={<span class=\"tok-num\">3</span>,<span class=\"tok-num\">4</span>,<span class=\"tok-num\">5</span>,<span class=\"tok-num\">2</span>,<span class=\"tok-num\">1</span>};</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t\tSystem.out.println(a[i]);</span><span class=\"line\">\t\t\t</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;everse array&quot;</span>);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">5</span>-<span class=\"tok-num\">1</span>; i&gt;=<span class=\"tok-num\">0</span>; i--)</span><span class=\"line\">\t\t\tSystem.out.println(a[i]);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "a[0]=3\na[1]=5\na[2]=2\na[3]=5\na[4]=6\nArray in reverse form:\na[4]=6\na[3]=5\na[2]=2\na[1]=5\na[0]=3",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order. write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order.  general q2",
+      "createdAt": "2026-10-02T03:22:08.141Z"
     }
   ]
 };
