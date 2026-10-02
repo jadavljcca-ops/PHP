@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:21:36.358Z
+ * Last updated: 2026-10-02T04:24:08.478Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:21:36.358Z",
+  "lastUpdated": "2026-10-02T04:24:08.478Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2543,8 +2543,8 @@ window.DEFAULT_DATA = {
       "unitTitle": "All Unit Video Link",
       "practicalNumber": 1,
       "tag": "Q1",
-      "title": "",
-      "question": "Q1 Practical",
+      "title": "Copy the link below and paste it into Google.",
+      "question": "Copy the link below and paste it into Google.",
       "category": "General",
       "logic": "The link below contains videos showing solutions for Tableau practical programs.",
       "code": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
@@ -2553,9 +2553,9 @@ window.DEFAULT_DATA = {
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
-      "dataSearch": " q1 practical the link below contains videos showing solutions for tableau practical programs. general q1",
+      "dataSearch": "copy the link below and paste it into google. copy the link below and paste it into google. the link below contains videos showing solutions for tableau practical programs. general q1",
       "createdAt": "2026-10-02T02:05:16.352Z",
-      "updatedAt": "2026-10-02T04:21:34.592Z"
+      "updatedAt": "2026-10-02T04:24:06.725Z"
     },
     {
       "id": "q-1790907523536-876",
