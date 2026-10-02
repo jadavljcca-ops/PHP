@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:15:01.628Z
+ * Last updated: 2026-10-02T03:15:55.064Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:15:01.628Z",
+  "lastUpdated": "2026-10-02T03:15:55.064Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2919,6 +2919,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to calculate the area of square and rectangle by overloading the area method. 7 create a complex number class. write a program to calculate the area of square and rectangle by overloading the area method. 7 create a complex number class.  general q6",
       "createdAt": "2026-10-02T03:14:59.888Z"
+    },
+    {
+      "id": "q-1790910953360-45",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Create a complex number class. The class should have a constructor and methods to add, subtract and multiply two complex numbers and to return the real and imaginary parts.",
+      "question": "Create a complex number class. The class should have a constructor and methods to add, subtract and multiply two complex numbers and to return the real and imaginary parts.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 7-Create a complex number class. The class should\nhave a constructor and methods to add, subtract and\nmultiply two complex numbers and to return the real\nand imaginary parts. */\n\nclass u1p7\n{\n\tint r,i;\n\tu1p7()\n\t{\n\t\tr=i=0;\n\t}\n\tu1p7(int x, int y)\n\t{\n\t\tr=x;\n\t\ti=y;\n\t}\n\tu1p7(int x)\n\t{\n\t\tr=i=x;\n\t}\n\tpublic static u1p7 add(u1p7 s2,u1p7 s3)\n\t{\n\t\tu1p7 s1=new u1p7();\n\t\ts1.r=s2.r+s3.r;\n\t\ts1.i=s2.i+s3.i;\n\t\treturn s1;\n\t}\n\t\n\tpublic static u1p7 sub(u1p7 s2, u1p7 s3)\n\t{\n\t\tu1p7 s1=new u1p7();\n\t\ts1.r=s2.r-s3.r;\n\t\ts1.i=s2.i-s3.i;\n\t\treturn s1;\n\t}\n\t\n\tpublic static u1p7 mul(u1p7 s2, u1p7 s3)\n\t{\n\t\tu1p7 s1=new u1p7();\n\t\ts1.r=s2.r-s3.r;\n\t\ts1.i=s2.i-s3.i;\n\t\treturn s1;\n\t}\n\t\n\tpublic void display()\n\t{\n\t\tSystem.out.println(\"The value of R is :\"+r);\n\t\tSystem.out.println(\"The value of I is :\"+i);\n\t}\n\t\n\tpublic static void main(Stringa args[])\n\t{\n\t\t\tu1p7 s1=new u1p7();\n\t\t\tu1p7 s2=new u1p7();\n\t\t\tu1p7 s3=new u1p7();\n\t\t\tSystem.out.println(\"Date of object\");\n\t\t\ts1.display();\n\t\t\ts2.display();\n\t\t\ts3.display();\n\t\t\t\n\t\t\tSystem.out.println(\"After a addition:\");\n\t\t\ts1.add(s2,s3);\n\t\t\ts1.display();\n\t\t\t\n\t\t\tSystem.out.println(\"After a subtract:\");\n\t\t\ts1.sub(s2,s3);\n\t\t\ts1.display();\n\t\t\t\n\t\t\tSystem.out.println(\"After a Multipication:\");\n\t\t\ts1.mul(s2,s3);\n\t\t\ts1.display();\n\t\t\t\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">7</span>-Create a complex number <span class=\"tok-kw\">class</span>. The <span class=\"tok-kw\">class</span> should</span><span class=\"line\">have a constructor <span class=\"tok-kw\">and</span> methods to add, subtract <span class=\"tok-kw\">and</span></span><span class=\"line\">multiply two complex numbers <span class=\"tok-kw\">and</span> to <span class=\"tok-kw\">return</span> the real</span><span class=\"line\"><span class=\"tok-kw\">and</span> imaginary parts. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p7</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> r,i;</span><span class=\"line\">\tu1p7()</span><span class=\"line\">\t{</span><span class=\"line\">\t\tr=i=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t}</span><span class=\"line\">\tu1p7(<span class=\"tok-kw\">int</span> x, <span class=\"tok-kw\">int</span> y)</span><span class=\"line\">\t{</span><span class=\"line\">\t\tr=x;</span><span class=\"line\">\t\ti=y;</span><span class=\"line\">\t}</span><span class=\"line\">\tu1p7(<span class=\"tok-kw\">int</span> x)</span><span class=\"line\">\t{</span><span class=\"line\">\t\tr=i=x;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> u1p7 add(u1p7 s2,u1p7 s3)</span><span class=\"line\">\t{</span><span class=\"line\">\t\tu1p7 s1=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\ts1.r=s2.r+s3.r;</span><span class=\"line\">\t\ts1.i=s2.i+s3.i;</span><span class=\"line\">\t\t<span class=\"tok-kw\">return</span> s1;</span><span class=\"line\">\t}</span><span class=\"line\">\t</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> u1p7 sub(u1p7 s2, u1p7 s3)</span><span class=\"line\">\t{</span><span class=\"line\">\t\tu1p7 s1=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\ts1.r=s2.r-s3.r;</span><span class=\"line\">\t\ts1.i=s2.i-s3.i;</span><span class=\"line\">\t\t<span class=\"tok-kw\">return</span> s1;</span><span class=\"line\">\t}</span><span class=\"line\">\t</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> u1p7 mul(u1p7 s2, u1p7 s3)</span><span class=\"line\">\t{</span><span class=\"line\">\t\tu1p7 s1=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\ts1.r=s2.r-s3.r;</span><span class=\"line\">\t\ts1.i=s2.i-s3.i;</span><span class=\"line\">\t\t<span class=\"tok-kw\">return</span> s1;</span><span class=\"line\">\t}</span><span class=\"line\">\t</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> display()</span><span class=\"line\">\t{</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;The value of R is :&quot;</span>+r);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;The value of I is :&quot;</span>+i);</span><span class=\"line\">\t}</span><span class=\"line\">\t</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(Stringa args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t\tu1p7 s1=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\t\tu1p7 s2=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\t\tu1p7 s3=<span class=\"tok-kw\">new</span> u1p7();</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Date of object&quot;</span>);</span><span class=\"line\">\t\t\ts1.display();</span><span class=\"line\">\t\t\ts2.display();</span><span class=\"line\">\t\t\ts3.display();</span><span class=\"line\">\t\t\t</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;After a addition:&quot;</span>);</span><span class=\"line\">\t\t\ts1.add(s2,s3);</span><span class=\"line\">\t\t\ts1.display();</span><span class=\"line\">\t\t\t</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;After a subtract:&quot;</span>);</span><span class=\"line\">\t\t\ts1.sub(s2,s3);</span><span class=\"line\">\t\t\ts1.display();</span><span class=\"line\">\t\t\t</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;After a Multipication:&quot;</span>);</span><span class=\"line\">\t\t\ts1.mul(s2,s3);</span><span class=\"line\">\t\t\ts1.display();</span><span class=\"line\">\t\t\t</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Data of Object:\nThe value of r is : 0\nThe value of i is : 0\nThe value of r is : 5\nThe value of i is : 5\nThe value of r is : 5\nThe value of i is : 10\nAfter Addition:\nThe value of r is : 10\nThe value of i is : 15\nAfter Subtraction:\nThe value of r is : 0\nThe value of i is : 5\nAfter Mutiplication:\nThe value of r is : 25\nThe value of i is : 50",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a complex number class. the class should have a constructor and methods to add, subtract and multiply two complex numbers and to return the real and imaginary parts. create a complex number class. the class should have a constructor and methods to add, subtract and multiply two complex numbers and to return the real and imaginary parts.  general q7",
+      "createdAt": "2026-10-02T03:15:53.362Z"
     }
   ]
 };
