@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:31:30.074Z
+ * Last updated: 2026-10-02T02:34:37.303Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:31:30.074Z",
+  "lastUpdated": "2026-10-02T02:34:37.303Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2640,6 +2640,28 @@ window.DEFAULT_DATA = {
       "dataSearch": "write a program to validate and email id using regular expression and by using dom write a program to validate and email id using regular expression and by using dom  general q49",
       "createdAt": "2026-10-02T02:30:20.615Z",
       "updatedAt": "2026-10-02T02:31:28.381Z"
+    },
+    {
+      "id": "q-1790908475599-574",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using AJAX.",
+      "question": "Write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using AJAX.",
+      "category": "General",
+      "logic": "",
+      "code": "#p9.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction checkString()\n{\n    var xmlhttp = new XMLHttpRequest();\n    var str = document.getElementById('strstring').value;\n    xmlhttp.open(\"GET\", \"p9.php?q=\" + str, true);\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\nEnter string : \n<input type=\"text\" id=\"strstring\"><br>\n<input type=\"submit\" name=\"submit\" onclick=\"checkString();\">\n<div id=\"info\"></div>\n</body></html>\n\n#p9.php\n<?php\n$str = $_GET[\"q\"];\n$n = strlen($str);\necho \"String lenght is $n <br>\";\nif (!($n >= 7 && $n <= 12))\n{\n    echo \"String should have minimum 7 and max 12 characters.<br>\";\n}\nelse\n{\n    echo \"String is : \" . $str;\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p9.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function checkString()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&#39;strstring&#39;</span>).value;</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p9.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span> &amp;&amp; xmlhttp.status == <span class=\"tok-num\">200</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter string : </span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;strstring&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span> onclick=<span class=\"tok-str\">&quot;checkString();&quot;</span>&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p9.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$str = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">$n = <span class=\"tok-fn\">strlen</span>($str);</span><span class=\"line\">echo <span class=\"tok-str\">&quot;String lenght is $n &lt;br&gt;&quot;</span>;</span><span class=\"line\"><span class=\"tok-kw\">if</span> (!($n &gt;= <span class=\"tok-num\">7</span> &amp;&amp; $n &lt;= <span class=\"tok-num\">12</span>))</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;String should have minimum 7 and max 12 characters.&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;String is : &quot;</span> . $str;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter string :Dabhi Prit\n\nString lenght is 10\nString is : Dabhi Prit",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using ajax. write a program to validate a username field and also validate the length of the username entered (i.e. minimum length of 7 and maximum length of 12) using ajax.  general q9",
+      "createdAt": "2026-10-02T02:34:35.600Z"
     }
   ]
 };
