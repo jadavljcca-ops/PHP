@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:07:12.062Z
+ * Last updated: 2026-10-02T04:08:12.895Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:07:12.062Z",
+  "lastUpdated": "2026-10-02T04:08:12.895Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3493,6 +3493,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write an applicaɵon that accepts marks of three different subjects from user. marks should be between 0 to 100, if marks of any of the subject do not belong to this range, generate custom excepɵon out of rangeexcepɵon. if marks of each subjects are greater than or equal to 40 then display message “pass” along with percentage, otherwise display message “fail”. also write excepɵon handling code to catch all the possible runɵme excepɵons likely to be generated in the program. write an applicaɵon that accepts marks of three different subjects from user. marks should be between 0 to 100, if marks of any of the subject do not belong to this range, generate custom excepɵon out of rangeexcepɵon. if marks of each subjects are greater than or equal to 40 then display message “pass” along with percentage, otherwise display message “fail”. also write excepɵon handling code to catch all the possible runɵme excepɵons likely to be generated in the program.  general q2",
       "createdAt": "2026-10-02T04:07:10.257Z"
+    },
+    {
+      "id": "q-1790914091123-225",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 3,
+      "tag": "Q3",
+      "title": "Write a program which takes the age of 5 persons from command line and find the average age of all persons. The program should handle excepƟon if the argument is not correctly formaƩed and custom excepƟon if the age is not between 1 to 100.",
+      "question": "Write a program which takes the age of 5 persons from command line and find the average age of all persons. The program should handle excepƟon if the argument is not correctly formaƩed and custom excepƟon if the age is not between 1 to 100.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 3-Write a program which takes the age of 5 persons from\ncommand line and find the average age of all persons. The\nprogram should handle exception if the argument is not\ncorrectly formatted and custom exception if the age is not\nbetween 1 to 100.*/\n\nclass u4p3\n{\npublic static void main(String args[])\n\t{\n\tint i,s=0;\n\tint a[]=new int[5];\n\ttry\n\t{\n\tfor(i=0;i<a.length;i++)\n\t{\n\tint x=Integer.parseInt(args[i]);\n\tif(x>=1 && x<=100)\n\t{\n\ta[i]=x;\n\ts+=x;\n\t}\n\telse\n\tthrow new ValidateAge();\n\t}\n\tfloat avg=s/5;\n\tSystem.out.println(\"Average of age is : \"+avg);\n\t}\n\tcatch(NumberFormatExcepƟon e)\n\t{\n\tSystem.out.println(\"Age should be integervalue...\");\n\t}\n\tcatch(ArrayIndexOutOfBoundsException e)\n {\n System.out.println(\"Enter only 5 elements...\");\n }\n catch(Exception e)\n {\n }\n }\n}\nclass ValidateAge extends Exception\n{\n\tValidateAge()\n\t{\n\tSystem.out.println(\"Age should be between 1 to 100...\");\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">3</span>-Write a program which takes the age of <span class=\"tok-num\">5</span> persons <span class=\"tok-kw\">from</span></span><span class=\"line\">command line <span class=\"tok-kw\">and</span> find the average age of all persons. The</span><span class=\"line\">program should handle exception <span class=\"tok-kw\">if</span> the argument <span class=\"tok-kw\">is</span> <span class=\"tok-kw\">not</span></span><span class=\"line\">correctly formatted <span class=\"tok-kw\">and</span> custom exception <span class=\"tok-kw\">if</span> the age <span class=\"tok-kw\">is</span> <span class=\"tok-kw\">not</span></span><span class=\"line\">between <span class=\"tok-num\">1</span> to <span class=\"tok-num\">100.</span>*/</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p3</span><span class=\"line\">{</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> i,s=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> a[]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\t<span class=\"tok-kw\">try</span></span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> x=Integer.parseInt(args[i]);</span><span class=\"line\">\t<span class=\"tok-kw\">if</span>(x&gt;=<span class=\"tok-num\">1</span> &amp;&amp; x&lt;=<span class=\"tok-num\">100</span>)</span><span class=\"line\">\t{</span><span class=\"line\">\ta[i]=x;</span><span class=\"line\">\ts+=x;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">else</span></span><span class=\"line\">\tthrow <span class=\"tok-kw\">new</span> ValidateAge();</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">float</span> avg=s/<span class=\"tok-num\">5</span>;</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Average of age is : &quot;</span>+avg);</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(NumberFormatExcepƟon e)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Age should be integervalue...&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(ArrayIndexOutOfBoundsException e)</span><span class=\"line\"> {</span><span class=\"line\"> System.out.println(<span class=\"tok-str\">&quot;Enter only 5 elements...&quot;</span>);</span><span class=\"line\"> }</span><span class=\"line\"> catch(Exception e)</span><span class=\"line\"> {</span><span class=\"line\"> }</span><span class=\"line\"> }</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> ValidateAge extends Exception</span><span class=\"line\">{</span><span class=\"line\">\tValidateAge()</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Age should be between 1 to 100...&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "//Command line argument java U4P3\nEnter only 5 elements...\njava U4P3 1 2 3 4 v\nAge should be integer value...\njava U4P3 1 2 3 4 5\nAverage of age is : 3.0",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program which takes the age of 5 persons from command line and find the average age of all persons. the program should handle excepɵon if the argument is not correctly formaʃed and custom excepɵon if the age is not between 1 to 100. write a program which takes the age of 5 persons from command line and find the average age of all persons. the program should handle excepɵon if the argument is not correctly formaʃed and custom excepɵon if the age is not between 1 to 100.  general q3",
+      "createdAt": "2026-10-02T04:08:11.124Z"
     }
   ]
 };
