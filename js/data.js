@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:01:56.332Z
+ * Last updated: 2026-10-02T03:02:13.926Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:01:56.332Z",
+  "lastUpdated": "2026-10-02T03:02:13.926Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -191,6 +191,15 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-3",
       "num": "Unit 3",
       "title": "Package, String and Wrapper Classes",
+      "sub": "solved programs — aim, logic, code and output",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-4-sub-ds-sem3",
+      "subjectId": "sub-ds-sem3",
+      "semesterId": "sem-3",
+      "num": "Unit 4",
+      "title": "Excep􀆟on Handling and Mul􀆟threading",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
