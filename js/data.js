@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:17:30.786Z
+ * Last updated: 2026-10-02T04:18:25.798Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:17:30.786Z",
+  "lastUpdated": "2026-10-02T04:18:25.798Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3625,6 +3625,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecɵvely. aōer all thread finish, main thread should print message “ task completed”. write this program with use of runnable interface. write a java program to create 2 threads each thread calculates the sum and average of 1 to 10 and 11 to 20 respecɵvely. aōer all thread finish, main thread should print message “ task completed”. write this program with use of runnable interface.  general q8",
       "createdAt": "2026-10-02T04:17:28.440Z"
+    },
+    {
+      "id": "q-1790914703277-817",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "Create two thread. One thread print ‘fybca’ 4 Ɵmes and another thread print ‘sybca’ 6 Ɵmes. Set priority for both thread and when thread finished print ‘tybca’ from main.",
+      "question": "Create two thread. One thread print ‘fybca’ 4 Ɵmes and another thread print ‘sybca’ 6 Ɵmes. Set priority for both thread and when thread finished print ‘tybca’ from main.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 9-Create two thread. One thread print ‘fybca’ 4 times and\nanother thread print ‘sybca’ 6 times. Set priority for both\nthread and when thread finished print ‘tybca’ from main. */\n\nclass u4p9\n{\n\tpublic static void main(String args[])\n\t{\n\tFybca f=new Fybca();\n\tSybca s=new Sybca();\n\tf.start();\n\ts.start();\n\tf.setPriority(6);\n\ts.setPriority(3);\n\tSystem.out.println(\"Priority of Fybca is :\"+f.getPriority());\n\tSystem.out.println(\"Priority of Sybca is :\"+s.getPriority());\n\ttry{\n\tf.join();\n\ts.join();\n\t}\n\tcatch(InterruptedException e)\n\t{\n\tSystem.out.println(\"There is some exception..\");\n\t}\n\tSystem.out.println(\"TYBCA\");\n\t}\n}\nclass Fybca extends Thread\n\t{\n\tint i;\n\tpublic void run()\n\t{\n\tfor(i=0;i<=3;i++)\n\tSystem.out.println(\"FYBCA\");\n\t}\n}\nclass Sybca extends Thread\n{\n\tint i;\n\tpublic void run()\n\t{\n\tfor(i=0;i<=5;i++)\n\tSystem.out.println(\"SYBCA\");\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">9</span>-Create two thread. One thread <span class=\"tok-fn\">print</span> ‘fybca’ <span class=\"tok-num\">4</span> times <span class=\"tok-kw\">and</span></span><span class=\"line\">another thread <span class=\"tok-fn\">print</span> ‘sybca’ <span class=\"tok-num\">6</span> times. Set priority <span class=\"tok-kw\">for</span> both</span><span class=\"line\">thread <span class=\"tok-kw\">and</span> when thread finished <span class=\"tok-fn\">print</span> ‘tybca’ <span class=\"tok-kw\">from</span> <span class=\"tok-fn\">main</span>. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p9</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tFybca f=<span class=\"tok-kw\">new</span> Fybca();</span><span class=\"line\">\tSybca s=<span class=\"tok-kw\">new</span> Sybca();</span><span class=\"line\">\tf.start();</span><span class=\"line\">\ts.start();</span><span class=\"line\">\tf.setPriority(<span class=\"tok-num\">6</span>);</span><span class=\"line\">\ts.setPriority(<span class=\"tok-num\">3</span>);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Priority of Fybca is :&quot;</span>+f.getPriority());</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Priority of Sybca is :&quot;</span>+s.getPriority());</span><span class=\"line\">\t<span class=\"tok-kw\">try</span>{</span><span class=\"line\">\tf.join();</span><span class=\"line\">\ts.join();</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(InterruptedException e)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;There is some exception..&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;TYBCA&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Fybca extends Thread</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> i;</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>;i&lt;=<span class=\"tok-num\">3</span>;i++)</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;FYBCA&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> Sybca extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> i;</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>;i&lt;=<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;SYBCA&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "FYBCA\nFYBCA\nFYBCA\nFYBCA\nSYBCA\nSYBCA\nSYBCA\nSYBCA\nSYBCA\nSYBCA\nPriority of Fybca is : 6\nPriority of Sybca is : 3\nTYBCA",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create two thread. one thread print ‘fybca’ 4 ɵmes and another thread print ‘sybca’ 6 ɵmes. set priority for both thread and when thread finished print ‘tybca’ from main. create two thread. one thread print ‘fybca’ 4 ɵmes and another thread print ‘sybca’ 6 ɵmes. set priority for both thread and when thread finished print ‘tybca’ from main.  general q9",
+      "createdAt": "2026-10-02T04:18:23.278Z"
     }
   ]
 };
