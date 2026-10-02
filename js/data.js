@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:22:33.789Z
+ * Last updated: 2026-10-02T02:24:17.920Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:22:33.789Z",
+  "lastUpdated": "2026-10-02T02:24:17.920Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2573,6 +2573,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "Chart for Create a form containing a radiobutton with some product names. Whenever a user selects a particular product from the radiobutton, Display on the page as “You have selected________ product”. Implement using AJAX.",
       "dataSearch": "create a form containing a radiobutton with some product names. whenever a user selects a particular product from the radiobutton, display on the page as “you have selected________ product”. implement using ajax. create a form containing a radiobutton with some product names. whenever a user selects a particular product from the radiobutton, display on the page as “you have selected________ product”. implement using ajax.  general q5",
       "createdAt": "2026-10-02T02:21:54.754Z"
+    },
+    {
+      "id": "q-1790907856198-27",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 6,
+      "tag": "Q6",
+      "title": "Create a form containing one input field (Number). When the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. Implement using AJAX.",
+      "question": "Create a form containing one input field (Number). When the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. Implement using AJAX.",
+      "category": "General",
+      "logic": "",
+      "code": "#p6.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n\t\n    var str = document.getElementById(\"txtno\").value;\n\t\n    xmlhttp.open(\"GET\", \"p6.php?q=\" + str, true);\n\t\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\nEnter Number : <input type=\"number\" id=\"txtno\" onkeyup=\"showdata();\">\n<div id=\"info\"></div>\n</body></html>\n\n#p6.php\n<?php\n$n = $_GET[\"q\"];\nif ($n % 2 == 0)\n{\n    echo \"$n is Even number.\";\n}\nelse\n{\n    echo \"$n is odd number.\";\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p6.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">\t</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;txtno&quot;</span>).value;</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p6.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter Number : &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;number&quot;</span> id=<span class=\"tok-str\">&quot;txtno&quot;</span> onkeyup=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p6.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$n = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\"><span class=\"tok-kw\">if</span> ($n % <span class=\"tok-num\">2</span> == <span class=\"tok-num\">0</span>)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;$n is Even number.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;$n is odd number.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter Number : 12\n12 is Even number.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. implement using ajax. create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. implement using ajax.  general q6",
+      "createdAt": "2026-10-02T02:24:16.199Z"
     }
   ]
 };
