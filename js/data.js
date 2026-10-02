@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:16:46.120Z
+ * Last updated: 2026-10-02T03:17:34.100Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:16:46.120Z",
+  "lastUpdated": "2026-10-02T03:17:34.100Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2963,6 +2963,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "a shop during festival season offers a discount 10% for purchase made up to rs.1,000,12% for purchase value of rs.1,000 or more up to rs 1,500 and 15% for purchase value of rs.1,500 or more. write a program to implement the above scheme for a given sales and print out the sales and print out the sales value, discount and net amount payable by a customer. create necessary methods and constructors. a shop during festival season offers a discount 10% for purchase made up to rs.1,000,12% for purchase value of rs.1,000 or more up to rs 1,500 and 15% for purchase value of rs.1,500 or more. write a program to implement the above scheme for a given sales and print out the sales and print out the sales value, discount and net amount payable by a customer. create necessary methods and constructors.  general q8",
       "createdAt": "2026-10-02T03:16:44.412Z"
+    },
+    {
+      "id": "q-1790911052369-76",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 9,
+      "tag": "Q9",
+      "title": "A bank gives 6.5% per annum interest on deposits made in that bank. Write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of Rs.5000 for compound interest. Create necessary methods and constructors too.",
+      "question": "A bank gives 6.5% per annum interest on deposits made in that bank. Write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of Rs.5000 for compound interest. Create necessary methods and constructors too.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 9-A bank gives 6.5% per annum interest on deposits\nmade in that bank. Write a program to calculate the\ntotal amount that a person will receive after the end of\n5 years for a deposit of Rs.5000 for compound interest.\nCreate necessary methods and constructors too. */\n\nimport java.lang.*;\nclass u1p9\n{\n\tint n,amt;\n\tfloat r;\n\tdouble ci,netamt;\n\tu1p9()\n\t{\n\t\tamt=5000;\n\t\tr=6.5f;\n\t\tn=5;\n\t}\n\tpublic void cmp_int()\n\t{\n\t\tci=amt*Math.pow((1+r/100),n);\n\t\tnetamt=ci+amt;\n\t}\n\tpublic void display()\n\t{\n\t\t\tSystem.out.println(\"principal amount \"+amt);\n\t\t\tSystem.out.println(\"Rate \"+r);\n\t\t\tSystem.out.println(\"Year \"+n);\n\t\t\tSystem.out.println(\"copratio intract \"+ci);\n\t\t\tSystem.out.println(\"Net amount \"+netamt);\n\t}\n\tpublic static void main(String args[])\n\t{\n\t\tu1p9 a=new u1p9();\n\t\ta.cmp_int();\n\t\ta.display();\n\t}//main over\n}//class",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">9</span>-A bank gives <span class=\"tok-num\">6.5</span>% per annum interest on deposits</span><span class=\"line\">made <span class=\"tok-kw\">in</span> that bank. Write a program to calculate the</span><span class=\"line\">total amount that a person will receive after the end of</span><span class=\"line\"><span class=\"tok-num\">5</span> years <span class=\"tok-kw\">for</span> a deposit of Rs.<span class=\"tok-num\">5000</span> <span class=\"tok-kw\">for</span> compound interest.</span><span class=\"line\">Create necessary methods <span class=\"tok-kw\">and</span> constructors too. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.lang.*;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p9</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> n,amt;</span><span class=\"line\">\t<span class=\"tok-kw\">float</span> r;</span><span class=\"line\">\t<span class=\"tok-kw\">double</span> ci,netamt;</span><span class=\"line\">\tu1p9()</span><span class=\"line\">\t{</span><span class=\"line\">\t\tamt=<span class=\"tok-num\">5000</span>;</span><span class=\"line\">\t\tr=<span class=\"tok-num\">6.5</span>f;</span><span class=\"line\">\t\tn=<span class=\"tok-num\">5</span>;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> cmp_int()</span><span class=\"line\">\t{</span><span class=\"line\">\t\tci=amt*Math.<span class=\"tok-fn\">pow</span>((<span class=\"tok-num\">1</span>+r/<span class=\"tok-num\">100</span>),n);</span><span class=\"line\">\t\tnetamt=ci+amt;</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> display()</span><span class=\"line\">\t{</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;principal amount &quot;</span>+amt);</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Rate &quot;</span>+r);</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Year &quot;</span>+n);</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;copratio intract &quot;</span>+ci);</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Net amount &quot;</span>+netamt);</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\tu1p9 a=<span class=\"tok-kw\">new</span> u1p9();</span><span class=\"line\">\t\ta.cmp_int();</span><span class=\"line\">\t\ta.display();</span><span class=\"line\">\t}<span class=\"tok-com\">//main over</span></span><span class=\"line\">}<span class=\"tok-com\">//class</span></span>",
+      "output": "Principal amount : 5000\nRate : 6.5\nYears : 5\nCompound interest : 6850.435157383199\nNet amount : 11850.4351573832",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "a bank gives 6.5% per annum interest on deposits made in that bank. write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of rs.5000 for compound interest. create necessary methods and constructors too. a bank gives 6.5% per annum interest on deposits made in that bank. write a program to calculate the total amount that a person will receive after the end of 5 years for a deposit of rs.5000 for compound interest. create necessary methods and constructors too.  general q9",
+      "createdAt": "2026-10-02T03:17:32.370Z"
     }
   ]
 };
