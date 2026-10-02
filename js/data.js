@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:09:18.797Z
+ * Last updated: 2026-10-02T04:10:11.427Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:09:18.797Z",
+  "lastUpdated": "2026-10-02T04:10:11.427Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3537,6 +3537,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write an applicaɵon that converts between meters and feet. its first command- line argument is a number and second command line argument is either \"cenɵmeter\" or \"meter\". if the argument equals \"cenɵmeter\" displays a string reporɵng the equivalent number of meters. if this argument equals \"meters\", display a string reporɵng the equivalent number of cenɵmeter. if unit is not given properly then generate custom excepɵon uniƞormatexcepɵon. if first argument is not proper format then generate numberformatexcepɵon. generate other excepɵon as per requirements. (1 meter=100 cenɵmeter) write an applicaɵon that converts between meters and feet. its first command- line argument is a number and second command line argument is either \"cenɵmeter\" or \"meter\". if the argument equals \"cenɵmeter\" displays a string reporɵng the equivalent number of meters. if this argument equals \"meters\", display a string reporɵng the equivalent number of cenɵmeter. if unit is not given properly then generate custom excepɵon uniƞormatexcepɵon. if first argument is not proper format then generate numberformatexcepɵon. generate other excepɵon as per requirements. (1 meter=100 cenɵmeter)  general q4",
       "createdAt": "2026-10-02T04:09:16.940Z"
+    },
+    {
+      "id": "q-1790914209677-483",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Write a program that accepts 5 even numbers from command line , if any of the numbers is odd then throw custom excepƟon OddExcepƟon and count such invalid numbers",
+      "question": "Write a program that accepts 5 even numbers from command line , if any of the numbers is odd then throw custom excepƟon OddExcepƟon and count such invalid numbers",
+      "category": "General",
+      "logic": "",
+      "code": "/* 5-Write a program that accepts 5 even numbers from\ncommand line , if any of the numbers is odd then throw\ncustom exception OddException and count such invalid\nnumbers. */\n\nclass u4p5\n{\n\tpublic static void main(String args[])\n\t{\n\tint cnt=0;\n\tint a[]=new int[5];\n\tOddException o=new OddException();\n\tfor(int i=0;i<a.length;i++)\n\t{\n\ttry\n\t{\n\ta[i]=Integer.parseInt(args[i]);\n\tif(a[i]%2!=0)\n\t{\n\tcnt++;\n\tthrow (o);\n\t}\n\t}\n\tcatch(OddException e)\n\t{\n\tSystem.out.println(a[i]);\n\t}\n}\nSystem.out.println(\"The unvalid number are :\"+cnt);\n }\n}\nclass OddException extends Exception\n{\n\tOddException()\n\t{\n\tString error=\"NUMBER IS ODD..\";\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">5</span>-Write a program that accepts <span class=\"tok-num\">5</span> even numbers <span class=\"tok-kw\">from</span></span><span class=\"line\">command line , <span class=\"tok-kw\">if</span> any of the numbers <span class=\"tok-kw\">is</span> odd then throw</span><span class=\"line\">custom exception OddException <span class=\"tok-kw\">and</span> count such invalid</span><span class=\"line\">numbers. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p5</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> cnt=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> a[]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\tOddException o=<span class=\"tok-kw\">new</span> OddException();</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">try</span></span><span class=\"line\">\t{</span><span class=\"line\">\ta[i]=Integer.parseInt(args[i]);</span><span class=\"line\">\t<span class=\"tok-kw\">if</span>(a[i]%<span class=\"tok-num\">2</span>!=<span class=\"tok-num\">0</span>)</span><span class=\"line\">\t{</span><span class=\"line\">\tcnt++;</span><span class=\"line\">\tthrow (o);</span><span class=\"line\">\t}</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(OddException e)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(a[i]);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\">System.out.println(<span class=\"tok-str\">&quot;The unvalid number are :&quot;</span>+cnt);</span><span class=\"line\"> }</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> OddException extends Exception</span><span class=\"line\">{</span><span class=\"line\">\tOddException()</span><span class=\"line\">\t{</span><span class=\"line\">\tString error=<span class=\"tok-str\">&quot;NUMBER IS ODD..&quot;</span>;</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "//Command line argument java U4P5 2 3 4 5 6\n3\n5\nThe unvalid number are : 2",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program that accepts 5 even numbers from command line , if any of the numbers is odd then throw custom excepɵon oddexcepɵon and count such invalid numbers write a program that accepts 5 even numbers from command line , if any of the numbers is odd then throw custom excepɵon oddexcepɵon and count such invalid numbers  general q5",
+      "createdAt": "2026-10-02T04:10:09.678Z"
     }
   ]
 };
