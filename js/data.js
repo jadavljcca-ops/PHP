@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:56:41.848Z
+ * Last updated: 2026-10-02T03:00:39.482Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:56:41.848Z",
+  "lastUpdated": "2026-10-02T03:00:39.482Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -164,6 +164,15 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-3",
       "num": "Unit 2",
       "title": "All Unit Video Link",
+      "sub": "solved programs — aim, logic, code and output",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-1-sub-ds-sem3",
+      "subjectId": "sub-ds-sem3",
+      "semesterId": "sem-3",
+      "num": "Unit 1",
+      "title": "Java Introduction",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
