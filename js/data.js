@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:28:15.564Z
+ * Last updated: 2026-10-02T02:30:22.384Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:28:15.564Z",
+  "lastUpdated": "2026-10-02T02:30:22.384Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2617,6 +2617,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5). write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5).  general q7",
       "createdAt": "2026-10-02T02:28:13.870Z"
+    },
+    {
+      "id": "q-1790908220614-147",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 1",
+      "unitTitle": "Introduction to PHP",
+      "practicalNumber": 49,
+      "tag": "Q49",
+      "title": "",
+      "question": "Q49 Practical",
+      "category": "General",
+      "logic": "",
+      "code": "#p8.php\n<html>\n<head>\n<script>\nfunction checkEmail()\n{\n    var email = document.getElementById(\"emailid\").value;\n    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;\n    var info = document.getElementById(\"info\");\n    if(regex.test(email))\n    {\n        info.innerHTML = \"Valid Email Address.\";\n        info.style.color = \"green\";\n    }\n    else\n    {\n        info.innerHTML = \"Invalid Email Address.\";\n        info.style.color = \"red\";\n    }\n}\n</script>\n</head>\n<body>\n<form method=\"POST\">\nEnter Email Id:\n<input type=\"text\" id=\"emailid\" name=\"emailid\"><br>\n<input type=\"button\" value=\"verifacation\" onclick=\"checkEmail()\"><br>\n</form>\n\n<p id=\"info\"></p>\n</body></html>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p8.php</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script&gt;</span><span class=\"line\">function checkEmail()</span><span class=\"line\">{</span><span class=\"line\">    var email = document.getElementById(<span class=\"tok-str\">&quot;emailid&quot;</span>).value;</span><span class=\"line\">    var regex = /^[a-zA-Z0-<span class=\"tok-num\">9._</span>%+-]+<span class=\"tok-kw\">@</span>[a-zA-Z0-<span class=\"tok-num\">9.</span>-]+\\.[a-zA-Z]{<span class=\"tok-num\">2</span>,}$/;</span><span class=\"line\">    var info = document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>);</span><span class=\"line\">    <span class=\"tok-kw\">if</span>(regex.test(email))</span><span class=\"line\">    {</span><span class=\"line\">        info.innerHTML = <span class=\"tok-str\">&quot;Valid Email Address.&quot;</span>;</span><span class=\"line\">        info.style.color = <span class=\"tok-str\">&quot;green&quot;</span>;</span><span class=\"line\">    }</span><span class=\"line\">    <span class=\"tok-kw\">else</span></span><span class=\"line\">    {</span><span class=\"line\">        info.innerHTML = <span class=\"tok-str\">&quot;Invalid Email Address.&quot;</span>;</span><span class=\"line\">        info.style.color = <span class=\"tok-str\">&quot;red&quot;</span>;</span><span class=\"line\">    }</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&lt;form method=<span class=\"tok-str\">&quot;POST&quot;</span>&gt;</span><span class=\"line\">Enter Email Id:</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;emailid&quot;</span> name=<span class=\"tok-str\">&quot;emailid&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;button&quot;</span> value=<span class=\"tok-str\">&quot;verifacation&quot;</span> onclick=<span class=\"tok-str\">&quot;checkEmail()&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;/form&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;p id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/p&gt;</span><span class=\"line\">&lt;/body&gt;&lt;/html&gt;</span>",
+      "output": "Enter Email Id: jd2886@gmail.com\nValid Email Address.",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": " q49 practical  general q49",
+      "createdAt": "2026-10-02T02:30:20.615Z"
     }
   ]
 };
