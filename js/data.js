@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:22:09.870Z
+ * Last updated: 2026-10-02T03:23:18.401Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:22:09.870Z",
+  "lastUpdated": "2026-10-02T03:23:18.401Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3051,6 +3051,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order. write a program to create an array to store 5 integer values. also iniɵalize the array with 5 numbers and display the array elements in reverse order.  general q2",
       "createdAt": "2026-10-02T03:22:08.141Z"
+    },
+    {
+      "id": "q-1790911396640-140",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 3,
+      "tag": "Q3",
+      "title": "Write a program to find sum of two matrices of 3 x3.",
+      "question": "Write a program to find sum of two matrices of 3 x3.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 3-Write a program to find sum of two matrices of 3 x3. */\nclass u2p3\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint i,j;\n\t\tint a[][]={{1,2,3},{2,3,4,},{3,4,5}};\n\t\tint b[][]={{1,2,3},{2,3,4,},{3,4,5}};\n\t\tint c[][]=new int[3][3];\n\t\t\n\t\tfor(i=0; i<3; i++)\n\t\t{\n\t\t\tfor(j=0; j<3; j++)\n\t\t\t{\n\t\t\t\tc[i][j]=a[i][j]+b[i][j];\n\t\t\t\tSystem.out.print(c[i][j]+\" \");\n\t\t\t}\n\t\t\tSystem.out.println(\"\");\n\t\t}\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">3</span>-Write a program to find <span class=\"tok-fn\">sum</span> of two matrices of <span class=\"tok-num\">3</span> x3. */</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p3</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> i,j;</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a[][]={{<span class=\"tok-num\">1</span>,<span class=\"tok-num\">2</span>,<span class=\"tok-num\">3</span>},{<span class=\"tok-num\">2</span>,<span class=\"tok-num\">3</span>,<span class=\"tok-num\">4</span>,},{<span class=\"tok-num\">3</span>,<span class=\"tok-num\">4</span>,<span class=\"tok-num\">5</span>}};</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> b[][]={{<span class=\"tok-num\">1</span>,<span class=\"tok-num\">2</span>,<span class=\"tok-num\">3</span>},{<span class=\"tok-num\">2</span>,<span class=\"tok-num\">3</span>,<span class=\"tok-num\">4</span>,},{<span class=\"tok-num\">3</span>,<span class=\"tok-num\">4</span>,<span class=\"tok-num\">5</span>}};</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> c[][]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[<span class=\"tok-num\">3</span>][<span class=\"tok-num\">3</span>];</span><span class=\"line\">\t\t</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">3</span>; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">for</span>(j=<span class=\"tok-num\">0</span>; j&lt;<span class=\"tok-num\">3</span>; j++)</span><span class=\"line\">\t\t\t{</span><span class=\"line\">\t\t\t\tc[i][j]=a[i][j]+b[i][j];</span><span class=\"line\">\t\t\t\tSystem.out.<span class=\"tok-fn\">print</span>(c[i][j]+<span class=\"tok-str\">&quot; &quot;</span>);</span><span class=\"line\">\t\t\t}</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;&quot;</span>);</span><span class=\"line\">\t\t}</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "2 6 8\n4 6 8\n6 8 10",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to find sum of two matrices of 3 x3. write a program to find sum of two matrices of 3 x3.  general q3",
+      "createdAt": "2026-10-02T03:23:16.641Z"
     }
   ]
 };
