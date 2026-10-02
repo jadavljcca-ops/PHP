@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:25:35.303Z
+ * Last updated: 2026-10-02T02:28:15.564Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:25:35.303Z",
+  "lastUpdated": "2026-10-02T02:28:15.564Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2595,6 +2595,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. implement using ajax. create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is odd or even” with a message to the user. implement using ajax.  general q6",
       "createdAt": "2026-10-02T02:24:16.199Z"
+    },
+    {
+      "id": "q-1790908093860-335",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5).",
+      "question": "Write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5).",
+      "category": "General",
+      "logic": "",
+      "code": "#p7.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction checkString()\n{\n    var xmlhttp = new XMLHttpRequest();\n    var str = document.getElementById('strstring').value;\n    xmlhttp.open(\"GET\", \"p7.php?q=\" + str, true);\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\nEnter String : \n<input type=\"text\" id=\"strstring\"><br>\n<input type=\"submit\" name=\"submit\" onclick=\"checkString();\"><br>\n<div id=\"info\"></div>\n</body></html>\n\n\n#p7.php\n<?php\n$str = $_GET[\"q\"];\n$n = strlen($str);\necho $n;\nif ($str == '' || $n <= 5)\n{\n    echo \"String is empty OR string should have minimum 5 characters<br>\";\n}\nelse\n{\n    echo \"<br>String is : \" . $str;\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p7.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function checkString()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&#39;strstring&#39;</span>).value;</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p7.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span> &amp;&amp; xmlhttp.status == <span class=\"tok-num\">200</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter String : </span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;strstring&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;submit&quot;</span> name=<span class=\"tok-str\">&quot;submit&quot;</span> onclick=<span class=\"tok-str\">&quot;checkString();&quot;</span>&gt;&lt;br&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p7.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$str = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">$n = <span class=\"tok-fn\">strlen</span>($str);</span><span class=\"line\">echo $n;</span><span class=\"line\"><span class=\"tok-kw\">if</span> ($str == <span class=\"tok-str\">&#39;&#39;</span> || $n &lt;= <span class=\"tok-num\">5</span>)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;String is empty OR string should have minimum 5 characters&lt;br&gt;&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;&lt;br&gt;String is : &quot;</span> . $str;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "Enter String : Parth sir\n9\nString is : Parth sir",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5). write a program to validate a blank field and also validate the length of a string entered (i.e. minimum length of 5).  general q7",
+      "createdAt": "2026-10-02T02:28:13.870Z"
     }
   ]
 };
