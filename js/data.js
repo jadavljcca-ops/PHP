@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:11:55.938Z
+ * Last updated: 2026-10-02T02:18:45.313Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:11:55.938Z",
+  "lastUpdated": "2026-10-02T02:18:45.313Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2529,6 +2529,28 @@ window.DEFAULT_DATA = {
       "dataSearch": " q1 practical the link below contains videos showing solutions for tableau practical programs. general q1",
       "createdAt": "2026-10-02T02:05:16.352Z",
       "updatedAt": "2026-10-02T02:11:37.717Z"
+    },
+    {
+      "id": "q-1790907523536-876",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 4,
+      "tag": "Q4",
+      "title": "Create a form containing a combobox with some color names as items. Whenever a user selects a particular color from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button). Implement using AJAX.",
+      "question": "Create a form containing a combobox with some color names as items. Whenever a user selects a particular color from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button). Implement using AJAX.",
+      "category": "General",
+      "logic": "",
+      "code": "#p4.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n\t\n    var str = document.getElementById(\"cmboptions\").value;\n\t\n    xmlhttp.open(\"GET\", \"p4.php?q=\" + str, true);\n\t\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n</script>\n</head>\n<body>\n<select id=\"cmboptions\" onchange=\"showdata();\">\n    <option>Red</option>\n    <option>Green</option>\n    <option>Orange</option>\n</select>\n<div id=\"info\"></div>\n</body>\n</html>\n\n#p4.php\n<?php\n\n$n = $_GET[\"q\"];\n\necho \"You selected : \" . $n;\n\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p4.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">\t</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;cmboptions&quot;</span>).value;</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;p4.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">\t</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">&lt;select id=<span class=\"tok-str\">&quot;cmboptions&quot;</span> onchange=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;</span><span class=\"line\">    &lt;option&gt;Red&lt;/option&gt;</span><span class=\"line\">    &lt;option&gt;Green&lt;/option&gt;</span><span class=\"line\">    &lt;option&gt;Orange&lt;/option&gt;</span><span class=\"line\">&lt;/select&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p4.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">&nbsp;</span><span class=\"line\">$n = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\">&nbsp;</span><span class=\"line\">echo <span class=\"tok-str\">&quot;You selected : &quot;</span> . $n;</span><span class=\"line\">&nbsp;</span><span class=\"line\">?&gt;</span>",
+      "output": "Select color: red\n              black\n              yellow\n              Orange\nYou selected : Orange",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing a combobox with some color names as items. whenever a user selects a particular color from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button). implement using ajax. create a form containing a combobox with some color names as items. whenever a user selects a particular color from the combobox, that selected item should be printed on the page. (i.e. without pressing submit button). implement using ajax.  general q4",
+      "createdAt": "2026-10-02T02:18:43.538Z"
     }
   ]
 };
