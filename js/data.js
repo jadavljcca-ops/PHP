@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:34:37.303Z
+ * Last updated: 2026-10-02T02:37:46.893Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:34:37.303Z",
+  "lastUpdated": "2026-10-02T02:37:46.893Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2626,7 +2626,7 @@ window.DEFAULT_DATA = {
       "unitNum": "Unit 4",
       "unitTitle": "AJAX and Validation",
       "practicalNumber": 8,
-      "tag": "Q49",
+      "tag": "Q8",
       "title": "Write a program to validate and Email ID using regular expression and by using DOM",
       "question": "Write a program to validate and Email ID using regular expression and by using DOM",
       "category": "General",
@@ -2637,9 +2637,9 @@ window.DEFAULT_DATA = {
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": "write a program to validate and email id using regular expression and by using dom write a program to validate and email id using regular expression and by using dom  general q49",
+      "dataSearch": "write a program to validate and email id using regular expression and by using dom write a program to validate and email id using regular expression and by using dom  general q8",
       "createdAt": "2026-10-02T02:30:20.615Z",
-      "updatedAt": "2026-10-02T02:31:28.381Z"
+      "updatedAt": "2026-10-02T02:37:45.177Z"
     },
     {
       "id": "q-1790908475599-574",
