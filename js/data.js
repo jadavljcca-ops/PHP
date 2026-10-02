@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:04:43.053Z
+ * Last updated: 2026-10-02T04:06:08.511Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:04:43.053Z",
+  "lastUpdated": "2026-10-02T04:06:08.511Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3449,6 +3449,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program that takes a string from user and display its capacity append a new string to exisɵng string and display string capacity aōer appending. write a java program that takes a string from user and display its capacity append a new string to exisɵng string and display string capacity aōer appending.  general q10",
       "createdAt": "2026-10-02T04:03:13.664Z"
+    },
+    {
+      "id": "q-1790913966778-767",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 1,
+      "tag": "Q1",
+      "title": "Write a Java program to input n integer numbers and display lowest and second lowest number. Also handle the different excepƟons possible to be thrown during execuƟon.",
+      "question": "Write a Java program to input n integer numbers and display lowest and second lowest number. Also handle the different excepƟons possible to be thrown during execuƟon.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 1-Write a Java program to input n integer numbers and display\nlowest and second lowest number. Also handle the different\nexceptions possible to be thrown during execution.*/\n\nclass u1p4\n{\n\tpublic static void main(String args[]){\n\tint a[]=new int[args.length];\n\tfor(int i=0;i<a.length;i++)\n\ta[i]=Integer.parseInt(args[i]);\n\tSystem.out.println(\"Array : \");\n\tfor(int i=0;i<a.length;i++)\n\tSystem.out.println(a[i]);\n\tfor(int i=0;i<a.length;i++)\n\t{\n\tfor(int j=i+1;j<a.length;j++)\n\t{\n\t\tif(a[i]>a[j])\n\t\t{\n\t\tint t=a[i];\n\t\ta[i]=a[j];\n\t\ta[j]=t;\n\t\t}\n    }\n }\n\tSystem.out.println(\"Array after sorting : \");\n\tfor(int i=0;i<a.length;i++)\n\tSystem.out.println(a[i]);\n\tSystem.out.println(\"The lowest value is : \"+a[0]);\n\tSystem.out.println(\"The second lowest value is :\"+a[1]);\n }//main over\n}//class over",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">1</span>-Write a Java program to <span class=\"tok-fn\">input</span> n integer numbers <span class=\"tok-kw\">and</span> display</span><span class=\"line\">lowest <span class=\"tok-kw\">and</span> second lowest number. Also handle the different</span><span class=\"line\">exceptions possible to be thrown during execution.*/</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p4</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[]){</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> a[]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[args.length];</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\ta[i]=Integer.parseInt(args[i]);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Array : &quot;</span>);</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\tSystem.out.println(a[i]);</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> j=i+<span class=\"tok-num\">1</span>;j&lt;a.length;j++)</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">if</span>(a[i]&gt;a[j])</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> t=a[i];</span><span class=\"line\">\t\ta[i]=a[j];</span><span class=\"line\">\t\ta[j]=t;</span><span class=\"line\">\t\t}</span><span class=\"line\">    }</span><span class=\"line\"> }</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Array after sorting : &quot;</span>);</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;a.length;i++)</span><span class=\"line\">\tSystem.out.println(a[i]);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The lowest value is : &quot;</span>+a[<span class=\"tok-num\">0</span>]);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The second lowest value is :&quot;</span>+a[<span class=\"tok-num\">1</span>]);</span><span class=\"line\"> }<span class=\"tok-com\">//main over</span></span><span class=\"line\">}<span class=\"tok-com\">//class over</span></span>",
+      "output": "//Command line argument java U4P1 2 1 4 3 33\nArray :\n2\n1\n4\n3\n33\nArray aŌer sorƟng :\n1\n2\n3\n4\n33\nThe lowest value is : 1\nThe second lowest value is : 2",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a java program to input n integer numbers and display lowest and second lowest number. also handle the different excepɵons possible to be thrown during execuɵon. write a java program to input n integer numbers and display lowest and second lowest number. also handle the different excepɵons possible to be thrown during execuɵon.  general q1",
+      "createdAt": "2026-10-02T04:06:06.778Z"
     }
   ]
 };
