@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:13:26.828Z
+ * Last updated: 2026-10-02T03:14:13.378Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:13:26.828Z",
+  "lastUpdated": "2026-10-02T03:14:13.378Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2875,6 +2875,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator. write a java program to scan 3 integer values from the command line argument and display the maximum number using conditional operator.  general q4",
       "createdAt": "2026-10-02T03:13:25.086Z"
+    },
+    {
+      "id": "q-1790910851428-451",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-1-sub-ds-sem3",
+      "unitNum": "Unit 1",
+      "unitTitle": "Java Introduction",
+      "practicalNumber": 5,
+      "tag": "Q5",
+      "title": "Write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (Hypotenuse = square root (x*x + Y *Y))",
+      "question": "Write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (Hypotenuse = square root (x*x + Y *Y))",
+      "category": "General",
+      "logic": "",
+      "code": "/* 5-Write a program to calculate the hypotenuse of right\nangled triangle when other sides of the triangle are\ngiven. (Hypotenuse = square root (x*x + Y *Y)) */\n\nimport java.lang.Math;\nimport java.util.Scanner;\nclass u1p5\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint x,y;\n\t\tScanner s=new Scanner(System.in);\n\t\tSystem.out.println(\"Enter X value as Integer.:\");\n\t\tx=s.nextInt();\n\t\tSystem.out.println(\"Enter Y value as Integer.:\");\n\t\ty=s.nextInt();\n\t\tdouble z=Math.sqrt((x*x)+(y*y));\n\t\tSystem.out.print(\"Area of Hypotenyse is:--> \"+z);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">5</span>-Write a program to calculate the hypotenuse of right</span><span class=\"line\">angled triangle when other sides of the triangle are</span><span class=\"line\">given. (Hypotenuse = square root (x*x + Y *Y)) */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.lang.Math;</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.util.Scanner;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u1p5</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> x,y;</span><span class=\"line\">\t\tScanner s=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Enter X value as Integer.:&quot;</span>);</span><span class=\"line\">\t\tx=s.nextInt();</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;Enter Y value as Integer.:&quot;</span>);</span><span class=\"line\">\t\ty=s.nextInt();</span><span class=\"line\">\t\t<span class=\"tok-kw\">double</span> z=Math.<span class=\"tok-fn\">sqrt</span>((x*x)+(y*y));</span><span class=\"line\">\t\tSystem.out.<span class=\"tok-fn\">print</span>(<span class=\"tok-str\">&quot;Area of Hypotenyse is:--&gt; &quot;</span>+z);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Enter x value as integer:25\nEnter y value as integer:25\nArea of hypotenuse is : 35.35533905932738",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (hypotenuse = square root (x*x + y *y)) write a program to calculate the hypotenuse of right angled triangle when other sides of the triangle are given. (hypotenuse = square root (x*x + y *y))  general q5",
+      "createdAt": "2026-10-02T03:14:11.429Z"
     }
   ]
 };
