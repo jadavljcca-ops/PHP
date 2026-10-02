@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:01:40.923Z
+ * Last updated: 2026-10-02T03:01:56.332Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:01:40.923Z",
+  "lastUpdated": "2026-10-02T03:01:56.332Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -182,6 +182,15 @@ window.DEFAULT_DATA = {
       "semesterId": "sem-3",
       "num": "Unit 2",
       "title": "Array, Inheritance and Interface",
+      "sub": "solved programs — aim, logic, code and output",
+      "questionCount": 0
+    },
+    {
+      "id": "unit-3-sub-ds-sem3",
+      "subjectId": "sub-ds-sem3",
+      "semesterId": "sem-3",
+      "num": "Unit 3",
+      "title": "Package, String and Wrapper Classes",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
     }
