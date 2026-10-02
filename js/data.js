@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:21:01.753Z
+ * Last updated: 2026-10-02T04:21:36.358Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:21:01.753Z",
+  "lastUpdated": "2026-10-02T04:21:36.358Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2552,10 +2552,10 @@ window.DEFAULT_DATA = {
       "output": "",
       "outputImage": "",
       "chartSrc": "",
-      "chartAlt": "",
+      "chartAlt": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
       "dataSearch": " q1 practical the link below contains videos showing solutions for tableau practical programs. general q1",
       "createdAt": "2026-10-02T02:05:16.352Z",
-      "updatedAt": "2026-10-02T02:11:37.717Z"
+      "updatedAt": "2026-10-02T04:21:34.592Z"
     },
     {
       "id": "q-1790907523536-876",
