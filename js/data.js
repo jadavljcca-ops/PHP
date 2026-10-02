@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:18:25.798Z
+ * Last updated: 2026-10-02T04:19:14.251Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:18:25.798Z",
+  "lastUpdated": "2026-10-02T04:19:14.251Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3647,6 +3647,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "create two thread. one thread print ‘fybca’ 4 ɵmes and another thread print ‘sybca’ 6 ɵmes. set priority for both thread and when thread finished print ‘tybca’ from main. create two thread. one thread print ‘fybca’ 4 ɵmes and another thread print ‘sybca’ 6 ɵmes. set priority for both thread and when thread finished print ‘tybca’ from main.  general q9",
       "createdAt": "2026-10-02T04:18:23.278Z"
+    },
+    {
+      "id": "q-1790914752528-733",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 10,
+      "tag": "Q10",
+      "title": "Write an applicaƟon that starts two threads. Set prioriƟes of both threads as 8 and 4 respecƟvely. Each thread executes a loop with 5 iteraƟons displaying its thread name. Demonstrate the execuƟon of a high priority thread and how it delays the execuƟon of low priority thread",
+      "question": "Write an applicaƟon that starts two threads. Set prioriƟes of both threads as 8 and 4 respecƟvely. Each thread executes a loop with 5 iteraƟons displaying its thread name. Demonstrate the execuƟon of a high priority thread and how it delays the execuƟon of low priority thread",
+      "category": "General",
+      "logic": "",
+      "code": "/* 10-Write an application that starts two threads. Set priorities of\nboth threads as 8 and 4 respectively. Each thread executes a\nloop with 5 iterations displaying its thread name.\nDemonstrate the execution of a high priority thread and how\nit delays the execution of low priority thread.*/\n\nclass A extends Thread\n{\n\tpublic void run()\n\t{\n\tfor(int i=0;i<5;i++)\n\t{\n\tSystem.out.println(\"Thread name of first class is : \"+Thread.currentThread().getName());\n\t}\t\n\t}\n}\nclass B extends Thread\n{\n\tpublic void run()\n\t{\n\tfor(int i=0;i<5;i++)\n\t{\n\tSystem.out.println(\"Thread name of second class is : \"+Thread.currentThread().getName());\n\t}\n\t}\n}\nclass u4p10\n{\npublic static void main(String args[])\n\t{\n\tA a=new A();\n\tB b=new B();\n\ta.setPriority(8);\n\tb.setPriority(4);\n\ta.start();\n\tb.start();\n\tSystem.out.println(\"The Priority of first class is :\"+a.getPriority());\n\tSystem.out.println(\"The Priority of second class is :\"+b.getPriority());\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">10</span>-Write an application that starts two threads. Set priorities of</span><span class=\"line\">both threads <span class=\"tok-kw\">as</span> <span class=\"tok-num\">8</span> <span class=\"tok-kw\">and</span> <span class=\"tok-num\">4</span> respectively. Each thread executes a</span><span class=\"line\">loop <span class=\"tok-kw\">with</span> <span class=\"tok-num\">5</span> iterations displaying its thread name.</span><span class=\"line\">Demonstrate the execution of a high priority thread <span class=\"tok-kw\">and</span> how</span><span class=\"line\">it delays the execution of low priority thread.*/</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> A extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Thread name of first class is : &quot;</span>+Thread.currentThread().getName());</span><span class=\"line\">\t}\t</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> B extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Thread name of second class is : &quot;</span>+Thread.currentThread().getName());</span><span class=\"line\">\t}</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p10</span><span class=\"line\">{</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tA a=<span class=\"tok-kw\">new</span> A();</span><span class=\"line\">\tB b=<span class=\"tok-kw\">new</span> B();</span><span class=\"line\">\ta.setPriority(<span class=\"tok-num\">8</span>);</span><span class=\"line\">\tb.setPriority(<span class=\"tok-num\">4</span>);</span><span class=\"line\">\ta.start();</span><span class=\"line\">\tb.start();</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The Priority of first class is :&quot;</span>+a.getPriority());</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The Priority of second class is :&quot;</span>+b.getPriority());</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "Thread name of second class is : Thread-1\nThread name of second class is : Thread-1\nThread name of second class is : Thread-1\nThread name of first class is : Thread-0\nThread name of second class is : Thread-1\nThread name of second class is : Thread-1\nThread name of first class is : Thread-0\nThread name of first class is : Thread-0\nThread name of first class is : Thread-0\nThread name of first class is : Thread-0\nThe Priority of first class is : 8\nThe Priority of second class is : 4",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write an applicaɵon that starts two threads. set prioriɵes of both threads as 8 and 4 respecɵvely. each thread executes a loop with 5 iteraɵons displaying its thread name. demonstrate the execuɵon of a high priority thread and how it delays the execuɵon of low priority thread write an applicaɵon that starts two threads. set prioriɵes of both threads as 8 and 4 respecɵvely. each thread executes a loop with 5 iteraɵons displaying its thread name. demonstrate the execuɵon of a high priority thread and how it delays the execuɵon of low priority thread  general q10",
+      "createdAt": "2026-10-02T04:19:12.529Z"
     }
   ]
 };
