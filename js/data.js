@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:30:22.384Z
+ * Last updated: 2026-10-02T02:31:30.074Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:30:22.384Z",
+  "lastUpdated": "2026-10-02T02:31:30.074Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2622,13 +2622,13 @@ window.DEFAULT_DATA = {
       "id": "q-1790908220614-147",
       "semesterId": "sem-5",
       "subjectId": "sub-hypertext-preprocessor-sem-5",
-      "unitId": "unit-1-sub-hypertext-preprocessor-sem-5",
-      "unitNum": "Unit 1",
-      "unitTitle": "Introduction to PHP",
-      "practicalNumber": 49,
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 8,
       "tag": "Q49",
-      "title": "",
-      "question": "Q49 Practical",
+      "title": "Write a program to validate and Email ID using regular expression and by using DOM",
+      "question": "Write a program to validate and Email ID using regular expression and by using DOM",
       "category": "General",
       "logic": "",
       "code": "#p8.php\n<html>\n<head>\n<script>\nfunction checkEmail()\n{\n    var email = document.getElementById(\"emailid\").value;\n    var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;\n    var info = document.getElementById(\"info\");\n    if(regex.test(email))\n    {\n        info.innerHTML = \"Valid Email Address.\";\n        info.style.color = \"green\";\n    }\n    else\n    {\n        info.innerHTML = \"Invalid Email Address.\";\n        info.style.color = \"red\";\n    }\n}\n</script>\n</head>\n<body>\n<form method=\"POST\">\nEnter Email Id:\n<input type=\"text\" id=\"emailid\" name=\"emailid\"><br>\n<input type=\"button\" value=\"verifacation\" onclick=\"checkEmail()\"><br>\n</form>\n\n<p id=\"info\"></p>\n</body></html>",
@@ -2637,8 +2637,9 @@ window.DEFAULT_DATA = {
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": " q49 practical  general q49",
-      "createdAt": "2026-10-02T02:30:20.615Z"
+      "dataSearch": "write a program to validate and email id using regular expression and by using dom write a program to validate and email id using regular expression and by using dom  general q49",
+      "createdAt": "2026-10-02T02:30:20.615Z",
+      "updatedAt": "2026-10-02T02:31:28.381Z"
     }
   ]
 };
