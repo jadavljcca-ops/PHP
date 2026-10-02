@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:57:27.828Z
+ * Last updated: 2026-10-02T03:58:17.367Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:57:27.828Z",
+  "lastUpdated": "2026-10-02T03:58:17.367Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3339,6 +3339,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program that accepts a string from command line and perform following operaɵons: 1. display each character on separate line in reverse order. 2. count total number of characters and display each character's posiɵon too. 3. idenɵfy that whether the string is palindrome or not. count total number of uppercase and lowercase characters in it. write a program that accepts a string from command line and perform following operaɵons: 1. display each character on separate line in reverse order. 2. count total number of characters and display each character's posiɵon too. 3. idenɵfy that whether the string is palindrome or not. count total number of uppercase and lowercase characters in it.  general q5",
       "createdAt": "2026-10-02T03:57:26.093Z"
+    },
+    {
+      "id": "q-1790913495661-591",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 6,
+      "tag": "Q6",
+      "title": "Write a program that takes a string from the user and validate it. The string should be at least 5 characters and should contain at least one digit. Display an appropriate valid message.",
+      "question": "Write a program that takes a string from the user and validate it. The string should be at least 5 characters and should contain at least one digit. Display an appropriate valid message.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 6-Write a program that takes a string from the user and\nvalidate it. The string should be at least 5 characters and \nshould contain at least one digit. Display an appropriate valid\nmessage. */\n\nclass u3p6\n{\n\tpublic static void main(String args[])\n\t{\n\tString s=new String(args[0]);\n\tSystem.out.println(\"The String is : \"+s);\n\tint l=s.length();\n\tSystem.out.println(\"Length of String is : \"+l);\n\tif(l<5)\n\tSystem.out.println(\"Invalid String\");\n\telse\n\t{\n\tint x=0;\n\tfor(int i=0;i<l;i++)\n\t{\n\tif(Character.isDigit(s.charAt(i)))\n\t{\n\tx=1;\n\tbreak;\n\t}\n\t}\n\tif(x==1)\n\tSystem.out.println(\"Valid String..\");\n\telse\n\tSystem.out.println(\"Invalid: String must have 1 digit value..\");\n\t}\n  }\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">6</span>-Write a program that takes a string <span class=\"tok-kw\">from</span> the user <span class=\"tok-kw\">and</span></span><span class=\"line\">validate it. The string should be at least <span class=\"tok-num\">5</span> characters <span class=\"tok-kw\">and</span> </span><span class=\"line\">should contain at least one digit. Display an appropriate valid</span><span class=\"line\">message. */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u3p6</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tString s=<span class=\"tok-kw\">new</span> String(args[<span class=\"tok-num\">0</span>]);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The String is : &quot;</span>+s);</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> l=s.length();</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Length of String is : &quot;</span>+l);</span><span class=\"line\">\t<span class=\"tok-kw\">if</span>(l&lt;<span class=\"tok-num\">5</span>)</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Invalid String&quot;</span>);</span><span class=\"line\">\t<span class=\"tok-kw\">else</span></span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">int</span> x=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;l;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">if</span>(Character.isDigit(s.charAt(i)))</span><span class=\"line\">\t{</span><span class=\"line\">\tx=<span class=\"tok-num\">1</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">break</span>;</span><span class=\"line\">\t}</span><span class=\"line\">\t}</span><span class=\"line\">\t<span class=\"tok-kw\">if</span>(x==<span class=\"tok-num\">1</span>)</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Valid String..&quot;</span>);</span><span class=\"line\">\t<span class=\"tok-kw\">else</span></span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Invalid: String must have 1 digit value..&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">  }</span><span class=\"line\">}</span>",
+      "output": "//Command Line Argument java U3P6 jgbca123\nThe String is : jgbca123\nLength of String is : 8\nValid String..",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program that takes a string from the user and validate it. the string should be at least 5 characters and should contain at least one digit. display an appropriate valid message. write a program that takes a string from the user and validate it. the string should be at least 5 characters and should contain at least one digit. display an appropriate valid message.  general q6",
+      "createdAt": "2026-10-02T03:58:15.661Z"
     }
   ]
 };
