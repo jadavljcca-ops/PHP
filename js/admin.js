@@ -234,7 +234,7 @@
 
       const userNameEl = document.getElementById('admin-user-display');
       if (userNameEl) {
-        userNameEl.textContent = `User: ${window.PracticalsAuth.getCurrentUser() || 'J.d'}`;
+        userNameEl.textContent = `User: ${window.PracticalsAuth.getCurrentUser() || 'Parth'}`;
       }
 
       renderSemesterPills();
@@ -1009,12 +1009,12 @@
     const credResetBtn = document.getElementById('cred-reset-btn');
     if (credResetBtn) {
       credResetBtn.addEventListener('click', function () {
-        if (confirm('Reset admin credentials back to default (Username: J.d, Password: Jd@#123)?')) {
+        if (confirm('Reset admin credentials back to default (Username: Parth, Password: PjDdpy@#67)?')) {
           const res = window.PracticalsAuth.resetCredentialsToDefault();
           if (res.success) {
             showToast(res.message, 'info');
             const userDisplay = document.getElementById('admin-user-display');
-            if (userDisplay) userDisplay.textContent = 'User: J.d';
+            if (userDisplay) userDisplay.textContent = 'User: Parth';
             closeModal('credentials-modal');
           } else {
             showToast(res.message, 'error');

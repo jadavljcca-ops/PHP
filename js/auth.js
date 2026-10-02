@@ -5,26 +5,30 @@
  * with fallback to configurable default credentials.
  */
 
-const DEFAULT_ADMIN_USERNAME = "J.d";
-const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
+const DEFAULT_ADMIN_USERNAME = "Parth";
+const DEFAULT_ADMIN_PASSWORD = "PjDdpy@#67";
 
 (function (window) {
   'use strict';
 
   const AUTH_SESSION_KEY = 'python_practicals_admin_auth';
-  const AUTH_CREDENTIALS_KEY = 'python_practicals_admin_credentials_v1';
+  const AUTH_CREDENTIALS_KEY = 'python_practicals_admin_credentials_v2';
 
   /**
    * Retrieve active admin credentials from localStorage or defaults
    */
   function getCredentials() {
     try {
+      // Clear legacy storage keys if present
+      localStorage.removeItem('python_practicals_admin_credentials_v1');
+
       const stored = localStorage.getItem(AUTH_CREDENTIALS_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
         if (parsed && parsed.username && parsed.password) {
-          // If stored credentials are old default 'admin'/'admin123', upgrade them to new default J.d / Jd@#123
-          if (parsed.username === 'admin' && parsed.password === 'admin123') {
+          // If stored credentials are old default accounts, clear them to use new defaults
+          const oldUsers = ['admin', 'j.d', 'jd'];
+          if (oldUsers.includes(String(parsed.username).toLowerCase().trim())) {
             localStorage.removeItem(AUTH_CREDENTIALS_KEY);
           } else {
             return {
@@ -74,21 +78,15 @@ const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
     }
 
     // Normalized checks for default credentials:
-    // Usernames: J.d, j.d, jd, JD, Jd, admin, Admin, ADMIN
+    // Username: Parth (case-insensitive)
     const normUser = rawUser.toLowerCase().replace(/[\s\._\-]/g, '');
     const isDefaultUser = (
-      normUser === 'jd' ||
-      normUser === 'admin' ||
-      rawUser.toLowerCase() === 'j.d'
+      normUser === 'parth' ||
+      rawUser.toLowerCase() === 'parth'
     );
 
-    // Passwords: Jd@#123, jd@#123, JD@#123, admin123, admin
-    const isDefaultPass = (
-      rawPass === 'Jd@#123' ||
-      rawPass.toLowerCase() === 'jd@#123' ||
-      rawPass.toLowerCase() === 'admin123' ||
-      rawPass.toLowerCase() === 'admin'
-    );
+    // Password: PjDdpy@#67
+    const isDefaultPass = (rawPass === DEFAULT_ADMIN_PASSWORD);
 
     const creds = getCredentials();
     const isCustomMatch = creds.isCustom && (
@@ -192,14 +190,15 @@ const DEFAULT_ADMIN_PASSWORD = "Jd@#123";
   }
 
   /**
-   * Reset credentials back to default J.d / Jd@#123
+   * Reset credentials back to default Parth / PjDdpy@#67
    */
   function resetCredentialsToDefault() {
     try {
       localStorage.removeItem(AUTH_CREDENTIALS_KEY);
+      localStorage.removeItem('python_practicals_admin_credentials_v1');
       return {
         success: true,
-        message: 'Credentials reset to default (J.d / Jd@#123).'
+        message: 'Credentials reset to default (Parth / PjDdpy@#67).'
       };
     } catch (e) {
       return {
