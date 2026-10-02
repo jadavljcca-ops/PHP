@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:12:14.219Z
+ * Last updated: 2026-10-02T04:16:28.445Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:12:14.219Z",
+  "lastUpdated": "2026-10-02T04:16:28.445Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3581,6 +3581,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write an applicaɵon that starts two thread. first thread displays even numbers in the range specified from the command line and second thread displays odd numbers in the same range. each thread waits for 300 milliseconds before displaying the next numbers. the applicaɵon waits for both the thread to finish and then displays the message “both threads completed”. write an applicaɵon that starts two thread. first thread displays even numbers in the range specified from the command line and second thread displays odd numbers in the same range. each thread waits for 300 milliseconds before displaying the next numbers. the applicaɵon waits for both the thread to finish and then displays the message “both threads completed”.  general q6",
       "createdAt": "2026-10-02T04:12:12.471Z"
+    },
+    {
+      "id": "q-1790914586735-791",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-4-sub-ds-sem3",
+      "unitNum": "Unit 4",
+      "unitTitle": "Exception Handling and Multithreading",
+      "practicalNumber": 7,
+      "tag": "Q7",
+      "title": "Write a program that create and starts five threads. Each thread is instantiated from the same class. It executes a loop with ten iterations. Each iteration displays the character 'x' and sleep for 500 milliseconds. The application waits for all threads to complete and then display a message ‘hello’",
+      "question": "Write a program that create and starts five threads. Each thread is instantiated from the same class. It executes a loop with ten iterations. Each iteration displays the character 'x' and sleep for 500 milliseconds. The application waits for all threads to complete and then display a message ‘hello’",
+      "category": "General",
+      "logic": "",
+      "code": "/* 7-Write a program that create and starts five threads. Each\nthread is instanƟated from the same class. It executes a loop\nwith ten iterations. Each iteraƟon displays the character 'x'\nand sleep for 500 milliseconds. The applicaƟon waits for all\nthreads to complete and then display a message ‘hello’ */\n\nclass A extends Thread\n{\n\tpublic void run()\n\t{\n\ttry\n\t{\n\tfor(int i=0;i<10;i++)\n\t{\n\tThread.sleep(500);\n\tSystem.out.println(\"x\");\n\t}\n\t}\n\tcatch(InterruptedException e)\n\t{\n\t}\n  }\n}\nclass u4p7\n{\n\tpublic static void main(String args[])\n\t{\n\tA a=new A();\n\tA n[]=new A[5];\n\tfor(int i=0;i<5;i++)\n\tn[i]=new A();\n\tfor(int i=0;i<5;i++)\n\tn[i].start();\n\tfor(int i=0;i<5;i++)\n\t{\n\ttry\t\n\t{\n\tn[i].join();\n\t}\n\tcatch(InterruptedException e)\n\t{\n\t}\n\t}\n\tSystem.out.println(\"Threads are completed....\");\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">7</span>-Write a program that create <span class=\"tok-kw\">and</span> starts five threads. Each</span><span class=\"line\">thread <span class=\"tok-kw\">is</span> instanƟated <span class=\"tok-kw\">from</span> the same <span class=\"tok-kw\">class</span>. It executes a loop</span><span class=\"line\"><span class=\"tok-kw\">with</span> ten iterations. Each iteraƟon displays the character <span class=\"tok-str\">&#39;x&#39;</span></span><span class=\"line\"><span class=\"tok-kw\">and</span> sleep <span class=\"tok-kw\">for</span> <span class=\"tok-num\">500</span> milliseconds. The applicaƟon waits <span class=\"tok-kw\">for</span> all</span><span class=\"line\">threads to complete <span class=\"tok-kw\">and</span> then display a message ‘hello’ */</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">class</span> A extends Thread</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> run()</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">try</span></span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">10</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\tThread.sleep(<span class=\"tok-num\">500</span>);</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;x&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(InterruptedException e)</span><span class=\"line\">\t{</span><span class=\"line\">\t}</span><span class=\"line\">  }</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">class</span> u4p7</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tA a=<span class=\"tok-kw\">new</span> A();</span><span class=\"line\">\tA n[]=<span class=\"tok-kw\">new</span> A[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\tn[i]=<span class=\"tok-kw\">new</span> A();</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\tn[i].start();</span><span class=\"line\">\t<span class=\"tok-kw\">for</span>(<span class=\"tok-kw\">int</span> i=<span class=\"tok-num\">0</span>;i&lt;<span class=\"tok-num\">5</span>;i++)</span><span class=\"line\">\t{</span><span class=\"line\">\t<span class=\"tok-kw\">try</span>\t</span><span class=\"line\">\t{</span><span class=\"line\">\tn[i].join();</span><span class=\"line\">\t}</span><span class=\"line\">\tcatch(InterruptedException e)</span><span class=\"line\">\t{</span><span class=\"line\">\t}</span><span class=\"line\">\t}</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;Threads are completed....&quot;</span>);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "x\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx\nx \nThreads are completed.....",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write a program that create and starts five threads. each thread is instantiated from the same class. it executes a loop with ten iterations. each iteration displays the character 'x' and sleep for 500 milliseconds. the application waits for all threads to complete and then display a message ‘hello’ write a program that create and starts five threads. each thread is instantiated from the same class. it executes a loop with ten iterations. each iteration displays the character 'x' and sleep for 500 milliseconds. the application waits for all threads to complete and then display a message ‘hello’  general q7",
+      "createdAt": "2026-10-02T04:16:26.736Z"
     }
   ]
 };
