@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:48:58.659Z
+ * Last updated: 2026-10-02T03:51:42.505Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:48:58.659Z",
+  "lastUpdated": "2026-10-02T03:51:42.505Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3273,6 +3273,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program that creates three different classes in three different packages and access them from default package. all the three packages should be at the same level. write a program that creates three different classes in three different packages and access them from default package. all the three packages should be at the same level.  general q2",
       "createdAt": "2026-10-02T03:48:34.384Z"
+    },
+    {
+      "id": "q-1790913100731-829",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-3-sub-ds-sem3",
+      "unitNum": "Unit 3",
+      "unitTitle": "Package, String and Wrapper Classes",
+      "practicalNumber": 3,
+      "tag": "Q3",
+      "title": "Create package pack1 within this package create class A which contains one instance variable and one instance method. Create another package pack2 within this package create class B. where class B is calling the method and variable of class A.",
+      "question": "Create package pack1 within this package create class A which contains one instance variable and one instance method. Create another package pack2 within this package create class B. where class B is calling the method and variable of class A.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 3-Create package pack1 within this package create class A\nwhich contains one instance variable and one instance\nmethod. Create another package pack2 within this package\ncreate class B. where class B is calling the method and\nvariable of class A. */\n\npackage P1;\npublic class A\n\t{ \n\tpublic int x=100;\n\tpublic void show()\n\t{\n\tSystem.out.println(\"X:\"+x);\n\t}\n}\npackage P2;\nimport P1.*;\nclass B\n{\n\tpublic static void main(String args[])\n\t{\n\tA a1=new A();\n\ta1.show();\n\tSystem.out.println(\"The value of X is : \"+a1.x);\n\t}\n}",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">3</span>-Create package pack1 within this package create <span class=\"tok-kw\">class</span> A</span><span class=\"line\">which contains one instance variable <span class=\"tok-kw\">and</span> one instance</span><span class=\"line\">method. Create another package pack2 within this package</span><span class=\"line\">create <span class=\"tok-kw\">class</span> B. where <span class=\"tok-kw\">class</span> B <span class=\"tok-kw\">is</span> calling the method <span class=\"tok-kw\">and</span></span><span class=\"line\">variable of <span class=\"tok-kw\">class</span> A. */</span><span class=\"line\">&nbsp;</span><span class=\"line\">package P1;</span><span class=\"line\"><span class=\"tok-kw\">public</span> <span class=\"tok-kw\">class</span> A</span><span class=\"line\">\t{ </span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">int</span> x=<span class=\"tok-num\">100</span>;</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">void</span> show()</span><span class=\"line\">\t{</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;X:&quot;</span>+x);</span><span class=\"line\">\t}</span><span class=\"line\">}</span><span class=\"line\">package P2;</span><span class=\"line\"><span class=\"tok-kw\">import</span> P1.*;</span><span class=\"line\"><span class=\"tok-kw\">class</span> B</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\tA a1=<span class=\"tok-kw\">new</span> A();</span><span class=\"line\">\ta1.show();</span><span class=\"line\">\tSystem.out.println(<span class=\"tok-str\">&quot;The value of X is : &quot;</span>+a1.x);</span><span class=\"line\">\t}</span><span class=\"line\">}</span>",
+      "output": "X:100\nThe value of X is : 100",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create package pack1 within this package create class a which contains one instance variable and one instance method. create another package pack2 within this package create class b. where class b is calling the method and variable of class a. create package pack1 within this package create class a which contains one instance variable and one instance method. create another package pack2 within this package create class b. where class b is calling the method and variable of class a.  general q3",
+      "createdAt": "2026-10-02T03:51:40.731Z"
     }
   ]
 };
