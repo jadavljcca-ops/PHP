@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:25:32.101Z
+ * Last updated: 2026-10-02T04:26:05.939Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:25:32.101Z",
+  "lastUpdated": "2026-10-02T04:26:05.939Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2543,8 +2543,8 @@ window.DEFAULT_DATA = {
       "unitTitle": "All Unit Video Link",
       "practicalNumber": 1,
       "tag": "Q1",
-      "title": "The link below contains videos showing solutions for Tableau practical programs.                                                            Copy the link below and paste it into Google.",
-      "question": "The link below contains videos showing solutions for Tableau practical programs.                                                            Copy the link below and paste it into Google.",
+      "title": "The link below contains videos showing solutions for Tableau practical programs.                                                                                          Copy the link below and paste it into Google.",
+      "question": "The link below contains videos showing solutions for Tableau practical programs.                                                                                          Copy the link below and paste it into Google.",
       "category": "General",
       "logic": "Copy the link below and paste it into Google.",
       "code": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
@@ -2553,9 +2553,9 @@ window.DEFAULT_DATA = {
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
-      "dataSearch": "the link below contains videos showing solutions for tableau practical programs.                                                            copy the link below and paste it into google. the link below contains videos showing solutions for tableau practical programs.                                                            copy the link below and paste it into google. copy the link below and paste it into google. general q1",
+      "dataSearch": "the link below contains videos showing solutions for tableau practical programs.                                                                                          copy the link below and paste it into google. the link below contains videos showing solutions for tableau practical programs.                                                                                          copy the link below and paste it into google. copy the link below and paste it into google. general q1",
       "createdAt": "2026-10-02T02:05:16.352Z",
-      "updatedAt": "2026-10-02T04:25:26.521Z"
+      "updatedAt": "2026-10-02T04:26:04.139Z"
     },
     {
       "id": "q-1790907523536-876",
