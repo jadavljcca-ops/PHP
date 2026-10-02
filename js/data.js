@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:39:22.607Z
+ * Last updated: 2026-10-02T02:42:44.673Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:39:22.607Z",
+  "lastUpdated": "2026-10-02T02:42:44.673Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2684,6 +2684,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a php program to print user data using ajax. make one drop down select user id and print specific user detail by matching user id. write a php program to print user data using ajax. make one drop down select user id and print specific user detail by matching user id.  general q10",
       "createdAt": "2026-10-02T02:39:20.906Z"
+    },
+    {
+      "id": "q-1790908962972-50",
+      "semesterId": "sem-5",
+      "subjectId": "sub-hypertext-preprocessor-sem-5",
+      "unitId": "unit-4-sub-hypertext-preprocessor-sem-5",
+      "unitNum": "Unit 4",
+      "unitTitle": "AJAX and Validation",
+      "practicalNumber": 11,
+      "tag": "Q11",
+      "title": "Create a form containing one input field (Number). When the user enters the number and as the key is released, the form should display “whether the number is greater than 50 or not” with a message to the user. Implement using AJAX",
+      "question": "Create a form containing one input field (Number). When the user enters the number and as the key is released, the form should display “whether the number is greater than 50 or not” with a message to the user. Implement using AJAX",
+      "category": "General",
+      "logic": "",
+      "code": "#p11.html\n<html>\n<head>\n<script type=\"text/javascript\" language=\"javascript\">\nfunction showdata()\n{\n    var xmlhttp = new XMLHttpRequest();\n    var str = document.getElementById(\"txtname\").value;\n    xmlhttp.open(\"GET\", \"u4p11.php?q=\" + str, true);\n    xmlhttp.onreadystatechange = function()\n    {\n        if (xmlhttp.readyState == 4)\n        {\n            document.getElementById(\"info\").innerHTML = xmlhttp.responseText;\n        }\n    }\n    xmlhttp.send();\n}\n\n</script>\n</head>\n<body>\nEnter Number : <input type=\"text\" id=\"txtname\" onkeyup=\"showdata();\">\n<div id=\"info\"></div>\n</body>\n</html>\n\n#p11.php\n<?php\n$n = $_GET[\"q\"];\nif ($n > 50)\n{\n    echo \"$n is > 50.\";\n}\nelse\n{\n    echo \"$n is < 50.\";\n}\n?>",
+      "codeHtml": "<span class=\"line\"><span class=\"tok-com\">#p11.html</span></span><span class=\"line\">&lt;html&gt;</span><span class=\"line\">&lt;head&gt;</span><span class=\"line\">&lt;script <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text/javascript&quot;</span> language=<span class=\"tok-str\">&quot;javascript&quot;</span>&gt;</span><span class=\"line\">function showdata()</span><span class=\"line\">{</span><span class=\"line\">    var xmlhttp = <span class=\"tok-kw\">new</span> XMLHttpRequest();</span><span class=\"line\">    var str = document.getElementById(<span class=\"tok-str\">&quot;txtname&quot;</span>).value;</span><span class=\"line\">    xmlhttp.<span class=\"tok-fn\">open</span>(<span class=\"tok-str\">&quot;GET&quot;</span>, <span class=\"tok-str\">&quot;u4p11.php?q=&quot;</span> + str, <span class=\"tok-kw\">true</span>);</span><span class=\"line\">    xmlhttp.onreadystatechange = function()</span><span class=\"line\">    {</span><span class=\"line\">        <span class=\"tok-kw\">if</span> (xmlhttp.readyState == <span class=\"tok-num\">4</span>)</span><span class=\"line\">        {</span><span class=\"line\">            document.getElementById(<span class=\"tok-str\">&quot;info&quot;</span>).innerHTML = xmlhttp.responseText;</span><span class=\"line\">        }</span><span class=\"line\">    }</span><span class=\"line\">    xmlhttp.send();</span><span class=\"line\">}</span><span class=\"line\">&nbsp;</span><span class=\"line\">&lt;/script&gt;</span><span class=\"line\">&lt;/head&gt;</span><span class=\"line\">&lt;body&gt;</span><span class=\"line\">Enter Number : &lt;<span class=\"tok-fn\">input</span> <span class=\"tok-fn\">type</span>=<span class=\"tok-str\">&quot;text&quot;</span> id=<span class=\"tok-str\">&quot;txtname&quot;</span> onkeyup=<span class=\"tok-str\">&quot;showdata();&quot;</span>&gt;</span><span class=\"line\">&lt;div id=<span class=\"tok-str\">&quot;info&quot;</span>&gt;&lt;/div&gt;</span><span class=\"line\">&lt;/body&gt;</span><span class=\"line\">&lt;/html&gt;</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-com\">#p11.php</span></span><span class=\"line\">&lt;?php</span><span class=\"line\">$n = $_GET[<span class=\"tok-str\">&quot;q&quot;</span>];</span><span class=\"line\"><span class=\"tok-kw\">if</span> ($n &gt; <span class=\"tok-num\">50</span>)</span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;$n is &gt; 50.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\"><span class=\"tok-kw\">else</span></span><span class=\"line\">{</span><span class=\"line\">    echo <span class=\"tok-str\">&quot;$n is &lt; 50.&quot;</span>;</span><span class=\"line\">}</span><span class=\"line\">?&gt;</span>",
+      "output": "",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is greater than 50 or not” with a message to the user. implement using ajax create a form containing one input field (number). when the user enters the number and as the key is released, the form should display “whether the number is greater than 50 or not” with a message to the user. implement using ajax  general q11",
+      "createdAt": "2026-10-02T02:42:42.973Z"
     }
   ]
 };
