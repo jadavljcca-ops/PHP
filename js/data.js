@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:24:08.478Z
+ * Last updated: 2026-10-02T04:25:02.999Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:24:08.478Z",
+  "lastUpdated": "2026-10-02T04:25:02.999Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2543,19 +2543,19 @@ window.DEFAULT_DATA = {
       "unitTitle": "All Unit Video Link",
       "practicalNumber": 1,
       "tag": "Q1",
-      "title": "Copy the link below and paste it into Google.",
-      "question": "Copy the link below and paste it into Google.",
+      "title": "The link below contains videos showing solutions for Tableau practical programs.  Copy the link below and paste it into Google.",
+      "question": "The link below contains videos showing solutions for Tableau practical programs.  Copy the link below and paste it into Google.",
       "category": "General",
-      "logic": "The link below contains videos showing solutions for Tableau practical programs.",
+      "logic": "Copy the link below and paste it into Google.",
       "code": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
       "codeHtml": "<span class=\"line\">https:<span class=\"tok-com\">//drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing</span></span>",
       "output": "",
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
-      "dataSearch": "copy the link below and paste it into google. copy the link below and paste it into google. the link below contains videos showing solutions for tableau practical programs. general q1",
+      "dataSearch": "the link below contains videos showing solutions for tableau practical programs.  copy the link below and paste it into google. the link below contains videos showing solutions for tableau practical programs.  copy the link below and paste it into google. copy the link below and paste it into google. general q1",
       "createdAt": "2026-10-02T02:05:16.352Z",
-      "updatedAt": "2026-10-02T04:24:06.725Z"
+      "updatedAt": "2026-10-02T04:25:01.213Z"
     },
     {
       "id": "q-1790907523536-876",
