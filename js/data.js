@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T02:05:29.764Z
+ * Last updated: 2026-10-02T02:11:39.463Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T02:05:29.764Z",
+  "lastUpdated": "2026-10-02T02:11:39.463Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -2519,15 +2519,16 @@ window.DEFAULT_DATA = {
       "title": "",
       "question": "Q1 Practical",
       "category": "General",
-      "logic": "",
+      "logic": "The link below contains videos showing solutions for Tableau practical programs.",
       "code": "https://drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing",
       "codeHtml": "<span class=\"line\">https:<span class=\"tok-com\">//drive.google.com/drive/folders/1c--zovT4qQ6hQ80md9iZRwVOM6ZU_0Gi?usp=sharing</span></span>",
       "output": "",
       "outputImage": "",
       "chartSrc": "",
       "chartAlt": "",
-      "dataSearch": " q1 practical  general q1",
-      "createdAt": "2026-10-02T02:05:16.352Z"
+      "dataSearch": " q1 practical the link below contains videos showing solutions for tableau practical programs. general q1",
+      "createdAt": "2026-10-02T02:05:16.352Z",
+      "updatedAt": "2026-10-02T02:11:37.717Z"
     }
   ]
 };
