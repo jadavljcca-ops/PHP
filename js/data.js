@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:20:29.834Z
+ * Last updated: 2026-10-02T04:20:51.181Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:20:29.834Z",
+  "lastUpdated": "2026-10-02T04:20:51.181Z",
   "semesters": [
     {
       "id": "sem-1",
