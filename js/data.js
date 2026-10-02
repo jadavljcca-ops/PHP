@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T04:19:22.294Z
+ * Last updated: 2026-10-02T04:20:29.834Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T04:19:22.294Z",
+  "lastUpdated": "2026-10-02T04:20:29.834Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -154,15 +154,6 @@ window.DEFAULT_DATA = {
       "subjectId": "sub-tableau-sem-3",
       "semesterId": "sem-3",
       "num": "Unit 1",
-      "title": "All Unit Video Link",
-      "sub": "solved programs — aim, logic, code and output",
-      "questionCount": 0
-    },
-    {
-      "id": "unit-2-sub-tableau-sem-3",
-      "subjectId": "sub-tableau-sem-3",
-      "semesterId": "sem-3",
-      "num": "Unit 2",
       "title": "All Unit Video Link",
       "sub": "solved programs — aim, logic, code and output",
       "questionCount": 0
