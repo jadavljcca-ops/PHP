@@ -1,11 +1,11 @@
 /**
  * Default Practicals Data
  * Auto-synchronized from Admin Portal on localhost
- * Last updated: 2026-10-02T03:23:18.401Z
+ * Last updated: 2026-10-02T03:24:17.454Z
  */
 
 window.DEFAULT_DATA = {
-  "lastUpdated": "2026-10-02T03:23:18.401Z",
+  "lastUpdated": "2026-10-02T03:24:17.454Z",
   "semesters": [
     {
       "id": "sem-1",
@@ -3073,6 +3073,28 @@ window.DEFAULT_DATA = {
       "chartAlt": "",
       "dataSearch": "write a program to find sum of two matrices of 3 x3. write a program to find sum of two matrices of 3 x3.  general q3",
       "createdAt": "2026-10-02T03:23:16.641Z"
+    },
+    {
+      "id": "q-1790911455727-282",
+      "semesterId": "sem-3",
+      "subjectId": "sub-ds-sem3",
+      "unitId": "unit-2-sub-ds-sem3",
+      "unitNum": "Unit 2",
+      "unitTitle": "Array, Inheritance and Interface",
+      "practicalNumber": 4,
+      "tag": "Q4",
+      "title": "Write program to create an array of company name and another array of price quoted by the company. Fetch the company name who has quoted the lowest amount.",
+      "question": "Write program to create an array of company name and another array of price quoted by the company. Fetch the company name who has quoted the lowest amount.",
+      "category": "General",
+      "logic": "",
+      "code": "/* 4-Write program to create an array of company name and\nanother array of price quoted by the company. Fetch the\ncompany name who has quoted the lowest amount*/\n\nimport java.util.Scanner;\nclass u2p4\n{\n\tpublic static void main(String args[])\n\t{\n\t\tint i,j;\n\t\tint a[]=new int[5];\n\t\tString s[]=new String[5];\n\t\tScanner s1=new Scanner(System.in);\n\t\tfor(i=0; i<5; i++)\n\t\t{\n\t\t\tSystem.out.println(\"Enter a cmpany name: \");\n\t\t\ts=s1.next();\n\t\t\tSystem.out.println(\"Enter a quottion: \");\n\t\t\ta=s1.nextInt();\n\t\t}\n\t\tint min=a[0];\n\t\tj=0;\n\t\tfor(i=0; i<5; i++)\n\t\t{\n\t\t\tif(a[i]>min)\n\t\t\t\tmin=a[i];\n\t\t}\n\t\tSystem.out.println(\"name of company with lass quottion : \" +s[j])\n\t\t;\n\t}//main over\n}//class over",
+      "codeHtml": "<span class=\"line\">/* <span class=\"tok-num\">4</span>-Write program to create an array of company name <span class=\"tok-kw\">and</span></span><span class=\"line\">another array of price quoted by the company. Fetch the</span><span class=\"line\">company name who has quoted the lowest amount*/</span><span class=\"line\">&nbsp;</span><span class=\"line\"><span class=\"tok-kw\">import</span> java.util.Scanner;</span><span class=\"line\"><span class=\"tok-kw\">class</span> u2p4</span><span class=\"line\">{</span><span class=\"line\">\t<span class=\"tok-kw\">public</span> <span class=\"tok-kw\">static</span> <span class=\"tok-kw\">void</span> <span class=\"tok-fn\">main</span>(String args[])</span><span class=\"line\">\t{</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> i,j;</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> a[]=<span class=\"tok-kw\">new</span> <span class=\"tok-kw\">int</span>[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\t\tString s[]=<span class=\"tok-kw\">new</span> String[<span class=\"tok-num\">5</span>];</span><span class=\"line\">\t\tScanner s1=<span class=\"tok-kw\">new</span> Scanner(System.<span class=\"tok-kw\">in</span>);</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Enter a cmpany name: &quot;</span>);</span><span class=\"line\">\t\t\ts=s1.next();</span><span class=\"line\">\t\t\tSystem.out.println(<span class=\"tok-str\">&quot;Enter a quottion: &quot;</span>);</span><span class=\"line\">\t\t\ta=s1.nextInt();</span><span class=\"line\">\t\t}</span><span class=\"line\">\t\t<span class=\"tok-kw\">int</span> <span class=\"tok-fn\">min</span>=a[<span class=\"tok-num\">0</span>];</span><span class=\"line\">\t\tj=<span class=\"tok-num\">0</span>;</span><span class=\"line\">\t\t<span class=\"tok-kw\">for</span>(i=<span class=\"tok-num\">0</span>; i&lt;<span class=\"tok-num\">5</span>; i++)</span><span class=\"line\">\t\t{</span><span class=\"line\">\t\t\t<span class=\"tok-kw\">if</span>(a[i]&gt;<span class=\"tok-fn\">min</span>)</span><span class=\"line\">\t\t\t\t<span class=\"tok-fn\">min</span>=a[i];</span><span class=\"line\">\t\t}</span><span class=\"line\">\t\tSystem.out.println(<span class=\"tok-str\">&quot;name of company with lass quottion : &quot;</span> +s[j])</span><span class=\"line\">\t\t;</span><span class=\"line\">\t}<span class=\"tok-com\">//main over</span></span><span class=\"line\">}<span class=\"tok-com\">//class over</span></span>",
+      "output": "Enter company name:A\nEnter quotaƟon:400\nEnter company name:B\nEnter quotaƟon:300\nEnter company name:C\nEnter quotaƟon:370\nEnter company name:D\nEnter quotaƟon:500\nEnter company name:E\nEnter quotaƟon:240\nName of company with less quotaƟon:E",
+      "outputImage": "",
+      "chartSrc": "",
+      "chartAlt": "",
+      "dataSearch": "write program to create an array of company name and another array of price quoted by the company. fetch the company name who has quoted the lowest amount. write program to create an array of company name and another array of price quoted by the company. fetch the company name who has quoted the lowest amount.  general q4",
+      "createdAt": "2026-10-02T03:24:15.728Z"
     }
   ]
 };
